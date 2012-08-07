@@ -1,0 +1,57 @@
+{% load url from future %}
+{% load i18n %}
+{% load migdal_tags events_tags %}
+{% load compressed %}
+
+<html>
+    <head>
+        <title>{% trans "Culture's right" %}</title>
+        {% compressed_css 'base' %}
+    </head>
+    <body>
+        <a href="{% url "migdal_main" %}">{% trans "Culture's right" %}</a>
+        <ul id="menu">
+            {% if request.LANGUAGE_CODE == 'pl' %}
+                <li><a href="{% url 'migdal_entry_info' 'o-nas' %}">{% trans "About us" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'migdal_entry_info' 'about-us' %}">{% trans "About us" %}</a></li>
+            {% endif %}
+            <li><a href="{% url 'migdal_entry_list_publications' %}">{% trans "Publications" %}</a></li>
+            <li><a href="{% url 'events' %}">{% trans "Events" %}</a></li>
+            {% if request.LANGUAGE_CODE == 'pl' %}
+                <li><a href="{% url 'migdal_category' 'stanowiska' %}">{% trans "Positions" %}</a></li>
+                <li><a href="{% url 'migdal_category' 'pierwsza-pomoc' %}">{% trans "First aid" %}</a></li>
+                <li><a href="/en">English</a></li>
+            {% else %}
+                <li><a href="{% url 'migdal_category' 'positions' %}">{% trans "Positions" %}</a></li>
+                <li><a href="{% url 'migdal_category' 'first-aid' %}">{% trans "First aid" %}</a></li>
+                <li><a href="/">polski</a></li>
+            {% endif %}
+        </ul>
+
+        <div id="sidebar" style="float:right; width: 20%;">
+            {% block "sidebar" %}
+                <div class="sidebar-box">
+                    <h3>{% trans "Upcoming events" %}</h3>
+                    {% events_box %}
+                </div>
+                <div class="sidebar-box">
+                    <h3>{% trans "Categories" %}</h3>
+                    {% categories %}
+                </div>
+                <div class="sidebar-box">
+                    <h3>{% trans "Latest comments" %}</h3>
+                    {% last_comments %}
+                </div>
+                <div class="sidebar-box">
+                    <h3>{% trans "Follow us" %}</h3>
+                    <a href="{% url 'migdal_main_feed' %}">RSS</a>
+                </div>
+            {% endblock %}
+        </div>
+
+        <div id="body" style="width: 75%">
+            {% block "body" %}{% endblock %}
+        </div>
+    </body>
+</html>

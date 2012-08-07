@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: prawokultury-events\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-07 17:28+0200\n"
+"PO-Revision-Date: 2012-08-07 17:29+0100\n"
+"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
+"Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: models.py:11
+msgid "date"
+msgstr "data"
+
+#: models.py:12
+msgid "link"
+msgstr "link"
+
+#: models.py:15
+msgid "event"
+msgstr "wydarzenie"
+
+#: models.py:16
+msgid "events"
+msgstr "wydarzenia"
+
+#: models.py:20
+msgid "title"
+msgstr "tytuł"
+
+#: models.py:21
+msgid "organizer"
+msgstr "organizator"
+
+#: models.py:22
+msgid "place"
+msgstr "miejsce"
+
+#: templates/events/event_list.html:5
+msgid "Events"
+msgstr "Wydarzenia"
+
+#: templates/events/snippets/events_box.html:15
+msgid "more events"
+msgstr "więcej wydarzeń"
+

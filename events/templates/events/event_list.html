@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block "body" %}
+<h1>{% trans "Events" %}</h1>
+{% for event in object_list %}
+    {{ event.title }}
+    {{ event.place }}
+    {{ event.organizer }}
+    {{ event.date }}
+{% endfor %}
+{% endblock %}

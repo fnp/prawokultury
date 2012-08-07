@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-migdal 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-07 17:28+0200\n"
+"PO-Revision-Date: 2012-08-07 17:31+0100\n"
+"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
+"Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
+"Language: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Poedit-Language: Polish\n"
+
+#: admin.py:45
+msgid "Categories"
+msgstr "Kategorie"
+
+#: feeds.py:26
+msgid "latest"
+msgstr "ostatnie"
+
+#: feeds.py:30
+#: models.py:48
+msgid "entries"
+msgstr "wpisy"
+
+#: feeds.py:32
+msgid "in category"
+msgstr "w kategorii"
+
+#: models.py:15
+msgid "category"
+msgstr "kategoria"
+
+#: models.py:16
+#: urls.py:32
+#: urls.py:34
+msgid "categories"
+msgstr "kategorie"
+
+#: models.py:40
+msgid "author"
+msgstr "autor"
+
+#: models.py:41
+msgid "author email"
+msgstr "e-mail autora"
+
+#: models.py:42
+msgid "image"
+msgstr "obrazek"
+
+#: models.py:43
+msgid "promoted"
+msgstr "promowane"
+
+#: models.py:47
+msgid "entry"
+msgstr "wpis"
+
+#: models.py:72
+#: models.py:78
+msgid "title"
+msgstr "tytuł"
+
+#: models.py:73
+#: models.py:79
+msgid "lead"
+msgstr "lead"
+
+#: models.py:80
+msgid "needed"
+msgstr "potrzebne"
+
+#: models.py:81
+msgid "Unneeded"
+msgstr "Niepotrzebne"
+
+#: models.py:81
+msgid "Needed"
+msgstr "Potrzebne"
+
+#: models.py:81
+msgid "Done"
+msgstr "Ukończone"
+
+#: models.py:86
+msgid "body"
+msgstr "treść"
+
+#: models.py:87
+msgid "published"
+msgstr "opublikowane"
+
+#: models.py:93
+msgid "file"
+msgstr "plik"
+
+#: settings.py:19
+msgid "news"
+msgstr "newsy"
+
+#: settings.py:20
+msgid "publications"
+msgstr "publikacje"
+
+#: settings.py:21
+msgid "info"
+msgstr "info"
+
+#: templates/comments/migdal/entry/preview.html:19
+msgid "Please correct the error below"
+msgid_plural "Please correct the errors below"
+msgstr[0] "Proszę poprawić poniższy błąd"
+msgstr[1] "Proszę poprawić poniższe błędy"
+msgstr[2] "Proszę poprawić poniższe błędy"
+
+#: templates/comments/migdal/entry/preview.html:21
+msgid "Preview your comment"
+msgstr "Podgląd komentarza"
+
+#: templates/comments/migdal/entry/preview.html:29
+msgid "and"
+msgstr "i"
+
+#: templates/comments/migdal/entry/preview.html:29
+msgid "Post your comment"
+msgstr "Wyślij komentarz"
+
+#: templates/comments/migdal/entry/preview.html:29
+msgid "or make changes"
+msgstr "lub zmień"
+
+#: templates/comments/migdal/entry/preview.html:45
+msgid "Post"
+msgstr "Wyślij"
+
+#: templates/comments/migdal/entry/preview.html:46
+msgid "Preview"
+msgstr "Podgląd"
+
+#: templates/migdal/entry/entry_list.html:10
+msgid "Category"
+msgstr "Kategoria"
+
+#: templates/migdal/entry/entry_list.html:16
+msgid "Latest news"
+msgstr "Ostatnie newsy"
+
+#: templates/migdal/entry/entry_short.html:10
+msgid "read more"
+msgstr "czytaj więcej"
+
+#: templates/migdal/entry/entry_short.html:16
+#, python-format
+msgid "%(c)s comment"
+msgid_plural "%(c)s comments"
+msgstr[0] "%(c)s komentarz"
+msgstr[1] "%(c)s komentarze"
+msgstr[2] "%(c)s komentarzy"
+

@@ -1,0 +1,10 @@
+Django>=1.4,<1.5
+South>=0.7.4
+PIL
+sorl-thumbnail>=11.09,<12
+
+textile
+django-markupfield
+django-gravatar
+django_comments_xtd
+django-pipeline

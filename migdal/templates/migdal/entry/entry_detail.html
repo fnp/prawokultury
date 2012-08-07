@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load comments %}
+{% load migdal_tags %}
+
+
+{% block "body" %}
+
+<div class="entry entry-short entry-{{ object.type }}">
+
+{% entry_begin entry %}
+{{ entry.body }}
+
+{% if entry.get_type.commentable %}
+    {% render_comment_list for entry %}
+    {% render_comment_form for entry %}
+{% endif %}
+</div>
+
+{% endblock %}

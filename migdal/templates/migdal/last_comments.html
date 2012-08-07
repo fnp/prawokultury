@@ -1,0 +1,14 @@
+{% load gravatar %}
+{% load markup_tags %}
+<ul id="latest-comments">
+  {% for comment in object_list %}
+    <li>
+    <a href="{{ comment.get_absolute_url }}">
+        <div>
+        <img src="{% gravatar_for_email comment.email 16 %}"/>
+        {{ comment.name }}, {{ comment.submit_date }}</div>
+        {{ comment.comment|textile_restricted_pl|striptags|truncatechars:32 }}
+    </a>
+    </li>
+  {% endfor %}
+</ul>

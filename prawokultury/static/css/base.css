@@ -1,0 +1,29 @@
+body {
+    font-family: Purisa, sans-serif;
+}
+
+#menu {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#menu li {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.avatar {
+    float: left;
+    margin-left: -60px;
+}
+.entry {
+    margin-left: 60px;
+}
+.entry h2 {
+    margin: 0;
+}
+.entry-data {
+    font-size: .8em;
+}

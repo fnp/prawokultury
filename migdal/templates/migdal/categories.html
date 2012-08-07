@@ -1,0 +1,7 @@
+<ul class="categories">
+    {% for cat in object_list %}
+        <li class="category">
+            <a href="{{ cat.get_absolute_url }}">{{ cat }} ({{cat.entry_set.count}})</a>
+        </li>
+    {% endfor %}
+</ul>

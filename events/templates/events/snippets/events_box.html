@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load url from future %}
+
+<ul class="event-list">
+{% for event in objects %}
+    <li class="event-list-item">
+        <a target="_blank" href="{{ event.link }}">
+            {{ event.place }}, {{ event.date }}
+            {{ event.title }}
+            {{ event.organizer }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+<a href="{% url 'events' %}">{% trans "more events" %}</a>

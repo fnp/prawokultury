@@ -1,0 +1,13 @@
+{% load gravatar %}
+{% load markup_tags %}
+<dl id="comments">
+  {% for comment in comment_list %}
+    <dt id="c{{ comment.id }}">
+        <img src="{% gravatar_for_email comment.email 24 %}"/>
+        {{ comment.submit_date }} - {{ comment.name }}
+    </dt>
+    <dd>
+        <p>{{ comment.comment|textile_restricted_pl }}</p>
+    </dd>
+  {% endfor %}
+</dl>

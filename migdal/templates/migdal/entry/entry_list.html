@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+{% load migdal_tags %}
+
+{% block "body" %}
+
+<h1>
+{% if category %}
+    {% trans "Category" %}: {{ category }}
+    <a href="{% url 'migdal_category_feed' category.slug %}">RSS</a>
+{% elif entry_type %}
+    {{ entry_type|capfirst }}
+    <a href="{% url 'migdal_entry_list_'|add:entry_type.db|add:'_feed' %}">RSS</a>
+{% else %}
+    {% trans "Latest news" %}
+{% endif %}
+</h1>
+
+{% for object in object_list %}
+    {% entry_short object %}
+{% endfor %}
+
+{% endblock %}

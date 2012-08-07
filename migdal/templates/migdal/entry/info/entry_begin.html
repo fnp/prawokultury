@@ -1,0 +1,5 @@
+<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+{% if object.image %}
+    <img class="entry-picture" src="{{ object.image.url }}" />
+{% endif %}
+{{ object.lead }}

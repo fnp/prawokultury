@@ -1,0 +1,34 @@
+localsettings.py
+dev.sqlite
+*.db
+*.db-journal
+*~
+*.orig
+*.log
+
+# Compress output
+/static
+
+# Python garbage
+*.pyc
+.coverage
+pip-log.txt
+nosetests.xml
+
+# Mac OS X garbage
+.DS_Store
+
+# Windows garbage
+thumbs.db
+
+# Eclipse
+.project
+.settings
+.pydevproject
+.tmp_*
+
+# Tags file
+TAGS
+
+media
+search_index
