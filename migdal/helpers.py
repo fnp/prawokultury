@@ -12,6 +12,7 @@ from django.utils.translation import get_language, string_concat
 
 
 class EntryType(namedtuple('EntryType', 'db slug commentable on_main')):
+    __slots__ = ()
     def __unicode__(self):
         return unicode(self.slug)
 

@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load gravatar %}
 
 <img class="avatar" src="{% gravatar_for_email object.author_email 48 %}"/>
@@ -6,6 +7,20 @@
 <div class="entry-data">
 {{ object.date }}
 {{ object.author }}
+
+{% if request.LANGUAGE_CODE == 'pl' %}
+    {% if object.published_en %}
+        {% language 'en' %}
+            <a href="{{ object.get_absolute_url }}">English version</a>
+        {% endlanguage %}
+    {% endif %}
+{% elif object.published_pl %}
+        {% language 'pl' %}
+            <a href="{{ object.get_absolute_url }}">polska wersja</a>
+        {% endlanguage %}
+{% endif %}
+
+
 {% for category in object.categories.all %}
     <a href="{{ category.get_absolute_url }}">{{ category }}</a>
 {% endfor %}

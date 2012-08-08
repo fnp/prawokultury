@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block "body" %}
+
+<h1>{% trans "Submit new story" %}</h1>
+
+
+    <form method="post" action="{% url 'migdal_submit' %}">
+    {% csrf_token %}
+    <table>
+        {{ submit_form.as_table }}
+        <tr><td><button type="submit">Go!</button></td></tr>
+    </table>
+    </form>
+
+
+{% endblock %}

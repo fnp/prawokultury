@@ -30,15 +30,13 @@ add_translatable(Category, {
 
 
 class Entry(models.Model):
-    #type = models.CharField(max_length=16,
-    #        choices=((t.db, t.slug) for t in settings.TYPES),
-    #        db_index=True)
     type = models.CharField(max_length=16,
             choices=((t.db, t.slug) for t in settings.TYPES),
             db_index=True)
     date = models.DateTimeField(auto_now_add=True, db_index=True)
     author = models.CharField(_('author'), max_length=128)
-    author_email = models.EmailField(_('author email'), max_length=128, null=True, blank=True)
+    author_email = models.EmailField(_('author email'), max_length=128, null=True, blank=True,
+            help_text=_('Used only to display gravatar and send notifications.'))
     image = models.ImageField(_('image'), upload_to='entry/image/', null=True, blank=True)
     promo = models.BooleanField(_('promoted'), default=False)
     categories = models.ManyToManyField(Category, null=True, blank=True)
@@ -66,27 +64,21 @@ class Entry(models.Model):
     def get_type(self):
         return dict(settings.TYPES_DICT)[self.type]
 
-
-add_translatable(Entry, languages=settings.OBLIGATORY_LANGUAGES, fields={
-    'slug': models.SlugField(unique=True, db_index=True),
-    'title': models.CharField(_('title'), max_length=255),
-    'lead': MarkupField(_('lead'), markup_type='textile_pl'),
-})
-
 add_translatable(Entry, languages=settings.OPTIONAL_LANGUAGES, fields={
-    'slug': models.SlugField(unique=True, db_index=True, null=True, blank=True),
-    'title': models.CharField(_('title'), max_length=255, null=True, blank=True),
-    'lead': MarkupField(_('lead'), markup_type='textile_pl', null=True, blank=True),
     'needed': models.CharField(_('needed'), max_length=1, db_index=True, choices=(
                 ('n', _('Unneeded')), ('w', _('Needed')), ('y', _('Done'))),
                 default='n'),
 })
 
 add_translatable(Entry, {
-    'body': MarkupField(_('body'), markup_type='textile_pl', null=True, blank=True),
+    'slug': models.SlugField(unique=True, db_index=True, null=True, blank=True),
+    'title': models.CharField(_('title'), max_length=255, null=True, blank=True),
+    'lead': MarkupField(_('lead'), markup_type='textile_pl', null=True, blank=True,
+                help_text=_('Use <a href="http://textile.thresholdstate.com/">Textile</a> syntax.')),
+    'body': MarkupField(_('body'), markup_type='textile_pl', null=True, blank=True,
+                help_text=_('Use <a href="http://textile.thresholdstate.com/">Textile</a> syntax.')),
     'published': models.BooleanField(_('published'), default=False),
 })
-
 
 
 class Attachment(models.Model):

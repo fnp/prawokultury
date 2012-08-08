@@ -22,7 +22,8 @@ TYPES = app_setting('MIGDAL_TYPES', (
         ))
 TYPES_DICT = dict((t.db, t) for t in TYPES)
 TYPES_ON_MAIN = tuple(t.db for t in TYPES if t.on_main)
-# FIXME: if only news is on_main, `news/` should either throw 404 or redirect to main
+TYPE_SUBMIT = 'news'
+
 
 LANGUAGES = app_setting('MIGDAL_LANGUAGES', settings.LANGUAGES)
 LANGUAGE_CODE = app_setting('MIGDAL_LANGUAGE_CODE', settings.LANGUAGE_CODE)

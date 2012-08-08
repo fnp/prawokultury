@@ -1,0 +1,14 @@
+{% load url from future %}W serwisie pojawił się nowy wpis.
+http://localhost:8000{% url 'admin:migdal_entry_change' object.pk %}
+
+Autor: {{ object.author|default_if_none:"" }}
+E-mail: {{ object.author_email|default_if_none:"" }}
+Tytuł [pl]: {{ object.title_pl|default_if_none:"" }}
+Tytuł [en]: {{ object.title_en|default_if_none:"" }}
+Kategorie: {{ object.categories.all|join:", " }}
+
+---
+{{ object.lead_pl.raw }}
+---
+{{ object.lead_en.raw }}
+---

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block "body" %}
+
+<h1>{% trans "Thanks for submitting" %}</h1>
+
+{% blocktrans %}
+Thank you for submitting this new story, it's waiting for moderation.
+If you provided an email, we'll inform you about changes in it's status
+and comments.
+{% endblocktrans %}
+
+
+
+{% endblock %}

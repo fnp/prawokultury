@@ -1,4 +1,21 @@
 <h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+
+<div class="entry-data">
+{% if request.LANGUAGE_CODE == 'pl' %}
+    {% if object.published_en %}
+        {% language 'en' %}
+            <a href="{{ object.get_absolute_url }}">English version</a>
+        {% endlanguage %}
+    {% endif %}
+{% elif object.published_pl %}
+    {{ request.LANGUAGE_CODE }}
+    {% language 'pl' %}
+        <a href="{{ object.get_absolute_url }}">polska wersja</a>
+    {% endlanguage %}
+{% endif %}
+</div>
+
+
 {% if object.image %}
     <img class="entry-picture" src="{{ object.image.url }}" />
 {% endif %}

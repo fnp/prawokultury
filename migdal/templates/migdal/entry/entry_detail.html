@@ -12,7 +12,7 @@
 
 {% if entry.get_type.commentable %}
     {% render_comment_list for entry %}
-    {% render_comment_form for entry %}
+    {% entry_comment_form entry %}
 {% endif %}
 </div>
 

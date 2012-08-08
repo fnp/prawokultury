@@ -17,6 +17,10 @@
 {% endif %}
 </h1>
 
+{% if submit %}
+    <a href="{% url 'migdal_submit' %}">{% trans "Submit a new story." %}</a>
+{% endif %}
+
 {% for object in object_list %}
     {% entry_short object %}
 {% endfor %}
