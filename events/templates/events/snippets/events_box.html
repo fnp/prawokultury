@@ -5,11 +5,16 @@
 {% for event in objects %}
     <li class="event-list-item">
         <a target="_blank" href="{{ event.link }}">
-            {{ event.place }}, {{ event.date }}
+            <div class="date">
+                <div class="day">{{ event.date|date:"j" }}</div>
+                <div class="mon">{{ event.date|date:"b" }}</div>
+            </div>
+            {{ event.place }}
             {{ event.title }}
             {{ event.organizer }}
+            <div style="clear: both"></div>
         </a>
     </li>
 {% endfor %}
 </ul>
-<a href="{% url 'events' %}">{% trans "more events" %}</a>
+<!--p class="more"><a href="{% url 'events' %}">{% trans "more events" %}</a></p-->

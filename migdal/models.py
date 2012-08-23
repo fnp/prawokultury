@@ -10,6 +10,8 @@ from migdal import settings
 
 
 class Category(models.Model):
+    taxonomy = models.CharField(_('taxonomy'), max_length=32,
+                    choices=settings.TAXONOMIES)
 
     class Meta:
         verbose_name = _('category')

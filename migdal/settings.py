@@ -30,3 +30,9 @@ LANGUAGE_CODE = app_setting('MIGDAL_LANGUAGE_CODE', settings.LANGUAGE_CODE)
 OBLIGATORY_LANGUAGES = app_setting('MIGDAL_OBLIGATORY', tuple(
     lang for lang in LANGUAGES if lang[0]==LANGUAGE_CODE))
 OPTIONAL_LANGUAGES = tuple(lang for lang in LANGUAGES if lang not in OBLIGATORY_LANGUAGES)
+
+
+TAXONOMIES = (
+    ('topics', _('topics')),
+    ('types', _('types')),
+)

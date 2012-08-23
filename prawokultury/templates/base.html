@@ -9,49 +9,74 @@
         {% compressed_css 'base' %}
     </head>
     <body>
-        <a href="{% url "migdal_main" %}">{% trans "Culture's right" %}</a>
-        <ul id="menu">
-            {% if request.LANGUAGE_CODE == 'pl' %}
-                <li><a href="{% url 'migdal_entry_info' 'o-nas' %}">{% trans "About us" %}</a></li>
-            {% else %}
-                <li><a href="{% url 'migdal_entry_info' 'about-us' %}">{% trans "About us" %}</a></li>
-            {% endif %}
-            <li><a href="{% url 'migdal_entry_list_publications' %}">{% trans "Publications" %}</a></li>
-            <li><a href="{% url 'events' %}">{% trans "Events" %}</a></li>
-            {% if request.LANGUAGE_CODE == 'pl' %}
-                <li><a href="{% url 'migdal_category' 'stanowiska' %}">{% trans "Positions" %}</a></li>
-                <li><a href="{% url 'migdal_category' 'pierwsza-pomoc' %}">{% trans "First aid" %}</a></li>
-                <li><a href="/en">English</a></li>
-            {% else %}
-                <li><a href="{% url 'migdal_category' 'positions' %}">{% trans "Positions" %}</a></li>
-                <li><a href="{% url 'migdal_category' 'first-aid' %}">{% trans "First aid" %}</a></li>
-                <li><a href="/">polski</a></li>
-            {% endif %}
-        </ul>
+    <div id="body">
 
-        <div id="sidebar" style="float:right; width: 20%;">
+        <div id="header-bar">
+        <div class="bar-left">
+            <a id="logo" href="{% url "migdal_main" %}">{% trans "Culture's right" %}</a>
+        </div>
+        <div class="bar-right">
+            <a id="logo-fnp" href="http://nowoczesnapolska.org.pl">[Logo FNP]</a>
+            <a id="logo-osi" href="http://osi">[Logo OSI]</a>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+
+        <div id="menu-bar">
+        <div class="bar-right">
+            <form id="search-form"><input /><button>?</button></form>
+        </div>
+        <ul id="menu" class="bar-left">
+            {% block "main_menu" %}
+                {% main_menu 'url' request.get_full_path %}
+            {% endblock %}
+        </ul>
+        <div style="clear: both;"></div>
+        </div>
+
+        <div id="main-bar">
+        <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
                 <div class="sidebar-box">
                     <h3>{% trans "Upcoming events" %}</h3>
                     {% events_box %}
                 </div>
+                <div id="sidebar-box-categories" class="sidebar-box">
+                    {% categories 'topics' %}
+                    {% categories 'types' %}
+                </div>
                 <div class="sidebar-box">
-                    <h3>{% trans "Categories" %}</h3>
-                    {% categories %}
+                    <a href="{% url 'migdal_main_feed' %}">RSS</a>
                 </div>
                 <div class="sidebar-box">
                     <h3>{% trans "Latest comments" %}</h3>
                     {% last_comments %}
                 </div>
-                <div class="sidebar-box">
-                    <h3>{% trans "Follow us" %}</h3>
-                    <a href="{% url 'migdal_main_feed' %}">RSS</a>
-                </div>
             {% endblock %}
         </div>
-
-        <div id="body" style="width: 75%">
+        <div id="content" class="bar-left">
             {% block "body" %}{% endblock %}
         </div>
+        <div style="clear: both;"></div>
+        </div>
+
+        <div id="footer-bar">
+            <p class="footer-item">
+                <strong>Fundacja Nowoczesna Polska</strong><br/>
+                <br/>
+                ul.Marszałkowska 84/92 lok. 125<br/>
+                00-514 Warszawa<br/>
+                tel/fax: +48 22 621 30 17<br/>
+                e-mail: fundacja@nowoczesnapolska.org.pl
+            </p>
+            <p class="footer-item">
+                <br/><br/>
+                KRS: 0000070056<br/>
+                REGON: 017423865<br/>
+                Nr konta: 46 10201097 0000 7502 0001 6766
+            </p>
+        </div>
+
+    </div>
     </body>
 </html>

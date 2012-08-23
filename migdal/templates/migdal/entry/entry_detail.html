@@ -3,9 +3,18 @@
 {% load migdal_tags %}
 
 
+{% block "main_menu" %}
+    {% if entry.categories %}
+        {% main_menu 'objects' entry.categories.all %}
+    {% else %}
+        {% main_menu 'entry_type' entry.type %}
+    {% endif %}
+{% endblock "main_menu" %}
+
+
 {% block "body" %}
 
-<div class="entry entry-short entry-{{ object.type }}">
+<div class="entry entry-short entry-{{ entry.type }}">
 
 {% entry_begin entry %}
 {{ entry.body }}

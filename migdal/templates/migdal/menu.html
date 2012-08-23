@@ -1,0 +1,7 @@
+{% load i18n %}
+{% for item in items %}
+    <li{% if item.active %} 
+        class="active"{%endif %} {% if item.html_id %}
+        id="{{ item.html_id}}"{% endif %}>
+        <a href="{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}

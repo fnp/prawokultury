@@ -20,6 +20,8 @@ class EntriesFeed(Feed):
             category = None
         if type_db:
             entry_type = TYPES_DICT[type_db]
+        else:
+            entry_type = None
         return {'entry_type': entry_type, 'category': category}
 
     def title(self, obj):
