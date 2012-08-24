@@ -24,5 +24,11 @@ urlpatterns = patterns('',
     url(r'^comments/', include('django_comments_xtd.urls')),
 ) + migdal_urlpatterns
 
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   )
 
 urlpatterns += staticfiles_urlpatterns()

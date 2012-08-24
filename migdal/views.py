@@ -28,7 +28,10 @@ def entry_list(request, type_db=None, category_slug=None):
     else:
         category = None
 
-    object_list = api.entry_list(entry_type=entry_type, category=category)
+    promobox = 5 if entry_type is None and category is None else None
+
+    object_list = api.entry_list(entry_type=entry_type, category=category,
+                    promobox=promobox)
 
     return render(request, templates, {
             'object_list': object_list,

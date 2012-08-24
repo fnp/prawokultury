@@ -1,12 +1,12 @@
 {% load i18n %}
-{% load gravatar %}
+{% load gravatar thumbnail %}
 
 <img class="avatar" src="{% gravatar_for_email object.author_email 48 %}"/>
 <h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
 
 <div class="entry-data">
-{{ object.date }}
-{{ object.author }}
+<div class="date">{{ object.date }}</div>
+<div class="author">{{ object.author }}</div>
 
 {% if request.LANGUAGE_CODE == 'pl' %}
     {% if object.published_en %}
@@ -20,13 +20,23 @@
         {% endlanguage %}
 {% endif %}
 
-
+<div class="categories">
 {% for category in object.categories.all %}
     <a href="{{ category.get_absolute_url }}">{{ category }}</a>
 {% endfor %}
 </div>
 
+</div>
+
 {% if object.image %}
-    <img class="entry-picture" src="{{ object.image.url }}" />
+    <img class="entry-picture" src="{% thumbnail object.image "250x300" as thumb %}
+                    {{ thumb.url }}
+                {% empty %}
+                    {{ object.image.url }}
+                {% endthumbnail %}" />
 {% endif %}
+<div class="lead">
 {{ object.lead }}
+</div>
+<div style="clear: both"></div>
+

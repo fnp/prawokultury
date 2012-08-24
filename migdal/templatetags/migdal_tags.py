@@ -39,6 +39,19 @@ def entry_short(context, entry):
     return t.render(template.Context(context))
 
 
+@register.simple_tag(takes_context=True)
+def entry_promobox(context, entry):
+    t = template.loader.select_template((
+        'migdal/entry/%s/entry_promobox.html' % entry.type,
+        'migdal/entry/entry_promobox.html',
+    ))
+    context = {
+        'request': context['request'],
+        'object': entry,
+    }
+    return t.render(template.Context(context))
+
+
 @register.inclusion_tag('migdal/categories.html', takes_context=True)
 def categories(context, taxonomy):
     context = {

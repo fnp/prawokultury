@@ -1,0 +1,56 @@
+.sidebar-box {
+  border-top: 1px solid #8a8b85;
+  padding-top: 1.5em;
+  padding-bottom: .9em;
+  clear: both; }
+  .sidebar-box h3 {
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 1.2em; }
+  .sidebar-box .more {
+    text-align: right; }
+  .sidebar-box .event-list {
+    list-style: none;
+    padding-left: 0; }
+    .sidebar-box .event-list li {
+      margin-top: 1em; }
+    .sidebar-box .event-list a {
+      display: block; }
+    .sidebar-box .event-list .date {
+      clear: both;
+      float: left;
+      background: #e63612;
+      background-image: url("/static/img/calendar.png");
+      background-repeat: no-repeat;
+      color: #71ece6;
+      width: 5em;
+      height: 4.8em;
+      border-radius: .5em;
+      text-align: center;
+      margin-right: 1em; }
+      .sidebar-box .event-list .date .day {
+        font-size: 2.4em;
+        font-style: italic; }
+      .sidebar-box .event-list .date .mon {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        margin-top: -0.3em; }
+    .sidebar-box .event-list .date:hover {
+      text-decoration: none; }
+    .sidebar-box .event-list .description {
+      color: black;
+      font-size: 1.1em; }
+
+#sidebar-box-categories ul {
+  width: 50%;
+  display: table-cell;
+  list-style: none;
+  padding-left: 0;
+  padding-right: 4em;
+  font-size: 1.4em;
+  padding-right: 3.4em; }
+#sidebar-box-categories .category-taxonomy-topics a {
+  color: #31ada3; }
+#sidebar-box-categories .category-taxonomy-types a {
+  color: #ff6100; }

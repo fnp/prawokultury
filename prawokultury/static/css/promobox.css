@@ -1,0 +1,61 @@
+#promobox {
+  position: relative; }
+  #promobox a:hover {
+    text-decoration: none; }
+
+ul.promobox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 32.3em;
+  overflow: hidden; }
+
+.promobox-item {
+  border-radius: 0 0 2em 0;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.promobox-link {
+  background-image: url("/static/img/rog.png");
+  display: block;
+  position: relative;
+  height: 32.3em;
+  background-position: 100% 100%;
+  background-repeat: no-repeat; }
+
+#promobox-switcher {
+  position: absolute;
+  top: 1.6em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100; }
+  #promobox-switcher a {
+    display: block;
+    background: black;
+    font-size: 1.1em;
+    width: 1.1em;
+    padding: .45em .5em;
+    border-radius: 0 1em 1em 0;
+    color: white; }
+  #promobox-switcher a.active {
+    background: #02529b; }
+
+.promobox-info {
+  position: absolute;
+  top: 15.4em;
+  background-color: #64c0bd;
+  color: white;
+  width: 20em;
+  padding: 1.5em 4.8em 1.2em 2em;
+  border-radius: 0 6em 6em 0; }
+  .promobox-info .clip {
+    height: 9.7em;
+    overflow: hidden; }
+  .promobox-info h2 {
+    margin-top: 0;
+    font-size: 1.5em; }
+  .promobox-info .lead {
+    font-size: 1.2em;
+    line-height: 1.1em; }

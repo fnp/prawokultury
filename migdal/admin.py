@@ -22,7 +22,7 @@ class AttachmentInline(admin.TabularInline):
 
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('type', 'author', 'author_email', 'image')}),
+        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image')}),
     ) + tuple(
         (ln, {'fields': (
             ('published_%s' % lc),
