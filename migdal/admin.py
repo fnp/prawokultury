@@ -59,7 +59,7 @@ class EntryAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = translated_fields(('title', 'slug'))
+    list_display = translated_fields(('title', 'slug')) + ('taxonomy',)
     prepopulated_fields = dict([
             ("slug_%s" % lang_code, ("title_%s" % lang_code,))
             for lang_code, lang_name in settings.LANGUAGES

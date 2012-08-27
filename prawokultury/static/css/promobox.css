@@ -8,13 +8,16 @@ ul.promobox {
   padding: 0;
   margin: 0;
   height: 32.3em;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
 
 .promobox-item {
   border-radius: 0 0 2em 0;
   list-style: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  position: absolute;
+  width: 100%; }
 
 .promobox-link {
   background-image: url("/static/img/rog.png");
@@ -39,7 +42,7 @@ ul.promobox {
     padding: .45em .5em;
     border-radius: 0 1em 1em 0;
     color: white; }
-  #promobox-switcher a.active {
+  #promobox-switcher .active a {
     background: #02529b; }
 
 .promobox-info {

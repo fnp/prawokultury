@@ -30,19 +30,20 @@
 <div id="promobox">
 <ul id="promobox-switcher">
 {% for object in object_list.promobox %}
-    <li>
-        <a href="" 
-        {% if forloop.counter == 1 %} class="active"{% endif %}
+    <li {% if forloop.counter == 1 %} class="active"{% endif %}>
+        <a href="{{ object.get_absolute_url }}"
         >{{ forloop.counter }}</a>
     </li>
 {% endfor %}
 </ul>
 
+<div id="promobox-wrapper">
 <ul class="promobox">
 {% for object in object_list.promobox %}
-    {% entry_promobox object %}
+    {% entry_promobox object forloop.counter %}
 {% endfor %}
 </ul>
+</div>
 
 </div>
 {% endif %}
