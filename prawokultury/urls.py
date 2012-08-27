@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
+    url(r'^search/', include('haystack.urls')),
 ) + i18n_patterns('',
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
     url(r'^comments/', include('django_comments_xtd.urls')),

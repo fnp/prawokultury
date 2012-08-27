@@ -8,3 +8,6 @@ django-markupfield
 django-gravatar
 django_comments_xtd
 django-pipeline
+
+-e git+https://github.com/toastdriven/django-haystack.git@master#egg=django-haystack
+pysolr
