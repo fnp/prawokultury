@@ -9,6 +9,7 @@ from migdal.helpers import add_translatable
 from migdal import app_settings
 
 
+
 class Category(models.Model):
     taxonomy = models.CharField(_('taxonomy'), max_length=32,
                     choices=app_settings.TAXONOMIES)
