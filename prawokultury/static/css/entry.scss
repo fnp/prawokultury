@@ -1,21 +1,28 @@
 .avatar {
     float: left;
-    margin-left: -7.5em;
-    margin-top: .8em;
+    margin-left: -8em;
+    margin-top: 0em;
 }
 
 .entry-short {
     border-top: 1px solid #8b8b87;
+
+    .entry-wrapped {
+        padding-top: .7em;
+    }
 }
 
 .entry-wrapped {
     margin-left: 8em;
-    padding-top: .7em;
 
-    h2 {
+    h1, h2 {
         margin: 0;
-        font-size: 1.2em;
         color: #01519a;
+        font-size: 1.2em;
+
+        a {
+            color: #01519a;
+        }
     }
 
     .entry-data {
@@ -68,6 +75,12 @@
     }
 }
 
+.entry-info .entry-wrapped {
+    margin-left: 0;
+    h1 {
+        font-size: 2em;
+    }
+}
 
 .entry-picture {
     float: left;

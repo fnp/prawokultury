@@ -4,10 +4,10 @@
   padding-bottom: .9em;
   clear: both; }
   .sidebar-box h3 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: normal;
     margin-top: 0;
-    margin-bottom: 1.2em; }
+    margin-bottom: 1.1em; }
   .sidebar-box .more {
     text-align: right; }
   .sidebar-box .event-list {
@@ -54,3 +54,31 @@
   color: #31ada3; }
 #sidebar-box-categories .category-taxonomy-types a {
   color: #ff6100; }
+
+#latest-comments {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  #latest-comments a {
+    display: block;
+    color: #363a3b; }
+  #latest-comments li {
+    margin-bottom: 1.5em; }
+  #latest-comments li:after {
+    content: url("/static/img/dot.png");
+    display: block;
+    margin: 1.5em 1.5em 0 0;
+    text-align: center; }
+  #latest-comments li:last-child {
+    margin-bottom: 0; }
+  #latest-comments li:last-child:after {
+    display: none; }
+  #latest-comments .title {
+    font-size: 1.1em;
+    font-weight: bold; }
+  #latest-comments .author {
+    color: #acacac;
+    font-size: 1.1em; }
+  #latest-comments .body {
+    margin-top: 1.3em;
+    font-size: 1.1em; }

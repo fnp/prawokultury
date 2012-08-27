@@ -5,10 +5,10 @@
     clear: both;
 
     h3 {
-        font-size: 1.3em;
+        font-size: 1.4em;
         font-weight: normal;
         margin-top: 0;
-        margin-bottom: 1.2em;
+        margin-bottom: 1.1em;
     }
 
     .more {
@@ -78,5 +78,47 @@
 
     .category-taxonomy-types a {
         color: #ff6100;
+    }
+}
+
+
+#latest-comments {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+        display: block;
+        color: #363a3b;
+    }
+
+    li {
+        margin-bottom: 1.5em;
+    }
+    li:after {
+        content: url("/static/img/dot.png");
+        display: block;
+        margin: 1.5em 1.5em 0 0;
+        text-align:center;
+    }
+
+    li:last-child {
+        margin-bottom: 0;
+    }
+    li:last-child:after {
+        display: none;
+    }
+
+    .title {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    .author {
+        color: #acacac;
+        font-size: 1.1em;
+    }
+    .body {
+        margin-top: 1.3em;
+        font-size: 1.1em;
     }
 }

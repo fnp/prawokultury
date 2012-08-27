@@ -1,18 +1,21 @@
 .avatar {
   float: left;
-  margin-left: -7.5em;
-  margin-top: .8em; }
+  margin-left: -8em;
+  margin-top: 0em; }
 
 .entry-short {
   border-top: 1px solid #8b8b87; }
+  .entry-short .entry-wrapped {
+    padding-top: .7em; }
 
 .entry-wrapped {
-  margin-left: 8em;
-  padding-top: .7em; }
-  .entry-wrapped h2 {
+  margin-left: 8em; }
+  .entry-wrapped h1, .entry-wrapped h2 {
     margin: 0;
-    font-size: 1.2em;
-    color: #01519a; }
+    color: #01519a;
+    font-size: 1.2em; }
+    .entry-wrapped h1 a, .entry-wrapped h2 a {
+      color: #01519a; }
   .entry-wrapped .entry-data {
     font-size: 1.1em;
     margin-top: 1.4em;
@@ -45,6 +48,11 @@
     .entry-wrapped .more .read-more:after {
       content: url("/static/img/read-more.png");
       margin-left: .7em; }
+
+.entry-info .entry-wrapped {
+  margin-left: 0; }
+  .entry-info .entry-wrapped h1 {
+    font-size: 2em; }
 
 .entry-picture {
   float: left;

@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from migdal import api
 from migdal.forms import get_submit_form
 from migdal.models import Category, Entry
-from migdal.settings import TYPES_DICT, TYPES_ON_MAIN, TYPE_SUBMIT
+from migdal import app_settings
 
 
 def entry_list(request, type_db=None, category_slug=None):
@@ -14,13 +14,13 @@ def entry_list(request, type_db=None, category_slug=None):
     templates = ["migdal/entry/entry_list.html"]
 
     if type_db:
-        if TYPES_ON_MAIN == (type_db,):
+        if app_settings.TYPES_ON_MAIN == (type_db,):
             return redirect('migdal_main')
-        entry_type = TYPES_DICT[type_db]
+        entry_type = app_settings.TYPES_DICT[type_db]
         templates = ["migdal/entry/%s/entry_list.html" % type_db] + templates
-        submit = type_db == TYPE_SUBMIT
+        submit = type_db == app_settings.TYPE_SUBMIT
     else:
-        submit = TYPES_ON_MAIN == (TYPE_SUBMIT,)
+        submit = app_settings.TYPES_ON_MAIN == (app_settings.TYPE_SUBMIT,)
         entry_type = None
 
     if category_slug:

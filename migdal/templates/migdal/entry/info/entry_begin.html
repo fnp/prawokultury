@@ -1,5 +1,11 @@
 {% load i18n %}
-<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+
+{% if detail %}
+    <h1>{{ object.title }}</h1>
+{% else %}
+    <h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
+{% endif %}
+
 
 <div class="entry-data">
 {% if request.LANGUAGE_CODE == 'pl' %}
@@ -20,4 +26,6 @@
 {% if object.image %}
     <img class="entry-picture" src="{{ object.image.url }}" />
 {% endif %}
+<div class="lead">
 {{ object.lead }}
+</div>

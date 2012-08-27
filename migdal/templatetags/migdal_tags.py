@@ -6,15 +6,15 @@ from django_comments_xtd.models import XtdComment
 from django.contrib import comments
 from django.core.urlresolvers import reverse
 from django import template
+from migdal import app_settings
 from migdal.models import Category, Entry
-from migdal import settings
 from django.utils.translation import ugettext_lazy as _
 
 register = template.Library()
 
 
 @register.simple_tag(takes_context=True)
-def entry_begin(context, entry):
+def entry_begin(context, entry, detail=False):
     t = template.loader.select_template((
         'migdal/entry/%s/entry_begin.html' % entry.type,
         'migdal/entry/entry_begin.html',
@@ -22,6 +22,7 @@ def entry_begin(context, entry):
     context = {
         'request': context['request'],
         'object': entry,
+        'detail': detail,
     }
     return t.render(template.Context(context))
 
@@ -63,7 +64,7 @@ def categories(context, taxonomy):
 
 
 @register.inclusion_tag('migdal/last_comments.html')
-def last_comments(limit=10):
+def last_comments(limit=app_settings.LAST_COMMENTS):
     return {'object_list': 
         XtdComment.objects.filter(is_public=True, is_removed=False).order_by('-submit_date')[:limit]}
 

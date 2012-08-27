@@ -6,12 +6,12 @@ from django.db import models
 from django.utils.translation import get_language, ugettext_lazy as _, ugettext
 from markupfield.fields import MarkupField
 from migdal.helpers import add_translatable
-from migdal import settings
+from migdal import app_settings
 
 
 class Category(models.Model):
     taxonomy = models.CharField(_('taxonomy'), max_length=32,
-                    choices=settings.TAXONOMIES)
+                    choices=app_settings.TAXONOMIES)
 
     class Meta:
         verbose_name = _('category')
@@ -33,7 +33,7 @@ add_translatable(Category, {
 
 class Entry(models.Model):
     type = models.CharField(max_length=16,
-            choices=((t.db, t.slug) for t in settings.TYPES),
+            choices=((t.db, t.slug) for t in app_settings.TYPES),
             db_index=True)
     date = models.DateTimeField(auto_now_add=True, db_index=True)
     author = models.CharField(_('author'), max_length=128)
@@ -53,7 +53,7 @@ class Entry(models.Model):
 
     def save(self, *args, **kwargs):
         # convert blank to null for slug uniqueness check to work
-        for lc, ln in settings.OPTIONAL_LANGUAGES:
+        for lc, ln in app_settings.OPTIONAL_LANGUAGES:
             slug_name = "slug_%s" % lc
             if hasattr(self, slug_name) == u'':
                 setattr(self, slug_name, None)
@@ -64,9 +64,9 @@ class Entry(models.Model):
         return ('migdal_entry_%s' % self.type, [self.slug])
 
     def get_type(self):
-        return dict(settings.TYPES_DICT)[self.type]
+        return dict(app_settings.TYPES_DICT)[self.type]
 
-add_translatable(Entry, languages=settings.OPTIONAL_LANGUAGES, fields={
+add_translatable(Entry, languages=app_settings.OPTIONAL_LANGUAGES, fields={
     'needed': models.CharField(_('needed'), max_length=1, db_index=True, choices=(
                 ('n', _('Unneeded')), ('w', _('Needed')), ('y', _('Done'))),
                 default='n'),
