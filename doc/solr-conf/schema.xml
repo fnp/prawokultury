@@ -169,9 +169,9 @@
     <field name="title_en" type="text_en" indexed="true" stored="true" multiValued="false" />
     <field name="body_en" type="text_en" indexed="true" stored="true" multiValued="false" />
 
-    <field name="organiser_en" type="text_en" indexed="true" stored="true" multiValued="false" />
+    <field name="organizer_en" type="text_en" indexed="true" stored="true" multiValued="false" />
     <field name="place_en" type="text_ws" indexed="true" stored="true" multiValued="false" />
-    <field name="organiser_pl" type="text_en" indexed="true" stored="true" multiValued="false" />
+    <field name="organizer_pl" type="text_pl" indexed="true" stored="true" multiValued="false" />
     <field name="place_pl" type="text_ws" indexed="true" stored="true" multiValued="false" />
 
   </fields>
