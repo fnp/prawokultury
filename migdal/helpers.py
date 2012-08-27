@@ -71,3 +71,21 @@ def i18n_patterns(prefix, *args):
         return pattern_list
     return pattern_list + [MyLocaleRegexURLResolver(pattern_list)]
 
+
+def add_translatable_index(index_class, fields, languages=None):
+    """Adds some translatable fields to a search index, and a getter."""
+    if languages is None:
+        languages = settings.LANGUAGES
+    for name, field in fields.items():
+        for lang_code, lang_name in languages:
+            new_field = copy(field)
+            fname = "%s_%s" % (name, lang_code)
+            new_field.index_fieldname = new_field.index_fieldname \
+                and "%s_%s" % (new_field.index_fieldname, lang_code) \
+                or fname
+            new_field.model_attr = new_field.model_attr \
+                and "%s_%s" % (new_field.model_attr, lang_code) \
+                or fname
+            setattr(index_class, fname, new_field)
+            index_class.fields[fname] = new_field
+

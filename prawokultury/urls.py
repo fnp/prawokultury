@@ -9,7 +9,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from migdal.helpers import i18n_patterns
 from migdal.urls import urlpatterns as migdal_urlpatterns
 from django.utils.translation import ugettext_lazy as _, string_concat
-
+from events.urls import urlpatterns as events_urlpatterns
 
 admin.autodiscover()
 
@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 ) + i18n_patterns('',
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
     url(r'^comments/', include('django_comments_xtd.urls')),
-) + migdal_urlpatterns
+) + migdal_urlpatterns 
 
 if settings.DEBUG:
     urlpatterns += patterns('',

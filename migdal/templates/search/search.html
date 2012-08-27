@@ -2,13 +2,18 @@
 {% load url from future %}
 {% load i18n %}
 {% load migdal_tags %}
+{% load events_tags %}
 
 
 {% block "body" %}
 <h1>{% trans "Search results" %}</h1>
 
 {% for result in page.object_list %}
-{% entry_short result.object %}
+  {% if result.model_name == "entry" %}
+    {% entry_short result.object %}
+  {% elif result.model_name == "event" %}
+    {% event_short result.object %}
+  {% endif %}
 {% empty %}
 <p>{% trans "No results found." %}</p>
 {% endfor %}

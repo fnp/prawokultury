@@ -14,3 +14,8 @@ from datetime import datetime
 def events_box(context, limit=app_settings.BOX_LENGTH):
     objects = Event.objects.filter(date__gte=datetime.now())[:limit]
     return {'objects': objects}
+
+
+@register.inclusion_tag('events/snippets/event_short.html')
+def event_short(event):
+    return {'event': event}
