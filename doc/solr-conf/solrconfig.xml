@@ -756,6 +756,10 @@
 	 lead_en^1.0
 	 body_pl^1.5
 	 body_en^1.5
+         place_en^0.5
+         place_pl^1.0
+         organiser_pl^1.0
+         organiser_en^0.5
        </str>
        <int name="rows">50</int>
        <int name="qs">2</int>
