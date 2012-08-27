@@ -39,6 +39,20 @@ def entry_short(context, entry):
     return t.render(template.Context(context))
 
 
+@register.simple_tag(takes_context=True)
+def entry_promobox(context, entry, counter):
+    t = template.loader.select_template((
+        'migdal/entry/%s/entry_promobox.html' % entry.type,
+        'migdal/entry/entry_promobox.html',
+    ))
+    context = {
+        'request': context['request'],
+        'object': entry,
+        'counter': counter,
+    }
+    return t.render(template.Context(context))
+
+
 @register.inclusion_tag('migdal/categories.html', takes_context=True)
 def categories(context, taxonomy):
     context = {
@@ -75,15 +89,22 @@ class MenuItem(object):
 
 
 class ModelMenuItem(object):
-    def __init__(self, obj, html_id=None):
+    def __init__(self, obj, title=None, html_id=None):
         self.obj = obj
-        self.title = unicode(obj)
+        self.title = title or unicode(obj)
         self.url = obj.get_absolute_url()
         self.html_id = html_id
 
     def check_active(self, chooser, value):
         self.active = (chooser == 'object' and value == self.obj or
                         chooser == 'objects' and self.obj in value)
+
+class CategoryMenuItem(ModelMenuItem):
+    def check_active(self, chooser, value):
+        super(CategoryMenuItem, self).check_active(chooser, value)
+        self.active = (self.active or
+                       (chooser == 'object' and isinstance(value, Entry) and
+                        self.obj in value.categories.all()))
 
 
 class EntryTypeMenuItem(object):
@@ -104,8 +125,8 @@ def main_menu(context, chooser=None, value=None):
         ModelMenuItem(Entry.objects.get(slug_pl='o-nas')),
         EntryTypeMenuItem(_(u'Publications'), u'publications'),
         MenuItem(_(u'Events'), reverse('events')),
-        ModelMenuItem(Category.objects.get(slug_pl='stanowisko')),
-        ModelMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc')),
+        CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'), title=_('Positions')),
+        CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc')),
     ]
     if context['request'].LANGUAGE_CODE == 'pl':
         items.append(MenuItem(u'en', '/en/', html_id='item-lang'))

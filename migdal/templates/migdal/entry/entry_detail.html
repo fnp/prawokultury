@@ -4,25 +4,25 @@
 
 
 {% block "main_menu" %}
-    {% if entry.categories %}
-        {% main_menu 'objects' entry.categories.all %}
-    {% else %}
-        {% main_menu 'entry_type' entry.type %}
-    {% endif %}
+    {% main_menu 'object' entry %}
 {% endblock "main_menu" %}
 
 
 {% block "body" %}
 
 <div class="entry entry-short entry-{{ entry.type }}">
+<div class="entry-wrapped">
 
 {% entry_begin entry %}
+<div class="body">
 {{ entry.body }}
+</div>
 
 {% if entry.get_type.commentable %}
     {% render_comment_list for entry %}
     {% entry_comment_form entry %}
 {% endif %}
+</div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,82 @@
+.sidebar-box {
+    border-top: 1px solid #8a8b85;
+    padding-top: 1.5em;
+    padding-bottom: .9em;
+    clear: both;
+
+    h3 {
+        font-size: 1.3em;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 1.2em;
+    }
+
+    .more {
+        text-align: right;
+    }
+
+    .event-list {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin-top: 1em;
+        }
+
+        a {
+            display: block;
+        }
+        
+        .date {
+            clear: both;
+            float: left;
+            background: #e63612;
+            background-image: url('/static/img/calendar.png');
+            background-repeat: no-repeat;
+            color: #71ece6;
+            width: 5em;
+            height: 4.8em;
+            border-radius: .5em;
+            text-align: center;
+            margin-right: 1em;
+
+            .day {
+                font-size: 2.4em;
+                font-style: italic;
+            }
+            .mon {
+                font-size: 1.1em;
+                text-transform: uppercase;
+                margin-top: -.3em;
+            }
+        }
+
+        .date:hover {
+            text-decoration: none;
+        }
+
+        .description {
+            color: black;
+            font-size: 1.1em;
+        }
+    }
+}
+
+#sidebar-box-categories {
+    ul {
+        width: 50%;
+        display: table-cell;
+        list-style: none;
+        padding-left: 0;
+        padding-right: 4em;
+        font-size: 1.4em;
+        padding-right: 3.4em;
+    }
+    .category-taxonomy-topics a {
+        color: #31ada3;
+    }
+
+    .category-taxonomy-types a {
+        color: #ff6100;
+    }
+}

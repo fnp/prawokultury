@@ -1,0 +1,13 @@
+.bar-right {
+  width: 22em;
+  padding: 0 1em;
+  float: right; }
+
+.bar-left {
+  width: 70em;
+  padding: 0 1em;
+  float: left; }
+
+#body {
+  width: 96em;
+  margin: auto; }

@@ -9,9 +9,11 @@
                 <div class="day">{{ event.date|date:"j" }}</div>
                 <div class="mon">{{ event.date|date:"b" }}</div>
             </div>
-            {{ event.place }}
-            {{ event.title }}
-            {{ event.organizer }}
+            <div class="description">
+                {{ event.place }}
+                {{ event.title }}
+                {{ event.organizer }}
+            </div>
             <div style="clear: both"></div>
         </a>
     </li>

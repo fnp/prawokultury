@@ -1,0 +1,49 @@
+#menu-bar {
+    height: 4em;
+}
+
+#menu {
+    list-style: none;
+    margin-left: 0;
+    text-transform: uppercase;
+    margin: .7em 0 0 0;
+
+    li {
+        display: inline-block;
+        position: relative;
+        list-style: none;
+        padding-left: 0;
+        margin-right: 3em;
+
+        a {
+            color: black;
+            font-size: 1.1em;
+        }
+    }
+    li:last {
+        margin-right: 0;
+    }
+    li.active {
+        font-weight: bold;
+    }
+    li.active:before {
+        color: #004e98;
+        content: "(";
+        position: absolute;
+        left: -.7em;
+        font-size: 2em;
+        top: -.25em;
+    }
+    li.active:after {
+        color: #004e98;
+        content: ")";
+        position: absolute;
+        right: -.7em;
+        font-size: 2em;
+        top: -.25em;
+    }
+
+    #item-lang a {
+        color: #0050a2;
+    }
+}

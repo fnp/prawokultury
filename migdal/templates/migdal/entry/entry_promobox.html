@@ -1,0 +1,30 @@
+{% load i18n %}
+
+
+<li class="promobox-item"{% if counter == 1 %}class="active"{% endif %}
+    style="
+    {% if counter != 1 %}display: none;{% endif %}
+    {% if object.image %}
+        background: url('{{ object.image.url }}');
+        background-size:100%;
+        background-position: 50% 50%;
+    {% else %}
+        background: black;
+    {% endif %}
+">
+
+<a class="promobox-link" href="{{ object.get_absolute_url }}">
+
+
+<div class="promobox-info">
+<div class="clip">
+<h2>{{ object.title }}</h2>
+
+<div class="lead">
+{{ object.lead }}
+</div>
+</div>
+</div>
+
+</a>
+</li>

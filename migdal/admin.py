@@ -22,7 +22,7 @@ class AttachmentInline(admin.TabularInline):
 
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('type', 'author', 'author_email', 'image')}),
+        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image')}),
     ) + tuple(
         (ln, {'fields': (
             ('published_%s' % lc),
@@ -59,7 +59,7 @@ class EntryAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = translated_fields(('title', 'slug'))
+    list_display = translated_fields(('title', 'slug')) + ('taxonomy',)
     prepopulated_fields = dict([
             ("slug_%s" % lang_code, ("title_%s" % lang_code,))
             for lang_code, lang_name in settings.LANGUAGES

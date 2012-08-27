@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load i18n %}
+{% load pagination_tags %}
 {% load migdal_tags %}
 
 
@@ -17,24 +18,47 @@
 
 {% block "body" %}
 
-<h1>
 {% if category %}
     {% trans "Category" %}: {{ category }}
-    <a href="{% url 'migdal_category_feed' category.slug %}">RSS</a>
+    <h1><a href="{% url 'migdal_category_feed' category.slug %}">RSS</a></h1>
 {% elif entry_type %}
     {{ entry_type|capfirst }}
-    <a href="{% url 'migdal_entry_list_'|add:entry_type.db|add:'_feed' %}">RSS</a>
-{% else %}
-    {% trans "Latest news" %}
+    <h1><a href="{% url 'migdal_entry_list_'|add:entry_type.db|add:'_feed' %}">RSS</a></h1>
 {% endif %}
-</h1>
+
+{% if object_list.promobox and request.page == 1 %}
+<div id="promobox">
+<ul id="promobox-switcher">
+{% for object in object_list.promobox %}
+    <li {% if forloop.counter == 1 %} class="active"{% endif %}>
+        <a href="{{ object.get_absolute_url }}"
+        >{{ forloop.counter }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<div id="promobox-wrapper">
+<ul class="promobox">
+{% for object in object_list.promobox %}
+    {% entry_promobox object forloop.counter %}
+{% endfor %}
+</ul>
+</div>
+
+</div>
+{% endif %}
 
 {% if submit %}
+    <p class="submit-link">
     <a href="{% url 'migdal_submit' %}">{% trans "Submit a new story." %}</a>
+    </p>
 {% endif %}
 
+
+{% autopaginate object_list 10 %}
 {% for object in object_list %}
     {% entry_short object %}
 {% endfor %}
+{% paginate %}
 
 {% endblock %}
