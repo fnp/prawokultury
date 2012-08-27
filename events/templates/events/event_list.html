@@ -1,12 +1,36 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load url from future %}
+{% load i18n pagination_tags prevnext %}
 
 {% block "body" %}
 <h1>{% trans "Events" %}</h1>
+
+{% autopaginate object_list 10 %}
 {% for event in object_list %}
-    {{ event.title }}
-    {{ event.place }}
-    {{ event.organizer }}
-    {{ event.date }}
+    <div class="event">
+    <a href="{{ event.link }}">
+        <h2>{{ event.date }}</h2>{# just date #}
+        <strong class="title">{{ event.title }}</strong>
+
+        <div class="description">
+        {{ event.date }}, {{ event.place }}<br/>
+        {% trans "Organizer" %}: {{ event.organizer }}<br/>
+        </div>
+    </a>
+    </div>
 {% endfor %}
+
+<p class="prevnext">
+{% next_page %}
+{% if past %}
+    {% url "events" as prev_url %}
+    {% trans "see upcoming events" as prev_label %}
+    {% previous_page prev_url prev_label %}
+{% else %}
+    {% url "events_past" as prev_url %}
+    {% trans "see past events" as prev_label %}
+    {% previous_page prev_url prev_label %}
+{% endif %}
+</p>
+
 {% endblock %}

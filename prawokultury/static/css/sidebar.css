@@ -16,7 +16,8 @@
     .sidebar-box .event-list li {
       margin-top: 1em; }
     .sidebar-box .event-list a {
-      display: block; }
+      display: block;
+      color: #363a3b; }
     .sidebar-box .event-list .date {
       clear: both;
       float: left;
@@ -36,10 +37,7 @@
         font-size: 1.1em;
         text-transform: uppercase;
         margin-top: -0.3em; }
-    .sidebar-box .event-list .date:hover {
-      text-decoration: none; }
     .sidebar-box .event-list .description {
-      color: black;
       font-size: 1.1em; }
 
 #sidebar-box-categories ul {

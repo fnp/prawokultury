@@ -1,0 +1,16 @@
+.prevnext {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-top: 1.4em; }
+  .prevnext a {
+    color: #acacac; }
+  .prevnext .next_page {
+    float: right; }
+  .prevnext .next_page:after {
+    content: url("/static/img/read-more.png");
+    vertical-align: middle;
+    margin-left: .7em; }
+  .prevnext .previous_page:before {
+    content: url("/static/img/previous.png");
+    vertical-align: middle;
+    margin-right: .7em; }

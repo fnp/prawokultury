@@ -126,8 +126,10 @@ def main_menu(context, chooser=None, value=None):
         ModelMenuItem(Entry.objects.get(slug_pl='o-nas')),
         EntryTypeMenuItem(_(u'Publications'), u'publications'),
         MenuItem(_(u'Events'), reverse('events')),
-        CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'), title=_('Positions')),
-        CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc')),
+        CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'),
+            title=_('Positions')),
+        CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc'),
+            title=_('First aid in copyright')),
     ]
     if context['request'].LANGUAGE_CODE == 'pl':
         items.append(MenuItem(u'en', '/en/', html_id='item-lang'))

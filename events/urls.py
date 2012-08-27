@@ -3,11 +3,10 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.conf.urls import patterns, include, url
-from django.views.generic import ListView, DetailView
-from events.models import Event
+from django.utils.translation import string_concat, ugettext_lazy as _
 
 
-urlpatterns = patterns('',
-    url(r'^$', ListView.as_view(model=Event), name='events'),
-    #url(r'^(?P<slug>[^/]+)/$', DetailView.as_view(model=Event), name='news'),
+urlpatterns = patterns('events.views',
+    url(r'^$', 'events', name='events'),
+    url(string_concat('^', _('past'), '/$'), 'events_past', name='events_past'),
 )

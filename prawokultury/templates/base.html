@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% load url from future %}
 {% load i18n static %}
 {% load migdal_tags events_tags %}
@@ -58,9 +59,9 @@
                     {% categories 'topics' %}
                     {% categories 'types' %}
                 </div>
-                <div class="sidebar-box">
+                <!--div class="sidebar-box">
                     <a href="{% url 'migdal_main_feed' %}">RSS</a>
-                </div>
+                </div-->
                 <div class="sidebar-box">
                     <h3>{% trans "Latest comments" %}</h3>
                     {% last_comments %}

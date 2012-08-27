@@ -25,8 +25,9 @@
 
         a {
             display: block;
+            color: #363a3b;;
         }
-        
+
         .date {
             clear: both;
             float: left;
@@ -51,12 +52,7 @@
             }
         }
 
-        .date:hover {
-            text-decoration: none;
-        }
-
         .description {
-            color: black;
             font-size: 1.1em;
         }
     }

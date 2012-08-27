@@ -1,0 +1,16 @@
+{% if number or url %}
+    {% load i18n %}
+    <a class="next_page" 
+        {% if number %}
+            href="?page={{ number }}"
+        {% else %}
+            href="{{ url }}"
+        {% endif %}
+    >
+        {% if title %}
+            {{ title }}
+        {% else %}
+            {% trans "next" %}
+        {% endif %}
+    </a>
+{% endif %}

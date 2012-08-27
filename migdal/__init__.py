@@ -23,7 +23,7 @@ class Settings(AppSettings):
         ('topics', _('topics')),
         ('types', _('types')),
     )
-    LAST_COMMENTS = 10
+    LAST_COMMENTS = 5
 
     TYPES_DICT = None
     def _more_TYPES_DICT(self, value):

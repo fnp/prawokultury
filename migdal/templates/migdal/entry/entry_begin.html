@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load gravatar thumbnail %}
 
-<img class="avatar" src="{% gravatar_for_email object.author_email 64 %}"/>
+<img class="avatar" src="{% gravatar_for_email object.author_email 64 %}" alt="Avatar"/>
 {% if detail %}
     <h1>{{ object.title }}</h1>
 {% else %}

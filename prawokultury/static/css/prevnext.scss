@@ -1,0 +1,25 @@
+.prevnext {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 1.4em;
+
+    a {
+        color: #acacac;
+    }
+
+    .next_page {
+        float: right;
+    }
+    .next_page:after {
+        content: url('/static/img/read-more.png');
+        vertical-align: middle;
+        margin-left: .7em;
+    }
+    .previous_page {
+    }
+    .previous_page:before {
+        content: url('/static/img/previous.png');
+        vertical-align: middle;
+        margin-right: .7em;
+    }
+}

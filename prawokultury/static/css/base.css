@@ -16,6 +16,6 @@ a:hover {
   text-decoration: underline; }
 
 h1 {
-  margin: 0;
+  margin: 0 0 .5em 0;
   color: #01519a;
   font-size: 2em; }
