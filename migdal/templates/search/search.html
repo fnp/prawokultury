@@ -8,7 +8,7 @@
 <h1>{% trans "Search results" %}</h1>
 
 {% for result in page.object_list %}
-{% entry_short result %}
+{% entry_short result.object %}
 {% empty %}
 <p>{% trans "No results found." %}</p>
 {% endfor %}

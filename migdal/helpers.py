@@ -34,9 +34,8 @@ def add_translatable(model, fields, languages=None):
     for name, field in fields.items():
         for lang_code, lang_name in languages:
             new_field = copy(field)
-            if hasattr(field, 'verbose_name') and field.verbose_name:
+            if field.verbose_name:
                 new_field.verbose_name = string_concat(field.verbose_name, ' [%s]' % lang_code)
-		
             new_field.contribute_to_class(model, "%s_%s" % (name, lang_code))
         setattr(model, name, field_getter(name))
         # add setter?

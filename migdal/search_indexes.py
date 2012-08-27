@@ -1,13 +1,14 @@
+from django.conf import settings
 import datetime
 from haystack import indexes
 from migdal.models import Entry
-from django.conf import settings
+
 from copy import copy
 
 
 class EntryIndex(indexes.SearchIndex, indexes.Indexable):
-    date = indexes.DateTimeField(indexed=True)
-    author = indexes.CharField()
+    date = indexes.DateTimeField(indexed=True, model_attr="date")
+    author = indexes.CharField(model_attr="author")
 
     def get_model(self):
         return Entry
@@ -26,6 +27,7 @@ def add_translatable(index_class, fields, languages=None):
             new_field = copy(field)
             fname = "%s_%s" % (name, lang_code)
             new_field.index_fieldname = fname
+            new_field.model_attr = fname
             setattr(index_class, fname, new_field)
             index_class.fields[fname] = new_field
 
