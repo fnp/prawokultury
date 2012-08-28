@@ -14,13 +14,13 @@ class EntryIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
 
     def index_queryset(self):
         """Used when the entire index for model is updated."""
-        return self.get_model().objects.all() # from example: filter(date__lte=datetime.datetime.now())
+        return self.get_model().objects.all()  # filter(date__lte=datetime.datetime.now())
 
 
 add_translatable_index(EntryIndex, {
-    'title': indexes.CharField(),
-    'lead': indexes.CharField(),
-    'body': indexes.CharField()
+    'title': indexes.CharField(null=True),
+    'lead': indexes.CharField(null=True),
+    'body': indexes.CharField(null=True)
     })
 
 

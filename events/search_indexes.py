@@ -12,16 +12,15 @@ class EventIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
     def index_queryset(self):
         """Used when the entire index for model is updated."""
         return self.get_model().objects.all()
-        
+
 
 add_translatable_index(EventIndex, {
 # Haystack needs a main field to be the same across all indexes
 # so we treat title of the event as this main content, named 'body'
-   'body': indexes.CharField(model_attr='title'), 
-   'organizer': indexes.CharField(), 
-   'place': indexes.CharField()
+   'body': indexes.CharField(model_attr='title', null=True),
+   'organizer': indexes.CharField(null=True),
+   'place': indexes.CharField(null=True)
    })
 
 
 getattr(EventIndex, "body_%s" % settings.LANGUAGE_CODE).document = True
-
