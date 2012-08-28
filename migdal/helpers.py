@@ -20,7 +20,7 @@ class EntryType(namedtuple('EntryType', 'db slug commentable on_main')):
 def field_getter(name):
     @property
     def getter(self):
-        val = getattr(self, "%s_%s" % (name, get_language()))
+        val = getattr(self, "%s_%s" % (name, get_language()), None)
         if not val:
             val = getattr(self, "%s_%s" % (name, settings.LANGUAGE_CODE))
         return val
