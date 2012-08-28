@@ -1,0 +1,44 @@
+.form-info {
+    font-size: 1.2em;
+}
+
+.submit-form {
+    margin-top: 1.3em;
+
+    table {
+        border-spacing: 0 .5em;
+    }
+
+    tr {
+        background-color: #fdfdfd;
+    }
+
+    label {
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+
+    input, textarea, select {
+        font-size: 1.2em;
+        border: 0;
+        background-color: #fdfdfd;
+        width: 100%;
+        margin-bottom: .5em;
+    }
+    
+
+    th, td {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: top;
+        padding: .5em 0;
+    }
+
+    .helptext {
+        color: #acacac;
+        font-size: 1.1em;
+        a {
+            color: black;
+        }
+    }
+}

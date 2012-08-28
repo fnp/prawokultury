@@ -26,7 +26,7 @@
     }
 
     .entry-data {
-        font-size: 1.1em;
+        font-size: 1.2em;
         margin-top: 1.4em;
         margin-bottom: 1.4em;
         .date {
@@ -44,16 +44,17 @@
     }
 
     .lead {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .body {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .more {
+        clear: both;
         float: right;
-        font-size: 1.1em;
+        font-size: 1.2em;
         font-style: italic;
         margin-top: .6em;
         margin-bottom: 1.8em;
@@ -96,7 +97,7 @@
 
     a {
         color: black;
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     a:before {
         content: url("/static/img/plus.png");

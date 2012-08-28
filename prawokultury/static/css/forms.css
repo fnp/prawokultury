@@ -1,0 +1,28 @@
+.form-info {
+  font-size: 1.2em; }
+
+.submit-form {
+  margin-top: 1.3em; }
+  .submit-form table {
+    border-spacing: 0 .5em; }
+  .submit-form tr {
+    background-color: #fdfdfd; }
+  .submit-form label {
+    font-size: 1.2em;
+    font-weight: normal; }
+  .submit-form input, .submit-form textarea, .submit-form select {
+    font-size: 1.2em;
+    border: 0;
+    background-color: #fdfdfd;
+    width: 100%;
+    margin-bottom: .5em; }
+  .submit-form th, .submit-form td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: top;
+    padding: .5em 0; }
+  .submit-form .helptext {
+    color: #acacac;
+    font-size: 1.1em; }
+    .submit-form .helptext a {
+      color: black; }

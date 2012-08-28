@@ -23,8 +23,12 @@ def get_submit_form(*args, **kwargs):
 
         def __init__(self, *args, **kwargs):
             super(SubmitForm, self).__init__(*args, **kwargs)
-            self.fields['title_%s' % lang].required = True
-            self.fields['lead_%s' % lang].required = True
+            title = self.fields['title_%s' % lang]
+            title.required = True
+            title.label = _('Title')
+            lead = self.fields['lead_%s' % lang]
+            lead.required = True
+            lead.label = _('Content')
 
         def clean(self):
             data = super(SubmitForm, self).clean()

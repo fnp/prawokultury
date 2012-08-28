@@ -12,6 +12,7 @@
 <div class="date">{{ object.date }}</div>
 <div class="author">{{ object.author }}</div>
 
+{% comment %}
 {% if request.LANGUAGE_CODE == 'pl' %}
     {% if object.published_en %}
         {% language 'en' %}
@@ -23,6 +24,7 @@
             <a href="{{ object.get_absolute_url }}">polska wersja</a>
         {% endlanguage %}
 {% endif %}
+{% endcomment %}
 
 <div class="categories">
 {% for category in object.categories.all %}
@@ -43,5 +45,3 @@
 <div class="lead">
 {{ object.lead }}
 </div>
-<div style="clear: both"></div>
-

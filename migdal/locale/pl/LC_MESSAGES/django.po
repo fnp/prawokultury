@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-migdal 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-08 15:23+0200\n"
-"PO-Revision-Date: 2012-08-08 15:26+0100\n"
+"POT-Creation-Date: 2012-08-28 12:10+0200\n"
+"PO-Revision-Date: 2012-08-28 12:14+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: Polish\n"
@@ -18,116 +18,136 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Poedit-Language: Polish\n"
 
-#: admin.py:45
-msgid "Categories"
-msgstr "Kategorie"
-
-#: feeds.py:26
-msgid "latest"
-msgstr "ostatnie"
-
-#: feeds.py:30
-#: models.py:46
-msgid "entries"
-msgstr "wpisy"
-
-#: feeds.py:32
-msgid "in category"
-msgstr "w kategorii"
-
-#: models.py:15
-msgid "category"
-msgstr "kategoria"
-
-#: models.py:16
-#: urls.py:35
-#: urls.py:37
-msgid "categories"
-msgstr "kategorie"
-
-#: models.py:37
-msgid "author"
-msgstr "autor"
-
-#: models.py:38
-msgid "author email"
-msgstr "e-mail autora"
-
-#: models.py:39
-msgid "Used only to display gravatar and send notifications."
-msgstr "Używany tylko do wyświetlenia gravatara i wysyłania powiadomień."
-
-#: models.py:40
-msgid "image"
-msgstr "obrazek"
-
-#: models.py:41
-msgid "promoted"
-msgstr "promowane"
-
-#: models.py:45
-msgid "entry"
-msgstr "wpis"
-
-#: models.py:68
-msgid "needed"
-msgstr "potrzebne"
-
-#: models.py:69
-msgid "Unneeded"
-msgstr "Niepotrzebne"
-
-#: models.py:69
-msgid "Needed"
-msgstr "Potrzebne"
-
-#: models.py:69
-msgid "Done"
-msgstr "Ukończone"
-
-#: models.py:75
-msgid "title"
-msgstr "tytuł"
-
-#: models.py:76
-msgid "lead"
-msgstr "lead"
-
-#: models.py:77
-#: models.py:79
-msgid "Use <a href=\"http://textile.thresholdstate.com/\">Textile</a> syntax."
-msgstr "Włączona składnia <a href=\"http://textile.thresholdstate.com/\">Textile</a>."
-
-#: models.py:78
-msgid "body"
-msgstr "treść"
-
-#: models.py:80
-msgid "published"
-msgstr "opublikowane"
-
-#: models.py:85
-msgid "file"
-msgstr "plik"
-
-#: settings.py:19
+#: __init__.py:17
 msgid "news"
 msgstr "newsy"
 
-#: settings.py:20
+#: __init__.py:18
 msgid "publications"
 msgstr "publikacje"
 
-#: settings.py:21
+#: __init__.py:19
 msgid "info"
 msgstr "info"
 
-#: urls.py:32
-#: urls.py:33
+#: __init__.py:23
+msgid "topics"
+msgstr "tematy"
+
+#: __init__.py:24
+msgid "types"
+msgstr "rodzaje"
+
+#: admin.py:41
+msgid "Categories"
+msgstr "Kategorie"
+
+#: feeds.py:28
+msgid "latest"
+msgstr "ostatnie"
+
+#: feeds.py:32
+#: models.py:49
+msgid "entries"
+msgstr "wpisy"
+
+#: feeds.py:34
+msgid "in category"
+msgstr "w kategorii"
+
+#: forms.py:28
+msgid "Title"
+msgstr "Tytuł"
+
+#: forms.py:31
+msgid "Content"
+msgstr "Treść"
+
+#: models.py:14
+msgid "taxonomy"
+msgstr "taksonomia"
+
+#: models.py:18
+msgid "category"
+msgstr "kategoria"
+
+#: models.py:19
+#: urls.py:40
+#: urls.py:42
+msgid "categories"
+msgstr "kategorie"
+
+#: models.py:40
+msgid "author"
+msgstr "autor"
+
+#: models.py:41
+msgid "author email"
+msgstr "e-mail autora"
+
+#: models.py:42
+msgid "Used only to display gravatar and send notifications."
+msgstr "Używany tylko do wyświetlenia gravatara i wysyłania powiadomień."
+
+#: models.py:43
+msgid "image"
+msgstr "obrazek"
+
+#: models.py:44
+msgid "promoted"
+msgstr "promowane"
+
+#: models.py:48
+msgid "entry"
+msgstr "wpis"
+
+#: models.py:71
+msgid "needed"
+msgstr "potrzebne"
+
+#: models.py:72
+msgid "Unneeded"
+msgstr "Niepotrzebne"
+
+#: models.py:72
+msgid "Needed"
+msgstr "Potrzebne"
+
+#: models.py:72
+msgid "Done"
+msgstr "Ukończone"
+
+#: models.py:78
+msgid "title"
+msgstr "tytuł"
+
+#: models.py:79
+msgid "lead"
+msgstr "lead"
+
+#: models.py:80
+#: models.py:82
+msgid "Use <a href=\"http://textile.thresholdstate.com/\">Textile</a> syntax."
+msgstr "Włączona składnia <a href=\"http://textile.thresholdstate.com/\">Textile</a>."
+
+#: models.py:81
+msgid "body"
+msgstr "treść"
+
+#: models.py:83
+msgid "published"
+msgstr "opublikowane"
+
+#: models.py:88
+msgid "file"
+msgstr "plik"
+
+#: urls.py:37
+#: urls.py:38
 msgid "submit"
 msgstr "wyslij"
 
-#: urls.py:33
+#: urls.py:38
 msgid "thanks"
 msgstr "dzieki"
 
@@ -162,21 +182,13 @@ msgstr "Wyślij"
 msgid "Preview"
 msgstr "Podgląd"
 
-#: templates/migdal/entry/entry_list.html:10
+#: templates/migdal/entry/entry_list.html:22
 msgid "Category"
 msgstr "Kategoria"
 
-#: templates/migdal/entry/entry_list.html:16
-msgid "Latest news"
-msgstr "Ostatnie newsy"
-
-#: templates/migdal/entry/entry_list.html:21
-msgid "Submit a new story."
-msgstr "Przyślij nowego newsa."
-
-#: templates/migdal/entry/entry_short.html:10
-msgid "read more"
-msgstr "czytaj więcej"
+#: templates/migdal/entry/entry_list.html:55
+msgid "Submit a new story, create Culture's Right with us!"
+msgstr "Przyślij nowego newsa, twórz Prawo Kultury razem z nami!"
 
 #: templates/migdal/entry/entry_short.html:16
 #, python-format
@@ -186,9 +198,30 @@ msgstr[0] "%(c)s komentarz"
 msgstr[1] "%(c)s komentarze"
 msgstr[2] "%(c)s komentarzy"
 
+#: templates/migdal/entry/entry_short.html:21
+msgid "read more"
+msgstr "czytaj więcej"
+
 #: templates/migdal/entry/submit.html:7
 msgid "Submit new story"
 msgstr "Przyślij nowego newsa."
+
+#: templates/migdal/entry/submit.html:9
+msgid ""
+"\n"
+"By submitting a story here, you agree to publish it under the terms of the\n"
+"<a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a>\n"
+"free license."
+msgstr ""
+"\n"
+"Wysyłając newsa, zgadzasz się najego publikację na warunkach wolnej licencji\n"
+"<a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#: templates/migdal/entry/submit.html:14
+msgid ""
+"Stories are moderated, so please be\n"
+"patient, you'll be notified when it's published."
+msgstr "Newsy są moderowane. Bądź cierpliwy, otrzymasz powiadomienie o jego publikacji."
 
 #: templates/migdal/entry/submit_thanks.html:7
 msgid "Thanks for submitting"
@@ -204,3 +237,36 @@ msgstr ""
 "\n"
 "Dziękujemy za przysłanie nowego newsa, teraz czeka on na moderację.Jeśli podano adres e-mail, będziemy Cię informowali o zmianach statusui komentarzach\n"
 
+#: templates/search/search.html:9
+msgid "Search results"
+msgstr "Wyniki wyszukiwania"
+
+#: templates/search/search.html:18
+msgid "No results found."
+msgstr "Brak wyników."
+
+#: templates/search/search.html:25
+msgid "previous"
+msgstr "poprzednie"
+
+#: templates/search/search.html:28
+msgid "next"
+msgstr "następne"
+
+#: templatetags/migdal_tags.py:128
+msgid "Publications"
+msgstr "Publikacje"
+
+#: templatetags/migdal_tags.py:129
+msgid "Events"
+msgstr "Wydarzenia"
+
+#: templatetags/migdal_tags.py:131
+msgid "Positions"
+msgstr "Stanowiska"
+
+#~ msgid "Latest news"
+#~ msgstr "Ostatnie newsy"
+
+#~ msgid "Submit a new story."
+#~ msgstr "Przyślij nowego newsa."

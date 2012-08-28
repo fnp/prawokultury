@@ -2,17 +2,12 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
+from django.conf import settings
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from migdal.models import Category, Entry, Attachment
-from migdal import settings
-
-
-def translated_fields(field_names, languages=settings.LANGUAGES):
-    return tuple("%s_%s" % (field_name, lang_code)
-                for field_name in field_names
-                for lang_code, lang_name in languages
-                )
+from migdal import app_settings
+from migdal.helpers import translated_fields
 
 
 class AttachmentInline(admin.TabularInline):
@@ -21,6 +16,7 @@ class AttachmentInline(admin.TabularInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
+    date_hierarchy = 'date'
     fieldsets = (
         (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image')}),
     ) + tuple(
@@ -31,7 +27,7 @@ class EntryAdmin(admin.ModelAdmin):
             'lead_%s' % lc,
             'body_%s' % lc,
             )})
-        for lc, ln in settings.OBLIGATORY_LANGUAGES
+        for lc, ln in app_settings.OBLIGATORY_LANGUAGES
     ) + tuple(
         (ln, {'fields': (
             ('needed_%s' % lc, 'published_%s' % lc),
@@ -40,7 +36,7 @@ class EntryAdmin(admin.ModelAdmin):
             'lead_%s' % lc,
             'body_%s' % lc,
             )})
-        for lc, ln in settings.OPTIONAL_LANGUAGES
+        for lc, ln in app_settings.OPTIONAL_LANGUAGES
     ) + (
         (_('Categories'), {'fields': ('categories',)}),
     )
@@ -49,12 +45,12 @@ class EntryAdmin(admin.ModelAdmin):
             for lang_code, lang_name in settings.LANGUAGES
         ]) 
 
-    list_display = translated_fields(('title',), settings.OBLIGATORY_LANGUAGES
-            ) + ('type', 'date', 'author'
+    list_display = translated_fields(('title',), app_settings.OBLIGATORY_LANGUAGES
+            ) + ('type', 'date', 'author', 'promo'
             ) + translated_fields(('published',)
-            ) + translated_fields(('needed',), settings.OPTIONAL_LANGUAGES)
-    list_filter = ('type',) + translated_fields(('published',)
-            ) + translated_fields(('needed',), settings.OPTIONAL_LANGUAGES)
+            ) + translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
+    list_filter = ('type', 'promo') + translated_fields(('published',)
+            ) + translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
     inlines = (AttachmentInline,)
 
 

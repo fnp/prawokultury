@@ -2,7 +2,7 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, include, url, handler404
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat
 from migdal import feeds, app_settings
@@ -24,7 +24,12 @@ for t in app_settings.TYPES:
             name='migdal_entry_%s' % t.db),
     ]
 
-urlpatterns = i18n_patterns('',
+
+# Disable en for now.
+urlpatterns = patterns('', 
+    url(r'^en/', handler404),
+)
+urlpatterns += i18n_patterns('',
     # main page
     url(r'^$', 'migdal.views.entry_list', name='migdal_main'),
     url(r'^rss.xml$', feeds.EntriesFeed(), name='migdal_main_feed'),

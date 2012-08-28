@@ -6,14 +6,21 @@
 
 <h1>{% trans "Submit new story" %}</h1>
 
+<p class="form-info">{% blocktrans %}
+By submitting a story here, you agree to publish it under the terms of the
+<a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a>
+free license.{% endblocktrans %}</p>
 
-    <form method="post" action="{% url 'migdal_submit' %}">
-    {% csrf_token %}
-    <table>
-        {{ submit_form.as_table }}
-        <tr><td><button type="submit">Go!</button></td></tr>
-    </table>
-    </form>
+<p>{% blocktrans %}Stories are moderated, so please be
+patient, you'll be notified when it's published.{% endblocktrans %}</p>
+
+<form class="submit-form" method="post" action="{% url 'migdal_submit' %}">
+{% csrf_token %}
+<table>
+    {{ submit_form.as_table }}
+    <tr><td><button type="submit">Go!</button></td></tr>
+</table>
+</form>
 
 
 {% endblock %}

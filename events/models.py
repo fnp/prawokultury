@@ -16,6 +16,10 @@ class Event(models.Model):
         verbose_name_plural = _('events')
         ordering = ['date']
 
+    def __unicode__(self):
+        return self.title
+
+
 add_translatable(Event, {
     'title': models.CharField(_('title'), max_length=255),
     'organizer': models.CharField(_('organizer'), max_length=255, db_index=True),

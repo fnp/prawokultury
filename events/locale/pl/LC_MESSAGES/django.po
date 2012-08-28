@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury-events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-07 17:28+0200\n"
-"PO-Revision-Date: 2012-08-07 17:29+0100\n"
+"POT-Creation-Date: 2012-08-28 11:24+0200\n"
+"PO-Revision-Date: 2012-08-28 11:28+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -33,23 +33,39 @@ msgstr "wydarzenie"
 msgid "events"
 msgstr "wydarzenia"
 
-#: models.py:20
+#: models.py:24
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:21
+#: models.py:25
 msgid "organizer"
 msgstr "organizator"
 
-#: models.py:22
+#: models.py:26
 msgid "place"
 msgstr "miejsce"
 
-#: templates/events/event_list.html:5
+#: urls.py:11
+msgid "past"
+msgstr "przeszle"
+
+#: templates/events/event_list.html:7
 msgid "Events"
 msgstr "Wydarzenia"
 
-#: templates/events/snippets/events_box.html:15
+#: templates/events/event_list.html:18
+msgid "see upcoming events"
+msgstr "zobaczy nadchodzące wydarzenia"
+
+#: templates/events/event_list.html:22
+msgid "see past events"
+msgstr "zobacz przeszłe wydarzenia"
+
+#: templates/events/snippets/event_short.html:9
+msgid "Organizer"
+msgstr "Organizator"
+
+#: templates/events/snippets/events_box.html:21
 msgid "more events"
 msgstr "więcej wydarzeń"
 

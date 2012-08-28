@@ -10,9 +10,8 @@
                 <div class="mon">{{ event.date|date:"b" }}</div>
             </div>
             <div class="description">
-                {{ event.place }}
                 {{ event.title }}
-                {{ event.organizer }}
+                ({{ event.organizer }}, {{ event.place }})
             </div>
             <div style="clear: both"></div>
         </a>
