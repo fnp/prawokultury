@@ -82,8 +82,6 @@
                 00-514 Warszawa<br/>
                 tel/fax: +48 22 621 30 17<br/>
                 e-mail: fundacja@nowoczesnapolska.org.pl<br/>
-                <br/>
-                {% trans "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license." %}
             </p>
             <p class="footer-item">
                 <br/><br/>
@@ -91,11 +89,17 @@
                 REGON: 017423865<br/>
                 Nr konta: 46 10201097 0000 7502 0001 6766
             </p>
+            <p class="footer-item">
+                <br/><br/>
+                {% trans "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license." %}
+            </p>
+
             <div style="clear: both;"></div>
         </div>
 
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
+    {{ piwik_tag|safe }}
     </body>
 </html>
