@@ -80,7 +80,6 @@ class SearchPublishedView(SearchView):
         results = super(SearchPublishedView, self).get_results()
         lang_code = get_language()
         def is_published(entity):
-            print "is published? %s, %s" % (entity.published_pl, entity.published_en) 
             if isinstance(entity, Entry):
                 return getattr(entity, "published_%s" % lang_code) == True
             else:
