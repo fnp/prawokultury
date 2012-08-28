@@ -42,7 +42,7 @@ class Entry(models.Model):
             help_text=_('Used only to display gravatar and send notifications.'))
     image = models.ImageField(_('image'), upload_to='entry/image/', null=True, blank=True)
     promo = models.BooleanField(_('promoted'), default=False)
-    categories = models.ManyToManyField(Category, null=True, blank=True)
+    categories = models.ManyToManyField(Category, null=True, blank=True, verbose_name=_('categories'))
 
     class Meta:
         verbose_name = _('entry')
