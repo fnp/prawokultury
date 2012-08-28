@@ -3,7 +3,7 @@
 }
 
 .submit-form {
-    margin-top: 1.3em;
+    margin-top: 3em;
 
     table {
         border-spacing: 0 .5em;
@@ -18,12 +18,22 @@
         font-weight: normal;
     }
 
+    .errorlist {
+        color: #e41b13;
+        font-size: 1.2em;
+        padding: 0 0 0 1.3em;
+        margin: 0 0 .5em 0;
+        list-style: url("/static/img/read-more.png");
+    }
+
     input, textarea, select {
         font-size: 1.2em;
         border: 0;
-        background-color: #fdfdfd;
+        background-color: white;
+        color: #363A3B;
         width: 100%;
         margin-bottom: .5em;
+        border: 1px solid #EDECE7;
     }
     
 
@@ -31,14 +41,14 @@
         text-align: left;
         font-weight: normal;
         vertical-align: top;
-        padding: .5em 0;
+        padding: .5em;
     }
 
     .helptext {
         color: #acacac;
         font-size: 1.1em;
         a {
-            color: black;
+            color: #363A3B;
         }
     }
 }

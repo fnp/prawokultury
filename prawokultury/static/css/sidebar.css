@@ -8,6 +8,8 @@
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 1.1em; }
+    .sidebar-box h3 a {
+      color: #363A3B; }
   .sidebar-box .more {
     text-align: right; }
   .sidebar-box .event-list {

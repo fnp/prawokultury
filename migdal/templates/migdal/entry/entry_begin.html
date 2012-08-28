@@ -36,7 +36,7 @@
 </div>
 
 {% if object.image %}
-    <img class="entry-picture" src="{% thumbnail object.image "250x300" as thumb %}
+    <img class="entry-picture" src="{% thumbnail object.image "200x150" as thumb %}
                     {{ thumb.url }}
                 {% empty %}
                     {{ object.image.url }}

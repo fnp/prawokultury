@@ -52,7 +52,7 @@
         <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
                 <div class="sidebar-box">
-                    <h3>{% trans "Upcoming events" %}</h3>
+                    <h3><a href="{% url 'events' %}">{% trans "Upcoming events" %}</a></h3>
                     {% events_box %}
                 </div>
                 <div id="sidebar-box-categories" class="sidebar-box">

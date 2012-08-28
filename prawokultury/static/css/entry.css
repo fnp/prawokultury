@@ -16,6 +16,8 @@
     font-size: 1.2em; }
     .entry-wrapped h1 a, .entry-wrapped h2 a {
       color: #01519a; }
+  .entry-wrapped h2.section {
+    margin: 2em 0; }
   .entry-wrapped .entry-data {
     font-size: 1.2em;
     margin-top: 1.4em;
@@ -73,3 +75,18 @@
     content: url("/static/img/plus.png");
     vertical-align: top;
     margin-right: 1em; }
+
+.comments {
+  margin-left: 8em; }
+  .comments .comment-form {
+    border-top: 1px solid #494948; }
+  .comments .comment-data {
+    font-size: 1.2em;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em; }
+    .comments .comment-data .comment-date {
+      color: #acacac; }
+    .comments .comment-data .comment-author {
+      font-weight: bold; }
+  .comments .body {
+    font-size: 1.2em; }

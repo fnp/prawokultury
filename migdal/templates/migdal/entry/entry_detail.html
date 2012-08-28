@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load comments %}
+{% load comments i18n %}
 {% load migdal_tags %}
 
 
@@ -17,10 +17,13 @@
 <div class="body">
 {{ entry.body }}
 </div>
+<div style="clear: both"></div>
 
 {% if entry.get_type.commentable %}
     {% render_comment_list for entry %}
+    <div class="comments">
     {% entry_comment_form entry %}
+    </div>
 {% endif %}
 </div>
 </div>

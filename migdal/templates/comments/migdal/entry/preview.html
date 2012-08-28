@@ -1,51 +1,45 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load comments %}
-{% load gravatar %}
+{% load comments gravatar i18n %}
 {% load migdal_tags markup_tags %}
+
+
+{% block "main_menu" %}
+    {% main_menu 'object' entry %}
+{% endblock "main_menu" %}
 
 
 {% block "body" %}
 
-{% entry_begin form.target_object %}
+<div class="entry entry-detail entry-{{ entry.type }}">
+<div class="entry-wrapped">
+
+{% entry_begin form.target_object 1 %}
+<div class="body">
 {{ form.target_object.body }}
+</div>
 
-{% render_comment_list for form.target_object %}
+{% if form.target_object.get_type.commentable %}
+    <div style="clear: both"></div>
 
+    {% render_comment_list for form.target_object %}
 
-  <form action="{% comment_form_target %}" method="post">{% csrf_token %}
-    {% if next %}<div><input type="hidden" name="next" value="{{ next }}" /></div>{% endif %}
-    {% if form.errors %}
-    <h1>{% blocktrans count counter=form.errors|length %}Please correct the error below{% plural %}Please correct the errors below{% endblocktrans %}</h1>
-    {% else %}
-    <h1>{% trans "Preview your comment" %}</h1>
-    <dt>
-        <img src="{% gravatar_for_email form.email.value 24 %}"/>
-        {{ form.name.value }}
-    </dt>
+    <h2 class="section">{% trans "Preview your comment" %}</h2>
+    <div class="comments">
 
-      <blockquote>{{ comment|textile_restricted_pl }}</blockquote>
-      <p>
-      {% trans "and" %} <input type="submit" name="submit" class="submit-post" value="{% trans "Post your comment" %}" id="submit" /> {% trans "or make changes" %}:
-      </p>
-    {% endif %}
-    {% for field in form %}
-      {% if field.is_hidden %}
-        <div>{{ field }}</div>
-      {% else %}
-        {% if field.errors %}{{ field.errors }}{% endif %}
-        <p
-          {% if field.errors %} class="error"{% endif %}
-          {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
-          {{ field.label_tag }} {{ field }}
-        </p>
-      {% endif %}
-    {% endfor %}
-    <p class="submit">
-    <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}" />
-    <input type="submit" name="preview" class="submit-preview" value="{% trans "Preview" %}" />
-    </p>
-  </form>
+    <div class="comment preview">
+        <img class="avatar" src="{% gravatar_for_email form.email.value 64 %}" alt="Avatar"/>
+        <div class="comment-data">
+        <div class="comment-author">{{ form.name.value }}</div>
+        </div>
+        <div class="body">{{ comment|textile_restricted_pl }}</div>
+        <div style="clear: both"></div>
+    </div>
 
+    {% include "comments/form.html" %}
+
+    </div>
+{% endif %}
+</div>
+</div>
 
 {% endblock %}

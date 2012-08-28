@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-migdal 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-28 12:37+0200\n"
-"PO-Revision-Date: 2012-08-28 12:38+0100\n"
-"Last-Translator: Marcin Koziej <marcin@lolownia.org>\n"
+"POT-Creation-Date: 2012-08-28 15:15+0200\n"
+"PO-Revision-Date: 2012-08-28 15:17+0100\n"
+"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: Polish\n"
 "MIME-Version: 1.0\n"
@@ -155,36 +155,25 @@ msgstr "dzieki"
 msgid "search"
 msgstr "szukaj"
 
-#: templates/comments/migdal/entry/preview.html:19
-msgid "Please correct the error below"
-msgid_plural "Please correct the errors below"
-msgstr[0] "Proszę poprawić poniższy błąd"
-msgstr[1] "Proszę poprawić poniższe błędy"
-msgstr[2] "Proszę poprawić poniższe błędy"
+#: templates/comments/form.html:3
+msgid "Add comment"
+msgstr "Dodaj komentarz"
 
-#: templates/comments/migdal/entry/preview.html:21
-msgid "Preview your comment"
-msgstr "Podgląd komentarza"
-
-#: templates/comments/migdal/entry/preview.html:29
-msgid "and"
-msgstr "i"
-
-#: templates/comments/migdal/entry/preview.html:29
-msgid "Post your comment"
-msgstr "Wyślij komentarz"
-
-#: templates/comments/migdal/entry/preview.html:29
-msgid "or make changes"
-msgstr "lub zmień"
-
-#: templates/comments/migdal/entry/preview.html:45
+#: templates/comments/form.html:24
 msgid "Post"
 msgstr "Wyślij"
 
-#: templates/comments/migdal/entry/preview.html:46
+#: templates/comments/form.html:25
 msgid "Preview"
 msgstr "Podgląd"
+
+#: templates/comments/migdal/entry/list.html:5
+msgid "Comments"
+msgstr "Komentarze"
+
+#: templates/comments/migdal/entry/preview.html:26
+msgid "Preview your comment"
+msgstr "Podgląd komentarza"
 
 #: templates/migdal/entry/entry_list.html:22
 msgid "Category"
@@ -192,7 +181,7 @@ msgstr "Kategoria"
 
 #: templates/migdal/entry/entry_list.html:55
 msgid "Submit a new story, create Culture's Right with us!"
-msgstr "Przyślij nowego newsa, twórz Prawo Kultury razem z nami!"
+msgstr "Dodaj nowy wpis, twórz Prawo Kultury razem z nami!"
 
 #: templates/migdal/entry/entry_short.html:16
 #, python-format
@@ -208,7 +197,7 @@ msgstr "czytaj więcej"
 
 #: templates/migdal/entry/submit.html:7
 msgid "Submit new story"
-msgstr "Przyślij nowego newsa."
+msgstr "Dodaj nowy wpis"
 
 #: templates/migdal/entry/submit.html:9
 msgid ""
@@ -218,14 +207,18 @@ msgid ""
 "free license."
 msgstr ""
 "\n"
-"Wysyłając newsa, zgadzasz się najego publikację na warunkach wolnej licencji\n"
+"Dodając wpis, zgadzasz się najego publikację na warunkach wolnej licencji\n"
 "<a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
 
 #: templates/migdal/entry/submit.html:14
 msgid ""
 "Stories are moderated, so please be\n"
 "patient, you'll be notified when it's published."
-msgstr "Newsy są moderowane. Bądź cierpliwy, otrzymasz powiadomienie o jego publikacji."
+msgstr "Wpisy są moderowane. Bądź cierpliwy, otrzymasz powiadomienie o jego publikacji."
+
+#: templates/migdal/entry/submit.html:21
+msgid "Submit"
+msgstr "Wyślij"
 
 #: templates/migdal/entry/submit_thanks.html:7
 msgid "Thanks for submitting"
@@ -239,7 +232,7 @@ msgid ""
 "and comments.\n"
 msgstr ""
 "\n"
-"Dziękujemy za przysłanie nowego newsa, teraz czeka on na moderację.Jeśli podano adres e-mail, będziemy Cię informowali o zmianach statusui komentarzach\n"
+"Dziękujemy za dodanie nowego wpisu, teraz czeka on na moderację.Jeśli podano adres e-mail, będziemy Cię informowali o zmianach statusui komentarzach\n"
 
 #: templates/search/search.html:9
 msgid "Search results"
@@ -268,6 +261,22 @@ msgstr "Wydarzenia"
 #: templatetags/migdal_tags.py:131
 msgid "Positions"
 msgstr "Stanowiska"
+
+#~ msgid "Please correct the error below"
+
+#~ msgid_plural "Please correct the errors below"
+#~ msgstr[0] "Proszę poprawić poniższy błąd"
+#~ msgstr[1] "Proszę poprawić poniższe błędy"
+#~ msgstr[2] "Proszę poprawić poniższe błędy"
+
+#~ msgid "and"
+#~ msgstr "i"
+
+#~ msgid "Post your comment"
+#~ msgstr "Wyślij komentarz"
+
+#~ msgid "or make changes"
+#~ msgstr "lub zmień"
 
 #~ msgid "Latest news"
 #~ msgstr "Ostatnie newsy"

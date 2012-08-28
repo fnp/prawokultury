@@ -1,13 +1,26 @@
+{% load i18n %}
 {% load gravatar %}
 {% load markup_tags %}
-<dl id="comments">
+<a name="comment"></a>
+<h2 class="section">{% trans "Comments" %}</h2>
+<div class="comments">
   {% for comment in comment_list %}
-    <dt id="c{{ comment.id }}">
-        <img src="{% gravatar_for_email comment.email 24 %}"/>
-        {{ comment.submit_date }} - {{ comment.name }}
-    </dt>
-    <dd>
-        <p>{{ comment.comment|textile_restricted_pl }}</p>
-    </dd>
+    <div class="comment" id="c{{ comment.id }}">
+        <img class="avatar" src="{% gravatar_for_email comment.email 64 %}" alt="Avatar"/>
+        <div class="comment-data">
+        <div class="comment-author">
+            {% if comment.url %}
+                <a rel="nofollow" href="{{ comment.url }}">
+            {% endif %}
+            {{ comment.name }}
+            {% if comment.url %}
+                </a>
+            {% endif %}
+        </div>
+        <div class="comment-date">{{ comment.submit_date }}</div>
+        </div>
+        <div class="body">{{ comment.comment|textile_restricted_pl }}</div>
+    </div>
   {% endfor %}
-</dl>
+  <div style="clear: both"></div>
+</div>

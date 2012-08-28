@@ -25,6 +25,10 @@
         }
     }
 
+    h2.section {
+        margin: 2em 0;
+    }
+
     .entry-data {
         font-size: 1.2em;
         margin-top: 1.4em;
@@ -103,5 +107,30 @@
         content: url("/static/img/plus.png");
         vertical-align: top;
         margin-right: 1em;
+    }
+}
+
+
+.comments {
+    margin-left: 8em;
+
+    .comment-form {
+        border-top: 1px solid #494948;
+    }
+
+    .comment-data {
+        font-size: 1.2em;
+        margin-top: 1.4em;
+        margin-bottom: 1.4em;
+        .comment-date {
+            color: #acacac;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+    }
+
+    .body {
+        font-size: 1.2em;
     }
 }
