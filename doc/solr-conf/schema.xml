@@ -160,7 +160,7 @@
     <dynamicField name="*_pl" type="text_pl" indexed="true" stored="false" />
     <dynamicField name="*_en" type="text_en" indexed="true" stored="false" />
 
-    <field name="author" type="text_ws" indexed="true" stored="true" multiValued="false" />
+    <field name="author" type="text_general" indexed="true" stored="true" multiValued="false" />
     <field name="date" type="date" indexed="true" stored="true" multiValued="false" />
     <field name="body_pl" type="text_pl" indexed="true" stored="true" multiValued="false" />
     <field name="title_pl" type="text_pl" indexed="true" stored="true" multiValued="false" />
@@ -170,9 +170,9 @@
     <field name="body_en" type="text_en" indexed="true" stored="true" multiValued="false" />
 
     <field name="organizer_en" type="text_en" indexed="true" stored="true" multiValued="false" />
-    <field name="place_en" type="text_ws" indexed="true" stored="true" multiValued="false" />
+    <field name="place_en" type="text_general" indexed="true" stored="true" multiValued="false" />
     <field name="organizer_pl" type="text_pl" indexed="true" stored="true" multiValued="false" />
-    <field name="place_pl" type="text_ws" indexed="true" stored="true" multiValued="false" />
+    <field name="place_pl" type="text_general" indexed="true" stored="true" multiValued="false" />
 
   </fields>
 
