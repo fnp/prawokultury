@@ -58,7 +58,8 @@ def entry_promobox(context, entry, counter):
 def categories(context, taxonomy):
     context = {
         'request': context['request'],
-        'object_list': Category.objects.filter(taxonomy=taxonomy)
+        'object_list': Category.objects.filter(taxonomy=taxonomy
+                ).exclude(entry__isnull=True)
     }
     return context
 
@@ -128,13 +129,13 @@ def main_menu(context, chooser=None, value=None):
         MenuItem(_(u'Events'), reverse('events')),
         CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'),
             title=_('Positions')),
-        CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc'),
-            title=_('First aid in copyright')),
+        #CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc'),
+        #    title=_('First aid in copyright')),
     ]
-    if context['request'].LANGUAGE_CODE == 'pl':
-        items.append(MenuItem(u'en', '/en/', html_id='item-lang'))
-    else:
-        items.append(MenuItem(u'pl', '/', html_id='item-lang'))
+    #if context['request'].LANGUAGE_CODE == 'pl':
+    #    items.append(MenuItem(u'en', '/en/', html_id='item-lang'))
+    #else:
+    #    items.append(MenuItem(u'pl', '/', html_id='item-lang'))
     for item in items:
         item.check_active(chooser, value)
     return {'items': items}

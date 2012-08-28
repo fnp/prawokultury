@@ -8,6 +8,7 @@
 {% endif %}
 
 
+{% comment %}
 <div class="entry-data">
 {% if request.LANGUAGE_CODE == 'pl' %}
     {% if object.published_en %}
@@ -22,6 +23,7 @@
     {% endlanguage %}
 {% endif %}
 </div>
+{% endcomment %}
 
 
 {% if object.image %}

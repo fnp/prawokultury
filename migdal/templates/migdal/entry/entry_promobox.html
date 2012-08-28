@@ -1,7 +1,7 @@
 {% load i18n %}
 
 
-<li class="promobox-item{% if counter == 1 %} active"{% endif %}
+<li class="promobox-item{% if counter == 1 %} active{% endif %}"
     style="
     {% if counter != 1 %}display: none;{% endif %}
     {% if object.image %}
@@ -21,7 +21,7 @@
 <h2>{{ object.title }}</h2>
 
 <div class="lead">
-{{ object.lead }}
+{{ object.lead|striptags|truncatewords:8 }}
 </div>
 </div>
 </div>

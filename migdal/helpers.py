@@ -89,3 +89,9 @@ def add_translatable_index(index_class, fields, languages=None):
             setattr(index_class, fname, new_field)
             index_class.fields[fname] = new_field
 
+
+def translated_fields(field_names, languages=settings.LANGUAGES):
+    return tuple("%s_%s" % (field_name, lang_code)
+                for field_name in field_names
+                for lang_code, lang_name in languages
+                )
