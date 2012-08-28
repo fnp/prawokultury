@@ -6,6 +6,7 @@ from django.conf.urls import patterns, include, url, handler404
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat
 from migdal import feeds, app_settings
+from migdal.views import SearchPublishedView
 from migdal.helpers import i18n_patterns
 
 pats = []
@@ -41,6 +42,7 @@ urlpatterns += i18n_patterns('',
         'migdal.views.entry_list', name='migdal_category'),
     url(string_concat(r'^', _('categories'), r'/(?P<category_slug>[^/]*)/rss.xml$'),
         feeds.EntriesFeed(), name='migdal_category_feed'),
+    url(string_concat(r'^', _('search')), SearchPublishedView(), name='search'),
     # type-specific views
     *pats
 )

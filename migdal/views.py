@@ -3,10 +3,12 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.shortcuts import get_object_or_404, render, redirect
+from django.utils.translation import get_language
 from migdal import api
 from migdal.forms import get_submit_form
 from migdal.models import Category, Entry
 from migdal import app_settings
+from haystack.views import SearchView
 
 
 def entry_list(request, type_db=None, category_slug=None):
@@ -68,3 +70,21 @@ def submit(request):
 
 def submit_thanks(request):
     return render(request, "migdal/entry/submit_thanks.html")
+
+
+class SearchPublishedView(SearchView):
+    def __init__(self, *args, **kwargs):
+        super(SearchPublishedView, self).__init__(*args, **kwargs)
+
+    def get_results(self):
+        results = super(SearchPublishedView, self).get_results()
+        lang_code = get_language()
+        def is_published(entity):
+            print "is published? %s, %s" % (entity.published_pl, entity.published_en) 
+            if isinstance(entity, Entry):
+                return getattr(entity, "published_%s" % lang_code) == True
+            else:
+                return True
+        results = filter(lambda r: is_published(r.object), results)
+        print results
+        return results

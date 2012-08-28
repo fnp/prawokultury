@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-migdal 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-28 12:10+0200\n"
-"PO-Revision-Date: 2012-08-28 12:14+0100\n"
-"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
+"POT-Creation-Date: 2012-08-28 12:37+0200\n"
+"PO-Revision-Date: 2012-08-28 12:38+0100\n"
+"Last-Translator: Marcin Koziej <marcin@lolownia.org>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: Polish\n"
 "MIME-Version: 1.0\n"
@@ -72,8 +72,8 @@ msgid "category"
 msgstr "kategoria"
 
 #: models.py:19
-#: urls.py:40
-#: urls.py:42
+#: urls.py:41
+#: urls.py:43
 msgid "categories"
 msgstr "kategorie"
 
@@ -142,14 +142,18 @@ msgstr "opublikowane"
 msgid "file"
 msgstr "plik"
 
-#: urls.py:37
 #: urls.py:38
+#: urls.py:39
 msgid "submit"
 msgstr "wyslij"
 
-#: urls.py:38
+#: urls.py:39
 msgid "thanks"
 msgstr "dzieki"
+
+#: urls.py:45
+msgid "search"
+msgstr "szukaj"
 
 #: templates/comments/migdal/entry/preview.html:19
 msgid "Please correct the error below"
