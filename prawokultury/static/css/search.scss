@@ -7,6 +7,8 @@
         padding-left: 1em;
         border: none;
         border-radius: 1.5em 0 0 1.5em;
+        -moz-border-radius: 1.5em 0 0 1.5em;
+        -webkit-border-radius: 1.5em 0 0 1.5em;
         background: white;
         color: black;
         height: 2em;
@@ -22,6 +24,8 @@
         background-repeat: no-repeat;
         color: white;
         border-radius: 0 1em 1em 0;
+        -moz-border-radius: 0 1em 1em 0;
+        -webkit-border-radius: 0 1em 1em 0;
         padding-right: 1em;
 
         img {

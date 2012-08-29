@@ -14,6 +14,8 @@ ul.promobox {
 }
 .promobox-item {
     border-radius: 0 0 2em 0;
+    -moz-border-radius: 0 0 2em 0;
+    -webkit-border-radius: 0 0 2em 0;
     list-style:none;
     padding:0;
     margin: 0;
@@ -44,6 +46,8 @@ ul.promobox {
         width: 1.1em;
         padding: .45em .5em;
         border-radius: 0 1em 1em 0;
+        -moz-border-radius: 0 1em 1em 0;
+        -webkit-border-radius: 0 1em 1em 0;
         color: white;
     }
     .active a {
@@ -59,6 +63,8 @@ ul.promobox {
     width: 20em;
     padding: 1.5em 4.8em 1.2em 2em;
     border-radius: 0 6em 6em 0;
+    -moz-border-radius: 0 6em 6em 0;
+    -webkit-border-radius: 0 6em 6em 0;
 
     .clip {
         height: 9.7em;
