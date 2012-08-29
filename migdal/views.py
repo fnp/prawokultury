@@ -45,8 +45,9 @@ def entry_list(request, type_db=None, category_slug=None):
 
 def entry(request, type_db, slug):
     lang = request.LANGUAGE_CODE
-    args = {'type': type_db, 'slug_%s' % lang: slug, 'published_%s' % lang: True}
-    # TODO: preview for admins
+    args = {'type': type_db, 'slug_%s' % lang: slug}
+    if not request.user.has_perm('migdal.change_entry'):
+        args['published_%s' % lang] = True
     entry = get_object_or_404(Entry, **args)
 
     templates = ["migdal/entry/entry_detail.html"]

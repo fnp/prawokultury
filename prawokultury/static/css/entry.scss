@@ -18,7 +18,7 @@
     h1, h2 {
         margin: 0;
         color: #01519a;
-        font-size: 1.2em;
+        font-size: 1.3em;
 
         a {
             color: #01519a;
@@ -30,7 +30,7 @@
     }
 
     .entry-data {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-top: 1.4em;
         margin-bottom: 1.4em;
         .date {
@@ -48,17 +48,24 @@
     }
 
     .lead {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .body {
-        font-size: 1.2em;
+        font-size: 1.3em;
+    }
+
+    blockquote {
+        position:relative;
+        left:1em;
+        font-style:italic;
+        margin-left: 1em;
     }
 
     .more {
         clear: both;
         float: right;
-        font-size: 1.2em;
+        font-size: 1.3em;
         font-style: italic;
         margin-top: .6em;
         margin-bottom: 1.8em;
@@ -101,7 +108,7 @@
 
     a {
         color: black;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     a:before {
         content: url("/static/img/plus.png");
@@ -119,7 +126,7 @@
     }
 
     .comment-data {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-top: 1.4em;
         margin-bottom: 1.4em;
         .comment-date {
@@ -131,6 +138,6 @@
     }
 
     .body {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 }
