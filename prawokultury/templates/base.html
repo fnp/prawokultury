@@ -5,7 +5,7 @@
 {% load compressed %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
-       <title>{% trans "Culture's right" %}{% block "titleextra" %}{% endblock %}</title>
+       <title>{% block "titleextra" %}{% endblock %}{% trans "Culture's right" %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
 
