@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load url from future %}
 {% load i18n static %}
-{% load migdal_tags events_tags share %}
+{% load common_tags migdal_tags events_tags share %}
 {% load compressed %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
@@ -14,7 +14,7 @@
         <meta property='og:site_name' content='{% trans "Culture's right" %}' />
         <meta property='og:description' content='{% block "ogdescription" %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}{% static "img/square-logo.png"%}{% endblock %}' />
+        <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:locale' content='pl_PL' />
     </head>
     <body>
