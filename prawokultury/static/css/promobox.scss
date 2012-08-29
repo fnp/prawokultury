@@ -24,11 +24,14 @@ ul.promobox {
 }
 .promobox-link {
     background-image: url('/static/img/rog.png');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 0 0 2em 0;
+    -moz-border-radius: 0 0 2em 0;
+    -webkit-border-radius: 0 0 2em 0;
     display:block;
     position: relative;
     height: 32.3em;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 #promobox-switcher {
