@@ -1,0 +1,29 @@
+{% load i18n common_tags static %}
+{% with encoded_url=url|build_absolute_uri:request|urlencode encoded_desc=description|urlencode %}
+<a rel="nofollow" target="_blank" class="facebook"
+    href="https://www.facebook.com/sharer.php?u={{ encoded_url }}">
+    <img src="{% static "img/social/"|add:iconset|add:"facebook.png" %}"
+        alt="{% trans 'Share on Facebook' %}"></a>
+<a rel="nofollow" target="_blank" class="google"
+    href="https://plus.google.com/share?url={{ encoded_url }}">
+    <img src="{% static "img/social/"|add:iconset|add:"google.png" %}"
+        alt="{% trans 'Share on Google+' %}"></a>
+<a rel="nofollow" target="_blank" class="twitter"
+    href="https://twitter.com/intent/tweet?url={{ encoded_url }}&amp;text={{ encoded_desc }}">
+    <img src="{% static "img/social/"|add:iconset|add:"twitter.png" %}"
+        alt="{% trans 'Share on Twitter' %}"></a>
+<a rel="nofollow" target="_blank" class="nk"
+    href="http://nk.pl/#sledzik?shout={{ encoded_desc }}%20{{ encoded_url }}">
+    <img src="{% static "img/social/"|add:iconset|add:"nk.png" %}"
+        alt="{% trans 'Share on NK.pl' %}"></a>
+{% comment %}
+<a rel="nofollow" target="_blank" class="diaspora"
+    href="http://sharetodiaspora.github.com/?title={{ encoded_desc }}&amp;url={{ encoded_url }}">
+    <img src="{% static "img/social/"|add:iconset|add:"diaspora.png" %}"
+        alt="{% trans 'Share on Diaspora' %}"></a>
+<a rel="nofollow" target="_blank" class="blip"
+    href="http://blip.pl/dashboard?body={{ encoded_desc }}%20{{ encoded_url }}">
+    <img src="{% static "img/social/"|add:iconset|add:"blip.png" %}"
+        alt="{% trans 'Share on Blip.pl' %}"></a>
+{% endcomment %}
+{% endwith %}

@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 {% load url from future %}
 {% load i18n static %}
-{% load migdal_tags events_tags %}
+{% load migdal_tags events_tags share %}
 {% load compressed %}
-<html>
+<html prefix="og: http://ogp.me/ns#">
     <head>
-        <title>{% trans "Culture's right" %}</title>
+       <title>{% trans "Culture's right" %}{% block "titleextra" %}{% endblock %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
+
+        <meta property='og:url' content='{% block "ogurl" %}{% url 'migdal_main' %}{% endblock %}' />
+        <meta property='og:title' content='{% block "ogtitle" %}{% trans "Culture's right" %}{% endblock %}' />
+        <meta property='og:site_name' content='{% trans "Culture's right" %}' />
+        <meta property='og:description' content='{% block "ogdescription" %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />
+        <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
+        <meta property='og:image' content='{% block "ogimage" %}{% static "img/square-logo.png"%}{% endblock %}' />
+        <meta property='og:locale' content='pl_PL' />
     </head>
     <body>
     <div id="body">
@@ -58,9 +66,12 @@
                     {% categories 'topics' %}
                     {% categories 'types' %}
                 </div>
-                <!--div class="sidebar-box">
-                    <a href="{% url 'migdal_main_feed' %}">RSS</a>
-                </div-->
+                <div class="sidebar-box social">
+                    {% url 'migdal_main' as main_url %}
+                    {% trans "Culture's right" as site_name %}
+                    {% share main_url site_name "big" %}
+                    <!--a href="{% url 'migdal_main_feed' %}">RSS</a-->
+                </div>
                 <div class="sidebar-box">
                     <h3>{% trans "Latest comments" %}</h3>
                     {% last_comments %}

@@ -62,13 +62,22 @@
         margin-left: 1em;
     }
 
-    .more {
-        clear: both;
-        float: right;
+    .toolbar {
         font-size: 1.3em;
-        font-style: italic;
-        margin-top: .6em;
+        margin-top: 1.4em;
         margin-bottom: 1.8em;
+
+        .social a {
+            margin-right: .6em;
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .more {
+        float: right;
+        font-style: italic;
 
         a {
             color: #acacac;

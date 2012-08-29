@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load comments %}
-{% load migdal_tags %}
+{% load migdal_tags share %}
 
 
 <div class="entry entry-short entry-{{ object.type }}">
@@ -8,6 +8,9 @@
 
 {% entry_begin object %}
 
+<div style="clear: both;"></div>
+
+<div class="toolbar">
 <div class="more">
 
 {% if object.get_type.commentable %}
@@ -23,9 +26,11 @@
 
 </div>
 
-
 <div class="social">
+    {% share object.get_absolute_url object.title %}
 </div>
+</div>
+
 
 
 <div style="clear: both"></div>

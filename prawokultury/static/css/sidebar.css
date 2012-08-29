@@ -84,3 +84,11 @@
   #latest-comments .body {
     margin-top: 1.3em;
     font-size: 1.1em; }
+
+#sidebar .social {
+  padding-top: 2em;
+  padding-bottom: 2em; }
+  #sidebar .social a {
+    margin-right: 2em; }
+    #sidebar .social a img {
+      vertical-align: top; }

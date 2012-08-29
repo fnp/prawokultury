@@ -124,3 +124,15 @@
         font-size: 1.1em;
     }
 }
+
+#sidebar .social {
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    a {
+        margin-right: 2em;
+        img {
+            vertical-align: middle;
+        }
+    }
+}

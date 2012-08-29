@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 {% load comments i18n %}
-{% load migdal_tags %}
+{% load common_tags migdal_tags share %}
+
+
+{% block "titleextra" %}{{ entry.title }} ::{% endblock %}
+{% block "ogtitle" %}{{ entry.title }}{% endblock %}
+{% block "ogtype" %}article{% endblock %}
+{% block "ogdescription"%}{{ entry.lead|striptags|truncatewords:10 }}{% endblock %}
+{% block "ogimage" %}{% spaceless %}
+{% if entry.image %}
+    {{ entry.image.url|build_absolute_uri:request }}
+{% else %}
+    {{ block.super }}
+{% endif %}
+{% endspaceless %}{% endblock %}
 
 
 {% block "main_menu" %}
@@ -21,6 +34,15 @@
 <div class="body">
 {{ entry.body }}
 </div>
+
+<div style="clear: both;"></div>
+
+<div class="toolbar">
+<div class="social">
+    {% share object.get_absolute_url object.title %}
+</div>
+</div>
+
 <div style="clear: both"></div>
 
 {% if entry.get_type.commentable %}

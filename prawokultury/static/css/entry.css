@@ -34,13 +34,20 @@
     font-size: 1.3em; }
   .entry-wrapped .body {
     font-size: 1.3em; }
-  .entry-wrapped .more {
-    clear: both;
-    float: right;
-    font-size: 1.3em;
+  .entry-wrapped blockquote {
+    position: relative;
+    left: 1em;
     font-style: italic;
-    margin-top: .6em;
+    margin-left: 1em; }
+  .entry-wrapped .toolbar {
+    font-size: 1.3em;
+    margin-top: 1.4em;
     margin-bottom: 1.8em; }
+    .entry-wrapped .toolbar .social a {
+      margin-right: .6em; }
+  .entry-wrapped .more {
+    float: right;
+    font-style: italic; }
     .entry-wrapped .more a {
       color: #acacac; }
     .entry-wrapped .more .read-more {
