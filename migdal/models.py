@@ -2,13 +2,16 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.core.mail import send_mail
 from django.db import models
+from django.template import loader, Context
 from django.utils.translation import get_language, ugettext_lazy as _, ugettext
+from django_comments_xtd.models import XtdComment
 from markupfield.fields import MarkupField
-from migdal.helpers import add_translatable
 from migdal import app_settings
-
-
+from migdal.helpers import add_translatable
 
 class Category(models.Model):
     taxonomy = models.CharField(_('taxonomy'), max_length=32,
@@ -36,7 +39,7 @@ class Entry(models.Model):
     type = models.CharField(max_length=16,
             choices=((t.db, t.slug) for t in app_settings.TYPES),
             db_index=True)
-    date = models.DateTimeField(auto_now_add=True, db_index=True)
+    date = models.DateTimeField(auto_now_add=True, db_index=True, editable=True)
     author = models.CharField(_('author'), max_length=128)
     author_email = models.EmailField(_('author email'), max_length=128, null=True, blank=True,
             help_text=_('Used only to display gravatar and send notifications.'))
@@ -53,6 +56,16 @@ class Entry(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
+        if self.pk is not None:
+            orig = type(self).objects.get(pk=self.pk)
+            published_now = False
+            for lc, ln in settings.LANGUAGES:
+                if (not getattr(orig, "published_%s" % lc) and
+                        getattr(self, "published_%s" % lc)):
+                    published_now = True
+            if published_now:
+                self.notify_author_published()
+
         # convert blank to null for slug uniqueness check to work
         for lc, ln in app_settings.OPTIONAL_LANGUAGES:
             slug_name = "slug_%s" % lc
@@ -66,6 +79,23 @@ class Entry(models.Model):
 
     def get_type(self):
         return dict(app_settings.TYPES_DICT)[self.type]
+
+    def notify_author_published(self):
+        if not self.author_email:
+            return
+        site = Site.objects.get_current()
+        mail_text = loader.get_template('migdal/mail/published.txt').render(
+            Context({
+                'entry': self,
+                'site': site,
+            }))
+        send_mail(
+            ugettext(u'Your story has been published at %s.') % site.domain,
+            mail_text, settings.SERVER_EMAIL, [self.author_email]
+        )
+            
+        
+        
 
 add_translatable(Entry, languages=app_settings.OPTIONAL_LANGUAGES, fields={
     'needed': models.CharField(_('needed'), max_length=1, db_index=True, choices=(
@@ -90,3 +120,21 @@ class Attachment(models.Model):
 
     def url(self):
         return self.file.url if self.file else ''
+
+
+
+def notify_new_comment(sender, instance, created, **kwargs):
+    if (created and isinstance(instance.content_object, Entry) and
+                instance.content_object.author_email):
+        site = Site.objects.get_current()
+        mail_text = loader.get_template('migdal/mail/new_comment.txt').render(
+            Context({
+                'comment': instance,
+                'site': site,
+            }))
+        send_mail(
+            ugettext(u'New comment under your story at %s.') % site.domain,
+            mail_text, settings.SERVER_EMAIL, 
+            [instance.content_object.author_email]
+        )
+models.signals.post_save.connect(notify_new_comment, sender=XtdComment)

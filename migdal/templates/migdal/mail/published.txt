@@ -1,0 +1,11 @@
+{% load i18n %}{{ entry.author }},
+
+Twój wpis został opublikowany:
+
+{% language 'pl' %}{{ entry.title }}
+http://{{ site.domain }}{{ entry.get_absolute_url }}{% endlanguage %}
+
+Dziękujemy!
+
+-- 
+{{ site }}

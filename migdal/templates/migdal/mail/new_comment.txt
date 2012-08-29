@@ -1,0 +1,15 @@
+{% load i18n %}{{ comment.content_object.author }},
+
+Pod Twoim wpisem pojawił się nowy komentarz.
+
+{% language 'pl' %}{{ comment.content_object.title }}
+http://{{ site.domain }}{{ comment.get_absolute_url }}{% endlanguage %}
+
+
+Autor: {{ comment.name }}
+
+{{ comment.comment }}
+
+
+-- 
+{{ site }}
