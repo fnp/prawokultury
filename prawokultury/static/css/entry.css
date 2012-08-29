@@ -45,6 +45,8 @@
     margin-bottom: 1.8em; }
     .entry-wrapped .toolbar .social a {
       margin-right: .6em; }
+      .entry-wrapped .toolbar .social a img {
+        vertical-align: middle; }
   .entry-wrapped .more {
     float: right;
     font-style: italic; }
