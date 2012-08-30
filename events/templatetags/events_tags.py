@@ -12,7 +12,9 @@ from datetime import datetime
 
 @register.inclusion_tag('events/snippets/events_box.html', takes_context=True)
 def events_box(context, limit=app_settings.BOX_LENGTH):
-    objects = Event.objects.filter(date__gte=datetime.now())[:limit]
+    lang = context['request'].LANGUAGE_CODE
+    objects = Event.objects.filter(**{"published_%s" % lang: True})
+    objects = objects.filter(date__gte=datetime.now())[:limit]
     return {'objects': objects}
 
 

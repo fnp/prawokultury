@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-migdal 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-30 11:15+0200\n"
-"PO-Revision-Date: 2012-08-30 11:17+0100\n"
+"POT-Creation-Date: 2012-08-30 15:59+0200\n"
+"PO-Revision-Date: 2012-08-30 16:00+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: Polish\n"
@@ -47,7 +47,7 @@ msgid "latest"
 msgstr "ostatnie"
 
 #: feeds.py:32
-#: models.py:52
+#: models.py:54
 msgid "entries"
 msgstr "wpisy"
 
@@ -63,92 +63,97 @@ msgstr "Tytuł"
 msgid "Content"
 msgstr "Treść"
 
-#: models.py:17
+#: models.py:19
 msgid "taxonomy"
 msgstr "taksonomia"
 
-#: models.py:21
+#: models.py:23
 msgid "category"
 msgstr "kategoria"
 
-#: models.py:22
-#: models.py:48
+#: models.py:24
+#: models.py:50
 #: urls.py:41
 #: urls.py:43
 msgid "categories"
 msgstr "kategorie"
 
-#: models.py:43
+#: models.py:45
 msgid "author"
 msgstr "autor"
 
-#: models.py:44
+#: models.py:46
 msgid "author email"
 msgstr "e-mail autora"
 
-#: models.py:45
+#: models.py:47
 msgid "Used only to display gravatar and send notifications."
 msgstr "Używany tylko do wyświetlenia gravatara i wysyłania powiadomień."
 
-#: models.py:46
+#: models.py:48
 msgid "image"
 msgstr "obrazek"
 
-#: models.py:47
+#: models.py:49
 msgid "promoted"
 msgstr "promowane"
 
-#: models.py:51
+#: models.py:53
 msgid "entry"
 msgstr "wpis"
 
-#: models.py:93
+#: models.py:77
+#, python-format
+msgid "Published entry should have a slug in relevant language (%s)."
+msgstr "Opublikowany wpis powinien mieć slug w odpowiednim języku (%s)."
+
+#: models.py:96
 #, python-format
 msgid "Your story has been published at %s."
 msgstr "Twój wpis został opublikowany na stronie %s."
 
-#: models.py:101
+#: models.py:104
 msgid "needed"
 msgstr "potrzebne"
 
-#: models.py:102
+#: models.py:105
 msgid "Unneeded"
 msgstr "Niepotrzebne"
 
-#: models.py:102
+#: models.py:105
 msgid "Needed"
 msgstr "Potrzebne"
 
-#: models.py:102
+#: models.py:105
 msgid "Done"
 msgstr "Ukończone"
 
-#: models.py:108
+#: models.py:111
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:109
+#: models.py:112
 msgid "lead"
 msgstr "lead"
 
-#: models.py:110
-#: models.py:112
+#: models.py:113
+#: models.py:115
 msgid "Use <a href=\"http://textile.thresholdstate.com/\">Textile</a> syntax."
 msgstr "Włączona składnia <a href=\"http://textile.thresholdstate.com/\">Textile</a>."
 
-#: models.py:111
+#: models.py:114
 msgid "body"
 msgstr "treść"
 
-#: models.py:113
+#: models.py:116
 msgid "published"
 msgstr "opublikowane"
 
-#: models.py:118
+#: models.py:121
 msgid "file"
 msgstr "plik"
 
-#: models.py:136
+#: models.py:139
 #, python-format
 msgid "New comment under your story at %s."
 msgstr "Nowy komentarz pod Twoim wpisem na stronie %s."
