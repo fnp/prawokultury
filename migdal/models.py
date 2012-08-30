@@ -4,6 +4,7 @@
 #
 from django.conf import settings
 from django.contrib.sites.models import Site
+from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.db import models
 from django.template import loader, Context
@@ -12,6 +13,7 @@ from django_comments_xtd.models import XtdComment
 from markupfield.fields import MarkupField
 from migdal import app_settings
 from migdal.helpers import add_translatable
+from migdal.fields import SlugNullField
 
 class Category(models.Model):
     taxonomy = models.CharField(_('taxonomy'), max_length=32,
@@ -65,13 +67,14 @@ class Entry(models.Model):
                     published_now = True
             if published_now:
                 self.notify_author_published()
-
-        # convert blank to null for slug uniqueness check to work
-        for lc, ln in app_settings.OPTIONAL_LANGUAGES:
-            slug_name = "slug_%s" % lc
-            if hasattr(self, slug_name) == u'':
-                setattr(self, slug_name, None)
         super(Entry, self).save(*args, **kwargs)
+
+    def clean(self):
+        for lc, ln in settings.LANGUAGES:
+            if (getattr(self, "published_%s" % lc) and
+                    not getattr(self, "slug_%s" % lc)):
+                raise ValidationError(
+                    ugettext("Published entry should have a slug in relevant language (%s).") % lc)
 
     @models.permalink
     def get_absolute_url(self):
@@ -104,7 +107,7 @@ add_translatable(Entry, languages=app_settings.OPTIONAL_LANGUAGES, fields={
 })
 
 add_translatable(Entry, {
-    'slug': models.SlugField(unique=True, db_index=True, null=True, blank=True),
+    'slug': SlugNullField(unique=True, db_index=True, null=True, blank=True),
     'title': models.CharField(_('title'), max_length=255, null=True, blank=True),
     'lead': MarkupField(_('lead'), markup_type='textile_pl', null=True, blank=True,
                 help_text=_('Use <a href="http://textile.thresholdstate.com/">Textile</a> syntax.')),
