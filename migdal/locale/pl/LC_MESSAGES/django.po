@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-migdal 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-29 12:20+0200\n"
-"PO-Revision-Date: 2012-08-29 12:21+0100\n"
+"POT-Creation-Date: 2012-08-30 11:15+0200\n"
+"PO-Revision-Date: 2012-08-30 11:17+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: Polish\n"
@@ -186,6 +186,10 @@ msgstr "Komentarze"
 msgid "Preview your comment"
 msgstr "Podgląd komentarza"
 
+#: templates/migdal/entry/entry_detail.html:27
+msgid "This entry hasn't been published yet."
+msgstr "Ten wpis nie został jeszcze opublikowany."
+
 #: templates/migdal/entry/entry_list.html:22
 msgid "Category"
 msgstr "Kategoria"
@@ -194,7 +198,7 @@ msgstr "Kategoria"
 msgid "Submit a new story, create Culture's Right with us!"
 msgstr "Dodaj nowy wpis, twórz Prawo Kultury razem z nami!"
 
-#: templates/migdal/entry/entry_short.html:16
+#: templates/migdal/entry/entry_short.html:19
 #, python-format
 msgid "%(c)s comment"
 msgid_plural "%(c)s comments"
@@ -202,7 +206,7 @@ msgstr[0] "%(c)s komentarz"
 msgstr[1] "%(c)s komentarze"
 msgstr[2] "%(c)s komentarzy"
 
-#: templates/migdal/entry/entry_short.html:21
+#: templates/migdal/entry/entry_short.html:24
 msgid "read more"
 msgstr "czytaj więcej"
 
@@ -231,7 +235,7 @@ msgstr "Wpisy są moderowane. Bądź cierpliwy, otrzymasz powiadomienie o publik
 msgid "Submit"
 msgstr "Wyślij"
 
-#: templates/migdal/entry/submit_thanks.html:7
+#: templates/migdal/entry/submit_thanks.html:6
 msgid "Thanks for submitting"
 msgstr "Dziękujemy za zgłoszenie"
 
