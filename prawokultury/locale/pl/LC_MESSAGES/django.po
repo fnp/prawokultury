@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-28 15:15+0200\n"
-"PO-Revision-Date: 2012-08-28 16:42+0100\n"
+"POT-Creation-Date: 2012-08-30 10:23+0200\n"
+"PO-Revision-Date: 2012-08-30 10:24+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -22,41 +22,64 @@ msgid "events"
 msgstr "wydarzenia"
 
 #: templates/base.html:8
-#: templates/base.html.py:18
+#: templates/base.html.py:13
+#: templates/base.html:14
+#: templates/base.html.py:25
+#: templates/base.html:73
 msgid "Culture's right"
 msgstr "Prawo kultury"
 
-#: templates/base.html:23
+#: templates/base.html:30
 msgid "Organizer"
 msgstr "Organizator"
 
-#: templates/base.html:26
+#: templates/base.html:33
 msgid "Modern Poland Foundation"
 msgstr "Fundacja Nowoczesna Polska"
 
-#: templates/base.html:28
+#: templates/base.html:35
 msgid "Sponsor"
 msgstr "Wspierane przez"
 
-#: templates/base.html:31
+#: templates/base.html:38
 msgid "Trust for Civil Society in Central and Eastern Europe"
 msgstr ""
 
-#: templates/base.html:40
+#: templates/base.html:47
 msgid "Search"
 msgstr "Szukaj"
 
-#: templates/base.html:55
+#: templates/base.html:62
 msgid "Upcoming events"
 msgstr "Nadchodzące wydarzenia"
 
-#: templates/base.html:66
+#: templates/base.html:77
 msgid "Latest comments"
 msgstr "Ostatnie komentarze"
 
-#: templates/base.html:86
+#: templates/base.html:105
 msgid "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license."
 msgstr "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#: templates/share.html:5
+#: templates/share.html.py:7
+msgid "Share on Facebook"
+msgstr "Podziel się na Facebooku"
+
+#: templates/share.html:10
+#: templates/share.html.py:12
+msgid "Share on Google+"
+msgstr "Podziel się na Google+"
+
+#: templates/share.html:15
+#: templates/share.html.py:17
+msgid "Share on Twitter"
+msgstr "Podziel się na Twitterze"
+
+#: templates/share.html:20
+#: templates/share.html.py:22
+msgid "Share on NK.pl"
+msgstr "Podziel się na NK.pl"
 
 #: templates/prevnext/next.html:13
 msgid "next"

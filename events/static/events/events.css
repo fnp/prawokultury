@@ -5,10 +5,13 @@
   .event h2 {
     color: #01519a;
     font-weight: normal;
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-bottom: 1.1em; }
   .event a {
     display: block;
     color: #363a3b; }
+  .event .title {
+    font-size: 1.3em; }
   .event .description {
+    font-size: 1.3em;
     margin-top: 1.4em; }

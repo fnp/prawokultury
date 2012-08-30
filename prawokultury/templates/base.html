@@ -67,10 +67,11 @@
                     {% categories 'types' %}
                 </div>
                 <div class="sidebar-box social">
+                    <a href="{% url 'migdal_main_feed' %}" title="RSS feed">
+                        <img src="{% static 'img/rss.png' %}" alt="RSS feed" /></a>
                     {% url 'migdal_main' as main_url %}
                     {% trans "Culture's right" as site_name %}
                     {% share main_url site_name "big" %}
-                    <!--a href="{% url 'migdal_main_feed' %}">RSS</a-->
                 </div>
                 <div class="sidebar-box">
                     <h3>{% trans "Latest comments" %}</h3>
