@@ -21,9 +21,10 @@ class EventAdmin(admin.ModelAdmin):
         for lc, ln in settings.LANGUAGES
     )
     list_display = translated_fields(
-        ('title', 'place', 'organizer'), settings.LANGUAGES
+        ('title', 'place', 'organizer', 'published'), settings.LANGUAGES
         ) + ('date',)
     date_hierarchy = 'date'
+    list_filter = translated_fields(('published',))
 
 
 admin.site.register(Event, EventAdmin)

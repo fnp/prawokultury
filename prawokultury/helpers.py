@@ -19,7 +19,7 @@ def textile_pl(text):
 
 def textile_restricted_pl(text):
     return TextilePL(restricted=True, lite=True,
-                   noimage=True, auto_link=False).textile(
+                   noimage=True, auto_link=True).textile(
                         text, rel='nofollow')
 
 
