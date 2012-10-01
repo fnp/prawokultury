@@ -18,7 +18,7 @@ class AttachmentInline(admin.TabularInline):
 class EntryAdmin(admin.ModelAdmin):
     date_hierarchy = 'date'
     fieldsets = (
-        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image')}),
+        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image', 'date')}),
     ) + tuple(
         (ln, {'fields': (
             ('published_%s' % lc),
