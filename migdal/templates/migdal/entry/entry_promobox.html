@@ -1,11 +1,11 @@
-{% load i18n %}
+{% load i18n thumbnail %}
 
 
 <li class="promobox-item{% if counter == 1 %} active{% endif %}"
     style="
     {% if counter != 1 %}display: none;{% endif %}
     {% if object.image %}
-        background: url('{{ object.image.url }}');
+        background: url('{% thumbnail object.image "700x1000" as thumb %}{{ thumb.url }}{% empty %}{{ object.image.url }}{% endthumbnail %}');
         background-size:100%;
         background-position: 50% 50%;
     {% else %}

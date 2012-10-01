@@ -3,7 +3,7 @@
 {% load common_tags migdal_tags share %}
 
 
-{% block "titleextra" %}{{ entry.title }} ::{% endblock %}
+{% block "titleextra" %}{{ entry.title }} :: {% endblock %}
 {% block "ogtitle" %}{{ entry.title }}{% endblock %}
 {% block "ogtype" %}article{% endblock %}
 {% block "ogdescription"%}{{ entry.lead|striptags|truncatewords:10 }}{% endblock %}

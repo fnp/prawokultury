@@ -5,7 +5,7 @@
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext as _, string_concat
 from migdal import api
 from migdal.models import Category
 from migdal.settings import TYPES_DICT
@@ -49,3 +49,8 @@ class EntriesFeed(Feed):
 
     def item_description(self, item):
         return item.lead
+        image = item.image.url if item.image else "/static/img/square-logo.png"
+        return string_concat("<img src='%s'/>" % image, item.lead)
+
+    def item_pubdate(self, item):
+        return item.date
