@@ -10,7 +10,8 @@ from django.utils.translation import get_language
 
 def entry_list(entry_type=None, category=None, promobox=False):
     lang = get_language()
-    object_list = Entry.objects.filter(**{"published_%s" % lang: True})
+    object_list = Entry.objects.filter(**{"published_%s" % lang: True}
+        ).order_by('-published_at_%s' % lang)
     if entry_type:
         object_list = object_list.filter(type=entry_type.db)
     else:

@@ -17,11 +17,13 @@ class AttachmentInline(admin.TabularInline):
 
 class EntryAdmin(admin.ModelAdmin):
     date_hierarchy = 'date'
+    readonly_fields = ('date', 'changed_at') + translated_fields(('published_at',))
     fieldsets = (
-        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image', 'date')}),
+        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image', 'date', 'changed_at')}),
     ) + tuple(
         (ln, {'fields': (
             ('published_%s' % lc),
+            'published_at_%s' % lc,
             'title_%s' % lc,
             'slug_%s' % lc,
             'lead_%s' % lc,
@@ -31,6 +33,7 @@ class EntryAdmin(admin.ModelAdmin):
     ) + tuple(
         (ln, {'fields': (
             ('needed_%s' % lc, 'published_%s' % lc),
+            'published_at_%s' % lc,
             'title_%s' % lc,
             'slug_%s' % lc,
             'lead_%s' % lc,

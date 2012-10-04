@@ -53,4 +53,4 @@ class EntriesFeed(Feed):
         return string_concat("<img src='%s'/>" % image, item.lead)
 
     def item_pubdate(self, item):
-        return item.date
+        return item.published_at

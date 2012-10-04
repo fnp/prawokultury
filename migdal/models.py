@@ -2,6 +2,7 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
+from datetime import datetime
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
@@ -41,7 +42,8 @@ class Entry(models.Model):
     type = models.CharField(max_length=16,
             choices=((t.db, t.slug) for t in app_settings.TYPES),
             db_index=True)
-    date = models.DateTimeField(auto_now_add=True, db_index=True, editable=True)
+    date = models.DateTimeField(_('created at'), auto_now_add=True, db_index=True)
+    changed_at = models.DateTimeField(_('changed at'), auto_now=True, db_index=True)
     author = models.CharField(_('author'), max_length=128)
     author_email = models.EmailField(_('author email'), max_length=128, null=True, blank=True,
             help_text=_('Used only to display gravatar and send notifications.'))
@@ -62,8 +64,9 @@ class Entry(models.Model):
             orig = type(self).objects.get(pk=self.pk)
             published_now = False
             for lc, ln in settings.LANGUAGES:
-                if (not getattr(orig, "published_%s" % lc) and
-                        getattr(self, "published_%s" % lc)):
+                if (getattr(self, "published_%s" % lc)
+                        and getattr(self, "published_at_%s" % lc) is None):
+                    setattr(self, "published_at_%s" % lc, datetime.now())
                     published_now = True
             if published_now:
                 self.notify_author_published()
@@ -96,9 +99,7 @@ class Entry(models.Model):
             ugettext(u'Your story has been published at %s.') % site.domain,
             mail_text, settings.SERVER_EMAIL, [self.author_email]
         )
-            
-        
-        
+
 
 add_translatable(Entry, languages=app_settings.OPTIONAL_LANGUAGES, fields={
     'needed': models.CharField(_('needed'), max_length=1, db_index=True, choices=(
@@ -114,6 +115,7 @@ add_translatable(Entry, {
     'body': MarkupField(_('body'), markup_type='textile_pl', null=True, blank=True,
                 help_text=_('Use <a href="http://textile.thresholdstate.com/">Textile</a> syntax.')),
     'published': models.BooleanField(_('published'), default=False),
+    'published_at': models.DateTimeField(_('published at'), null=True, blank=True),
 })
 
 
