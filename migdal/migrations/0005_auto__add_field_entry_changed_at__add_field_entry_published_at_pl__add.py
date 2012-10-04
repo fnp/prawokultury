@@ -25,11 +25,13 @@ class Migration(SchemaMigration):
 
         if not db.dry_run:
             for entry in orm['migdal.Entry'].objects.all():
+                update_info = {}
                 if entry.published_pl:
-                    entry.published_at_pl = entry.date
+                    update_info['published_at_pl'] = entry.date
                 if entry.published_en:
-                    entry.published_at_en = entry.date
-                entry.save()
+                    update_info['published_at_en'] = entry.date
+                update_info['changed_at'] = entry.date
+                orm['migdal.Entry'].objects.filter(pk=entry.pk).update(**update_info)
 
 
     def backwards(self, orm):
