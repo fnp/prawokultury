@@ -23,7 +23,7 @@ def textile_restricted_pl(text):
                         text, rel='nofollow')
 
 
-class LazyUGettextLazy():
+class LazyUGettextLazy(object):
     """You can use it to internationalize strings in settings.
 
     Just import this class as gettext.

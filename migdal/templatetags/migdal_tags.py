@@ -124,18 +124,14 @@ class EntryTypeMenuItem(object):
 @register.inclusion_tag('migdal/menu.html', takes_context=True)
 def main_menu(context, chooser=None, value=None):
     items = [
-        ModelMenuItem(Entry.objects.get(slug_pl='o-nas')),
-        EntryTypeMenuItem(_(u'Publications'), u'publications'),
-        MenuItem(_(u'Events'), reverse('events')),
-        CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'),
-            title=_('Positions')),
-        #CategoryMenuItem(Category.objects.get(slug_pl='pierwsza-pomoc'),
-        #    title=_('First aid in copyright')),
+        #ModelMenuItem(Entry.objects.get(slug_pl='o-nas')),
+        #MenuItem(_(u'Events'), reverse('events')),
     ]
-    #if context['request'].LANGUAGE_CODE == 'pl':
-    #    items.append(MenuItem(u'en', '/en/', html_id='item-lang'))
-    #else:
-    #    items.append(MenuItem(u'pl', '/', html_id='item-lang'))
+    # TODO: context-aware language switcher
+    if context['request'].LANGUAGE_CODE == 'pl':
+        items.append(MenuItem(u'en', '/en/', html_id='item-lang'))
+    else:
+        items.append(MenuItem(u'pl', '/', html_id='item-lang'))
     for item in items:
         item.check_active(chooser, value)
     return {'items': items}

@@ -1,8 +1,13 @@
 Django>=1.4,<1.5
+#django_cas
+-e hg+https://bitbucket.org/cpcc/django-cas@197f156ee943#egg=django_cas
 South>=0.7.4
 PIL
 sorl-thumbnail>=11.09,<12
 django-pagination
+
+#django-jsonfield
+-e git+git://github.com/bradjasper/django-jsonfield.git@2f427368ad70bf8d9a0580df58ec0eb0654d62ae#egg=django-jsonfield
 
 textile
 django-markupfield

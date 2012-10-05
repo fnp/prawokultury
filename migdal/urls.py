@@ -26,11 +26,7 @@ for t in app_settings.TYPES:
     ]
 
 
-# Disable en for now.
-urlpatterns = patterns('', 
-    url(r'^en/', handler404),
-)
-urlpatterns += i18n_patterns('',
+urlpatterns = i18n_patterns('',
     # main page
     url(r'^$', 'migdal.views.entry_list', name='migdal_main'),
     url(r'^rss.xml$', feeds.EntriesFeed(), name='migdal_main_feed'),

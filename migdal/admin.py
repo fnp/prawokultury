@@ -5,9 +5,10 @@
 from django.conf import settings
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from migdal.models import Category, Entry, Attachment
+from migdal.models import Entry, Attachment
 from migdal import app_settings
 from migdal.helpers import translated_fields
+from prawokultury.model_helpers import filtered_model
 
 
 class AttachmentInline(admin.TabularInline):
@@ -15,55 +16,78 @@ class AttachmentInline(admin.TabularInline):
     readonly_fields = ['url']
 
 
-class EntryAdmin(admin.ModelAdmin):
-    date_hierarchy = 'date'
-    readonly_fields = ('date', 'changed_at') + translated_fields(('published_at',))
-    fieldsets = (
-        (None, {'fields': (('type', 'promo'), 'author', 'author_email', 'image', 'date', 'changed_at')}),
-    ) + tuple(
-        (ln, {'fields': (
-            ('published_%s' % lc),
-            'published_at_%s' % lc,
-            'title_%s' % lc,
-            'slug_%s' % lc,
-            'lead_%s' % lc,
-            'body_%s' % lc,
-            )})
-        for lc, ln in app_settings.OBLIGATORY_LANGUAGES
-    ) + tuple(
-        (ln, {'fields': (
-            ('needed_%s' % lc, 'published_%s' % lc),
-            'published_at_%s' % lc,
-            'title_%s' % lc,
-            'slug_%s' % lc,
-            'lead_%s' % lc,
-            'body_%s' % lc,
-            )})
-        for lc, ln in app_settings.OPTIONAL_LANGUAGES
-    ) + (
-        (_('Categories'), {'fields': ('categories',)}),
-    )
-    prepopulated_fields = dict([
-            ("slug_%s" % lang_code, ("title_%s" % lang_code,))
-            for lang_code, lang_name in settings.LANGUAGES
-        ]) 
+def filtered_entry_admin(typ):
+    class EntryAdmin(admin.ModelAdmin):
+        def queryset(self, request):
+            return self.model.objects.filter(type=typ)
 
-    list_display = translated_fields(('title',), app_settings.OBLIGATORY_LANGUAGES
-            ) + ('type', 'date', 'author', 'promo'
-            ) + translated_fields(('published',)
-            ) + translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
-    list_filter = ('type', 'promo') + translated_fields(('published',)
-            ) + translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
-    inlines = (AttachmentInline,)
+        date_hierarchy = 'date'
+        readonly_fields = ('date', 'changed_at') + \
+            translated_fields(('published_at',))
+        _promo_if_necessary = ('promo',) if typ.promotable else ()
+
+        fieldsets = (
+            (None, {
+                'fields': _promo_if_necessary + (
+                    'author', 'author_email', 'image', 'date', 'changed_at')
+                }),
+        ) + tuple(
+            (ln, {'fields': (
+                ('published_%s' % lc),
+                'published_at_%s' % lc,
+                'title_%s' % lc,
+                'slug_%s' % lc,
+                'lead_%s' % lc,
+                'body_%s' % lc,
+                )})
+            for lc, ln in app_settings.OBLIGATORY_LANGUAGES
+        ) + tuple(
+            (ln, {'fields': (
+                ('needed_%s' % lc, 'published_%s' % lc),
+                'published_at_%s' % lc,
+                'title_%s' % lc,
+                'slug_%s' % lc,
+                'lead_%s' % lc,
+                'body_%s' % lc,
+                )})
+            for lc, ln in app_settings.OPTIONAL_LANGUAGES
+        )
+
+        if typ.categorized:
+            fieldsets += (
+                (_('Categories'), {'fields': ('categories',)}),
+            )
+        prepopulated_fields = dict([
+                ("slug_%s" % lang_code, ("title_%s" % lang_code,))
+                for lang_code, lang_name in settings.LANGUAGES
+            ]) 
+
+        list_display = translated_fields(('title',),
+                            app_settings.OBLIGATORY_LANGUAGES) + \
+                ('date', 'author') + \
+                _promo_if_necessary + \
+                translated_fields(('published_at',)) + \
+                translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
+        list_filter = _promo_if_necessary + \
+                translated_fields(('published',)) + \
+                translated_fields(('needed',), app_settings.OPTIONAL_LANGUAGES)
+        inlines = (AttachmentInline,)
+        search_fields = ('title_pl', 'title_en')
+    return EntryAdmin
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = translated_fields(('title', 'slug')) + ('taxonomy',)
-    prepopulated_fields = dict([
-            ("slug_%s" % lang_code, ("title_%s" % lang_code,))
-            for lang_code, lang_name in settings.LANGUAGES
-        ]) 
+for typ in app_settings.TYPES:
+    newmodel = filtered_model("Entry_%s" % typ.db, Entry, 'type', typ.db, typ.slug)
+    admin.site.register(newmodel, filtered_entry_admin(typ))
 
 
-admin.site.register(Entry, EntryAdmin)
-admin.site.register(Category, CategoryAdmin)
+if app_settings.TAXONOMIES:
+    from migdal.models import Category
+
+    class CategoryAdmin(admin.ModelAdmin):
+        list_display = translated_fields(('title', 'slug')) + ('taxonomy',)
+        prepopulated_fields = dict([
+                ("slug_%s" % lang_code, ("title_%s" % lang_code,))
+                for lang_code, lang_name in settings.LANGUAGES
+            ]) 
+    admin.site.register(Category, CategoryAdmin)

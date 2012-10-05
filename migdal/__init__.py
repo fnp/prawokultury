@@ -14,9 +14,9 @@ class Settings(AppSettings):
     # Types of entries:
     # (slug, commentable, on main)
     TYPES = (
-            EntryType('news', _('news'), commentable=True, on_main=True),
-            EntryType('publications', _('publications'), commentable=False, on_main=False),
-            EntryType('info', _('info'), commentable=False, on_main=False),
+            EntryType('news', _('news'), commentable=True, on_main=True, promotable=True),
+            EntryType('publications', _('publications')),
+            EntryType('info', _('info')),
         )
     TYPE_SUBMIT = 'news'
     TAXONOMIES = (
@@ -25,6 +25,8 @@ class Settings(AppSettings):
     )
     LAST_COMMENTS = 5
 
+    MENU = []
+
     TYPES_DICT = None
     def _more_TYPES_DICT(self, value):
         return dict((t.db, t) for t in self.TYPES)
@@ -32,6 +34,10 @@ class Settings(AppSettings):
     TYPES_ON_MAIN = None
     def _more_TYPES_ON_MAIN(self, value):
         return tuple(t.db for t in self.TYPES if t.on_main)
+
+    TYPES_PROMOTABLE = None
+    def _more_TYPES_PROMOTABLE(self, value):
+        return tuple(t.db for t in self.TYPES if t.promotable)
 
     OBLIGATORY_LANGUAGES = None
     def _more_OBLIGATORY_LANGUAGES(self, value):
