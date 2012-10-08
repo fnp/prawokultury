@@ -1,0 +1,5 @@
+Wypełniono formularz {{ form_tag }} na stronie {{ site.name }}.
+
+http://{{ site.domain }}{{ admin_url }}
+
+{{ contact.body }}

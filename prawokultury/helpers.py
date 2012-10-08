@@ -3,6 +3,7 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.conf import settings
+from django.http import HttpResponse, HttpResponseRedirect
 from textile import Textile
 
 
@@ -64,3 +65,13 @@ class AppSettings(object):
         if hasattr(self, more):
             value = getattr(self, more)(value)
         return value
+
+
+def serve_file(url):
+    if settings.X_ACCEL_REDIRECT:
+        response = HttpResponse()
+        response['Content-Type'] = ""
+        response['X-Accel-Redirect'] = url
+        return response
+    else:
+        return HttpResponseRedirect(url)
