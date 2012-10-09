@@ -5,8 +5,8 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _, get_language
 from migdal.models import Entry
-from migdal.settings import TYPE_SUBMIT
-from slughifi import slughifi
+from migdal import app_settings
+from fnpdjango.utils.text import slughifi
 from django.core.mail import mail_managers
 from django import template
 
@@ -32,7 +32,7 @@ def get_submit_form(*args, **kwargs):
 
         def clean(self):
             data = super(SubmitForm, self).clean()
-            data['type'] = TYPE_SUBMIT
+            data['type'] = app_settings.TYPE_SUBMIT
             orig_slug = slughifi(data.get('title_%s' % lang, ''))
             slug = orig_slug
             number = 2

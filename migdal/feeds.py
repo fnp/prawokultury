@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext as _, string_concat
 from migdal import api
 from migdal.models import Category
-from migdal.settings import TYPES_DICT
+from migdal import app_settings
 
 
 class EntriesFeed(Feed):
@@ -19,7 +19,7 @@ class EntriesFeed(Feed):
         else:
             category = None
         if type_db:
-            entry_type = TYPES_DICT[type_db]
+            entry_type = app_settings.TYPES_DICT[type_db]
         else:
             entry_type = None
         return {'entry_type': entry_type, 'category': category}

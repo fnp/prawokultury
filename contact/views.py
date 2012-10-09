@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import permission_required
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import ugettext_lazy as _
-from prawokultury.helpers import serve_file
+from fnpdjango.utils.views import serve_file
 from .forms import contact_forms
 from .models import Attachment
 

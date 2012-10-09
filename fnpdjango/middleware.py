@@ -1,10 +1,15 @@
-# -*- coding: utf-8 -*-
-# This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
-# Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
-#
 from django.utils import translation
 from django.conf import settings
 from django.http import Http404
+
+
+class SetRemoteAddrFromXRealIP(object):
+    """Sets REMOTE_ADDR from the X-Real-IP header, as set by Nginx."""
+    def process_request(self, request):
+        try:
+            request.META['REMOTE_ADDR'] = request.META['HTTP_X_REAL_IP']
+        except KeyError:
+            return None
 
 
 class URLLocaleMiddleware(object):

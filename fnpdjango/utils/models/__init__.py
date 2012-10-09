@@ -1,4 +1,9 @@
+"""
+Utilities for Django models.
+"""
+
 from django.utils.translation import string_concat
+
 
 def filtered_model(name, model, field, value, verbose_extra=None):
     """Creates a proxy model filtering objects by a field."""

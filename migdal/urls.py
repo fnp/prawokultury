@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat
 from migdal import feeds, app_settings
 from migdal.views import SearchPublishedView
-from migdal.helpers import i18n_patterns
+from fnpdjango.utils.urls import i18n_patterns
 
 pats = []
 for t in app_settings.TYPES:

@@ -13,7 +13,7 @@ from django.utils.translation import get_language, ugettext_lazy as _, ugettext
 from django_comments_xtd.models import XtdComment
 from markupfield.fields import MarkupField
 from migdal import app_settings
-from migdal.helpers import add_translatable
+from fnpdjango.utils.models.translation import add_translatable
 from migdal.fields import SlugNullField
 
 class Category(models.Model):

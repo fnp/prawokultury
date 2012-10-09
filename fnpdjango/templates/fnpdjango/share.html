@@ -1,4 +1,4 @@
-{% load i18n common_tags static %}
+{% load i18n fnp_common static %}
 {% with encoded_url=url|build_absolute_uri:request|urlencode encoded_desc=description|urlencode %}
 <a rel="nofollow" target="_blank" class="facebook"
     href="https://www.facebook.com/sharer.php?u={{ encoded_url }}"

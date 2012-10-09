@@ -2,7 +2,7 @@ from django.conf import settings
 import datetime
 from haystack import indexes
 from events.models import Event
-from migdal.helpers import add_translatable_index
+from fnpdjango.utils.models.translation import add_translatable_index
 
 
 class EventIndex(indexes.RealTimeSearchIndex, indexes.Indexable):

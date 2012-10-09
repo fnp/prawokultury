@@ -5,7 +5,7 @@ Migdal (מִגְדָּל) is a multilingual blog Django app.
 Author: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>
 """
 from django.conf import settings
-from prawokultury.helpers import AppSettings
+from fnpdjango.utils.app import AppSettings
 from django.utils.translation import ugettext_lazy as _
 from migdal.helpers import EntryType
 
@@ -50,6 +50,3 @@ class Settings(AppSettings):
                         if lang not in self.OBLIGATORY_LANGUAGES)
 
 app_settings = Settings('MIGDAL')
-
-
-

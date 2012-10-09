@@ -6,7 +6,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _, ugettext
-from migdal.helpers import add_translatable
+from fnpdjango.utils.models.translation import add_translatable
 
 
 class Event(models.Model):

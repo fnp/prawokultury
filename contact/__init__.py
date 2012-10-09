@@ -42,7 +42,7 @@ some_template.html:
 
 """
 
-from prawokultury.helpers import AppSettings
+from fnpdjango.utils.app import AppSettings
 
 
 class Settings(AppSettings):

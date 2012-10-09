@@ -4,7 +4,7 @@
 #
 from itertools import chain
 from migdal.models import Entry
-from migdal.settings import TYPES
+from migdal import app_settings
 from django.utils.translation import get_language
 
 
@@ -15,7 +15,8 @@ def entry_list(entry_type=None, category=None, promobox=False):
     if entry_type:
         object_list = object_list.filter(type=entry_type.db)
     else:
-        object_list = object_list.filter(type__in=[t.db for t in TYPES if t.on_main])
+        object_list = object_list.filter(
+            type__in=[t.db for t in app_settings.TYPES if t.on_main])
     if category:
         object_list = object_list.filter(categories=category)
 

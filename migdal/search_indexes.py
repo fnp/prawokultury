@@ -1,8 +1,8 @@
-from django.conf import settings
 import datetime
+from django.conf import settings
 from haystack import indexes
+from fnpdjango.utils.models.translation import add_translatable_index
 from migdal.models import Entry
-from migdal.helpers import add_translatable_index
 
 
 class EntryIndex(indexes.RealTimeSearchIndex, indexes.Indexable):

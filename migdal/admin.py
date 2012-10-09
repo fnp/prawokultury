@@ -7,8 +7,8 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from migdal.models import Entry, Attachment
 from migdal import app_settings
-from migdal.helpers import translated_fields
-from prawokultury.model_helpers import filtered_model
+from fnpdjango.utils.models import filtered_model
+from fnpdjango.utils.models.translation import translated_fields
 
 
 class AttachmentInline(admin.TabularInline):
