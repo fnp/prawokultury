@@ -21,6 +21,15 @@ def filtered_entry_admin(typ):
         def queryset(self, request):
             return self.model.objects.filter(type=typ)
 
+        def has_add_permission(self, request):
+            return request.user.has_perm('migdal.add_entry')
+
+        def has_change_permission(self, request, obj=None):
+            return request.user.has_perm('migdal.change_entry')
+
+        def has_delete_permission(self, request, obj=None):
+            return request.user.has_perm('migdal.delete_entry')
+
         date_hierarchy = 'date'
         readonly_fields = ('date', 'changed_at') + \
             translated_fields(('published_at',))
