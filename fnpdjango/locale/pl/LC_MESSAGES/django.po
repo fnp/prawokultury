@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-10 14:32+0200\n"
+"PO-Revision-Date: 2012-10-10 14:33+0100\n"
+"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: templates/fnpdjango/share.html:5
+#: templates/fnpdjango/share.html.py:7
+msgid "Share on Facebook"
+msgstr "Podziel się na Facebooku"
+
+#: templates/fnpdjango/share.html:10
+#: templates/fnpdjango/share.html.py:12
+msgid "Share on Google+"
+msgstr "Podziel się na Google+"
+
+#: templates/fnpdjango/share.html:15
+#: templates/fnpdjango/share.html.py:17
+msgid "Share on Twitter"
+msgstr "Podziel się na Twitterze"
+
+#: templates/fnpdjango/share.html:20
+#: templates/fnpdjango/share.html.py:22
+msgid "Share on NK.pl"
+msgstr "Podziel się na NK.pl"
+
+#: templates/fnpdjango/prevnext/next.html:13
+msgid "next"
+msgstr "następne"
+
+#: templates/fnpdjango/prevnext/previous.html:13
+msgid "previous"
+msgstr "poprzednie"
+

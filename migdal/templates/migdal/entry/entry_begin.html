@@ -12,20 +12,6 @@
 <div class="date">{{ object.published_at }}</div>
 <div class="author">{{ object.author }}</div>
 
-{% comment %}
-{% if request.LANGUAGE_CODE == 'pl' %}
-    {% if object.published_en %}
-        {% language 'en' %}
-            <a href="{{ object.get_absolute_url }}">English version</a>
-        {% endlanguage %}
-    {% endif %}
-{% elif object.published_pl %}
-        {% language 'pl' %}
-            <a href="{{ object.get_absolute_url }}">polska wersja</a>
-        {% endlanguage %}
-{% endif %}
-{% endcomment %}
-
 <div class="categories">
 {% for category in object.categories.all %}
     {% if forloop.counter != 1 %}/{% endif %}
