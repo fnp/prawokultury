@@ -4,7 +4,6 @@
 #
 from django_comments_xtd.models import XtdComment
 from django.contrib import comments
-from django.core.urlresolvers import reverse
 from django import template
 from migdal import app_settings
 from migdal.models import Category, Entry
@@ -76,62 +75,3 @@ def entry_comment_form(entry):
             'form': comments.get_form()(entry),
             'next': entry.get_absolute_url(),
         }
-
-
-class MenuItem(object):
-    html_id = None
-
-    def __init__(self, title, url, html_id=None):
-        self.title = title
-        self.url = url
-        self.html_id = html_id
-
-    def check_active(self, chooser, value):
-        self.active = chooser == 'url' and value == self.url
-
-
-class ModelMenuItem(object):
-    def __init__(self, obj, title=None, html_id=None):
-        self.obj = obj
-        self.title = title or unicode(obj)
-        self.url = obj.get_absolute_url()
-        self.html_id = html_id
-
-    def check_active(self, chooser, value):
-        self.active = (chooser == 'object' and value == self.obj or
-                        chooser == 'objects' and self.obj in value)
-
-class CategoryMenuItem(ModelMenuItem):
-    def check_active(self, chooser, value):
-        super(CategoryMenuItem, self).check_active(chooser, value)
-        self.active = (self.active or
-                       (chooser == 'object' and isinstance(value, Entry) and
-                        self.obj in value.categories.all()))
-
-
-class EntryTypeMenuItem(object):
-    def __init__(self, title, type_, html_id=None):
-        self.type = type_
-        self.title = title
-        self.url = reverse('migdal_entry_list_%s' % type_)
-        self.html_id = html_id
-
-    def check_active(self, chooser, value):
-        self.active = (chooser == 'object' and isinstance(value, Entry)
-                        and value.type == self.type or
-                        chooser == 'entry_type' and value == self.type)
-
-@register.inclusion_tag('migdal/menu.html', takes_context=True)
-def main_menu(context, chooser=None, value=None):
-    items = [
-        #ModelMenuItem(Entry.objects.get(slug_pl='o-nas')),
-        #MenuItem(_(u'Events'), reverse('events')),
-    ]
-    # TODO: context-aware language switcher
-    if context['request'].LANGUAGE_CODE == 'pl':
-        items.append(MenuItem(u'en', '/en/', html_id='item-lang'))
-    else:
-        items.append(MenuItem(u'pl', '/', html_id='item-lang'))
-    for item in items:
-        item.check_active(chooser, value)
-    return {'items': items}

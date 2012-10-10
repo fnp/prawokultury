@@ -7,7 +7,7 @@
     {% block contact_form_description %}
     {% endblock %}
 
-    <form method="POST" action="." enctype="multipart/form-data">
+    <form method="POST" action="." enctype="multipart/form-data" class="submit-form">
     {% csrf_token %}
     <table>
         {{ form.as_table }}

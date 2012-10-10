@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-08 16:48+0200\n"
-"PO-Revision-Date: 2012-10-08 16:51+0100\n"
+"POT-Creation-Date: 2012-10-10 13:12+0200\n"
+"PO-Revision-Date: 2012-10-10 13:12+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -60,8 +60,8 @@ msgstr "Wyślij"
 #: templates/contact/mail_body.txt:2
 #: templates/contact/mail_subject.txt:1
 #, python-format
-msgid "Thank you for contacting us at %(site.name)s."
-msgstr "Dziękujemy za skontaktowanie się z nami na stronie %(site.name)s."
+msgid "Thank you for contacting us at %(site_name)s."
+msgstr "Dziękujemy za skontaktowanie się z nami na stronie %(site_name)s."
 
 #: templates/contact/mail_body.txt:3
 msgid "Your submission has been referred to the project coordinator."

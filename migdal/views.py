@@ -4,11 +4,20 @@
 #
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils.translation import get_language
+from fnpdjango.utils.views import set_current_object
 from migdal import api
 from migdal.forms import get_submit_form
 from migdal.models import Category, Entry
 from migdal import app_settings
 from haystack.views import SearchView
+
+
+def main(request):
+    if app_settings.MAIN_PAGE_ENTRY is not None:
+        main_entry = Entry.objects.get(**app_settings.MAIN_PAGE_ENTRY)
+        return entry(request, entry=main_entry)
+    else:
+        return entry_list(request)
 
 
 def entry_list(request, type_db=None, category_slug=None):
@@ -30,6 +39,9 @@ def entry_list(request, type_db=None, category_slug=None):
     else:
         category = None
 
+    if category:
+        set_current_object(request, category)
+
     promobox = 5 if entry_type is None and category is None else None
 
     object_list = api.entry_list(entry_type=entry_type, category=category,
@@ -43,15 +55,17 @@ def entry_list(request, type_db=None, category_slug=None):
         })
 
 
-def entry(request, type_db, slug):
-    lang = request.LANGUAGE_CODE
-    args = {'type': type_db, 'slug_%s' % lang: slug}
-    if not request.user.has_perm('migdal.change_entry'):
-        args['published_%s' % lang] = True
-    entry = get_object_or_404(Entry, **args)
+def entry(request, type_db=None, slug=None, entry=None):
+    if entry is None:
+        lang = request.LANGUAGE_CODE
+        args = {'type': type_db, 'slug_%s' % lang: slug}
+        entry = get_object_or_404(Entry, **args)
+    if request.user.has_perm('migdal.change_entry') or not entry.published:
+        raise Http404
+    set_current_object(request, entry, in_url=slug is not None)
 
     templates = ["migdal/entry/entry_detail.html"]
-    if type_db is not None:
+    if entry.type is not None:
         templates = ["migdal/entry/%s/entry_detail.html" % type_db] + templates
     return render(request, templates, {'entry': entry})
 

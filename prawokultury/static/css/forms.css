@@ -34,3 +34,7 @@
     font-size: 1.1em; }
     .submit-form .helptext a {
       color: #363A3B; }
+  .submit-form .required label {
+    font-weight: bold; }
+  .submit-form .required label:before {
+    content: '* '; }

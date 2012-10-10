@@ -28,7 +28,7 @@ for t in app_settings.TYPES:
 
 urlpatterns = i18n_patterns('',
     # main page
-    url(r'^$', 'migdal.views.entry_list', name='migdal_main'),
+    url(r'^$', 'migdal.views.main', name='migdal_main'),
     url(r'^rss.xml$', feeds.EntriesFeed(), name='migdal_main_feed'),
     # submit new entry
     url(string_concat(r'^', _('submit'), r'/$'), 'migdal.views.submit', name='migdal_submit'),

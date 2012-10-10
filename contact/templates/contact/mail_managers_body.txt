@@ -1,5 +1,5 @@
-Wypełniono formularz {{ form_tag }} na stronie {{ site.name }}.
+{% load url from future %}Wypełniono formularz {{ form_tag }} na stronie {{ site_name }}.
 
-http://{{ site.domain }}{{ admin_url }}
+http://{{ site_domain }}{% url 'admin:contact_contact_change' contact.pk %}
 
 {{ contact.body }}

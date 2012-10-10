@@ -1,1 +1,1 @@
-Wypełniono formularz {{ form_tag }} na stronie {{ site.name }}.
+Wypełniono formularz {{ form_tag }} na stronie {{ site_name }}.

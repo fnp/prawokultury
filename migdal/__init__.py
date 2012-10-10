@@ -25,7 +25,7 @@ class Settings(AppSettings):
     )
     LAST_COMMENTS = 5
 
-    MENU = []
+    MAIN_PAGE_ENTRY = None
 
     TYPES_DICT = None
     def _more_TYPES_DICT(self, value):

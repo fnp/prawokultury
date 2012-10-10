@@ -1,0 +1,6 @@
+{% load i18n fnp_lang %}
+{% for lc, ln in languages %}
+    {% if lc != request.LANGUAGE_CODE %}
+        <a href="{{ request|get_here_url:lc }}">{{ lc }}</a>
+    {% endif %}
+{% endfor %}

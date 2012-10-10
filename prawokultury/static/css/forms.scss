@@ -51,4 +51,11 @@
             color: #363A3B;
         }
     }
+
+    .required label {
+        font-weight: bold;
+    }
+    .required label:before {
+        content: '* ';
+    }
 }

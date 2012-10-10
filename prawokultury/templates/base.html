@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 {% load url from future %}
 {% load i18n static %}
-{% load fnp_common migdal_tags fnp_share %}
+{% load fnp_common migdal_tags fnp_share fnp_lang menu_tags %}
+{% load sponsor_tags %}
 {% load compressed %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
@@ -27,7 +28,6 @@
         </div>
         <div class="bar-right">
             <div class="social">
-                <a href="{% url 'contact_form' 'register' %}">register!</a>
                 {% url 'migdal_main' as main_url %}
                 {% share main_url "CopyCamp" "big" %}
             </div>
@@ -37,14 +37,15 @@
 
         <div id="menu-bar">
         <div class="bar-right">
-            <form id="search-form" method="GET" action="{% url 'search' %}"><input name="q" /><button>
+            <!--form id="search-form" method="GET" action="{% url 'search' %}"><input name="q" /><button>
                 <img src="{% static "img/search.png" %}" alt="{% trans "Search" %}" />
-            </button></form>
+            </button></form-->
         </div>
         <ul id="menu" class="bar-left">
             {% block "main_menu" %}
-                {% main_menu 'url' request.get_full_path %}
+                {% main_menu %}
             {% endblock %}
+            <li id="item-lang">{% lang_switcher %}</li>
         </ul>
         <div style="clear: both;"></div>
         </div>
@@ -53,7 +54,7 @@
         <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
                 <div class="sidebar-box">
-                    (Sponsorzy)
+                    {% sponsor_page 'main' %}
                 </div>
             {% endblock %}
         </div>

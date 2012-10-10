@@ -1,5 +1,5 @@
 {% load i18n %}
-{% blocktrans %}Thank you for contacting us at {{ site.name }}.{% endblocktrans %}
+{% blocktrans %}Thank you for contacting us at {{ site_name }}.{% endblocktrans %}
 {% trans "Your submission has been referred to the project coordinator." %}
 
 -- 

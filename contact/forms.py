@@ -39,11 +39,12 @@ class ContactForm(forms.Form):
                 attachment.file.save(value.name, value)
                 attachment.save()
 
+        site = Site.objects.get_current()
         dictionary = {
             'form_tag': self.form_tag,
-            'site': Site.objects.get_current(),
+            'site_name': site.name,
+            'site_domain': site.domain,
             'contact': contact,
-            'admin_url': '',
         }
         context = RequestContext(request)
         mail_managers_subject = render_to_string([
@@ -67,7 +68,7 @@ class ContactForm(forms.Form):
                     'contact/mail_body.txt', 
                 ], dictionary, context)
             send_mail(mail_subject, mail_body,
-                'no-reply@%s' % dictionary['site'].domain,
+                'no-reply@%s' % site.domain,
                 [contact.contact],
                 fail_silently=True)
 

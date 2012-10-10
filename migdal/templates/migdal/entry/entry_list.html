@@ -5,17 +5,6 @@
 {% load migdal_tags %}
 
 
-{% block "main_menu" %}
-    {% if category %}
-        {% main_menu 'object' category %}
-    {% elif entry_type %}
-        {% main_menu 'entry_type' entry_type.db %}
-    {% else %}
-        {{ block.super }}
-    {% endif %}
-{% endblock "main_menu" %}
-
-
 {% block "body" %}
 
 {% if category %}
