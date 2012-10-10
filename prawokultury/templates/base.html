@@ -15,7 +15,7 @@
         <meta property='og:site_name' content='CopyCamp' />
         <meta property='og:description' content='{% block "ogdescription" %}CopyCamp!{% endblock %}' />
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
+        <meta property='og:image' content='{% block "ogimage" %}{{ "img/copycamp2012_"|add:request.LANGUAGE_CODE|add:".png"|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:locale' content='pl_PL' />
     </head>
     <body>
@@ -24,9 +24,10 @@
         <div class="bar-left">
             <a id="logo" href="{% url "migdal_main" %}">
                 <img alt="{% trans "CopyCamp" %}"
-                    src="{% static "img/logo.png" %}" /></a>
+                    src="{% static "img/copycamp2012_"|add:request.LANGUAGE_CODE|add:".png" %}" /></a>
         </div>
         <div class="bar-right">
+            <a href="http://prawokultury.pl"><img src="{% static "img/logo_160.png" %}" alt="PrawoKultury.pl"/></a>
             <div class="social">
                 {% url 'migdal_main' as main_url %}
                 {% share main_url "CopyCamp" "big" %}

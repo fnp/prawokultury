@@ -1,8 +1,15 @@
 #header-bar {
-  height: 9em;
+  height: 14em;
   padding-top: 3em; }
   #header-bar .bar-left {
     margin-left: -1.1em; }
+  #header-bar .social {
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    #header-bar .social a {
+      margin-right: 1.8em; }
+      #header-bar .social a img {
+        vertical-align: middle; }
 
 .org-fnp, .org-trust {
   display: inline-block;

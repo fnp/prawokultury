@@ -1,11 +1,22 @@
 #header-bar {
-    height: 9em;
+    height: 14em;
     padding-top: 3em;
 
     .bar-left {
         margin-left: -1.1em;
     }
-
+    
+    .social {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    
+        a {
+            margin-right: 1.8em;
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
 }
 
 
@@ -25,3 +36,5 @@
 .org-fnp {
     margin-right: 4em;
 }
+
+
