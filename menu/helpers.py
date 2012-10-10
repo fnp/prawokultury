@@ -35,7 +35,7 @@ class ObjectMenuItem(MenuItem):
 
     @property
     def get_url(self):
-        return self.url or self.get_obj().get_absolute_url()
+        return self.url or self.obj.get_absolute_url()
 
     def is_active(self, request, value):
         if value == self.obj:

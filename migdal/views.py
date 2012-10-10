@@ -2,6 +2,7 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
+from django.http import Http404
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils.translation import get_language
 from fnpdjango.utils.views import set_current_object
@@ -60,7 +61,7 @@ def entry(request, type_db=None, slug=None, entry=None):
         lang = request.LANGUAGE_CODE
         args = {'type': type_db, 'slug_%s' % lang: slug}
         entry = get_object_or_404(Entry, **args)
-    if request.user.has_perm('migdal.change_entry') or not entry.published:
+    if not entry.published and not request.user.has_perm('migdal.change_entry'):
         raise Http404
     set_current_object(request, entry, in_url=slug is not None)
 
