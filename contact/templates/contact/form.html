@@ -4,8 +4,10 @@
 
     <h1>{% block contact_form_title %}{% trans "Contact form" %}{% endblock %}</h1>
 
+    <div class="form-info">
     {% block contact_form_description %}
     {% endblock %}
+    </div>
 
     <form method="POST" action="." enctype="multipart/form-data" class="submit-form">
     {% csrf_token %}
