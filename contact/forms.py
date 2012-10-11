@@ -23,7 +23,7 @@ class ContactForm(forms.Form):
     __metaclass__ = ContactFormMeta
 
     form_tag = None
-    title = _('Contact form')
+    form_title = _('Contact form')
     submit_label = _('Submit')
 
     required_css_class = 'required'
