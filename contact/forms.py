@@ -5,6 +5,7 @@ from django.core.validators import email_re
 from django import forms
 from django.template.loader import render_to_string
 from django.template import RequestContext
+from django.utils.translation import ugettext_lazy as _
 from .models import Attachment, Contact
 
 
@@ -20,9 +21,13 @@ class ContactFormMeta(forms.Form.__metaclass__):
 class ContactForm(forms.Form):
     """Subclass and define some fields."""
     __metaclass__ = ContactFormMeta
+
+    form_tag = None
+    title = _('Contact form')
+    submit_label = _('Submit')
+
     required_css_class = 'required'
     contact = forms.CharField(max_length=128)
-    form_tag = None
 
     def save(self, request):
         body = {}
