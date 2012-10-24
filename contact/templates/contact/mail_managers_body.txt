@@ -2,4 +2,11 @@
 
 http://{{ site_domain }}{% url 'admin:contact_contact_change' contact.pk %}
 
-{{ contact.body }}
+{% for k, v in contact.body.items %}
+{{ k }}:
+{{ v }}
+{% endfor %}
+{% for attachment in contact.attachment_set.all %}
+{{ attachment.tag }}:
+http://{{ site_domain }}{{ attachment.get_absolute_url }}
+{% endfor %}
