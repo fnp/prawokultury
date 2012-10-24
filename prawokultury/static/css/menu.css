@@ -20,18 +20,18 @@
   #menu li.active {
     font-weight: bold; }
   #menu li.active:before {
-    color: #004e98;
+    color: #ed7f00;
     content: "(";
     position: absolute;
     left: -0.7em;
     font-size: 2em;
     top: -0.25em; }
   #menu li.active:after {
-    color: #004e98;
+    color: #ed7f00;
     content: ")";
     position: absolute;
     right: -0.7em;
     font-size: 2em;
     top: -0.25em; }
   #menu #item-lang a {
-    color: #0050a2; }
+    color: #ed952f; }

@@ -6,6 +6,8 @@
   margin-left: 1em;
   margin-right: 1em;
   margin-bottom: 1em; }
+  #footer-bar a {
+    color: black; }
 
 .footer-item {
   width: 24em;

@@ -10,7 +10,8 @@ body {
   background-position: 50% 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #ed7f00; }
 
 a:hover {
   text-decoration: underline; }
@@ -20,7 +21,7 @@ img {
 
 h1 {
   margin: 0 0 .5em 0;
-  color: #01519a;
+  color: #ed7f00;
   font-size: 2em; }
 
 .warning {

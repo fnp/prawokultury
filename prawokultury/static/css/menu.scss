@@ -27,7 +27,7 @@
         font-weight: bold;
     }
     li.active:before {
-        color: #004e98;
+        color: #ed7f00;
         content: "(";
         position: absolute;
         left: -.7em;
@@ -35,7 +35,7 @@
         top: -.25em;
     }
     li.active:after {
-        color: #004e98;
+        color: #ed7f00;
         content: ")";
         position: absolute;
         right: -.7em;
@@ -44,6 +44,6 @@
     }
 
     #item-lang a {
-        color: #0050a2;
+        color: #ed952f; 
     }
 }
