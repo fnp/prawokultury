@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.urlresolvers import resolve, reverse
+from django.core.urlresolvers import resolve, reverse, Resolver404
 from django import template
 from django.utils import translation
 from ..utils.views import get_current_object
@@ -32,14 +32,20 @@ def get_here_url(request, lang):
         with translation.override(lang):
             url = obj.get_absolute_url()
     else:
-        match = resolve(request.get_full_path())
+        try:
+            match = resolve(request.get_full_path())
+        except Resolver404:
+            return None
         view = match.url_name
         if view is None:
             view = match.func
         if lang is None:
             lang = translation.get_language()
         with translation.override(lang):
-            url = reverse(view, args=match.args, kwargs=match.kwargs)
+            try:
+                url = reverse(view, args=match.args, kwargs=match.kwargs)
+            except Resolver404:
+                return None
     return url
 
 
