@@ -14,7 +14,7 @@ from datetime import datetime
 def events_box(context, limit=app_settings.BOX_LENGTH):
     lang = context['request'].LANGUAGE_CODE
     objects = Event.objects.filter(**{"published_%s" % lang: True})
-    objects = objects.filter(date__gte=datetime.now())[:limit]
+    objects = objects.filter(date_end__gte=datetime.now())[:limit]
     return {'objects': objects}
 
 

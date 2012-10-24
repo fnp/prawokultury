@@ -11,6 +11,8 @@ from migdal.helpers import add_translatable
 
 class Event(models.Model):
     date = models.DateTimeField(_('date'), max_length=255, db_index=True)
+    date_end = models.DateTimeField(_('end date'), max_length=255, 
+        db_index=True, blank=True)
     link = models.URLField(_('link'))
 
     class Meta:
@@ -22,6 +24,12 @@ class Event(models.Model):
         return self.title
 
     def clean(self):
+        if self.date_end:
+            if self.date_end < self.date:
+                raise ValidationError(
+                    ugettext("End date must not be earlier than start."))
+        else:
+            self.date_end = self.date
         for lc, ln in settings.LANGUAGES:
             if (getattr(self, "published_%s" % lc) and
                     not getattr(self, "title_%s" % lc)):

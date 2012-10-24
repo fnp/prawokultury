@@ -10,7 +10,7 @@ from migdal.helpers import translated_fields
 
 class EventAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('date', 'link')}),
+        (None, {'fields': ('date', 'date_end', 'link')}),
     ) + tuple(
         (ln, {'fields': (
             ('published_%s' % lc),
