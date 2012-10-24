@@ -35,17 +35,14 @@ def get_here_url(request, lang):
         try:
             match = resolve(request.get_full_path())
         except Resolver404:
-            return None
+            match = resolve('/')
         view = match.url_name
         if view is None:
             view = match.func
         if lang is None:
             lang = translation.get_language()
         with translation.override(lang):
-            try:
-                url = reverse(view, args=match.args, kwargs=match.kwargs)
-            except Resolver404:
-                return None
+            url = reverse(view, args=match.args, kwargs=match.kwargs)
     return url
 
 
