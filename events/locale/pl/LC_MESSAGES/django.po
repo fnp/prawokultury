@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury-events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-30 15:58+0200\n"
-"PO-Revision-Date: 2012-08-30 15:59+0100\n"
+"POT-Creation-Date: 2012-10-24 15:00+0200\n"
+"PO-Revision-Date: 2012-10-24 15:00+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -22,35 +22,43 @@ msgid "date"
 msgstr "data"
 
 #: models.py:14
+msgid "end date"
+msgstr "data zakończenia"
+
+#: models.py:16
 msgid "link"
 msgstr "link"
 
-#: models.py:17
+#: models.py:19
 msgid "event"
 msgstr "wydarzenie"
 
-#: models.py:18
+#: models.py:20
 msgid "events"
 msgstr "wydarzenia"
 
-#: models.py:29
+#: models.py:30
+msgid "End date must not be earlier than start."
+msgstr "Data zakończenia nie może być wcześniejsza niż rozpoczęcia."
+
+#: models.py:37
 #, python-format
 msgid "Published event should have a title in relevant language (%s)."
 msgstr "Opublikowane wydarzenie powinno mieć tytuł w odpowiednim języku (%s)."
 
-#: models.py:33
+#: models.py:41
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:34
+#: models.py:42
 msgid "organizer"
 msgstr "organizator"
 
-#: models.py:36
+#: models.py:44
 msgid "place"
 msgstr "miejsce"
 
-#: models.py:37
+#: models.py:45
 msgid "published"
 msgstr "opublikowane"
 
