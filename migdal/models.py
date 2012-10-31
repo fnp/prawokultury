@@ -60,17 +60,15 @@ class Entry(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        if self.pk is not None:
-            orig = type(self).objects.get(pk=self.pk)
-            published_now = False
-            for lc, ln in settings.LANGUAGES:
-                if (getattr(self, "published_%s" % lc)
-                        and getattr(self, "published_at_%s" % lc) is None):
-                    setattr(self, "published_at_%s" % lc, datetime.now())
-                    published_now = True
-            if published_now:
-                self.notify_author_published()
+        published_now = False
+        for lc, ln in settings.LANGUAGES:
+            if (getattr(self, "published_%s" % lc)
+                    and getattr(self, "published_at_%s" % lc) is None):
+                setattr(self, "published_at_%s" % lc, datetime.now())
+                published_now = True
         super(Entry, self).save(*args, **kwargs)
+        if published_now:
+            self.notify_author_published()
 
     def clean(self):
         for lc, ln in settings.LANGUAGES:
