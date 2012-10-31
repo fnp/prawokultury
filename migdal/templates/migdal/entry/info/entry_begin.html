@@ -8,30 +8,14 @@
 {% endif %}
 
 
-{% comment %}
-<div class="entry-data">
-{% if request.LANGUAGE_CODE == 'pl' %}
-    {% if object.published_en %}
-        {% language 'en' %}
-            <a href="{{ object.get_absolute_url }}">English version</a>
-        {% endlanguage %}
-    {% endif %}
-{% elif object.published_pl %}
-    {{ request.LANGUAGE_CODE }}
-    {% language 'pl' %}
-        <a href="{{ object.get_absolute_url }}">polska wersja</a>
-    {% endlanguage %}
-{% endif %}
-</div>
-{% endcomment %}
-
-
 {% if object.image %}
+    <a href="{{ object.image.url }}">
     <img class="entry-picture" src="{% thumbnail object.image "250x300" as thumb %}
                     {{ thumb.url }}
                 {% empty %}
                     {{ object.image.url }}
                 {% endthumbnail %}" />
+    </a>
 {% endif %}
 <div class="lead">
 {{ object.lead }}
