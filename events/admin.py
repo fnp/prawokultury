@@ -4,8 +4,8 @@
 #
 from django.conf import settings
 from django.contrib import admin
+from fnpdjango.utils.models.translation import translated_fields
 from events.models import Event
-from migdal.helpers import translated_fields
 
 
 class EventAdmin(admin.ModelAdmin):

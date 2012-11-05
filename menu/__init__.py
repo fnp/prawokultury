@@ -2,7 +2,7 @@ from fnpdjango.utils.app import AppSettings
 
 
 class Settings(AppSettings):
-    BOX_LENGTH = 3
+    MODULE = 'menu_items'
 
 
-app_settings = Settings('EVENTS')
+app_settings = Settings('MENU')

@@ -6,10 +6,10 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from migdal.helpers import i18n_patterns
-from migdal.urls import urlpatterns as migdal_urlpatterns
 from django.utils.translation import ugettext_lazy as _, string_concat
+from fnpdjango.utils.urls import i18n_patterns
 from events.urls import urlpatterns as events_urlpatterns
+from migdal.urls import urlpatterns as migdal_urlpatterns
 
 admin.autodiscover()
 

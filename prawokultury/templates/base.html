@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load url from future %}
 {% load i18n static %}
-{% load common_tags migdal_tags events_tags share %}
+{% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang %}
 {% load compressed %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
@@ -49,8 +49,9 @@
         </div>
         <ul id="menu" class="bar-left">
             {% block "main_menu" %}
-                {% main_menu 'url' request.get_full_path %}
+                {% main_menu %}
             {% endblock %}
+            <!--li id="item-lang">{% lang_switcher %}</li-->
         </ul>
         <div style="clear: both;"></div>
         </div>

@@ -1,7 +1,0 @@
-<ul class="categories">
-    {% for cat in object_list %}
-        <li class="category category-taxonomy-{{ cat.taxonomy }}">
-            <a href="{{ cat.get_absolute_url }}">{{ cat }}</a>
-        </li>
-    {% endfor %}
-</ul>
