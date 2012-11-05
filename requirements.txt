@@ -6,8 +6,13 @@ PIL
 sorl-thumbnail>=11.09,<12
 django-pagination
 
+-e git+git://github.com/fnp/fnpdjango.git@7b2a81536977bb13b68ada3e5a281e35b24e0bfd#egg=fnpdjango
+-e git+git://github.com/fnp/django-migdal.git@734cd58d3f12c5397b42c1ae122c947500386014#egg=django-migdal
+
 #django-jsonfield
 -e git+git://github.com/bradjasper/django-jsonfield.git@2f427368ad70bf8d9a0580df58ec0eb0654d62ae#egg=django-jsonfield
+
+-e git+git://github.com/fnp/django-migdal.git@734cd58d3f12c5397b42c1ae122c947500386014#egg=django-migdal
 
 textile
 django-markupfield
