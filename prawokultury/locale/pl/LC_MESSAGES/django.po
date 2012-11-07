@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-23 11:55+0200\n"
-"PO-Revision-Date: 2012-10-23 11:56+0100\n"
+"POT-Creation-Date: 2012-11-07 09:55+0100\n"
+"PO-Revision-Date: 2012-11-07 09:57+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -18,8 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: contact_forms.py:9
-msgid "Registration form"
-msgstr "Formularz rejestracyjny"
+#: menu_items.py:22
+msgid "Take part!"
+msgstr "Weź udział!"
 
 #: contact_forms.py:11
 msgid "Name"
@@ -61,10 +62,6 @@ msgstr "Zgoda na publikację"
 msgid "I agree to having materials recorded during the conference released under the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed\">CC BY-SA</a> license."
 msgstr "Wyrażam zgodę na publikację materiałów zarejestrowanych na konferencji na licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl\">CC BY-SA</a>."
 
-#: menu_items.py:22
-msgid "Registration"
-msgstr "Rejestracja"
-
 #: templates/404.html:5
 #: templates/404.html.py:10
 msgid "Page not found"
@@ -85,6 +82,12 @@ msgstr "Szukaj"
 #: templates/base.html:85
 msgid "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license."
 msgstr "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#~ msgid "Registration form"
+#~ msgstr "Formularz rejestracyjny"
+
+#~ msgid "Registration"
+#~ msgstr "Rejestracja"
 
 #~ msgid "Summary"
 #~ msgstr "Podsumowanie prezentacji"
