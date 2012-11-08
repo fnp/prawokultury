@@ -2,16 +2,39 @@ from django.contrib import admin
 from django.forms import ModelForm
 from .models import Contact
 from django.utils.translation import ugettext as _
-from .forms import contact_forms
+from .forms import contact_forms, admin_list_width
 from django.template import Template
 from django.utils.safestring import mark_safe
 
 
+class ContactAdminMeta(admin.ModelAdmin.__metaclass__):
+    def __getattr__(cls, name):
+        if name.startswith('admin_list_'):
+            return lambda self: ""
+        raise AttributeError, name
+
+
 class ContactAdmin(admin.ModelAdmin):
+    __metaclass__ = ContactAdminMeta
     date_hierarchy = 'created_at'
-    list_display = ('created_at', 'contact', 'form_tag')
+    list_display = ['created_at', 'contact', 'form_tag'] + \
+        ["admin_list_%d" % i for i in range(admin_list_width)]
     fields = ['form_tag', 'created_at', 'contact', 'ip']
     readonly_fields = ['form_tag', 'created_at', 'contact', 'ip']
+
+    def admin_list(self, obj, nr):
+        try:
+            field_name = contact_forms[obj.form_tag].admin_list[nr]
+        except BaseException, e:
+            return ''
+        else:
+            return obj.body.get(field_name, 'y')
+
+    def __getattr__(self, name):
+        if name.startswith('admin_list_'):
+            nr = int(name[len('admin_list_'):])
+            return lambda obj: self.admin_list(obj, nr)
+        raise AttributeError, name
 
     def change_view(self, request, object_id, extra_context=None):
         if object_id:

@@ -10,10 +10,14 @@ from .models import Attachment, Contact
 
 
 contact_forms = {}
+admin_list_width = 0
 class ContactFormMeta(forms.Form.__metaclass__):
     def __new__(cls, *args, **kwargs):
+        global admin_list_width
         model = super(ContactFormMeta, cls).__new__(cls, *args, **kwargs)
         assert model.form_tag not in contact_forms, 'Duplicate form_tag.'
+        if model.admin_list:
+            admin_list_width = max(admin_list_width, len(model.admin_list))
         contact_forms[model.form_tag] = model
         return model
 
@@ -25,6 +29,7 @@ class ContactForm(forms.Form):
     form_tag = None
     form_title = _('Contact form')
     submit_label = _('Submit')
+    admin_list = None
 
     required_css_class = 'required'
     contact = forms.CharField(max_length=128)
