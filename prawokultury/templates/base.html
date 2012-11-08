@@ -15,7 +15,7 @@
         <meta property='og:site_name' content='CopyCamp' />
         <meta property='og:description' content='{% block "ogdescription" %}{% trans "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms." %}{% endblock %}' />
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}{{ "img/copycamp2012_"|add:request.LANGUAGE_CODE|add:".png"|build_absolute_uri:request }}{% endblock %}' />
+        <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/copycamp2012_"|add:request.LANGUAGE_CODE|add:".png"|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:locale' content='pl_PL' />
     </head>
     <body>
