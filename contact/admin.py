@@ -28,7 +28,7 @@ class ContactAdmin(admin.ModelAdmin):
         except BaseException, e:
             return ''
         else:
-            return obj.body.get(field_name, 'y')
+            return obj.body.get(field_name, '')
 
     def __getattr__(self, name):
         if name.startswith('admin_list_'):
