@@ -1,0 +1,12 @@
+{% extends "contact/form.html" %}
+{% load i18n %}
+
+{% block contact_form_description %}
+{{ block.super }}
+
+{% if form.limit_reached %}
+<p class="warning">{% blocktrans %}Conference registration limit has been reached.
+We are now accepting speaker submissions only.{% endblocktrans %}</p>
+{% endif %}
+
+{% endblock %}

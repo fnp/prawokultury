@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-07 09:55+0100\n"
-"PO-Revision-Date: 2012-11-07 09:57+0100\n"
+"POT-Creation-Date: 2012-11-08 11:21+0100\n"
+"PO-Revision-Date: 2012-11-08 11:22+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -17,48 +17,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: contact_forms.py:9
+#: contact_forms.py:11
 #: menu_items.py:22
 msgid "Take part!"
 msgstr "Weź udział!"
 
-#: contact_forms.py:11
+#: contact_forms.py:13
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:12
+#: contact_forms.py:14
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:13
+#: contact_forms.py:15
 msgid "Organization"
 msgstr "Organizacja"
 
-#: contact_forms.py:15
+#: contact_forms.py:17
 msgid "Title of presentation"
 msgstr "Tytuł prezentacji"
 
-#: contact_forms.py:17
+#: contact_forms.py:19
 msgid "Presentation"
 msgstr "Prezentacja"
 
-#: contact_forms.py:19
+#: contact_forms.py:21
 msgid "Summary of presentation (max. 1800 characters)"
 msgstr "Krótki opis prezentacji (maks. 1800 znaków)"
 
-#: contact_forms.py:22
+#: contact_forms.py:24
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:23
+#: contact_forms.py:25
 msgid "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference."
 msgstr "Wyrażam zgodę na przetwarzanie moich danych osobowych (imię, nazwisko, adres poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska 84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:26
+#: contact_forms.py:28
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:27
+#: contact_forms.py:29
 msgid "I agree to having materials recorded during the conference released under the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed\">CC BY-SA</a> license."
 msgstr "Wyrażam zgodę na publikację materiałów zarejestrowanych na konferencji na licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl\">CC BY-SA</a>."
 
@@ -71,6 +71,10 @@ msgstr "Strona nie znaleziona"
 msgid "The page you were looking for doesn't exist."
 msgstr "Strona, której szukasz, nie istnieje."
 
+#: templates/base.html:16
+msgid "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms."
+msgstr "CopyCamp jest pierwszym w Polsce, organizowanym na dużą skalę spotkaniem osób zajmujących się problematyką praw autorskich."
+
 #: templates/base.html:26
 msgid "CopyCamp"
 msgstr "CopyCamp"
@@ -82,6 +86,32 @@ msgstr "Szukaj"
 #: templates/base.html:85
 msgid "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license."
 msgstr "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#: templates/contact/register/form.html:8
+msgid ""
+"Conference registration limit has been reached.\n"
+"We are now accepting speaker submissions only."
+msgstr ""
+"Limit rejestracji uczestników konferencji został osiągnięty.\n"
+"Obecnie przyjmujemy tylko zgłoszenia prezentacji."
+
+#: templates/contact/register/mail_body.txt:2
+#: templates/contact/register/mail_subject.txt:1
+#, python-format
+msgid "Thank you for submitting the registration form at %(site_name)s."
+msgstr "Dziękujemy za wypełnienie formularza rejestracyjnego na stronie %(site_name)s."
+
+#: templates/contact/register/mail_body.txt:3
+msgid "Your submission has been referred to the project coordinator."
+msgstr "Twoje zgłoszenie zostało przekazane osobie koordynującej projekt."
+
+#: templates/contact/register/mail_body.txt:6
+msgid "Message sent automatically. Please do not reply to it."
+msgstr "Wiadomość wysłana automatycznie, prosimy nie odpowiadać."
+
+#: templates/contact/register/thanks.html:5
+msgid "Thank you for submitting the registration form."
+msgstr "Dziękujemy za wypełnienie formularza rejestracyjnego."
 
 #~ msgid "Registration form"
 #~ msgstr "Formularz rejestracyjny"

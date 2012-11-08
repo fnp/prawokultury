@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 from django import forms
 from contact.forms import ContactForm
+from contact.models import Contact
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -26,3 +28,10 @@ class RegistrationForm(ContactForm):
         label=_('Permission for publication'),
         help_text=_('I agree to having materials recorded during the conference released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA</a> license.')
     )
+
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+        self.limit_reached = Contact.objects.all().count() >= settings.REGISTRATION_LIMIT
+        if self.limit_reached:
+            for field in ('title', 'summary'):
+                self.fields[field].required = True
