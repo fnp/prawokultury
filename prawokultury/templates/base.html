@@ -10,6 +10,7 @@
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
 
+        <meta charset="UTF-8" />
         <meta property='og:url' content='{% block "ogurl" %}{% url 'migdal_main' %}{% endblock %}' />
         <meta property='og:title' content='{% block "ogtitle" %}CopyCamp{% endblock %}' />
         <meta property='og:site_name' content='CopyCamp' />
