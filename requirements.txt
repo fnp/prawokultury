@@ -7,7 +7,7 @@ sorl-thumbnail>=11.09,<12
 django-pagination
 
 -e git+git://github.com/fnp/fnpdjango.git@9a5b05c52311da4f726fec29d8be7d173f695352#egg=fnpdjango
--e git+git://github.com/fnp/django-migdal.git@734cd58d3f12c5397b42c1ae122c947500386014#egg=django-migdal
+-e git+git://github.com/fnp/django-migdal.git@fe16cac52a33bd593bc8916415dc939d32dfb8f3#egg=django-migdal
 
 textile
 django-markupfield

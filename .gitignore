@@ -1,4 +1,4 @@
-*/settings.d/local.conf
+*/settings.d/local.py
 dev.sqlite
 *.db
 *.db-journal
