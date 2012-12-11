@@ -5,14 +5,14 @@
 {% load compressed %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
-       <title>{% block "titleextra" %}{% endblock %}{% trans "Culture's right" %}</title>
+       <title>{% block "titleextra" %}{% endblock %}{% trans "Right to Culture" %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
 
         <meta charset="UTF-8" />
         <meta property='og:url' content='{% block "ogurl" %}{% url 'migdal_main' %}{% endblock %}' />
-        <meta property='og:title' content='{% block "ogtitle" %}{% trans "Culture's right" %}{% endblock %}' />
-        <meta property='og:site_name' content='{% trans "Culture's right" %}' />
+        <meta property='og:title' content='{% block "ogtitle" %}{% trans "Right to Culture" %}{% endblock %}' />
+        <meta property='og:site_name' content='{% trans "Right to Culture" %}' />
         <meta property='og:description' content='{% block "ogdescription" %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
         <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
@@ -23,7 +23,7 @@
         <div id="header-bar">
         <div class="bar-left">
             <a id="logo" href="{% url "migdal_main" %}">
-                <img alt="{% trans "Culture's right" %}"
+                <img alt="{% trans "Right to Culture" %}"
                     src="{% static "img/logo.png" %}" /></a>
         </div>
         <div class="bar-right">
@@ -72,7 +72,7 @@
                     <a href="{% url 'migdal_main_feed' %}" title="RSS feed">
                         <img src="{% static 'img/rss.png' %}" alt="RSS feed" /></a>
                     {% url 'migdal_main' as main_url %}
-                    {% trans "Culture's right" as site_name %}
+                    {% trans "Right to Culture" as site_name %}
                     {% share main_url site_name "big" %}
                 </div>
                 <div class="sidebar-box">
