@@ -1,8 +1,8 @@
 #search-form {
-  margin-top: .4em; }
+  margin: .4em 0 0 0; }
   #search-form input {
     font-size: 1.1em;
-    width: 16.1em;
+    width: 15.1em;
     padding-left: 1em;
     border: none;
     border-radius: 1.5em 0 0 1.5em;
@@ -10,7 +10,8 @@
     -webkit-border-radius: 1.5em 0 0 1.5em;
     background: white;
     color: black;
-    height: 2em; }
+    height: 2em;
+    margin: 0; }
   #search-form button {
     font-size: 1.1em;
     width: 2.7em;
@@ -23,6 +24,7 @@
     border-radius: 0 1em 1em 0;
     -moz-border-radius: 0 1em 1em 0;
     -webkit-border-radius: 0 1em 1em 0;
-    padding-right: 1em; }
+    padding-right: 1em;
+    margin: 0; }
     #search-form button img {
       vertical-align: middle; }
