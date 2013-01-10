@@ -1,7 +1,6 @@
-.avatar {
+.entry-wrapped img.avatar {
     float: left;
-    margin-left: -8em;
-    margin-top: 0em;
+    margin: 0 0 0 -8em;
 }
 
 .entry-short {
@@ -94,6 +93,10 @@
             margin-left: .7em;
         }
     }
+
+    img {
+        margin: 1em;
+    }
 }
 
 .entry-info .entry-wrapped,
@@ -104,10 +107,9 @@
     }
 }
 
-.entry-picture {
+.entry-wrapped img.entry-picture {
     float: left;
-    margin-right: 1.5em;
-    margin-bottom: 1em;
+    margin: 0 1.5em 1em 0;
 }
 
 .submit-link {
@@ -150,4 +152,12 @@
     .body {
         font-size: 1.3em;
     }
+}
+
+table.borders {
+  border-collapse: collapse;
+  td {
+    border: 1px solid #777;
+    padding: .3em;
+  }
 }

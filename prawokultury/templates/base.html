@@ -64,6 +64,9 @@
                     <h3><a href="{% url 'events' %}">{% trans "Upcoming events" %}</a></h3>
                     {% events_box %}
                 </div>
+                <div class="sidebar-box" style="text-align: center">
+                   <a href="/publikacje/Dzielenie-sie/"><img src="{% static 'img/aigrain.jpg' %}" alt="Publikacja: Philippe Aigrain, Dzielenie się" /></a>
+                </div>
                 <div id="sidebar-box-categories" class="sidebar-box">
                     {% categories 'topics' %}
                     {% categories 'types' %}

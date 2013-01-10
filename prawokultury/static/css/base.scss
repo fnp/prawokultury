@@ -40,3 +40,9 @@ h1 {
 .notice {
     font-size: 1.3em;
 }
+.entry-wrapped {
+.gallery-item{float:left; width:300px;text-align:center;margin-top:2em;}
+.gallery-image{height:240px; width:300px; display: table-cell; vertical-align:middle;}
+.gallery-image img{margin: 0;}
+
+}

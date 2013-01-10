@@ -1,3 +1,4 @@
+# -*- coding: utf-8
 from migdal.models import Category, Entry
 from menu.helpers import ObjectMenuItem, MenuItem, ModelMenuItem
 from django.core.urlresolvers import reverse_lazy
@@ -27,3 +28,7 @@ ITEMS.append(ObjectMenuItem(Category.objects.get(slug_pl='stanowisko'),
     rev_lookups={Entry: 'categories'}, title=_('Positions')))
 #CategoryMenuItem(Category.objects.get(slug_pl='stanowisko'),
 #            title=_('Positions')),
+
+ITEMS.append(ObjectMenuItem(Entry.objects.get(slug_pl='pierwsza-pomoc'),
+    title=_('First aid in copyright')))
+

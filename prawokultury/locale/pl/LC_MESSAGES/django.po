@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-12 10:10+0100\n"
+"POT-Creation-Date: 2012-12-17 03:56+0000\n"
 "PO-Revision-Date: 2012-12-11 13:33+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
 
 #: menu_items.py:21
 msgid "Publications"
@@ -28,6 +29,10 @@ msgstr "Wydarzenia"
 #: menu_items.py:27
 msgid "Positions"
 msgstr "Stanowiska"
+
+#: menu_items.py:32
+msgid "First aid in copyright"
+msgstr "Pierwsza pomoc w prawie autorskim"
 
 #: urls.py:31
 msgid "events"
@@ -45,8 +50,7 @@ msgstr "publikacje"
 msgid "info"
 msgstr "info"
 
-#: templates/404.html:5
-#: templates/404.html.py:10
+#: templates/404.html:5 templates/404.html.py:10
 msgid "Page not found"
 msgstr "Strona nie znaleziona"
 
@@ -54,45 +58,48 @@ msgstr "Strona nie znaleziona"
 msgid "The page you were looking for doesn't exist."
 msgstr "Strona, której szukasz, nie istnieje."
 
-#: templates/base.html:8
-#: templates/base.html.py:13
-#: templates/base.html:14
-#: templates/base.html.py:25
-#: templates/base.html:74
+#: templates/base.html:8 templates/base.html.py:14 templates/base.html:15
+#: templates/base.html.py:26 templates/base.html:75
 msgid "Right to Culture"
 msgstr "Prawo kultury"
 
-#: templates/base.html:30
+#: templates/base.html:31
 msgid "Organizer"
 msgstr "Organizator"
 
-#: templates/base.html:33
+#: templates/base.html:34
 msgid "Modern Poland Foundation"
 msgstr "Fundacja Nowoczesna Polska"
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "Sponsor"
 msgstr "Wspierane przez"
 
-#: templates/base.html:38
+#: templates/base.html:39
 msgid "Trust for Civil Society in Central and Eastern Europe"
 msgstr ""
 
-#: templates/base.html:47
+#: templates/base.html:48
 msgid "Search"
 msgstr "Szukaj"
 
-#: templates/base.html:63
+#: templates/base.html:64
 msgid "Upcoming events"
 msgstr "Nadchodzące wydarzenia"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Latest comments"
 msgstr "Ostatnie komentarze"
 
-#: templates/base.html:106
-msgid "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license."
-msgstr "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+#: templates/base.html:107
+msgid ""
+"If not explicitly stated otherwise, all texts are licensed under the <a "
+"href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons "
+"Attribution-Share Alike</a> free license."
+msgstr ""
+"Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a "
+"href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative "
+"Commons Uznanie autorstwa – Na tych samych warunkach</a>."
 
 #~ msgid "Page not found."
 #~ msgstr "Strona nie znaleziona."
