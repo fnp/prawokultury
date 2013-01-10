@@ -1,8 +1,7 @@
 -i http://pypi.nowoczesnapolska.org.pl/simple
 
 Django>=1.4,<1.5
-#django_cas
--e hg+https://bitbucket.org/cpcc/django-cas@197f156ee943#egg=django_cas
+django_cas>=2.1,<2.2
 South>=0.7.4
 PIL
 sorl-thumbnail>=11.09,<12
