@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block "titleextra" %}{{ question }} :: {% endblock %}
+{% block "body" %}
+<h1>{{ question }}</h1>
+
+{{ question.answer }}
+
+<p><a href="{% url 'questions' %}">Wróć do listy pytań.</a></p>
+
+{% endblock %}

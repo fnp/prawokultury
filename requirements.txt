@@ -1,3 +1,5 @@
+-i http://pypi.nowoczesnapolska.org.pl/simple
+
 Django>=1.4,<1.5
 #django_cas
 -e hg+https://bitbucket.org/cpcc/django-cas@197f156ee943#egg=django_cas
@@ -6,8 +8,8 @@ PIL
 sorl-thumbnail>=11.09,<12
 django-pagination
 
--e git+git://github.com/fnp/fnpdjango.git@9a5b05c52311da4f726fec29d8be7d173f695352#egg=fnpdjango
 -e git+git://github.com/fnp/django-migdal.git@a3983327291548497d9bdd3db5976b895675b25e#egg=django-migdal
+fnpdjango>=0.1.3,<0.2
 
 textile
 django-markupfield

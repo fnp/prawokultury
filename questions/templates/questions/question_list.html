@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block "titleextra" %}Pierwsza pomoc w prawie autorskim :: {% endblock %}
+{% block "body" %}
+<h1>Pierwsza pomoc w prawie autorskim</h1>
+
+<p class="normal">Jeśli rozwiązania Twojego problemu nie ma na tej stronie,
+<a href="">zajrzyj do naszego podręcznika</a>. Jeśli i to nie pomoże,
+<a href="{% url 'questions_form' %}">zadaj pytanie naszemu prawnikowi</a>.</p>
+  
+<ul>
+{% for question in object_list %}
+    <li><a href="{{ question.get_absolute_url }}">{{ question }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

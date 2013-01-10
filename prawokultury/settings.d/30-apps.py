@@ -4,6 +4,7 @@ INSTALLED_APPS = (
     'menu',
     'events',
     'migdal',
+    'questions',
 
     'gravatar',
     'south',

@@ -1,0 +1,19 @@
+{% load i18n %}{% language 'pl' %}{{ question.created_at }} zadałeś/zadałaś pytanie:
+
+{{ question.question|safe }}
+
+
+Odpowiedź:
+
+{{ question.answer.raw|safe }}
+
+{% if question.published %}
+Pytanie wraz z odpowiedzią można znaleźć na stronie:
+http://{{ site.domain }}{{ question.get_absolute_url }}
+{% endif %}
+
+Dziękujemy!
+
+-- 
+{{ site }}
+{% endlanguage %}

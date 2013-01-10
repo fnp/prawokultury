@@ -30,6 +30,7 @@ if 'django_cas' in settings.INSTALLED_APPS:
 urlpatterns += i18n_patterns('',
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
     url(r'^comments/', include('django_comments_xtd.urls')),
+    url(r'^prawnik/', include('questions.urls')),
 ) + migdal_urlpatterns 
 
 if settings.DEBUG:
