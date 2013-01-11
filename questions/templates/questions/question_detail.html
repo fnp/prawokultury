@@ -1,11 +1,14 @@
 {% extends "base.html" %}
+{% load url from future %}
 
 {% block "titleextra" %}{{ question }} :: {% endblock %}
 {% block "body" %}
 <h1>{{ question }}</h1>
 
+<div class="normal">
 {{ question.answer }}
 
 <p><a href="{% url 'questions' %}">Wróć do listy pytań.</a></p>
 
+</div>
 {% endblock %}

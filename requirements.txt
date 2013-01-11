@@ -13,7 +13,7 @@ fnpdjango>=0.1.4,<0.2
 textile
 django-markupfield
 django-gravatar
-django_comments_xtd
+django_comments_xtd==1.0a5
 django-pipeline>=1.2,<1.3
 
 #pyScss

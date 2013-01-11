@@ -5,8 +5,9 @@
 {% block "body" %}
 <h1>Pierwsza pomoc w prawie autorskim</h1>
 
-<p class="normal">Jeśli rozwiązania Twojego problemu nie ma na tej stronie,
-<a href="">zajrzyj do naszego podręcznika</a>. Jeśli i to nie pomoże,
+<div class="normal">
+<p>Jeśli rozwiązania Twojego problemu nie ma na tej stronie,
+<a href="{% url "migdal_entry_publications" "pierwsza-pomoc" %} ">zajrzyj do naszego podręcznika</a>. Jeśli i to nie pomoże,
 <a href="{% url 'questions_form' %}">zadaj pytanie naszemu prawnikowi</a>.</p>
   
 <ul>
@@ -14,5 +15,6 @@
     <li><a href="{{ question.get_absolute_url }}">{{ question }}</a></li>
 {% endfor %}
 </ul>
+</div>
 
 {% endblock %}

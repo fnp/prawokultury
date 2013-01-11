@@ -21,6 +21,16 @@ urlpatterns = patterns('',
         }),
     )
 
+if 'django.contrib.sitemaps' in settings.INSTALLED_APPS:
+    from migdal.sitemap import sitemaps as migdal_sitemaps
+    from questions.sitemap import sitemaps as question_sitemaps
+    sitemaps = dict(migdal_sitemaps.items() + question_sitemaps.items())
+    urlpatterns += patterns('',
+        url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {
+            'sitemaps': sitemaps
+        }),
+    )
+
 if 'django_cas' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         (r'^accounts/login/$', 'django_cas.views.login'),

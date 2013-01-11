@@ -32,6 +32,9 @@ h1 {
 .notice {
   font-size: 1.3em; }
 
+.normal {
+  font-size: 1.3em; }
+
 .entry-wrapped .gallery-item {
   float: left;
   width: 300px;

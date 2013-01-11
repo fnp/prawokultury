@@ -7,7 +7,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question', 'email', 'created_at', 'approved', 'answered', 'published')
     date_hierarchy = 'created_at'
     fields = (
-        ('email', 'created_at'),
+        ('email', 'created_at', 'changed_at'),
         'question',
         'approved',
         'edited_question',
@@ -16,7 +16,7 @@ class QuestionAdmin(admin.ModelAdmin):
         ('published', 'published_at'),
         
     )
-    readonly_fields = ['created_at', 'answered_at', 'published_at']
+    readonly_fields = ['created_at', 'answered_at', 'published_at', 'changed_at']
 
 
 admin.site.register(Question, QuestionAdmin)

@@ -11,6 +11,7 @@ class Question(models.Model):
     email = models.EmailField(_('contact e-mail'), null=True, blank=True)
     question = models.TextField(_('question'), db_index=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
+    changed_at = models.DateTimeField(_('changed at'), auto_now=True)
     approved = models.BooleanField(_('approved'), default=False)
     edited_question = models.TextField(_('edited question'), db_index=True, null=True, blank=True,
             help_text=_("Leave empty if question doesn't need editing."))
