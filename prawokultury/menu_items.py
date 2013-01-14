@@ -23,7 +23,14 @@ ITEMS.append(ObjectMenuItem(
     title=_('Positions')
 ))
 
+ITEMS.append(MenuItem(reverse_lazy('questions_form'), _('First aid'),
+        more_urls=(
+            reverse_lazy('questions'),
+            #reverse_lazy('questions_question'),
+            reverse_lazy('questions_thanks'),
+        )))
+
 ITEMS.append(ObjectMenuItem(
     obj_get=lambda:Entry.published_objects.get(slug_pl='pierwsza-pomoc'),
-    title=_('First aid in copyright')
+    title=_('Guide')
 ))

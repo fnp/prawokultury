@@ -26,6 +26,8 @@ class Question(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+        verbose_name = _('question')
+        verbose_name_plural = _('questions')
 
     def __unicode__(self):
         return self.edited_question or self.question

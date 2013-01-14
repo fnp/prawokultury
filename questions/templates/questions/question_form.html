@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load url from future %}
 
 {% block "titleextra" %}Pierwsza pomoc w prawie autorskim: pytanie do prawnika :: {% endblock %}
 {% block "body" %}
@@ -6,14 +7,38 @@
 
 
 <div class="normal">
-<form method="post" action="">
+<p>Jeżeli masz pytanie dotyczące prawa autorskiego, na które nie znalazłeś odpowiedzi
+w <a href="{% url 'migdal_entry_publications' 'pierwsza-pomoc' %}">naszym przewodniku</a>,
+możesz je nam zadać za pomocą poniższego formularza 
+lub telefonicznie pod nr [***] we wtorki w godzinach [***].
+Wybrane pytania (w razie potrzeby odpowiednio przeformułowane) oraz 
+odpowiedzi na te pytania będą publikowane na stronie PrawoKultury.pl. Możesz 
+zostawić swoje dane kontaktowe (adres e-mail), jeżeli chcesz, żebyśmy 
+skontaktowali się z Tobą w przypadku wątpliwości co do Twojego pytania. 
+Dane kontaktowe nie będą publikowane.</p>
+
+<p>Możemy nie być w stanie odpowiedzieć na wszystkie pytania, a w przypadku 
+podobnych pytań możemy odsyłać do wcześniejszych odpowiedzi.
+Odpowiedzi na pytania nie należy traktować jak porad prawnych. Jeżeli 
+poszukujesz porady prawnej skontaktuj się z prawnikiem.</p>
+
+<p>Administratorem danych osobowych przetwarzanych w związku z 
+funkcjonowaniem tego serwisu jest Fundacja Nowoczesna Polska [pełne 
+dane]. Podanie danych osobowych jest dobrowolne. Dane są przetwarzane w 
+zakresie niezbędnym do prowadzenia serwisu. Osobom, których dane są 
+zbierane, przysługuje prawo dostępu do treści swoich danych oraz ich 
+poprawiania.</p>
+    
+</div>
+
+<form class="submit-form" method="post" action="">
 {% csrf_token %}
 <table>
     {{ form.as_table }}
     <tr><td></td><td><button>Wyślij</button></td></tr>
 </table>
 </form>
-</div>
+
 
 
 {% endblock %}

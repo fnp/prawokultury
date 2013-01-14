@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-14 15:57+0100\n"
+"PO-Revision-Date: 2013-01-14 15:59+0100\n"
+"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: models.py:11
+msgid "contact e-mail"
+msgstr "e-mail kontaktowy"
+
+#: models.py:12
+#: models.py:29
+msgid "question"
+msgstr "pytanie"
+
+#: models.py:13
+msgid "created at"
+msgstr "utworzone"
+
+#: models.py:14
+msgid "changed at"
+msgstr "zmienione"
+
+#: models.py:15
+msgid "approved"
+msgstr "potwierdzone"
+
+#: models.py:16
+msgid "edited question"
+msgstr "zmienione pytanie"
+
+#: models.py:17
+msgid "Leave empty if question doesn't need editing."
+msgstr "Zostaw puste, jeśli pytanie nie wymaga zmian."
+
+#: models.py:18
+msgid "answer"
+msgstr "odpowiedź"
+
+#: models.py:19
+msgid "Use <a href=\"http://textile.thresholdstate.com/\">Textile</a> syntax."
+msgstr ""
+
+#: models.py:20
+msgid "answered"
+msgstr "udzielono odpowiedzi"
+
+#: models.py:21
+msgid "Check to send the answer to user."
+msgstr "Zaznacz, by wysłać odpowiedź użytkownikowi."
+
+#: models.py:22
+msgid "answered at"
+msgstr "udzielono odpowiedzi"
+
+#: models.py:23
+msgid "published"
+msgstr "opublikowane"
+
+#: models.py:24
+msgid "Check to display answered question on site."
+msgstr "Zaznaczy, by odpowiedź ukazała się na stronie."
+
+#: models.py:25
+msgid "published at"
+msgstr "opublikowane"
+
+#: models.py:30
+msgid "questions"
+msgstr "pytania"
+

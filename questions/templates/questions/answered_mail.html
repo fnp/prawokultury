@@ -1,0 +1,21 @@
+{% load i18n %}{% language 'pl' %}
+<p>{{ question.created_at }} zadałeś/zadałaś pytanie:</p>
+
+<blockquote>{{ question.question }}</blockquote>
+
+<p>Odpowiedź:</p>
+
+<blockquote>{{ question.answer }}</blockquote>
+
+{% if question.published %}
+<p>Pytanie wraz z odpowiedzią można znaleźć na stronie:
+<a href="http://{{ site.domain }}{{ question.get_absolute_url }}">http://{{ site.domain }}{{ question.get_absolute_url }}</a>
+</p>
+{% endif %}
+
+<p>Dziękujemy!</p>
+
+<p>-- 
+<br>{{ site }}
+<br>{% endlanguage %}
+</p>
