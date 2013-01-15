@@ -55,6 +55,24 @@ class Question(models.Model):
         msg.attach_alternative(html_content, "text/html")
         msg.send()
 
+    def ack_author(self):
+        if not self.email:
+            return
+        site = Site.objects.get_current()
+        context = Context({
+                'question': self,
+                'site': site,
+            })
+        text_content = loader.get_template('questions/ack_mail.txt'
+            ).render(context)
+        html_content = loader.get_template('questions/ack_mail.html'
+            ).render(context)
+        msg = EmailMultiAlternatives(
+            u'Twoje pytanie zostało zarejestrowane w serwisie %s.' % site.domain,
+            text_content, settings.SERVER_EMAIL, [self.email])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
     def save(self, *args, **kwargs):
         now = datetime.now()
         notify = False

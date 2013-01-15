@@ -7,4 +7,8 @@ class QuestionForm(ModelForm):
     class Meta:
         model = Question
         fields = ['email', 'question']
-        # TODO: honeypot!
+
+    def save(self, *args, **kwargs):
+        instance = super(QuestionForm, self).save(*args, **kwargs)
+        instance.ack_author()
+        return instance

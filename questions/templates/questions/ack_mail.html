@@ -1,0 +1,16 @@
+{% load i18n %}{% language 'pl' %}
+<p>{{ question.created_at }} zarejestrowaliśmy w serwisie PrawoKultury.pl Twoje pytanie:</p>
+
+<blockquote>{{ question.question }}</blockquote>
+
+<p>Dyżur prawnika w serwisie Prawo Kultury odbywa się we wtorki, prosimy więc
+o odrobinę cierpliwości. Możemy nie być w stanie odpowiedzieć na wszystkie
+pytania. Odpowiedzi są wysyłane e-mailem, ale zachęcamy też do śledzenia strony
+<a href="http://prawokultury.pl">http://PrawoKultury.pl</a>.</p>
+
+<p>Dziękujemy za skontaktowanie się z nami!</p>
+
+<p>-- 
+<br>{{ site }}
+<br>{% endlanguage %}
+</p>
