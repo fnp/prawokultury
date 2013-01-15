@@ -1,5 +1,6 @@
 # -*- coding: utf-8
 from datetime import datetime
+from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.mail import EmailMultiAlternatives
 from django.db import models
@@ -56,9 +57,13 @@ class Question(models.Model):
 
     def save(self, *args, **kwargs):
         now = datetime.now()
+        notify = False
         if self.answered and not self.answered_at:
-            self.notify_author()
+            notify = True
             self.answered_at = now
         if self.published and not self.published_at:
             self.published_at = now
-        super(Question, self).save(*args, **kwargs)
+        ret = super(Question, self).save(*args, **kwargs)
+        if notify:
+            self.notify_author()
+        return ret
