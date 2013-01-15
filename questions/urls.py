@@ -14,7 +14,7 @@ urlpatterns = patterns('',
         name="questions"
     ),
     url(r'^(?P<pk>\d+)/$',
-        DetailView.as_view(model=Question),
+        DetailView.as_view(queryset=Question.objects.filter(published=True)),
         name="questions_question"),
     url(r'^pytanie/$',
         QuestionFormView.as_view(),

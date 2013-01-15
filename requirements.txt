@@ -6,6 +6,7 @@ South>=0.7.4
 PIL
 sorl-thumbnail>=11.09,<12
 django-pagination
+django-honeypot
 
 django-migdal>=0.3,<0.4
 fnpdjango>=0.1.4,<0.2
@@ -20,6 +21,6 @@ django-pipeline>=1.2,<1.3
 #git+git://github.com/Kronuz/pyScss.git@d8f4da23a3c87696a75b3830ed4ab49b75550a93#egg=pyScss
 #TODO: pyScss support, for now just install sass
 
--e git+https://github.com/toastdriven/django-haystack.git@master#egg=django-haystack
+-e git+https://github.com/toastdriven/django-haystack.git@61b377d97efd5390c60c5a37acd009b8e69eb2f3#egg=django-haystack
 pysolr
 piwik

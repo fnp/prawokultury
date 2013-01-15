@@ -16,6 +16,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'piwik.django',
     'django_cas',
+    'honeypot',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
