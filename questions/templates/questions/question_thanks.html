@@ -1,11 +1,14 @@
 {% extends "base.html" %}
+{% load url from future %}
 
 {% block "titleextra" %}Dziękujemy za przesłanie pytania :: {% endblock %}
 {% block "body" %}
 <h1>Dziękujemy za przesłanie pytania</h1>
 
 <div class="normal">
-???
-</div>
+<p>Twoje pytanie zostało zapisane. Dziękujemy za kontakt.</p>
 
+<p>Wróć do <a href="{% url 'migdal_main' %}">strony głównej</a>.</p>
+
+</div>
 {% endblock %}
