@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load url from future %}
 
-{% block "titleextra" %}{{ question }} :: {% endblock %}
+{% block "titleextra" %}{{ question|linebreaksbr }} :: {% endblock %}
 {% block "body" %}
 <h1>{{ question }}</h1>
 

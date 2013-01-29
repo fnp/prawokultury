@@ -23,9 +23,9 @@ ITEMS.append(ObjectMenuItem(
     title=_('Positions')
 ))
 
-ITEMS.append(MenuItem(reverse_lazy('questions_form'), _('First aid'),
+ITEMS.append(MenuItem(reverse_lazy('questions'), _('First aid'),
         more_urls=(
-            reverse_lazy('questions'),
+            reverse_lazy('questions_form'),
             #reverse_lazy('questions_question'),
             reverse_lazy('questions_thanks'),
         )))

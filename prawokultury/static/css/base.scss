@@ -29,6 +29,10 @@ h1 {
     font-size: 2em;
 }
 
+h2 {
+    font-size: 1.2em;
+    color: #01519a;
+}
 
 .warning {
     border: 1px solid #ddd;
@@ -48,4 +52,10 @@ h1 {
 .gallery-image{height:240px; width:300px; display: table-cell; vertical-align:middle;}
 .gallery-image img{margin: 0;}
 
+}
+
+.questions {
+    li {
+        margin-bottom: 1em;
+    }
 }

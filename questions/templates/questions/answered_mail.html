@@ -1,7 +1,7 @@
 {% load i18n %}{% language 'pl' %}
 <p>{{ question.created_at }} zadałeś/zadałaś pytanie:</p>
 
-<blockquote>{{ question.question }}</blockquote>
+<blockquote>{{ question.question|linebreaks }}</blockquote>
 
 <p>Odpowiedź:</p>
 

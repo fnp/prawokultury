@@ -6,6 +6,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'answered', 'published')
     list_display = ('question', 'email', 'created_at', 'approved', 'answered', 'published')
     date_hierarchy = 'created_at'
+    search_fields = ('question', 'edited_question', 'answer', 'email')
     fields = (
         ('email', 'created_at', 'changed_at'),
         'question',

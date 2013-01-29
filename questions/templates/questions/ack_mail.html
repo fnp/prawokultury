@@ -1,7 +1,7 @@
 {% load i18n %}{% language 'pl' %}
 <p>{{ question.created_at }} zarejestrowaliśmy w serwisie PrawoKultury.pl Twoje pytanie:</p>
 
-<blockquote>{{ question.question }}</blockquote>
+<blockquote>{{ question.question|linebreaks }}</blockquote>
 
 <p>Dyżur prawnika w serwisie Prawo Kultury odbywa się we wtorki, prosimy więc
 o cierpliwość. Możemy nie być w stanie odpowiedzieć na wszystkie pytania.

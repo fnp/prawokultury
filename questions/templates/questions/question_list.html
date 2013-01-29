@@ -6,12 +6,15 @@
 <h1>Pierwsza pomoc w prawie autorskim</h1>
 
 <div class="normal">
-<p>Jeśli rozwiązania Twojego problemu nie ma na tej stronie,
-<a href="{% url "migdal_entry_publications" "pierwsza-pomoc" %} ">zajrzyj do
-naszego przewodnika</a>. Jeśli i to nie pomoże,
-<a href="{% url 'questions_form' %}">zadaj nam pytanie</a>.</p>
-  
-<ul>
+<h2>Zadaj nam pytanie!</h2>
+<p>Jeżeli masz pytanie dotyczące prawa autorskiego, którego nie ma na poniższej liście, i na które nie znalazłeś/znalazłaś
+odpowiedzi w <strong><a href="{% url 'migdal_entry_publications' 'pierwsza-pomoc' %}">przewodniku
+po prawie autorskim</a></strong>, możesz je nam zadać
+<strong><a href="{% url 'questions_form' %}">za pomocą specjalnego formularza</a></strong>.
+
+<h2>Odpowiedzi na już zadane pytania:</h2>
+
+<ul class='questions'>
 {% for question in object_list %}
     <li><a href="{{ question.get_absolute_url }}">{{ question }}</a></li>
 {% endfor %}
