@@ -67,7 +67,8 @@ ul.promobox {
     overflow: hidden; }
   .promobox-info h2 {
     margin-top: 0;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    color: white; }
   .promobox-info .lead {
     font-size: 1.2em;
     line-height: 1.1em; }

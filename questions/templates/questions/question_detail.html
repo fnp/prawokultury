@@ -3,7 +3,7 @@
 
 {% block "titleextra" %}{{ question|linebreaksbr }} :: {% endblock %}
 {% block "body" %}
-<h1>{{ question }}</h1>
+<h1>{{ question|linebreaksbr }}</h1>
 
 <div class="normal">
 {{ question.answer }}

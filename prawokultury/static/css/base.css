@@ -23,6 +23,10 @@ h1 {
   color: #01519a;
   font-size: 2em; }
 
+h2 {
+  font-size: 1.2em;
+  color: #01519a; }
+
 .warning {
   border: 1px solid #ddd;
   padding: 1em;
@@ -47,3 +51,6 @@ h1 {
   vertical-align: middle; }
 .entry-wrapped .gallery-image img {
   margin: 0; }
+
+.questions li {
+  margin-bottom: 1em; }

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: prawokultury-events\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-24 15:00+0200\n"
-"PO-Revision-Date: 2012-10-24 15:00+0100\n"
+"PO-Revision-Date: 2013-02-21 16:38+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
 "Language: \n"
@@ -72,7 +72,7 @@ msgstr "Wydarzenia"
 
 #: templates/events/event_list.html:18
 msgid "see upcoming events"
-msgstr "zobaczy nadchodzące wydarzenia"
+msgstr "zobacz nadchodzące wydarzenia"
 
 #: templates/events/event_list.html:22
 msgid "see past events"

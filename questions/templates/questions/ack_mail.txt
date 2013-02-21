@@ -3,7 +3,7 @@
 {{ question.question|safe }}
 
 
-Dyżur prawnika w serwisie Prawo Kultury odbywa się we wtorki, prosimy więc
+Dyżur prawnika w serwisie Prawo Kultury odbywa się w środy, prosimy więc
 o cierpliwość. Możemy nie być w stanie odpowiedzieć na wszystkie pytania.
 Odpowiedzi są wysyłane e-mailem, ale zachęcamy też do śledzenia strony
 http://PrawoKultury.pl
