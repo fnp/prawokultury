@@ -5,8 +5,11 @@ from .models import Question
 
 
 class QuestionIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, model_attr="__unicode__")
+    text = indexes.CharField(document=True)
     answer = indexes.CharField(model_attr="answer")
+
+    def prepare_text(self, obj):
+        return unicode(obj)
 
     def get_model(self):
         return Question
