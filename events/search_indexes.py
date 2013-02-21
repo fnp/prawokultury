@@ -1,11 +1,15 @@
 import datetime
 from django.conf import settings
 from haystack import indexes
-from fnpdjango.utils.models.translation import add_translatable_index
+from fnpdjango.utils.models.translation import add_translatable_index, localize_field
 from events.models import Event
 
 
 class EventIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
+    text = indexes.CharField(null=True,
+        model_attr=localize_field('title', settings.LANGUAGE_CODE),
+        document=True)
+
     def get_model(self):
         return Event
 
@@ -15,12 +19,12 @@ class EventIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
 
 
 add_translatable_index(EventIndex, {
-# Haystack needs a main field to be the same across all indexes
-# so we treat title of the event as this main content, named 'body'
-   'body': indexes.CharField(model_attr='title', null=True),
-   'organizer': indexes.CharField(null=True),
-   'place': indexes.CharField(null=True)
-   })
+    'organizer': indexes.CharField(null=True),
+    'place': indexes.CharField(null=True)
+    })
 
-
-getattr(EventIndex, "body_%s" % settings.LANGUAGE_CODE).document = True
+add_translatable_index(EventIndex, {
+    'title': indexes.CharField(null=True),
+    }, 
+    (lang for lang in settings.LANGUAGES if lang[0] != settings.LANGUAGE_CODE)
+)
