@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
+    url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
     )
 
 if 'django.contrib.sitemaps' in settings.INSTALLED_APPS:

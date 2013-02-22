@@ -7,6 +7,8 @@ from django.db import models
 from django.template import loader, Context
 from django.utils.translation import ugettext_lazy as _
 from markupfield.fields import MarkupField
+from taggit_autosuggest.managers import TaggableManager
+
 
 class Question(models.Model):
     email = models.EmailField(_('contact e-mail'), null=True, blank=True)
@@ -24,6 +26,8 @@ class Question(models.Model):
     published = models.BooleanField(_('published'), db_index=True, default=False,
         help_text=_('Check to display answered question on site.'))
     published_at = models.DateTimeField(_('published at'), null=True, blank=True, db_index=True)
+
+    tags = TaggableManager()
 
     class Meta:
         ordering = ['-created_at']

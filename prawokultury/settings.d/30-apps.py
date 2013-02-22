@@ -17,6 +17,8 @@ INSTALLED_APPS = (
     'piwik.django',
     'django_cas',
     'honeypot',
+    'taggit',
+    'taggit_autosuggest',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',

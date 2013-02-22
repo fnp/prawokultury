@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# Translations template for PROJECT.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-02-22 11:35+0100\n"
-"PO-Revision-Date: 2013-02-22 11:37+0100\n"
-"Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
-"Language-Team: pl <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,83 +19,83 @@ msgstr ""
 
 #: django_comments_xtd/admin.py:11
 msgid "Content"
-msgstr "Treść"
+msgstr ""
 
 #: django_comments_xtd/admin.py:13
 msgid "Metadata"
-msgstr "Metadane"
+msgstr ""
 
 #: django_comments_xtd/forms.py:13
 msgid "Notify me of follow up comments via email"
-msgstr "Powiadamiaj mnie o komentarzach"
+msgstr ""
 
 #: django_comments_xtd/forms.py:18
 msgid "Email address"
-msgstr "Adres e-mail"
+msgstr ""
 
 #: django_comments_xtd/forms.py:18
 msgid "Required for comment verification"
-msgstr "Wymagany do weryfikacji"
+msgstr ""
 
 #: django_comments_xtd/forms.py:20
 msgid "your comment"
-msgstr "Twój komentarz"
+msgstr ""
 
 #: django_comments_xtd/models.py:24
 msgid "Receive by email further comments in this conversation"
-msgstr "Włącza powiadamianie  e-mailem o kolejnych komentarzach w tym wątku."
+msgstr ""
 
 #: django_comments_xtd/views.py:24
 msgid "comment confirmation request"
-msgstr "potwierdzenie komentarza"
+msgstr ""
 
 #: django_comments_xtd/views.py:152
 msgid "new comment posted"
-msgstr "wysłano nowy komentarz"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/comment.html:15
 msgid "Comment for:"
-msgstr "Komentarz do:"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/comment.html:19
 msgid "Inappropriate comments like this one are removed."
-msgstr "Niewłaściwe komentarze, takie jak ten, są usuwane."
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/discarded.html:4
 msgid "Comment discarded"
-msgstr "Komentarz odrzucony"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/discarded.html:7
 msgid "Comment automatically discarded"
-msgstr "Komentarz automatycznie odrzucony"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/discarded.html:8
 msgid "Sorry, your comment has been automatically discarded"
-msgstr "Przepraszamy, Twój komentarz został automatycznie odrzucony"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/email_followup_comment.txt:4
 msgid "There is a new comment following up yours."
-msgstr "Pojawił się nowy komentarz"
+msgstr ""
 
 #: django_comments_xtd/templates/django_comments_xtd/email_followup_comment.txt:14
 msgid "Kind regards"
-msgstr "Pozdrawiam"
+msgstr ""
 
 #: taggit_autosuggest/managers.py:11
 msgid "Tags"
-msgstr "Tagi"
+msgstr ""
 
 #: taggit_autosuggest/managers.py:12
 msgid "A comma-separated list of tags."
-msgstr "Lista tagów oddzielonych przecinkami."
+msgstr ""
 
 #: taggit_autosuggest/widgets.py:67
 msgid "Enter Tag Here"
-msgstr "Wpisz nazwę tagu"
+msgstr ""
 
 #: taggit_autosuggest/widgets.py:68
 msgid "No Results"
-msgstr "Brak wyników"
+msgstr ""
 
 #: taggit_autosuggest/widgets.py:69
 msgid "No More Selections Are Allowed"

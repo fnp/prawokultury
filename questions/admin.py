@@ -13,6 +13,7 @@ class QuestionAdmin(admin.ModelAdmin):
         'approved',
         'edited_question',
         'answer',
+        'tags',
         ('answered', 'answered_at'),
         ('published', 'published_at'),
         

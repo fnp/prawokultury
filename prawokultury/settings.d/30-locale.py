@@ -34,3 +34,8 @@ USE_L10N = True
 USE_TZ = True
 
 FORMAT_MODULE_PATH = "prawokultury.formats"
+
+CONTRIB_LOCALE_APPS = [
+    'django_comments_xtd',
+    'taggit_autosuggest'
+]
