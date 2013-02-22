@@ -42,7 +42,7 @@ Tematy:
     {% if tag %}na temat: {{ tag }}{% endif %}
     ({{ object_list.count }}):</h2>
 
-{% autopaginate object_list 1 %}
+{% autopaginate object_list 20 %}
 
 <ul class='questions'>
 {% for question in object_list %}
