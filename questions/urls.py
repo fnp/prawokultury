@@ -3,14 +3,13 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.conf.urls import patterns, url
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, TemplateView
 from .models import Question
-from .views import QuestionFormView
+from .views import QuestionFormView, QuestionListView
 
 urlpatterns = patterns('',
     url(r'^$',
-        ListView.as_view(queryset=Question.objects.filter(published=True
-            ).order_by('-published_at')),
+        QuestionListView.as_view(),
         name="questions"
     ),
     url(r'^(?P<pk>\d+)/$',

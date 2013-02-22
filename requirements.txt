@@ -9,7 +9,7 @@ django-pagination
 django-honeypot
 
 django-migdal>=0.3.1,<0.4
-fnpdjango>=0.1.4,<0.2
+fnpdjango>=0.1.5,<0.2
 
 textile
 django-markupfield

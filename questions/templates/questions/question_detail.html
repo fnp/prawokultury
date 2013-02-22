@@ -6,6 +6,14 @@
 <h1>{{ question|linebreaksbr }}</h1>
 
 <div class="normal">
+{% if question.tags.all.count %}
+<p>Tematy: 
+{% for tag in question.tags.all %}
+    <a href="{% url 'questions' %}?tag={{ tag.slug }}">{{ tag }}</a>{% if not forloop.last %} / {% endif %}
+{% endfor %}
+{% endif %}
+</p>
+
 {{ question.answer }}
 
 <p><a href="{% url 'questions' %}">Wróć do listy pytań.</a></p>

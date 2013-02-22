@@ -7,8 +7,26 @@ from django.db import models
 from django.template import loader, Context
 from django.utils.translation import ugettext_lazy as _
 from markupfield.fields import MarkupField
+from taggit.models import TagBase, GenericTaggedItemBase
 from taggit_autosuggest.managers import TaggableManager
+from fnpdjango.utils.text.slughifi import slughifi
 
+
+class Tag(TagBase):
+    def slugify(self, tag, i=None):
+        slug = slughifi(tag)
+        if i is not None:
+            slug += "_%d" % i
+        return slug
+
+    class Meta:
+        verbose_name = _("Tag")
+        verbose_name_plural = _("Tags")
+
+
+class TagItem(GenericTaggedItemBase):
+    tag = models.ForeignKey(Tag, related_name="items")
+ 
 
 class Question(models.Model):
     email = models.EmailField(_('contact e-mail'), null=True, blank=True)
@@ -27,7 +45,7 @@ class Question(models.Model):
         help_text=_('Check to display answered question on site.'))
     published_at = models.DateTimeField(_('published at'), null=True, blank=True, db_index=True)
 
-    tags = TaggableManager()
+    tags = TaggableManager(through=TagItem)
 
     class Meta:
         ordering = ['-created_at']

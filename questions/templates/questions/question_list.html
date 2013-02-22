@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load url from future %}
+{% load pagination_tags fnp_prevnext %}
 
 {% block "titleextra" %}Pierwsza pomoc w prawie autorskim :: {% endblock %}
 {% block "body" %}
@@ -26,13 +27,39 @@ autorem szeregu publikacji naukowych poświęconych korzystaniu z
 technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
 doświadczenie doradcze w tej tematyce.</p>
 
-<h2>Odpowiedzi na już zadane pytania:</h2>
+Tematy: 
+{% if tag %}<a href=".">wszystkie</a>
+{% else %}<strong>wszystkie</strong>
+{% endif %}
+
+{% for atag in tags %} /
+    {% if atag == tag %}<strong>{{ atag }}</strong>
+    {% else %}<a href="?tag={{ atag.slug }}">{{ atag }}</a>
+    {% endif %}
+{% endfor %}
+
+<h2>Odpowiedzi na już zadane pytania
+    {% if tag %}na temat: {{ tag }}{% endif %}
+    ({{ object_list.count }}):</h2>
+
+{% autopaginate object_list 1 %}
 
 <ul class='questions'>
 {% for question in object_list %}
-    <li><a href="{{ question.get_absolute_url }}">{{ question }}</a></li>
+    <li><a href="{{ question.get_absolute_url }}">{{ question }}</a>
+        {% if question.tags.all.count %}
+        <br/>Tematy: 
+        {% for tag in question.tags.all %}
+            <a href="?tag={{ tag.slug }}">{{ tag }}</a>{% if not forloop.last %} / {% endif %}
+        {% endfor %}
+        {% endif %}
+    </li>
 {% endfor %}
 </ul>
+
 </div>
+
+{% prevnext %}
+
 
 {% endblock %}
