@@ -15,7 +15,12 @@ class MenuItem(object):
 
     def is_active(self, request, value):
         url = request.get_full_path()
-        return url == str(self.url) or url in set(str(url) for url in self.more_urls)
+        if url.startswith(str(self.url)):
+            return True
+        for other_url in self.more_urls:
+            if url.startswith(str(other_url)):
+                return True
+        return False
 
     def check_active(self, request, value):
         try:

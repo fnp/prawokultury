@@ -3,6 +3,8 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.core.urlresolvers import reverse_lazy
+from django.db import models
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .forms import QuestionForm
@@ -24,20 +26,21 @@ class QuestionListView(ListView):
         self.tag = None
         if 'tag' in request.GET:
             try:
-                self.tag = Tag.objects.get(slug=request.GET['tag'])
-            except Tag.DoesNotExist:
+                self.tag = Tag.objects.filter(items__question__published=True, slug=request.GET['tag'])[0]
+            except IndexError:
                 pass
         return super(QuestionListView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
         qs = Question.objects.filter(published=True
                 ).order_by('-published_at')
-        if 'tag' in self.request.GET:
-            qs = qs.filter(tags__slug=self.request.GET['tag'])
+        if self.tag:
+            qs = qs.filter(tags=self.tag)
         return qs
 
     def get_context_data(self, *args, **kwargs):
         context = super(QuestionListView, self).get_context_data(*args, **kwargs)
-        context['tags'] = Tag.objects.all()
+        context['tags'] = Tag.objects.filter(items__question__published=True
+            ).annotate(c=models.Count('items__tag')).order_by('-c', 'slug')
         context['tag'] = self.tag
         return context

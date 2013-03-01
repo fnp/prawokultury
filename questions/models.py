@@ -45,7 +45,7 @@ class Question(models.Model):
         help_text=_('Check to display answered question on site.'))
     published_at = models.DateTimeField(_('published at'), null=True, blank=True, db_index=True)
 
-    tags = TaggableManager(through=TagItem)
+    tags = TaggableManager(through=TagItem, blank=True)
 
     class Meta:
         ordering = ['-created_at']
