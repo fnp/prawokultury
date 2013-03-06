@@ -10,7 +10,7 @@
         {% compressed_css 'base' %}
 
         <meta charset="UTF-8" />
-        <meta property='og:url' content='{% block "ogurl" %}{% url 'migdal_main' %}{% endblock %}' />
+        <meta property='og:url' content='{% block "ogurl" %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:title' content='{% block "ogtitle" %}{% trans "Right to Culture" %}{% endblock %}' />
         <meta property='og:site_name' content='{% trans "Right to Culture" %}' />
         <meta property='og:description' content='{% block "ogdescription" %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />

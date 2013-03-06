@@ -47,12 +47,6 @@ Tematy:
 <ul class='questions'>
 {% for question in object_list %}
     <li><a href="{{ question.get_absolute_url }}">{{ question }}</a>
-        {% if question.tags.all.count %}
-        <br/>Tematy: 
-        {% for tag in question.tags.all %}
-            <a href="?tag={{ tag.slug }}">{{ tag }}</a>{% if not forloop.last %} / {% endif %}
-        {% endfor %}
-        {% endif %}
     </li>
 {% endfor %}
 </ul>
