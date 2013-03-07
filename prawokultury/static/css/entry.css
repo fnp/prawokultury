@@ -33,6 +33,10 @@
     font-size: 1.3em; }
   .entry-wrapped .body {
     font-size: 1.3em; }
+  .entry-wrapped .lead h2,
+  .entry-wrapped .body h2 {
+    font-size: 1em;
+    font-weight: normal; }
   .entry-wrapped blockquote {
     position: relative;
     left: 1em;
