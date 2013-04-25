@@ -1,0 +1,1736 @@
+[
+    {
+        "pk": 16,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "organizacje zbiorowego zarz\u0105dzania",
+            "slug": "organizacje-zbiorowego-zarzadzania"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "ochrona postaci",
+            "slug": "ochrona-postaci"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "naruszenie licencji CC",
+            "slug": "naruszenie-licencji-cc"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "zakres ochrony",
+            "slug": "zakres-ochrony"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "domena publiczna",
+            "slug": "domena-publiczna"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek",
+            "slug": "dozwolony-uzytek"
+        }
+    },
+    {
+        "pk": 88,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "licencje CC",
+            "slug": "licencje-cc"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 1 pr. aut.",
+            "slug": "art-1-pr-aut"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 115 pr. aut.",
+            "slug": "art-115-pr-aut"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 12 pr. aut.",
+            "slug": "art-12-pr-aut"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 2 pr. aut.",
+            "slug": "art-2-pr-aut"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 23 pr. aut.",
+            "slug": "art-23-pr-aut"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 25 pr. aut.",
+            "slug": "art-25-pr-aut"
+        }
+    },
+    {
+        "pk": 89,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 27 pr. aut.",
+            "slug": "art-27-pr-aut"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 29 pr. aut.",
+            "slug": "art-29-pr-aut"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 3 pr. aut.",
+            "slug": "art-3-pr-aut"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 34 pr. aut.",
+            "slug": "art-34-pr-aut"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 35 pr. aut.",
+            "slug": "art-35-pr-aut"
+        }
+    },
+    {
+        "pk": 100,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 4 pr. aut.",
+            "slug": "art-4-pr-aut"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 43 pr. aut.",
+            "slug": "art-43-pr-aut"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 44 pr. aut.",
+            "slug": "art-44-pr-aut"
+        }
+    },
+    {
+        "pk": 97,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 49 ust. 2 pr. aut.",
+            "slug": "art-49-ust-2-pr-aut"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 56 pr. aut.",
+            "slug": "art-56-pr-aut"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 57 pr. aut.",
+            "slug": "art-57-pr-aut"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 85 pr. aut.",
+            "slug": "art-85-pr-aut"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 99^1 pr. aut.",
+            "slug": "art-991-pr-aut"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 99^2 pr. aut.",
+            "slug": "art-992-pr-aut"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "artystyczne wykonanie",
+            "slug": "artystyczne-wykonanie"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "baza danych",
+            "slug": "baza-danych"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "fotografia",
+            "slug": "fotografia"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "interfejs",
+            "slug": "interfejs"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "patent",
+            "slug": "patent"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "programy komputerowe",
+            "slug": "programy-komputerowe"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "rejestracje audiowizualne",
+            "slug": "rejestracje-audiowizualne"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "utw\u00f3r audiowizualny",
+            "slug": "utwor-audiowizualny"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "wideogram",
+            "slug": "wideogram"
+        }
+    },
+    {
+        "pk": 91,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "wizerunek",
+            "slug": "wizerunek"
+        }
+    },
+    {
+        "pk": 92,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "w\u0142asno\u015b\u0107",
+            "slug": "wlasnosc"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "autorskie prawa osobiste",
+            "slug": "autorskie-prawa-osobiste"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawa pokrewne",
+            "slug": "prawa-pokrewne"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawo do pierwszych wyda\u0144",
+            "slug": "prawo-do-pierwszych-wydan"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawo do wynagrodzenia",
+            "slug": "prawo-do-wynagrodzenia"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawo do zezwalania na korzystanie z opracowa\u0144",
+            "slug": "prawo-do-zezwalania-na-korzystanie-z-opracowan"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "uznanie autorstwa",
+            "slug": "uznanie-autorstwa"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "questions.tag",
+        "fields": {
+            "category": 6,
+            "click_count": 0,
+            "name": "CC-BY-NC",
+            "slug": "cc-by-nc"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "questions.tag",
+        "fields": {
+            "category": 6,
+            "click_count": 0,
+            "name": "CC-BY-ND",
+            "slug": "cc-by-nd"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "questions.tag",
+        "fields": {
+            "category": 6,
+            "click_count": 0,
+            "name": "CC-BY-SA",
+            "slug": "cc-by-sa"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "cel informacyjny",
+            "slug": "cel-informacyjny"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "edukacja",
+            "slug": "edukacja"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "komercyjne wykorzystanie",
+            "slug": "komercyjne-wykorzystanie"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "link",
+            "slug": "link"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "mowy publiczne",
+            "slug": "mowy-publiczne"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "nadawanie utworu",
+            "slug": "nadawanie-utworu"
+        }
+    },
+    {
+        "pk": 104,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "nazwa",
+            "slug": "nazwa"
+        }
+    },
+    {
+        "pk": 87,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "niekomercyjne wykorzystanie",
+            "slug": "niekomercyjne-wykorzystanie"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "nieodp\u0142atne korzystanie",
+            "slug": "nieodplatne-korzystanie"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "odp\u0142atne korzystanie",
+            "slug": "odplatne-korzystanie"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "przedruk",
+            "slug": "przedruk"
+        }
+    },
+    {
+        "pk": 107,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "publiczne wy\u015bwietlenie",
+            "slug": "publiczne-wyswietlenie"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "reklama",
+            "slug": "reklama"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "reprografia",
+            "slug": "reprografia"
+        }
+    },
+    {
+        "pk": 105,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "rozpowszechnianie",
+            "slug": "rozpowszechnianie"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony cytat",
+            "slug": "dozwolony-cytat"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek osobisty",
+            "slug": "dozwolony-uzytek-osobisty"
+        }
+    },
+    {
+        "pk": 106,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek prywatny",
+            "slug": "dozwolony-uzytek-prywatny"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "op\u0142aty rekompensacyjne",
+            "slug": "oplaty-rekompensacyjne"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "pojedyncze egzemplarze",
+            "slug": "pojedyncze-egzemplarze"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "s\u0142uszne interesy tw\u00f3rcy",
+            "slug": "sluszne-interesy-tworcy"
+        }
+    },
+    {
+        "pk": 108,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "stosunek towarzyski",
+            "slug": "stosunek-towarzyski"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "trzystopniowy test",
+            "slug": "trzystopniowy-test"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "utw\u00f3r rozpowszechniony",
+            "slug": "utwor-rozpowszechniony"
+        }
+    },
+    {
+        "pk": 98,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "integralno\u015b\u0107 utworu",
+            "slug": "integralnosc-utworu"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "opracowanie",
+            "slug": "opracowanie"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "zbi\u00f3r",
+            "slug": "zbior"
+        }
+    },
+    {
+        "pk": 99,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "zmiany utworu",
+            "slug": "zmiany-utworu"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "ci\u0119\u017car dowodu",
+            "slug": "ciezar-dowodu"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "dochodzenie ochrony za granic\u0105",
+            "slug": "dochodzenie-ochrony-za-granica"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "naruszenie autorskich praw osobistych",
+            "slug": "naruszenie-autorskich-praw-osobistych"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "plagiat",
+            "slug": "plagiat"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "wykazanie naruszenia",
+            "slug": "wykazanie-naruszenia"
+        }
+    },
+    {
+        "pk": 102,
+        "model": "questions.tag",
+        "fields": {
+            "category": 11,
+            "click_count": 0,
+            "name": "materia\u0142y urz\u0119dowe",
+            "slug": "materialy-urzedowe"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "questions.tag",
+        "fields": {
+            "category": 11,
+            "click_count": 0,
+            "name": "wygasanie ochrony",
+            "slug": "wygasanie-ochrony"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "odst\u0105pienie",
+            "slug": "odstapienie"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "orygina\u0142",
+            "slug": "oryginal"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "przenoszenie autorskich praw maj\u0105tkowych",
+            "slug": "przenoszenie-autorskich-praw-majatkowych"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "spadkobiercy",
+            "slug": "spadkobiercy"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "wypowiedzenie",
+            "slug": "wypowiedzenie"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "zasada specyfikacji p\u00f3l eksploatacji",
+            "slug": "zasada-specyfikacji-pol-eksploatacji"
+        }
+    },
+    {
+        "pk": 93,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "znajdowanie uprawnionego",
+            "slug": "znajdowanie-uprawnionego"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "indywidualna tw\u00f3rczo\u015b\u0107",
+            "slug": "indywidualna-tworczosc"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "utwory pracownicze",
+            "slug": "utwory-pracownicze"
+        }
+    },
+    {
+        "pk": 95,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "utwory u\u017cytkowe",
+            "slug": "utwory-uzytkowe"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "wynik dzia\u0142ania programu",
+            "slug": "wynik-dzialania-programu"
+        }
+    },
+    {
+        "pk": 101,
+        "model": "questions.tag",
+        "fields": {
+            "category": 14,
+            "click_count": 0,
+            "name": "informacja publiczna",
+            "slug": "informacja-publiczna"
+        }
+    },
+    {
+        "pk": 103,
+        "model": "questions.tag",
+        "fields": {
+            "category": 14,
+            "click_count": 0,
+            "name": "ponowne wykorzystanie informacji publicznej",
+            "slug": "ponowne-wykorzystanie-informacji-publicznej"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "questions.tag",
+        "fields": {
+            "category": 15,
+            "click_count": 0,
+            "name": "tabele wynagrodze\u0144",
+            "slug": "tabele-wynagrodzen"
+        }
+    },
+    {
+        "pk": 154,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "publiczne udost\u0119pnianie",
+            "slug": "publiczne-udostepnianie"
+        }
+    },
+    {
+        "pk": 155,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "50% koszty uzyskania przychodu",
+            "slug": "50-koszty-uzyskania-przychodu"
+        }
+    },
+    {
+        "pk": 156,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "art. 18 pr. aut.",
+            "slug": "art-18-pr-aut"
+        }
+    },
+    {
+        "pk": 157,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "egzekucja z praw autorskich",
+            "slug": "egzekucja-z-praw-autorskich"
+        }
+    },
+    {
+        "pk": 158,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "ustawa o j\u0119zyku polskim",
+            "slug": "ustawa-o-jezyku-polskim"
+        }
+    },
+    {
+        "pk": 159,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "j\u0119zyk umowy",
+            "slug": "jezyk-umowy"
+        }
+    },
+    {
+        "pk": 160,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "art. 33 pr. aut.",
+            "slug": "art-33-pr-aut"
+        }
+    },
+    {
+        "pk": 161,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "utwory osierocone",
+            "slug": "utwory-osierocone"
+        }
+    },
+    {
+        "pk": 162,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "art. 77 pr. aut.",
+            "slug": "art-77-pr-aut"
+        }
+    },
+    {
+        "pk": 130,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 28 pr. aut.",
+            "slug": "art-28-pr-aut"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 31 pr. aut.",
+            "slug": "art-31-pr-aut"
+        }
+    },
+    {
+        "pk": 147,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 32 pr. aut.",
+            "slug": "art-32-pr-aut"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 47 pr. aut.",
+            "slug": "art-47-pr-aut"
+        }
+    },
+    {
+        "pk": 145,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 51 pr. aut.",
+            "slug": "art-51-pr-aut"
+        }
+    },
+    {
+        "pk": 114,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 81 pr. aut.",
+            "slug": "art-81-pr-aut"
+        }
+    },
+    {
+        "pk": 123,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 9 pr. aut.",
+            "slug": "art-9-pr-aut"
+        }
+    },
+    {
+        "pk": 96,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "dobra osobiste",
+            "slug": "dobra-osobiste"
+        }
+    },
+    {
+        "pk": 152,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "praca dyplomowa",
+            "slug": "praca-dyplomowa"
+        }
+    },
+    {
+        "pk": 121,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "Polskie Normy",
+            "slug": "polskie-normy"
+        }
+    },
+    {
+        "pk": 109,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "utw\u00f3r",
+            "slug": "utwor"
+        }
+    },
+    {
+        "pk": 94,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "wzory przemys\u0142owe",
+            "slug": "wzory-przemyslowe"
+        }
+    },
+    {
+        "pk": 127,
+        "model": "questions.tag",
+        "fields": {
+            "category": 4,
+            "click_count": 0,
+            "name": "znaki towarowe",
+            "slug": "znaki-towarowe"
+        }
+    },
+    {
+        "pk": 153,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "pierwsze\u0144stwo publikacji",
+            "slug": "pierwszenstwo-publikacji"
+        }
+    },
+    {
+        "pk": 116,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawo do autorstwa",
+            "slug": "prawo-do-autorstwa"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "prawo do wyda\u0144 naukowych i krytycznych",
+            "slug": "prawo-do-wydan-naukowych-i-krytycznych"
+        }
+    },
+    {
+        "pk": 117,
+        "model": "questions.tag",
+        "fields": {
+            "category": 5,
+            "click_count": 0,
+            "name": "pseudonim",
+            "slug": "pseudonim"
+        }
+    },
+    {
+        "pk": 131,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "biblioteka cyfrowa",
+            "slug": "biblioteka-cyfrowa"
+        }
+    },
+    {
+        "pk": 138,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "cytat",
+            "slug": "cytat"
+        }
+    },
+    {
+        "pk": 135,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "fragment utworu",
+            "slug": "fragment-utworu"
+        }
+    },
+    {
+        "pk": 136,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "kola\u017c",
+            "slug": "kolaz"
+        }
+    },
+    {
+        "pk": 143,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "koncert",
+            "slug": "koncert"
+        }
+    },
+    {
+        "pk": 151,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "moda",
+            "slug": "moda"
+        }
+    },
+    {
+        "pk": 146,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "publiczne wystawienie",
+            "slug": "publiczne-wystawienie"
+        }
+    },
+    {
+        "pk": 129,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "terminale",
+            "slug": "terminale"
+        }
+    },
+    {
+        "pk": 122,
+        "model": "questions.tag",
+        "fields": {
+            "category": 7,
+            "click_count": 0,
+            "name": "zwielokrotnienie",
+            "slug": "zwielokrotnienie"
+        }
+    },
+    {
+        "pk": 128,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek biblioteczny",
+            "slug": "dozwolony-uzytek-biblioteczny"
+        }
+    },
+    {
+        "pk": 90,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek edukacyjny",
+            "slug": "dozwolony-uzytek-edukacyjny"
+        }
+    },
+    {
+        "pk": 110,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "dozwolony u\u017cytek naukowy",
+            "slug": "dozwolony-uzytek-naukowy"
+        }
+    },
+    {
+        "pk": 137,
+        "model": "questions.tag",
+        "fields": {
+            "category": 8,
+            "click_count": 0,
+            "name": "wskazywanie \u017ar\u00f3d\u0142a",
+            "slug": "wskazywanie-zrodla"
+        }
+    },
+    {
+        "pk": 133,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 14 u\u015bude",
+            "slug": "art-14-usude"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "questions.tag",
+        "fields": {
+            "category": 3,
+            "click_count": 0,
+            "name": "art. 20 pr. aut.",
+            "slug": "art-20-pr-aut"
+        }
+    },
+    {
+        "pk": 126,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "cudze materia\u0142y",
+            "slug": "cudze-materialy"
+        }
+    },
+    {
+        "pk": 120,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "niezale\u017cna tw\u00f3rczo\u015b\u0107",
+            "slug": "niezalezna-tworczosc"
+        }
+    },
+    {
+        "pk": 113,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "t\u0142umaczenie",
+            "slug": "tlumaczenie"
+        }
+    },
+    {
+        "pk": 148,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "utw\u00f3r inspirowany",
+            "slug": "utwor-inspirowany"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "questions.tag",
+        "fields": {
+            "category": 9,
+            "click_count": 0,
+            "name": "utw\u00f3r wsp\u00f3\u0142autorski",
+            "slug": "utwor-wspolautorski"
+        }
+    },
+    {
+        "pk": 132,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "bezpieczna przysta\u0144",
+            "slug": "bezpieczna-przystan"
+        }
+    },
+    {
+        "pk": 124,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "dochodzenie ochrony",
+            "slug": "dochodzenie-ochrony"
+        }
+    },
+    {
+        "pk": 142,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "domniemanie niewinno\u015bci",
+            "slug": "domniemanie-niewinnosci"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "naruszenie autorskich praw maj\u0105tkowych",
+            "slug": "naruszenie-autorskich-praw-majatkowych"
+        }
+    },
+    {
+        "pk": 134,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "us\u0142ugi hostingowe",
+            "slug": "uslugi-hostingowe"
+        }
+    },
+    {
+        "pk": 111,
+        "model": "questions.tag",
+        "fields": {
+            "category": 10,
+            "click_count": 0,
+            "name": "wykazanie autorstwa",
+            "slug": "wykazanie-autorstwa"
+        }
+    },
+    {
+        "pk": 115,
+        "model": "questions.tag",
+        "fields": {
+            "category": 11,
+            "click_count": 0,
+            "name": "termin wyga\u015bni\u0119cia ochrony",
+            "slug": "termin-wygasniecia-ochrony"
+        }
+    },
+    {
+        "pk": 139,
+        "model": "questions.tag",
+        "fields": {
+            "category": 11,
+            "click_count": 0,
+            "name": "proste informacje prasowe",
+            "slug": "proste-informacje-prasowe"
+        }
+    },
+    {
+        "pk": 144,
+        "model": "questions.tag",
+        "fields": {
+            "category": 11,
+            "click_count": 0,
+            "name": "wyczerpanie prawa",
+            "slug": "wyczerpanie-prawa"
+        }
+    },
+    {
+        "pk": 119,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "forma pisemna",
+            "slug": "forma-pisemna"
+        }
+    },
+    {
+        "pk": 141,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "legalny posiadacz",
+            "slug": "legalny-posiadacz"
+        }
+    },
+    {
+        "pk": 150,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "licencje",
+            "slug": "licencje"
+        }
+    },
+    {
+        "pk": 149,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "sublicencje",
+            "slug": "sublicencje"
+        }
+    },
+    {
+        "pk": 118,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "umowa wydawnicza",
+            "slug": "umowa-wydawnicza"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "questions.tag",
+        "fields": {
+            "category": 12,
+            "click_count": 0,
+            "name": "zgoda uprawnionego",
+            "slug": "zgoda-uprawnionego"
+        }
+    },
+    {
+        "pk": 125,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "postacie",
+            "slug": "postacie"
+        }
+    },
+    {
+        "pk": 112,
+        "model": "questions.tag",
+        "fields": {
+            "category": 13,
+            "click_count": 0,
+            "name": "utwory plastyczne",
+            "slug": "utwory-plastyczne"
+        }
+    },
+    {
+        "pk": 140,
+        "model": "questions.tag",
+        "fields": {
+            "category": 15,
+            "click_count": 0,
+            "name": "wynagrodzenia niezbywalne",
+            "slug": "wynagrodzenia-niezbywalne"
+        }
+    },
+    {
+        "pk": 164,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "utw\u00f3r nieuko\u0144czony",
+            "slug": "utwor-nieukonczony"
+        }
+    },
+    {
+        "pk": 165,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "jednostki organizacyjne",
+            "slug": "jednostki-organizacyjne"
+        }
+    },
+    {
+        "pk": 163,
+        "model": "questions.tag",
+        "fields": {
+            "category": null,
+            "click_count": 0,
+            "name": "pierwsze udost\u0119pnienie publiczno\u015bci",
+            "slug": "pierwsze-udostepnienie-publicznosci"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "przepisy prawa",
+            "slug": "przepisy-prawa"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "przedmioty ochrony",
+            "slug": "przedmioty-ochrony"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "rodzaje praw",
+            "slug": "rodzaje-praw"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "licencje CC",
+            "slug": "licencje-cc"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "sposoby wykorzystania",
+            "slug": "sposoby-wykorzystania"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "dozwolony u\u017cytek",
+            "slug": "dozwolony-uzytek"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "cudza tw\u00f3rczo\u015b\u0107",
+            "slug": "cudza-tworczosc"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "odpowiedzialno\u015b\u0107",
+            "slug": "odpowiedzialnosc"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "domena publiczna",
+            "slug": "domena-publiczna"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "umowy",
+            "slug": "umowy"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "zakres ochrony",
+            "slug": "zakres-ochrony"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "zasoby publiczne",
+            "slug": "zasoby-publiczne"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "questions.tagcategory",
+        "fields": {
+            "name": "organizacje zbiorowego zarz\u0105dzania",
+            "slug": "organizacje-zbiorowego-zarzadzania"
+        }
+    }
+]
