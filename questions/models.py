@@ -32,7 +32,8 @@ class Tag(TagBase):
         return slug
 
     category = models.ForeignKey(TagCategory, blank = True, null = True, on_delete = models.SET_NULL)
-        
+    click_count = models.IntegerField(null = False, default = 0)
+    
     class Meta:
         verbose_name = _("Tag")
         verbose_name_plural = _("Tags")

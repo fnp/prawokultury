@@ -36,6 +36,8 @@ class QuestionListView(ListView):
                 ).order_by('-published_at')
         if self.tag:
             qs = qs.filter(tags=self.tag)
+            self.tag.click_count += 1
+            self.tag.save()
         return qs
 
     def get_context_data(self, *args, **kwargs):
