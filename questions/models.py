@@ -12,6 +12,18 @@ from taggit_autosuggest.managers import TaggableManager
 from fnpdjango.utils.text.slughifi import slughifi
 
 
+class TagCategory(models.Model):
+    name = models.CharField(verbose_name=_('Name'), unique = True, max_length = 100)
+    slug = models.SlugField(verbose_name=_('Slug'), unique = True, max_length = 100)
+
+    class Meta:
+        verbose_name = _("Tag Category")
+        verbose_name_plural = _("Tag Categries")
+        
+    def __unicode__(self):
+        return self.name
+    
+    
 class Tag(TagBase):
     def slugify(self, tag, i=None):
         slug = slughifi(tag)
@@ -19,6 +31,8 @@ class Tag(TagBase):
             slug += "_%d" % i
         return slug
 
+    category = models.ForeignKey(TagCategory, blank = True, null = True, on_delete = models.SET_NULL)
+        
     class Meta:
         verbose_name = _("Tag")
         verbose_name_plural = _("Tags")

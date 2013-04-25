@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Question, Tag
+from .models import Question, Tag, TagCategory
 
 class QuestionAdmin(admin.ModelAdmin):
     model = Question
@@ -23,3 +23,4 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Tag)
+admin.site.register(TagCategory)
