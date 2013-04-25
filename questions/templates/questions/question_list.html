@@ -28,9 +28,11 @@ technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
 doświadczenie doradcze w tej tematyce.</p>
 
 Kategorie:
+<div>
 {% for category in tag_categories %}
-    <p>{{category}} {{category.click_count}}</p>
+        <span style="font-size: {{category.factor}}em;">{{category}}</span>
 {% endfor %}
+</div>
 
 Tematy: 
 {% if tag %}<a href=".">wszystkie</a>
