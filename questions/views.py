@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .forms import QuestionForm
-from .models import Question, Tag
+from .models import Question, Tag, TagCategory
 
 
 class QuestionFormView(FormView):
@@ -45,4 +45,5 @@ class QuestionListView(ListView):
         context['tags'] = Tag.objects.filter(items__question__published=True
             ).annotate(c=models.Count('items__tag')).order_by('-c', 'slug')
         context['tag'] = self.tag
+        context['tag_categories'] = TagCategory.objects.all().annotate(click_count = models.Sum('tags__click_count'))
         return context

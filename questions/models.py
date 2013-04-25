@@ -18,7 +18,7 @@ class TagCategory(models.Model):
 
     class Meta:
         verbose_name = _("Tag Category")
-        verbose_name_plural = _("Tag Categries")
+        verbose_name_plural = _("Tag Categories")
         
     def __unicode__(self):
         return self.name
@@ -31,7 +31,7 @@ class Tag(TagBase):
             slug += "_%d" % i
         return slug
 
-    category = models.ForeignKey(TagCategory, blank = True, null = True, on_delete = models.SET_NULL)
+    category = models.ForeignKey(TagCategory, blank = True, null = True, on_delete = models.SET_NULL, related_name = 'tags')
     click_count = models.IntegerField(null = False, default = 0)
     
     class Meta:
