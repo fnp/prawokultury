@@ -53,7 +53,7 @@ class QuestionListView(ListView):
         minimum_factor = 0.7
         for category in context['tag_categories']:
             annotated_categories[category.id] = category
-            category.factor =  '%.2f' % (minimum_factor + (float(category.click_count) / all_tag_clicks_count))
+            category.factor =  '%.2f' % (minimum_factor + ((float(category.click_count) / all_tag_clicks_count) if all_tag_clicks_count else 0))
         for tag in tags:
             if tag.category:
                 category = annotated_categories[tag.category.id]
