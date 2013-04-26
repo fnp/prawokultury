@@ -8,7 +8,7 @@
        <title>{% block "titleextra" %}{% endblock %}{% trans "Right to Culture" %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
-
+        {% block "extra_css" %}{% endblock %}
         <meta charset="UTF-8" />
         <meta property='og:url' content='{% block "ogurl" %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:title' content='{% block "ogtitle" %}{% trans "Right to Culture" %}{% endblock %}' />
@@ -119,5 +119,6 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
     {{ piwik_tag|safe }}
+    {% block "extra_js" %}{% endblock %}
     </body>
 </html>

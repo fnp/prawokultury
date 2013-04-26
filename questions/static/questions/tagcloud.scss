@@ -1,0 +1,12 @@
+#questions-categories {
+    margin-bottom:10px;
+    a.selected {
+        cursor: default;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.questions-tags-group {
+    display: none;
+}

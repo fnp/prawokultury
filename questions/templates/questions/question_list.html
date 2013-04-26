@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load pagination_tags fnp_prevnext %}
+{% load compressed %}
 
 {% block "titleextra" %}Pierwsza pomoc w prawie autorskim :: {% endblock %}
 {% block "body" %}
@@ -27,23 +28,29 @@ autorem szeregu publikacji naukowych poświęconych korzystaniu z
 technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
 doświadczenie doradcze w tej tematyce.</p>
 
-Kategorie:
-<div>
-{% for category in tag_categories %}
-        <span style="font-size: {{category.factor}}em;">{{category}}</span>
-{% endfor %}
+<div id="questions-filter">
+
+    {% if tag %}<a href=".">Wyświetl wszystkie</a> lub w {% else %}W{% endif %}ybierz kategorię tematów:
+    <div id="questions-categories">
+    <a href="#" data-category-id="0">bez kategorii</a>
+    {% for category in tag_categories %} /
+            <a href="#" style="font-size: {{category.factor}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
+    {% endfor %}
+    </div>
+
+    <div id="questions-subjects">
+    {% for category_id, tag_list in tag_lists.items %}
+        <div class="questions-tags-group" data-category-id="{{category_id}}">
+        Wyświetl tylko na temat:
+        {% for atag in tag_list %} {% if not forloop.first %}/{% endif %}
+            {% if atag == tag %}<strong>{{ atag }}</strong>
+            {% else %}<a href="?tag={{ atag.slug }}">{{ atag }}</a>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
 </div>
-
-Tematy: 
-{% if tag %}<a href=".">wszystkie</a>
-{% else %}<strong>wszystkie</strong>
-{% endif %}
-
-{% for atag in tags %} /
-    {% if atag == tag %}<strong>{{ atag }}</strong>
-    {% else %}<a href="?tag={{ atag.slug }}">{{ atag }}</a>
-    {% endif %}
-{% endfor %}
 
 <h2>Odpowiedzi na już zadane pytania
     {% if tag %}na temat: {{ tag }}{% endif %}
@@ -63,4 +70,12 @@ Tematy:
 {% prevnext %}
 
 
+{% endblock %}
+
+{% block "extra_css" %}
+    {% compressed_css 'questions' %}
+{% endblock %}
+
+{% block "extra_js" %}
+    {% compressed_js 'questions' %}
 {% endblock %}
