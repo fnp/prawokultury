@@ -49,6 +49,7 @@ class QuestionListView(ListView):
         tags = Tag.objects.filter(items__question__published=True
             ).annotate(c=models.Count('items__tag')).order_by('category__slug', '-c', 'slug')
         all_tag_clicks_count = Tag.objects.all().aggregate(models.Sum('click_count'))['click_count__sum']
+        uncategorized_tag_clicks_count = Tag.objects.filter(category=None).aggregate(models.Sum('click_count'))['click_count__sum']
         annotated_categories = dict()
         minimum_factor = 0.7
         for category in context['tag_categories']:
@@ -56,7 +57,9 @@ class QuestionListView(ListView):
             category.factor =  '%.2f' % (minimum_factor + ((float(category.click_count) / all_tag_clicks_count) if all_tag_clicks_count else 0))
         for tag in tags:
             if tag.category:
-                category = annotated_categories[tag.category.id]
-                tag.factor = '%.2f' % (minimum_factor + ((float(tag.click_count) / category.click_count) if category.click_count else 0))
+                click_count = annotated_categories[tag.category.id].click_count
+            else:
+                click_count = uncategorized_tag_clicks_count
+            tag.factor = '%.2f' % (minimum_factor + ((float(tag.click_count) / click_count) if click_count else 0))
             context['tag_lists'].setdefault(tag.category.id if tag.category else 0, []).append(tag)
         return context
