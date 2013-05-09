@@ -29,8 +29,8 @@ technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
 doświadczenie doradcze w tej tematyce.</p>
 
 <div id="questions-filter">
-
-    {% if tag %}<a href=".">Wyświetl wszystkie</a> lub w{% else %}W{% endif %}ybierz kategorię tematów:
+    <h2>Filtruj pytania</h2>
+    Wybierz kategorię tematów:
     <div id="questions-categories">
     <a href="#" data-category-id="0">bez kategorii</a>
     {% for category in tag_categories %} /
@@ -49,6 +49,9 @@ doświadczenie doradcze w tej tematyce.</p>
         {% endfor %}
         </div>
     {% endfor %}
+    </div>
+    <div>
+        {% if tag %}<a href=".">Pokaż wszystkie pytania</a>{% endif %}
     </div>
 </div>
 
