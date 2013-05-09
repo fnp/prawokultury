@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load pagination_tags fnp_prevnext %}
+{% load compressed %}
 
 {% block "titleextra" %}Pierwsza pomoc w prawie autorskim :: {% endblock %}
 {% block "body" %}
@@ -27,16 +28,32 @@ autorem szeregu publikacji naukowych poświęconych korzystaniu z
 technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
 doświadczenie doradcze w tej tematyce.</p>
 
-Tematy: 
-{% if tag %}<a href=".">wszystkie</a>
-{% else %}<strong>wszystkie</strong>
-{% endif %}
+<div id="questions-filter">
+    <h2>Filtruj pytania</h2>
+    Wybierz kategorię tematów:
+    <div id="questions-categories">
+    <a href="#" {% if not tag.category %}class="selected"{% endif %} data-category-id="0">bez kategorii</a>
+    {% for category in tag_categories %} /
+            <a href="#" style="font-size: {{category.cloud_size}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
+    {% endfor %}
+    </div>
 
-{% for atag in tags %} /
-    {% if atag == tag %}<strong>{{ atag }}</strong>
-    {% else %}<a href="?tag={{ atag.slug }}">{{ atag }}</a>
-    {% endif %}
-{% endfor %}
+    <div id="questions-subjects">
+    {% for category_id, tag_list in tag_lists.items %}
+        <div class="questions-tags-group" data-category-id="{{category_id}}">
+        Wyświetl tylko na temat:
+        {% for atag in tag_list %} {% if not forloop.first %}/{% endif %}
+            {% if atag == tag %}<strong style="font-size: {{atag.cloud_size}}em;">{{ atag }}</strong>
+            {% else %}<a href="?tag={{ atag.slug }}" style="font-size: {{atag.cloud_size}}em;">{{ atag }}</a>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+    <div>
+        {% if tag %}<a href=".">Pokaż wszystkie pytania</a>{% endif %}
+    </div>
+</div>
 
 <h2>Odpowiedzi na już zadane pytania
     {% if tag %}na temat: {{ tag }}{% endif %}
@@ -56,4 +73,12 @@ Tematy:
 {% prevnext %}
 
 
+{% endblock %}
+
+{% block "extra_css" %}
+    {% compressed_css 'questions' %}
+{% endblock %}
+
+{% block "extra_js" %}
+    {% compressed_js 'questions' %}
 {% endblock %}

@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 from .forms import QuestionForm
-from .models import Question, Tag
+from .models import Question, Tag, TagCategory
 
 
 class QuestionFormView(FormView):
@@ -36,11 +36,34 @@ class QuestionListView(ListView):
                 ).order_by('-published_at')
         if self.tag:
             qs = qs.filter(tags=self.tag)
+            self.tag.click_count += 1
+            self.tag.save()
         return qs
 
     def get_context_data(self, *args, **kwargs):
+        def get_cloud_size(clicks, relate_to):
+            return '%.2f' % (0.7 + (float(clicks) / relate_to if relate_to != 0 else 0))
+        
         context = super(QuestionListView, self).get_context_data(*args, **kwargs)
-        context['tags'] = Tag.objects.filter(items__question__published=True
-            ).annotate(c=models.Count('items__tag')).order_by('-c', 'slug')
         context['tag'] = self.tag
+        context['tag_categories'] = TagCategory.objects.all().annotate(click_count = models.Sum('tags__click_count'))
+        context['tag_lists'] = dict()
+        
+        annotated_categories = dict()
+        all_tags_click_count = Tag.objects.all().aggregate(models.Sum('click_count'))['click_count__sum']
+        for category in context['tag_categories']:
+            annotated_categories[category.id] = category
+            category.cloud_size =  get_cloud_size(category.click_count, all_tags_click_count)
+        
+        tags = Tag.objects.filter(items__question__published=True) \
+                  .annotate(c=models.Count('items__tag')).order_by('category__slug', '-c', 'slug')
+        uncategorized_tags_click_count = Tag.objects.filter(category=None).aggregate(models.Sum('click_count'))['click_count__sum']
+        for tag in tags:
+            if tag.category:
+                category_click_count = annotated_categories[tag.category.id].click_count
+            else:
+                category_click_count = uncategorized_tags_click_count
+            tag.cloud_size = get_cloud_size(tag.click_count, category_click_count)
+            context['tag_lists'].setdefault(tag.category.id if tag.category else 0, []).append(tag)
+        
         return context

@@ -32,6 +32,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'compressed/base.css',
     },
+    'questions': {
+        'source_filenames': (
+            'questions/tagcloud.scss',
+        ),
+        'output_filename': 'compressed/questions.css'
+    }
 }
 PIPELINE_JS = {
     'base': {
@@ -42,6 +48,12 @@ PIPELINE_JS = {
         ),
         'output_filename': 'compressed/base.js',
     },
+    'questions': {
+        'source_filenames': (
+            'questions/tagcloud.js',
+        ),
+        'output_filename': 'compressed/questions.js'
+    }
 }
 
 PIPELINE_COMPILERS = (
