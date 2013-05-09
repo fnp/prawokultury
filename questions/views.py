@@ -65,5 +65,6 @@ class QuestionListView(ListView):
                 category_click_count = uncategorized_tags_click_count
             tag.cloud_size = get_cloud_size(tag.click_count, category_click_count)
             context['tag_lists'].setdefault(tag.category.id if tag.category else 0, []).append(tag)
+        context['has_uncategorized_tags'] = 0 in context['tag_lists']
         
         return context
