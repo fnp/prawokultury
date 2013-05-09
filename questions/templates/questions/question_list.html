@@ -33,7 +33,7 @@ doświadczenie doradcze w tej tematyce.</p>
     Wybierz kategorię tematów:
     <div id="questions-categories">
     <a href="#" {% if tag and not tag.category %}class="selected"{% endif %} data-category-id="0">bez kategorii</a>
-    {% for category in tag_categories %} /
+    {% for category in tag_categories %}
             <a href="#" style="font-size: {{category.cloud_size}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
     {% endfor %}
     </div>
@@ -42,7 +42,7 @@ doświadczenie doradcze w tej tematyce.</p>
     {% for category_id, tag_list in tag_lists.items %}
         <div class="questions-tags-group" data-category-id="{{category_id}}">
         Wyświetl tylko na temat:
-        {% for atag in tag_list %} {% if not forloop.first %}/{% endif %}
+        {% for atag in tag_list %}
             {% if atag == tag %}<strong style="font-size: {{atag.cloud_size}}em;">{{ atag }}</strong>
             {% else %}<a href="?tag={{ atag.slug }}" style="font-size: {{atag.cloud_size}}em;">{{ atag }}</a>
             {% endif %}
