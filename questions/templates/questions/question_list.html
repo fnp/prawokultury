@@ -32,7 +32,7 @@ doświadczenie doradcze w tej tematyce.</p>
     <h2>Filtruj pytania</h2>
     Wybierz kategorię tematów:
     <div id="questions-categories">
-    <a href="#" data-category-id="0">bez kategorii</a>
+    <a href="#" {% if not tag.category %}class="selected"{% endif %} data-category-id="0">bez kategorii</a>
     {% for category in tag_categories %} /
             <a href="#" style="font-size: {{category.factor}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
     {% endfor %}
