@@ -34,7 +34,7 @@ doświadczenie doradcze w tej tematyce.</p>
     <div id="questions-categories">
     <a href="#" {% if not tag.category %}class="selected"{% endif %} data-category-id="0">bez kategorii</a>
     {% for category in tag_categories %} /
-            <a href="#" style="font-size: {{category.factor}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
+            <a href="#" style="font-size: {{category.cloud_size}}em;" {% if tag.category == category %}class="selected"{% endif %} data-category-id="{{category.id}}">{{category}}</a>
     {% endfor %}
     </div>
 
@@ -43,8 +43,8 @@ doświadczenie doradcze w tej tematyce.</p>
         <div class="questions-tags-group" data-category-id="{{category_id}}">
         Wyświetl tylko na temat:
         {% for atag in tag_list %} {% if not forloop.first %}/{% endif %}
-            {% if atag == tag %}<strong style="font-size: {{atag.factor}}em;">{{ atag }}</strong>
-            {% else %}<a href="?tag={{ atag.slug }}" style="font-size: {{atag.factor}}em;">{{ atag }}</a>
+            {% if atag == tag %}<strong style="font-size: {{atag.cloud_size}}em;">{{ atag }}</strong>
+            {% else %}<a href="?tag={{ atag.slug }}" style="font-size: {{atag.cloud_size}}em;">{{ atag }}</a>
             {% endif %}
         {% endfor %}
         </div>
