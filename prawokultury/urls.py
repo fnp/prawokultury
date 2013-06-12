@@ -14,8 +14,6 @@ from migdal.urls import urlpatterns as migdal_urlpatterns
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
@@ -36,7 +34,14 @@ if 'django_cas' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         (r'^accounts/login/$', 'django_cas.views.login'),
         (r'^accounts/logout/$', 'django_cas.views.logout'),
+        (r'^admin/login/$', 'django_cas.views.login'),
+        (r'^admin/logout/$', 'django_cas.views.logout'),
     )
+
+urlpatterns += patterns('',
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+)
 
 urlpatterns += i18n_patterns('',
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
