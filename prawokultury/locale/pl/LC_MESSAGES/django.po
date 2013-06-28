@@ -89,11 +89,9 @@ msgstr "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licenc
 
 #: templates/contact/register/form.html:8
 msgid ""
-"Conference registration limit has been reached.\n"
-"We are now accepting speaker submissions only."
+"Conference registration limit has been reached."
 msgstr ""
-"Limit rejestracji uczestników konferencji został osiągnięty.\n"
-"Obecnie przyjmujemy tylko zgłoszenia prezentacji."
+"Limit rejestracji uczestników konferencji został osiągnięty."
 
 #: templates/contact/register/mail_body.txt:2
 #: templates/contact/register/mail_subject.txt:1

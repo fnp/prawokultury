@@ -27,7 +27,8 @@ h1 {
 .warning {
   border: 1px solid #ddd;
   padding: 1em;
-  background: #ffd; }
+  background: #ffd;
+  font-size: 1.3em; }
 
 .notice {
   font-size: 1.3em; }
