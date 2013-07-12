@@ -12,7 +12,7 @@ django-migdal>=0.3.1,<0.4
 fnpdjango>=0.1.5,<0.2
 
 textile
-django-markupfield
+django-markupfield<1.1  # 1.1 wants Django-1.5
 django-gravatar
 django_comments_xtd==1.0a5
 django-pipeline>=1.2,<1.3
