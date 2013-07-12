@@ -15,7 +15,7 @@ django-pagination
 -e git+git://github.com/fnp/django-migdal.git@734cd58d3f12c5397b42c1ae122c947500386014#egg=django-migdal
 
 textile
-django-markupfield
+django-markupfield<1.1  # 1.1 wants Django-1.5
 django-gravatar
 django_comments_xtd
 django-pipeline>=1.2,<1.3
