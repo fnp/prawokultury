@@ -72,10 +72,13 @@
   .entry-info .entry-wrapped h1,
   .entry-publications .entry-wrapped h1 {
     font-size: 2em; }
+  .entry-info .entry-wrapped img.entry-picture,
+  .entry-publications .entry-wrapped img.entry-picture {
+    margin-top: 1.5em; }
 
 .entry-wrapped img.entry-picture {
   float: left;
-  margin: 1.5em 1.5em 1em 0; }
+  margin: 0 1.5em 1em 0; }
 
 .entry-wrapped .lead ul {
   overflow: hidden;
