@@ -115,7 +115,12 @@
 
 .entry-wrapped img.entry-picture {
     float: left;
-    margin: 0 1.5em 1em 0;
+    margin: 1.5em 1.5em 1em 0;
+}
+
+.entry-wrapped .lead ul {
+    overflow: hidden;
+    padding-left: 16px;
 }
 
 .submit-link {
