@@ -16,11 +16,11 @@ class RegistrationForm(ContactForm):
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
     title = forms.CharField(label=_('Title of presentation'), 
-            max_length=256, required=False)
+            max_length=256, required=False, widget = forms.HiddenInput)
     presentation = forms.FileField(label=_('Presentation'),
-            required=False)
+            required=False, widget = forms.HiddenInput)
     summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
-            widget=forms.Textarea, max_length=1800, required=False)
+            widget=forms.HiddenInput, max_length=1800, required=False)
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
         help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
