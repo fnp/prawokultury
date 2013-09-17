@@ -18,6 +18,7 @@
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
         <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:locale' content='pl_PL' />
+        {% block "headextra" %}{% endblock %}
     </head>
     <body>
     <div id="body">
