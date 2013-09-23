@@ -47,6 +47,7 @@ urlpatterns += i18n_patterns('',
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
     url(r'^comments/', include('django_comments_xtd.urls')),
     url(r'^pierwsza-pomoc/', include('questions.urls')),
+    url(string_concat(r'^', _('shop'), r'/'), include('shop.urls')),
 ) + migdal_urlpatterns 
 
 if settings.DEBUG:

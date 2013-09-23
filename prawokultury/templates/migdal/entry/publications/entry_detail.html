@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load comments i18n %}
+{% load fnp_common migdal_tags fnp_share shop_tags %}
+
+
+{% block "body" %}
+
+{% if not entry.published %}
+    <p class="warning">{% trans "This entry hasn't been published yet." %}</p>
+{% endif %}
+
+<div class="entry entry-detail entry-{{ entry.type }}">
+<div class="entry-wrapped">
+
+{% entry_begin entry 1 %}
+<div class="body">
+{{ entry.body }}
+
+
+
+
+{% if entry.offer_set.all.exists %}
+
+{% order_form_for entry.offer_set.all.0 form %}
+
+{% endif %}
+
+
+
+
+{% for inline_html in entry.inline_html %}
+<div class="inline_html">
+    {{ inline_html|safe }}
+</div>
+{% endfor %}
+
+</div>
+
+<div style="clear: both;"></div>
+
+<div class="toolbar">
+<div class="social">
+    {% share object.get_absolute_url object.title %}
+</div>
+</div>
+
+<div style="clear: both"></div>
+
+{% if entry.get_type.commentable %}
+    {% render_comment_list for entry %}
+    <div class="comments">
+    {% entry_comment_form entry %}
+    </div>
+{% endif %}
+</div>
+</div>
+{% endblock %}
+

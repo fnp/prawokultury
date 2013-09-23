@@ -1,0 +1,7 @@
+{% extends "shop/email/base.txt" %}
+{% load i18n %}
+
+
+{% block body %}
+{% blocktrans %}Your payment has been successfully completed.{% endblocktrans %}
+{% endblock %}
