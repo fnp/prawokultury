@@ -94,6 +94,23 @@
             margin-left: .7em;
         }
     }
+
+    .gallery-item {
+        float: left;
+        width: 300px;
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    .gallery-image {
+        height: 250px;
+        width: 300px;
+        display: table-cell;
+        vertical-align: middle;
+        img {
+            margin: 0;
+        }
+    }
 }
 
 .entry-info .entry-wrapped,
