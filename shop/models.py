@@ -27,7 +27,7 @@ class Offer(models.Model):
         ordering = ['entry']
 
     def __unicode__(self):
-        return self.entry.title
+        return unicode(self.entry)
 
     def get_absolute_url(self):
         return self.entry.get_absolute_url()
@@ -121,4 +121,4 @@ def payment_status_changed_listener(sender, instance, old_status, new_status, **
             _('New order has been placed.'),
             'shop/email/payed_managers.txt'
         )
-getpaid.signals.payment_status_changed.connect(payment_status_changed_listener)
+getpaid.signals.payment_status_changed.connect(payment_status_changed_listener, dispatch_uid='shop.models.payment_status_changed_listener')

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 11:13+0100\n"
-"PO-Revision-Date: 2013-10-31 11:25+0100\n"
+"POT-Creation-Date: 2013-10-31 13:23+0100\n"
+"PO-Revision-Date: 2013-10-31 13:23+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Zgoda na przetwarzanie danych"
 msgid "price"
 msgstr "cena"
 
-#: models.py:25 models.py:45
+#: models.py:25 models.py:48
 msgid "offer"
 msgstr "oferta"
 
@@ -66,39 +66,39 @@ msgstr "oferta"
 msgid "offers"
 msgstr "oferty"
 
-#: models.py:46
+#: models.py:49
 msgid "items"
 msgstr "liczba egzemplarzy"
 
-#: models.py:47
+#: models.py:50
 msgid "name"
 msgstr "nazwisko"
 
-#: models.py:48
+#: models.py:51
 msgid "email"
 msgstr "e-mail"
 
-#: models.py:49
+#: models.py:52
 msgid "address"
 msgstr "adres"
 
-#: models.py:50
+#: models.py:53
 msgid "payed at"
 msgstr "zapłacono"
 
-#: models.py:54
+#: models.py:57
 msgid "order"
 msgstr "zamówienie"
 
-#: models.py:55
+#: models.py:58
 msgid "orders"
 msgstr "zamówienie"
 
-#: models.py:113
+#: models.py:117
 msgid "Your payment has been completed."
 msgstr "Twoja płatność została wykonana."
 
-#: models.py:117
+#: models.py:121
 msgid "New order has been placed."
 msgstr "Zostało złożone nowe zamówienie."
 
@@ -137,6 +137,19 @@ msgstr ""
 #: templates/shop/email/payed.txt:8
 msgid "Your order is now being processed: "
 msgstr "Twoje zamówienie jest przetwarzane:"
+
+#: templates/shop/snippets/order_form.html:8
+msgid "Payment and shipping costs"
+msgstr "Koszt płatności i dostawy"
+
+#: templates/shop/snippets/order_form.html:10
+#: templates/shop/snippets/order_form.html:13
+msgid "for each copy"
+msgstr "za każdy egzemplarz"
+
+#: templates/shop/snippets/order_form.html:12
+msgid "Final cost"
+msgstr "Sumaryczny koszt"
 
 #: templates/shop/snippets/order_form.html:18
 msgid "Donate!"
