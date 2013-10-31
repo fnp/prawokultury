@@ -27,3 +27,7 @@ piwik
 
 django-taggit
 django-taggit-autosuggest
+
+django-getpaid>=1.4,<1.5
+django-celery>=3.0.11
+django-kombu

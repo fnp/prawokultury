@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-17 10:41+0200\n"
-"PO-Revision-Date: 2013-01-14 16:09+0100\n"
+"POT-Creation-Date: 2013-10-31 11:29+0100\n"
+"PO-Revision-Date: 2013-10-31 11:30+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2)\n"
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: menu_items.py:15
 msgid "Publications"
@@ -38,9 +38,13 @@ msgstr "Pierwsza pomoc"
 msgid "Guide"
 msgstr "Przewodnik"
 
-#: urls.py:42
+#: urls.py:47
 msgid "events"
 msgstr "wydarzenia"
+
+#: urls.py:50
+msgid "shop"
+msgstr "sklep"
 
 #: settings.d/60-custom.py:5
 msgid "news"
@@ -62,44 +66,44 @@ msgstr "Strona nie znaleziona"
 msgid "The page you were looking for doesn't exist."
 msgstr "Strona, której szukasz, nie istnieje."
 
-#: templates/base.html:8 templates/base.html.py:14 templates/base.html:15
-#: templates/base.html.py:27 templates/base.html:79
+#: templates/base.html:9 templates/base.html.py:15 templates/base.html:16
+#: templates/base.html.py:28 templates/base.html:80
 msgid "Right to Culture"
 msgstr "Prawo kultury"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "Organizer"
 msgstr "Organizator"
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "Modern Poland Foundation"
 msgstr "Fundacja Nowoczesna Polska"
 
-#: templates/base.html:37
+#: templates/base.html:38
 msgid "Sponsor"
 msgstr "Wspierane przez"
 
-#: templates/base.html:40
+#: templates/base.html:41
 msgid "Trust for Civil Society in Central and Eastern Europe"
 msgstr ""
 
-#: templates/base.html:49
+#: templates/base.html:50
 msgid "Search"
 msgstr "Szukaj"
 
-#: templates/base.html:65
+#: templates/base.html:66
 msgid "Upcoming events"
 msgstr "Nadchodzące wydarzenia"
 
-#: templates/base.html:69
+#: templates/base.html:70
 msgid "Ask a lawyer"
 msgstr "Zapytaj prawnika"
 
-#: templates/base.html:83
+#: templates/base.html:84
 msgid "Latest comments"
 msgstr "Ostatnie komentarze"
 
-#: templates/base.html:112
+#: templates/base.html:113
 msgid ""
 "If not explicitly stated otherwise, all texts are licensed under the <a "
 "href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons "
@@ -108,6 +112,14 @@ msgstr ""
 "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a "
 "href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative "
 "Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#: templates/migdal/entry/publications/entry_detail.html:10
+msgid "This entry hasn't been published yet."
+msgstr "Ten wpis nie został jeszcze opublikowany."
+
+#: templates/migdal/entry/publications/entry_detail.html:28
+msgid "Price"
+msgstr "Cena"
 
 #~ msgid "First aid in copyright"
 #~ msgstr "Pierwsza pomoc w prawie autorskim"

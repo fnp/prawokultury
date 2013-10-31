@@ -5,6 +5,7 @@ INSTALLED_APPS = (
     'events',
     'migdal',
     'questions',
+    'shop',
 
     'gravatar',
     'south',
@@ -19,6 +20,11 @@ INSTALLED_APPS = (
     'honeypot',
     'taggit',
     'taggit_autosuggest',
+    'getpaid',
+    'getpaid.backends.payu',
+    'djcelery',
+    'djkombu',
+
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
