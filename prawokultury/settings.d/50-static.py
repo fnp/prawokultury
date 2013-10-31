@@ -42,6 +42,7 @@ PIPELINE_JS = {
     'base': {
         'source_filenames': (
             'js/promobox.js',
+            'shop/shop.js',
 
         ),
         'output_filename': 'compressed/base.js',

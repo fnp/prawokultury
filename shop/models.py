@@ -3,7 +3,7 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from datetime import datetime
-from django.core.mail import send_mail
+from django.core.mail import send_mail, mail_managers
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
@@ -16,8 +16,10 @@ from . import app_settings
 
 class Offer(models.Model):
     """ A fundraiser for a particular book. """
-    entry = models.ForeignKey(Entry)  # filter publications!
+    entry = models.OneToOneField(Entry)  # filter publications!
     price = models.DecimalField(_('price'), decimal_places=2, max_digits=6)
+    cost_const = models.DecimalField(decimal_places=2, max_digits=6)
+    cost_per_item = models.DecimalField(decimal_places=2, max_digits=6, default=0)
 
     class Meta:
         verbose_name = _('offer')
@@ -30,9 +32,11 @@ class Offer(models.Model):
     def get_absolute_url(self):
         return self.entry.get_absolute_url()
 
-    def sum(self):
-        """ The money gathered. """
-        return self.order_payed().aggregate(s=models.Sum('amount'))['s'] or 0
+    def total_per_item(self):
+        return self.price + self.cost_per_item
+
+    def price_per_items(self, items):
+        return self.cost_const + items * self.total_per_item()
 
 
 class Order(models.Model):
@@ -42,6 +46,7 @@ class Order(models.Model):
 
     """
     offer = models.ForeignKey(Offer, verbose_name=_('offer'))
+    items = models.IntegerField(verbose_name=_('items'), default=1)
     name = models.CharField(_('name'), max_length=127, blank=True)
     email = models.EmailField(_('email'), db_index=True)
     address = models.TextField(_('address'), db_index=True)
@@ -54,10 +59,13 @@ class Order(models.Model):
         ordering = ['-payed_at']
 
     def __unicode__(self):
-        return unicode(self.offer)
+        return "%s (%d egz.)" % (unicode(self.offer), self.items)
 
     def get_absolute_url(self):
         return self.offer.get_absolute_url()
+
+    def amount(self):
+        return self.offer.price_per_items(self.items)
 
     def notify(self, subject, template_name, extra_context=None):
         context = {
@@ -74,13 +82,23 @@ class Order(models.Model):
                 fail_silently=False
             )
 
+    def notify_managers(self, subject, template_name, extra_context=None):
+        context = {
+            'order': self,
+            'site': Site.objects.get_current(),
+        }
+        if extra_context:
+            context.update(extra_context)
+        with override(app_settings.DEFAULT_LANGUAGE):
+            mail_managers(subject, render_to_string(template_name, context))
+
 # Register the Order model with django-getpaid for payments.
 getpaid.register_to_payment(Order, unique=False, related_name='payment')
 
 
 def new_payment_query_listener(sender, order=None, payment=None, **kwargs):
     """ Set payment details for getpaid. """
-    payment.amount = order.offer.price
+    payment.amount = order.amount()
     payment.currency = 'PLN'
 getpaid.signals.new_payment_query.connect(new_payment_query_listener)
 
@@ -98,5 +116,9 @@ def payment_status_changed_listener(sender, instance, old_status, new_status, **
         instance.order.notify(
             _('Your payment has been completed.'),
             'shop/email/payed.txt'
+        )
+        instance.order.notify_managers(
+            _('New order has been placed.'),
+            'shop/email/payed_managers.txt'
         )
 getpaid.signals.payment_status_changed.connect(payment_status_changed_listener)

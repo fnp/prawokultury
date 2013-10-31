@@ -30,16 +30,16 @@ class OfferDetailView(FormView):
             self.object = get_object_or_404(Offer, **args)
         return super(OfferDetailView, self).dispatch(request, slug)
 
+    def get(self, *args, **kwargs):
+        return redirect(self.object.get_absolute_url())
+
     def get_context_data(self, *args, **kwargs):
         ctx = super(OfferDetailView, self).get_context_data(*args, **kwargs)
         ctx['entry'] = self.object.entry
         return ctx
 
     def get_form(self, form_class):
-        if self.request.method == 'POST':
-            return form_class(self.object, self.request.POST)
-        else:
-            return form_class(self.object)
+        return form_class(self.object, self.request.POST)
 
     def form_valid(self, form):
         order = form.save()
@@ -50,9 +50,11 @@ class OfferDetailView(FormView):
         return redirect(gateway_url_tuple[0])
 
 
-class ThanksView(TemplateView):
+class ThanksView(DetailView):
+    model = Payment
     template_name = "shop/thanks.html"
 
 
-class NoThanksView(TemplateView):
+class NoThanksView(DetailView):
+    model = Payment
     template_name = "shop/no_thanks.html"

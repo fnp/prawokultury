@@ -5,7 +5,8 @@ MIDDLEWARE_CLASSES = (
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'honeypot.middleware.HoneypotMiddleware',
+    'prawokultury.middleware.ExemptableHoneypotViewMiddleware',
+    'honeypot.middleware.HoneypotResponseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 

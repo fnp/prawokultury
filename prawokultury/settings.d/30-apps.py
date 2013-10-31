@@ -22,6 +22,9 @@ INSTALLED_APPS = (
     'taggit_autosuggest',
     'getpaid',
     'getpaid.backends.payu',
+    'djcelery',
+    'djkombu',
+
 
     'django.contrib.auth',
     'django.contrib.contenttypes',

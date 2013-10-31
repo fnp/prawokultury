@@ -11,8 +11,10 @@ class Migration(SchemaMigration):
         # Adding model 'Offer'
         db.create_table('shop_offer', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('entry', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['migdal.Entry'])),
+            ('entry', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['migdal.Entry'], unique=True)),
             ('price', self.gf('django.db.models.fields.DecimalField')(max_digits=6, decimal_places=2)),
+            ('cost_const', self.gf('django.db.models.fields.DecimalField')(max_digits=6, decimal_places=2)),
+            ('cost_per_item', self.gf('django.db.models.fields.DecimalField')(default=0, max_digits=6, decimal_places=2)),
         ))
         db.send_create_signal('shop', ['Offer'])
 
@@ -20,6 +22,7 @@ class Migration(SchemaMigration):
         db.create_table('shop_order', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('offer', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['shop.Offer'])),
+            ('items', self.gf('django.db.models.fields.IntegerField')(default=1)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=127, blank=True)),
             ('email', self.gf('django.db.models.fields.EmailField')(max_length=75, db_index=True)),
             ('address', self.gf('django.db.models.fields.TextField')(db_index=True)),
@@ -83,8 +86,10 @@ class Migration(SchemaMigration):
             'type': ('django.db.models.fields.CharField', [], {'max_length': '16', 'db_index': 'True'})
         },
         'shop.offer': {
-            'Meta': {'ordering': "['entry__title']", 'object_name': 'Offer'},
-            'entry': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['migdal.Entry']"}),
+            'Meta': {'ordering': "['entry']", 'object_name': 'Offer'},
+            'cost_const': ('django.db.models.fields.DecimalField', [], {'max_digits': '6', 'decimal_places': '2'}),
+            'cost_per_item': ('django.db.models.fields.DecimalField', [], {'default': '0', 'max_digits': '6', 'decimal_places': '2'}),
+            'entry': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['migdal.Entry']", 'unique': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'price': ('django.db.models.fields.DecimalField', [], {'max_digits': '6', 'decimal_places': '2'})
         },
@@ -93,6 +98,7 @@ class Migration(SchemaMigration):
             'address': ('django.db.models.fields.TextField', [], {'db_index': 'True'}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'db_index': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'items': ('django.db.models.fields.IntegerField', [], {'default': '1'}),
             'language_code': ('django.db.models.fields.CharField', [], {'max_length': '2', 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '127', 'blank': 'True'}),
             'offer': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['shop.Offer']"}),

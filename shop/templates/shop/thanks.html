@@ -8,6 +8,12 @@
 
 <h1>{% trans "Payment successful" %}</h1>
 
+<div class="normal">
+
 <p>{% trans "Your payment has been successfully completed." %}</p>
+
+<p>{% trans "Go back to:" %} <a href="{{ object.order.get_absolute_url }}">{{ object.order.offer }}</a>.</p>
+
+</div>
 
 {% endblock %}

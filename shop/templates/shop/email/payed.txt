@@ -4,4 +4,11 @@
 
 {% block body %}
 {% blocktrans %}Your payment has been successfully completed.{% endblocktrans %}
+
+{% blocktrans %}Your order is now being processed: {% endblocktrans %}
+
+{{ order }}
+{{ order.name }}
+{{ order.address }}
+
 {% endblock %}

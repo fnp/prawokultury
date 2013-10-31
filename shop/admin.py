@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# This file is part of Wolnelektury, licensed under GNU Affero GPLv3 or later.
+# This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.utils.translation import ugettext_lazy as _
@@ -10,7 +10,6 @@ from .models import Offer, Order
 class OfferAdmin(admin.ModelAdmin):
     model = Offer
     list_display = ['entry', 'price']
-    #~ search_fields = ['entry__title_pl']
 
 
 class PayedFilter(admin.SimpleListFilter):

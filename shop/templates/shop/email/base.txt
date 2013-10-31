@@ -1,5 +1,5 @@
-{% autoescape off %}{% load i18n %}{% trans 'Hi' %}{{ order.name }}{% endif %},
+{% autoescape off %}{% load i18n %}{% trans 'Hi' %} {{ order.name }},
 {% block body %}
 {% endblock %}
 {% blocktrans %}Cheers,
-Right to Culture team{% endblocktrans %}
+Right to Culture team{% endblocktrans %}{% endautoescape %}

@@ -8,8 +8,11 @@
 
 <h1>{% trans "Payment failed" %}</h1>
 
+<div class="normal">
+
 <p>{% trans "You're support has not been processed successfully." %}</p>
 
-
+<p>{% trans "Go back to:" %} <a href="{{ object.order.get_absolute_url }}">{{ object.order.offer }}</a>.</p>
+</div>
 
 {% endblock %}

@@ -10,6 +10,6 @@ register = template.Library()
 
 @register.inclusion_tag('shop/snippets/order_form.html', takes_context=True)
 def order_form_for(context, offer, form=None):
-    if form is None:
+    if not form:
         form = OrderForm(offer)
     return {'form': form}

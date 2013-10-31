@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load comments i18n %}
 {% load fnp_common migdal_tags fnp_share shop_tags %}
+{% load url from future %}
 
 
 {% block "body" %}
@@ -14,16 +15,25 @@
 
 {% entry_begin entry 1 %}
 <div class="body">
-{{ entry.body }}
+
+{% if entry.offer %}
+<div style="float:left;clear:left;">
+<a href="{% url 'migdal_entry_info' 'regulamin-sklepu' %}">Regulamin sklepu</a>
+</div>
+{% endif %}
 
 
+{% if entry.offer %}
+
+<p>{% trans "Price" %}: {{ entry.offer.price|floatformat:"-2" }} PLN</p>
 
 
-{% if entry.offer_set.all.exists %}
-
-{% order_form_for entry.offer_set.all.0 form %}
+{% order_form_for entry.offer form %}
 
 {% endif %}
+
+
+{{ entry.body }}
 
 
 
