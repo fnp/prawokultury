@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: .625em;
   background-color: #edece7;
   background-image: url("/static/img/bg.png");
@@ -20,7 +20,7 @@ img {
   border: 0; }
 
 h1 {
-  margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
   color: #01519a;
   font-size: 2em; }
 
@@ -29,7 +29,7 @@ h2 {
   color: #01519a; }
 
 .warning {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   padding: 1em;
   background: #ffd;
   font-size: 1.3em; }
@@ -40,18 +40,23 @@ h2 {
 .normal {
   font-size: 1.3em; }
 
+.entry-wrapped .gallery {
+  clear: both; }
 .entry-wrapped .gallery-item {
   float: left;
   width: 300px;
   text-align: center;
   margin-top: 2em; }
+  .entry-wrapped .gallery-item p {
+    min-height: 1.25em; }
 .entry-wrapped .gallery-image {
   height: 240px;
   width: 300px;
   display: table-cell;
   vertical-align: middle; }
 .entry-wrapped .gallery-image img {
-  margin: 0; }
+  margin: 0 auto;
+  display: block; }
 
 .questions li {
   margin-bottom: 1em; }
