@@ -17,7 +17,7 @@ class OrderForm(forms.Form):
         widget=NumberInput(attrs={'min': '1', 'step': '1', 'class': 'cost-items'}))
     name = forms.CharField(label=_("Name"))
     email = forms.EmailField(label=_("Contact e-mail"))
-    address = forms.CharField(label=_("Address"), widget=forms.Textarea)
+    address = forms.CharField(label=_("Shipping address"), widget=forms.Textarea)
 
     accept = forms.BooleanField(label=_("Accept terms"),
         help_text='''Akceptuję <a href='/info/regulamin-sklepu/'>regulamin sklepu</a>.''')
