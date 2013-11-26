@@ -2,31 +2,14 @@
 {% load url from future %}
 {% load pagination_tags fnp_prevnext %}
 {% load compressed %}
+{% load chunks %}
 
 {% block "titleextra" %}Pierwsza pomoc w prawie autorskim :: {% endblock %}
 {% block "body" %}
 <h1>Pierwsza pomoc w prawie autorskim: zapytaj prawnika</h1>
 
 <div class="normal">
-<h2>Zadaj nam pytanie!</h2>
-<p>Jeżeli masz pytanie dotyczące prawa autorskiego, którego nie ma na poniższej liście, i na które nie znalazłeś/znalazłaś
-odpowiedzi w <strong><a href="{% url 'migdal_entry_publications' 'pierwsza-pomoc' %}">przewodniku
-po prawie autorskim</a></strong>, możesz je nam zadać dzwoniąc w każdą środę w godz. 15-17 pod numer +48 516 519 697 lub
-<strong><a href="{% url 'questions_form' %}">za pomocą specjalnego formularza.</a></strong>.
-
-<p>Na pytania odpowiada dr Krzysztof Siewicz, prawnik
-specjalizujący się w prawnych aspektach przetwarzania informacji. Dr
-Siewicz jest pracownikiem Centrum Otwartej Nauki ICM UW, adiunktem w
-Katedrze Prawa Informatycznego WPiA UKSW oraz of counsel kancelarii
-prawnej GWW LEGAL.</p>
-
-<p>Dr Krzysztof Siewicz ukończył Wydział Prawa i Administracji
-Uniwersytetu Warszawskiego oraz uzyskał dyplom LLM Central European
-University w Budapeszcie. Doktorat o ochronie wolności użytkowników
-oprogramowania obronił na Uniwersytecie w Lejdzie (Holandia). Jest
-autorem szeregu publikacji naukowych poświęconych korzystaniu z
-technologii informacyjno-komunikacyjnych oraz posiada wieloletnie
-doświadczenie doradcze w tej tematyce.</p>
+{% chunk 'questions_list_info' %}
 
 <div id="questions-filter">
     <h2>Filtruj pytania</h2>

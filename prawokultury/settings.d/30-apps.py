@@ -6,6 +6,7 @@ INSTALLED_APPS = (
     'migdal',
     'questions',
     'shop',
+    'chunks',
 
     'gravatar',
     'south',

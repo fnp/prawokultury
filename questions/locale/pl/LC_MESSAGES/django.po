@@ -7,78 +7,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 15:57+0100\n"
-"PO-Revision-Date: 2013-01-14 15:59+0100\n"
+"POT-Creation-Date: 2013-11-26 13:59+0100\n"
+"PO-Revision-Date: 2013-11-26 14:00+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: models.py:11
+#: models.py:16
+msgid "Name"
+msgstr "Nazwa"
+
+#: models.py:17
+msgid "Slug"
+msgstr "Slug"
+
+#: models.py:20
+msgid "Tag Category"
+msgstr "Kategoria tagów"
+
+#: models.py:21
+msgid "Tag Categories"
+msgstr "Kategorie tagów"
+
+#: models.py:38
+msgid "Tag"
+msgstr "Tag"
+
+#: models.py:39
+msgid "Tags"
+msgstr "Tagi"
+
+#: models.py:47
 msgid "contact e-mail"
 msgstr "e-mail kontaktowy"
 
-#: models.py:12
-#: models.py:29
+#: models.py:48 models.py:68
 msgid "question"
 msgstr "pytanie"
 
-#: models.py:13
+#: models.py:49
 msgid "created at"
 msgstr "utworzone"
 
-#: models.py:14
+#: models.py:50
 msgid "changed at"
 msgstr "zmienione"
 
-#: models.py:15
+#: models.py:51
 msgid "approved"
 msgstr "potwierdzone"
 
-#: models.py:16
+#: models.py:52
 msgid "edited question"
 msgstr "zmienione pytanie"
 
-#: models.py:17
+#: models.py:53
 msgid "Leave empty if question doesn't need editing."
 msgstr "Zostaw puste, jeśli pytanie nie wymaga zmian."
 
-#: models.py:18
+#: models.py:54
 msgid "answer"
 msgstr "odpowiedź"
 
-#: models.py:19
-msgid "Use <a href=\"http://textile.thresholdstate.com/\">Textile</a> syntax."
-msgstr ""
+#: models.py:55
+msgid "Use <a href=\"http://txstyle.org/\">Textile</a> syntax."
+msgstr "Użyj składni <a href=\"http://txstyle.org/\">Textile</a>."
 
-#: models.py:20
+#: models.py:56
+msgid "answered by"
+msgstr "odpowiedzi udzielił/a"
+
+#: models.py:57
 msgid "answered"
 msgstr "udzielono odpowiedzi"
 
-#: models.py:21
+#: models.py:58
 msgid "Check to send the answer to user."
 msgstr "Zaznacz, by wysłać odpowiedź użytkownikowi."
 
-#: models.py:22
+#: models.py:59
 msgid "answered at"
 msgstr "udzielono odpowiedzi"
 
-#: models.py:23
+#: models.py:60
 msgid "published"
 msgstr "opublikowane"
 
-#: models.py:24
+#: models.py:61
 msgid "Check to display answered question on site."
 msgstr "Zaznaczy, by odpowiedź ukazała się na stronie."
 
-#: models.py:25
+#: models.py:62
 msgid "published at"
 msgstr "opublikowane"
 
-#: models.py:30
+#: models.py:69
 msgid "questions"
 msgstr "pytania"
-

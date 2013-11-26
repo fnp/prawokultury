@@ -52,7 +52,8 @@ class Question(models.Model):
     edited_question = models.TextField(_('edited question'), db_index=True, null=True, blank=True,
             help_text=_("Leave empty if question doesn't need editing."))
     answer = MarkupField(_('answer'), markup_type='textile_pl', blank=True,
-            help_text=_('Use <a href="http://textile.thresholdstate.com/">Textile</a> syntax.'))
+            help_text=_('Use <a href="http://txstyle.org/">Textile</a> syntax.'))
+    answered_by = models.CharField(_('answered by'), max_length=127, null=True, blank=True)
     answered = models.BooleanField(_('answered'), db_index=True, default=False,
             help_text=_('Check to send the answer to user.'))
     answered_at = models.DateTimeField(_('answered at'), null=True, blank=True, db_index=True)

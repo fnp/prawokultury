@@ -4,6 +4,7 @@
 {% load static from staticfiles %}
 {% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang %}
 {% load compressed %}
+{% load chunks %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
        <title>{% block "titleextra" %}{% endblock %}{% trans "Right to Culture" %}</title>
@@ -67,7 +68,7 @@
                     {% events_box %}
                 </div>
                 <div class="sidebar-box" style="text-align: center">
-                   <a href="/pierwsza-pomoc"><img src="{% static 'img/ask-a-lawyer.png' %}" alt="{% trans "Ask a lawyer" %}" /></a>
+                    {% chunk 'side_promo' %}
                 </div>
                 <div id="sidebar-box-categories" class="sidebar-box">
                     {% categories 'topics' %}
