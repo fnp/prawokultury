@@ -17,13 +17,6 @@
 <div class="body">
 
 {% if entry.offer %}
-<div style="float:left;clear:left;">
-<a href="{% url 'migdal_entry_info' 'regulamin-sklepu' %}">Regulamin sklepu</a>
-</div>
-{% endif %}
-
-
-{% if entry.offer %}
 
 <p>{% trans "Price" %}: {{ entry.offer.price|floatformat:"-2" }} PLN</p>
 
