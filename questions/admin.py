@@ -3,7 +3,7 @@ from .models import Question, Tag, TagCategory
 
 class QuestionAdmin(admin.ModelAdmin):
     model = Question
-    list_filter = ('approved', 'answered', 'published')
+    list_filter = ('approved', 'answered', 'published', 'answered_by')
     list_display = ('question', 'email', 'created_at', 'approved', 'answered', 'published')
     date_hierarchy = 'created_at'
     search_fields = ('question', 'edited_question', 'answer', 'email')
