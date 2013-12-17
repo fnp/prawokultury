@@ -45,11 +45,11 @@ class TagItem(GenericTaggedItemBase):
 
 class Question(models.Model):
     email = models.EmailField(_('contact e-mail'), null=True, blank=True)
-    question = models.TextField(_('question'), db_index=True)
+    question = models.TextField(_('question'), db_index=False)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     changed_at = models.DateTimeField(_('changed at'), auto_now=True)
     approved = models.BooleanField(_('approved'), default=False)
-    edited_question = models.TextField(_('edited question'), db_index=True, null=True, blank=True,
+    edited_question = models.TextField(_('edited question'), db_index=False, null=True, blank=True,
             help_text=_("Leave empty if question doesn't need editing."))
     answer = MarkupField(_('answer'), markup_type='textile_pl', blank=True,
             help_text=_('Use <a href="http://txstyle.org/">Textile</a> syntax.'))
