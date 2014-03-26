@@ -10,7 +10,7 @@
   .org-fnp span, .org-trust span {
     color: #888; }
   .org-fnp img, .org-trust img {
-    margin-left: -0.3em;
+    margin-left: -.3em;
     margin-top: 1em; }
 
 .org-fnp {
