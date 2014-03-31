@@ -66,7 +66,7 @@ class QuestionListView(ListView):
             LEFT JOIN questions_tagitem i ON i.tag_id=t.id
             LEFT JOIN questions_question q ON q.id=i.object_id
             WHERE q.published
-            GROUP BY t.category_id, t.click_count, t.id, t.name, t.slug
+            GROUP BY t.category_id, t.click_count, t.id, t.name, t.slug, c.slug
             ORDER BY c.slug, c DESC, t.slug
             """)
         uncategorized_tags_click_count = Tag.objects.filter(category=None).aggregate(models.Sum('click_count'))['click_count__sum']
