@@ -5,6 +5,7 @@
 {% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang fnp_annoy %}
 {% load compressed %}
 {% load chunks %}
+{% load piwik_tags %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
        <title>{% block "titleextra" %}{% endblock %}{% trans "Right to Culture" %}</title>
@@ -33,7 +34,7 @@
         <div class="bar-right">
             <div class="org-fnp">
                 <span>{% trans "Organizer" %}</span><br/>
-                <a href="http://nowoczesnapolska.org.pl">
+                <a href="//nowoczesnapolska.org.pl">
                     <img src="{% static 'img/logo-fnp.png' %}"
                         alt="{% trans "Modern Poland Foundation" %}" /></a>
             </div><div class="org-trust">
@@ -110,7 +111,7 @@
                 Nr konta: 46 10201097 0000 7502 0001 6766
             </p>
             <p class="footer-item">
-                <a href="http://nowoczesnapolska.org.pl/prywatnosc/">Polityka prywatności i ciasteczka</a>
+                <a href="https://nowoczesnapolska.org.pl/prywatnosc/">Polityka prywatności i ciasteczka</a>
                 <br/><br/>
                 {% trans "If not explicitly stated otherwise, all texts are licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike</a> free license." %}
             </p>
@@ -119,9 +120,9 @@
         </div>
 
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
-    {{ piwik_tag|safe }}
+    {% tracking_code %}
     {% block "extra_js" %}{% endblock %}
     </body>
 </html>

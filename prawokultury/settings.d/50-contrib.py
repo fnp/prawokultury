@@ -14,7 +14,7 @@ THUMBNAIL_QUALITY = 95
 GRAVATAR_DEFAULT_IMAGE = 'http://localhost:8000/static/img/avatar.png'
 
 CAS_SERVER_URL = 'http://logowanie.nowoczesnapolska.org.pl/cas/'
-CAS_VERSION = '1'
+CAS_VERSION = '3'
 
 HONEYPOT_FIELD_NAME='miut'
 
@@ -24,6 +24,8 @@ GETPAID_BACKENDS = (
     'getpaid.backends.payu',
 )
 
+PIWIK_URL = ''
+PIWIK_SITE_ID = 0
 
 import djcelery
 djcelery.setup_loader()

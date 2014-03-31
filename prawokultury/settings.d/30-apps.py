@@ -8,7 +8,7 @@ INSTALLED_APPS = (
     'shop',
     'chunks',
 
-    'gravatar',
+    'django_gravatar',
     'south',
     'django.contrib.comments',
     'django_comments_xtd',
@@ -16,7 +16,7 @@ INSTALLED_APPS = (
     'haystack',
     'pagination',
     'sorl.thumbnail',
-    'piwik.django',
+    'piwik',
     'django_cas',
     'honeypot',
     'taggit',
