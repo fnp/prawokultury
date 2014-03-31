@@ -5,7 +5,7 @@ from fnpdjango.utils.models.translation import add_translatable_index, localize_
 from events.models import Event
 
 
-class EventIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
+class EventIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(null=True,
         model_attr=localize_field('title', settings.LANGUAGE_CODE),
         document=True)

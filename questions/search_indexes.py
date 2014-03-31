@@ -4,7 +4,7 @@ from haystack import indexes
 from .models import Question
 
 
-class QuestionIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
+class QuestionIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True)
     answer = indexes.CharField(model_attr="answer")
 
