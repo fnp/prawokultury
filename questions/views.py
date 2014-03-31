@@ -26,9 +26,12 @@ class QuestionListView(ListView):
         self.tag = None
         if 'tag' in request.GET:
             try:
-                self.tag = Tag.objects.filter(items__question__published=True, slug=request.GET['tag'])[0]
-            except IndexError:
+                tag = Tag.objects.get(slug=request.GET['tag'])
+                assert Question.objects.filter(tags=self.tag).exists()
+            except (Tag.DoesNotExist, AssertionError):
                 pass
+            else:
+                self.tag = tag
         return super(QuestionListView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -54,9 +57,18 @@ class QuestionListView(ListView):
         for category in context['tag_categories']:
             annotated_categories[category.id] = category
             category.cloud_size =  get_cloud_size(category.click_count, all_tags_click_count)
-        
-        tags = Tag.objects.filter(items__question__published=True) \
-                  .annotate(c=models.Count('items__tag')).order_by('category__slug', '-c', 'slug')
+
+        # This wouldn't happen if we were using taggit without generic relations.
+        tags = Tag.objects.raw("""
+            SELECT t.category_id, t.click_count, t.id, t.name, t.slug, count(t.id) AS c
+            FROM questions_tag t
+            LEFT JOIN questions_tagcategory c ON c.id=t.category_id
+            LEFT JOIN questions_tagitem i ON i.tag_id=t.id
+            LEFT JOIN questions_question q ON q.id=i.object_id
+            WHERE q.published
+            GROUP BY t.category_id, t.click_count, t.id, t.name, t.slug
+            ORDER BY c.slug, c DESC, t.slug
+            """)
         uncategorized_tags_click_count = Tag.objects.filter(category=None).aggregate(models.Sum('click_count'))['click_count__sum']
         for tag in tags:
             if tag.category:
@@ -66,5 +78,5 @@ class QuestionListView(ListView):
             tag.cloud_size = get_cloud_size(tag.click_count, category_click_count)
             context['tag_lists'].setdefault(tag.category.id if tag.category else 0, []).append(tag)
         context['has_uncategorized_tags'] = 0 in context['tag_lists']
-        
+
         return context
