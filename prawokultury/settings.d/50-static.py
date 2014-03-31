@@ -27,7 +27,7 @@ PIPELINE_CSS = {
           'css/prevnext.scss',
           'css/forms.scss',
           'events/events.scss',
-
+          'fnpdjango/annoy/annoy.css',
         ),
         'output_filename': 'compressed/base.css',
     },
@@ -43,7 +43,7 @@ PIPELINE_JS = {
         'source_filenames': (
             'js/promobox.js',
             'shop/shop.js',
-
+            'fnpdjango/annoy/annoy.js',
         ),
         'output_filename': 'compressed/base.js',
     },

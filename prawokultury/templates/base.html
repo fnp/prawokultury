@@ -2,7 +2,7 @@
 {% load url from future %}
 {% load i18n %}
 {% load static from staticfiles %}
-{% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang %}
+{% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang fnp_annoy %}
 {% load compressed %}
 {% load chunks %}
 <html prefix="og: http://ogp.me/ns#">
@@ -22,6 +22,7 @@
         {% block "headextra" %}{% endblock %}
     </head>
     <body>
+    {% annoy %}
     <div id="body">
         <div id="header-bar">
         <div class="bar-left">
