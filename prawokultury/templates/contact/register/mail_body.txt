@@ -1,6 +1,6 @@
 {% load i18n %}
 {% comment %}{% blocktrans %}Thank you for submitting the registration form at {{ site_name }}.{% endblocktrans %}{% endcomment %}
-{% blocktrans %}Thank you for registering to the CopyCamp 2013 conference.
+{% blocktrans with conf=form.conference_name %}Thank you for registering to the {{conf}} conference.
 Please arrive early to obtain your name badge and conference materials.{% endblocktrans %}
 
 -- 

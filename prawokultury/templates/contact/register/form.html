@@ -12,19 +12,48 @@
     {% endblock %}
     </div>
 
-  {% if form.limit_reached %}
+{% if not form.started %}
+  {# Not yet started. #}
+  <div class="warning">
+    {% chunk "contact_form__"|add:form.form_tag|add:"__not_started" %}
+  </div>
+{% else %}
+  {# Already started. #}
+  {% if form.limit_reached and not form.open_call %}
+    {# Already closed. #}
     <div class="warning">
-        {% chunk "contact_form__"|add:form.form_tag|add:"__full" %}
+      {% chunk "contact_form__"|add:form.form_tag|add:"__closed" %}
     </div>
   {% else %}
+    {# Still running. #}
+    {% if form.limit_reached %}
+      {# Only taking presentation submissions. #}
+      <div class="warning">
+        {% chunk "contact_form__"|add:form.form_tag|add:"__presentations_only" %}
+      </div>
+    {% else %}
+      {% if not form.open_call %}
+      {# Not taking presentations any more. #}
+      <div class="warning">
+        {% chunk "contact_form__"|add:form.form_tag|add:"__no_presentations" %}
+      </div>
+      {% else %}
+        <div class="warning">
+          {% chunk "contact_form__"|add:form.form_tag|add:"__running" %}
+        </div>
+      {% endif %}
+    {% endif %}
+
     <form method="POST" action="." enctype="multipart/form-data" class="submit-form">
-    {% csrf_token %}
-    <table>
+      {% csrf_token %}
+      <table>
         {{ form.as_table }}
         <tr><td></td><td><button>{% block contact_form_submit %}{{ form.submit_label }}{% endblock %}</button></td></tr>
-    </table>
+      </table>
     </form>
   {% endif %}
-   <script type="text/javascript" src="/static/js/prefill.js"></script>
+{% endif %}
+
+<script type="text/javascript" src="/static/js/prefill.js"></script>
 
 {% endblock %}

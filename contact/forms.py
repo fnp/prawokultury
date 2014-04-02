@@ -27,7 +27,9 @@ class ContactForm(forms.Form):
     """Subclass and define some fields."""
     __metaclass__ = ContactFormMeta
 
+    started = False
     form_tag = None
+    save_as_tag = None
     form_title = _('Contact form')
     submit_label = _('Submit')
     admin_list = None
@@ -40,10 +42,11 @@ class ContactForm(forms.Form):
         for name, value in self.cleaned_data.items():
             if not isinstance(value, UploadedFile) and name != 'contact':
                     body[name] = value
+        save_as_tag = self.save_as_tag or self.form_tag
         contact = Contact.objects.create(body=body,
                     ip=request.META['REMOTE_ADDR'],
                     contact=self.cleaned_data['contact'],
-                    form_tag=self.form_tag)
+                    form_tag=self.save_as_tag)
         for name, value in self.cleaned_data.items():
             if isinstance(value, UploadedFile):
                 attachment = Attachment(contact=contact, tag=name)
@@ -56,6 +59,7 @@ class ContactForm(forms.Form):
             'site_name': site.name,
             'site_domain': site.domain,
             'contact': contact,
+            'form': self,
         }
         context = RequestContext(request)
         mail_managers_subject = render_to_string([

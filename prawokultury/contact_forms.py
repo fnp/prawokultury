@@ -8,6 +8,10 @@ from django.utils.translation import ugettext_lazy as _
 
 class RegistrationForm(ContactForm):
     form_tag = 'register'
+
+    save_as_tag = '2014'
+    conference_name = u'CopyCamp 2014' 
+    
     form_title = _('Take part!')
     admin_list = ['name', 'organization', 'title']
 
@@ -16,11 +20,11 @@ class RegistrationForm(ContactForm):
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
     title = forms.CharField(label=_('Title of presentation'), 
-            max_length=256, required=False, widget = forms.HiddenInput)
+            max_length=256, required=False)
     presentation = forms.FileField(label=_('Presentation'),
-            required=False, widget = forms.HiddenInput)
+            required=False)
     summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
-            widget=forms.HiddenInput, max_length=1800, required=False)
+            max_length=1800, required=False)
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
         help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
@@ -32,10 +36,17 @@ class RegistrationForm(ContactForm):
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
-        self.limit_reached = Contact.objects.filter(form_tag=self.form_tag).count() >= settings.REGISTRATION_LIMIT
+
+        self.started = getattr(settings, 'REGISTRATION_STARTED', False)
+        self.open_call = getattr(settings, 'REGISTRATION_OPEN_CALL', False)
+        self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= settings.REGISTRATION_LIMIT
         if self.limit_reached:
             for field in ('title', 'summary'):
                 self.fields[field].required = True
+        if not self.open_call:
+            for field in ('title', 'summary', 'presentation'):
+                del self.fields[field]
+            
 
 class NextForm(ContactForm):
     form_tag = 'next'
