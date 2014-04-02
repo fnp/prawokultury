@@ -7,7 +7,7 @@ from django.template import Template
 from django.utils.safestring import mark_safe
 
 
-class ContactAdminMeta(admin.ModelAdmin.__metaclass__):
+class ContactAdminMeta(admin.ModelAdmin.__class__):
     def __getattr__(cls, name):
         if name.startswith('admin_list_'):
             return lambda self: ""

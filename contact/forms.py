@@ -1,7 +1,8 @@
 from django.contrib.sites.models import Site
+from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import UploadedFile
 from django.core.mail import send_mail, mail_managers
-from django.core.validators import email_re
+from django.core.validators import validate_email
 from django import forms
 from django.template.loader import render_to_string
 from django.template import RequestContext
@@ -11,7 +12,7 @@ from .models import Attachment, Contact
 
 contact_forms = {}
 admin_list_width = 0
-class ContactFormMeta(forms.Form.__metaclass__):
+class ContactFormMeta(forms.Form.__class__):
     def __new__(cls, *args, **kwargs):
         global admin_list_width
         model = super(ContactFormMeta, cls).__new__(cls, *args, **kwargs)
@@ -68,7 +69,11 @@ class ContactForm(forms.Form):
         mail_managers(mail_managers_subject, mail_managers_body, 
             fail_silently=True)
 
-        if email_re.match(contact.contact):
+        try:
+            validate_email(contact.contact)
+        except ValidationError:
+            pass
+        else:
             mail_subject = render_to_string([
                     'contact/%s/mail_subject.txt' % self.form_tag,
                     'contact/mail_subject.txt', 

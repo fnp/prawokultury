@@ -13,8 +13,11 @@ THUMBNAIL_QUALITY = 95
 
 GRAVATAR_DEFAULT_IMAGE = 'http://localhost:8000/static/img/avatar.png'
 
-CAS_SERVER_URL = 'http://logowanie.nowoczesnapolska.org.pl/cas/'
-CAS_VERSION = '1'
+CAS_SERVER_URL = 'https://logowanie.nowoczesnapolska.org.pl/cas/'
+CAS_VERSION = '3'
 
 
 SPONSORS_THUMB_HEIGHT = None
+
+PIWIK_URL = ''
+PIWIK_SITE_ID = 0

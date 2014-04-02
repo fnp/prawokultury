@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-{% load url from future %}
 {% load i18n %}
 {% load static from staticfiles %}
 {% load fnp_common migdal_tags fnp_share fnp_lang menu_tags %}
 {% load sponsor_tags %}
 {% load compressed %}
+{% load piwik_tags %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
        <title>{% block "titleextra" %}{% endblock %}CopyCamp</title>
@@ -93,6 +93,6 @@
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
-    {{ piwik_tag|safe }}
+    {% tracking_code %}
     </body>
 </html>
