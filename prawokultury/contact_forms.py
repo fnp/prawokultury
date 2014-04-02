@@ -36,3 +36,13 @@ class RegistrationForm(ContactForm):
         if self.limit_reached:
             for field in ('title', 'summary'):
                 self.fields[field].required = True
+
+class NextForm(ContactForm):
+    form_tag = 'next'
+    form_title = _('Next CopyCamp')
+
+    name = forms.CharField(label=_('Name'), max_length=128)
+    contact = forms.EmailField(label=_('E-mail'), max_length=128)
+    organization = forms.CharField(label=_('Organization'),
+            max_length=256, required=False)
+

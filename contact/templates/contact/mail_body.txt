@@ -1,6 +1,6 @@
 {% load i18n %}
 {% blocktrans %}Thank you for contacting us at {{ site_name }}.{% endblocktrans %}
-{% trans "Your submission has been referred to the project coordinator." %}
+{% trans "Thank you for registering to the CopyCamp 2013 conference. Please arrive early to obtain your name badge and conference materials." %}
 
 -- 
 {% trans "Message sent automatically. Please do not reply to it." %}

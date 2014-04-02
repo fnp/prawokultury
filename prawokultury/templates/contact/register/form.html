@@ -4,7 +4,6 @@
 {% block "titleextra" %}{{ form.form_title }} :: {% endblock %}
 
 {% block "body" %}
-
     <h1>{% block contact_form_title %}{{ form.form_title }}{% endblock %}</h1>
 
     <div class="form-info">
@@ -26,5 +25,6 @@
     </table>
     </form>
   {% endif %}
+   <script type="text/javascript" src="/static/js/prefill.js"></script>
 
 {% endblock %}

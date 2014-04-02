@@ -21,6 +21,7 @@ class ContactAdmin(admin.ModelAdmin):
         ["admin_list_%d" % i for i in range(admin_list_width)]
     fields = ['form_tag', 'created_at', 'contact', 'ip']
     readonly_fields = ['form_tag', 'created_at', 'contact', 'ip']
+    list_filter = ['form_tag']
 
     def admin_list(self, obj, nr):
         try:
