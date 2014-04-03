@@ -12,13 +12,13 @@
   .entry-wrapped h1, .entry-wrapped h2 {
     margin: 0;
     color: #01519a;
-    font-size: 1.3em; }
+    font-size: 1.4em; }
     .entry-wrapped h1 a, .entry-wrapped h2 a {
       color: #01519a; }
   .entry-wrapped h2.section {
     margin: 2em 0; }
   .entry-wrapped .entry-data {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-top: 1.4em;
     margin-bottom: 1.4em; }
     .entry-wrapped .entry-data .date {
@@ -30,9 +30,9 @@
       .entry-wrapped .entry-data .categories a {
         color: black; }
   .entry-wrapped .lead {
-    font-size: 1.3em; }
+    font-size: 1.4em; }
   .entry-wrapped .body {
-    font-size: 1.3em; }
+    font-size: 1.4em; }
   .entry-wrapped .lead h2,
   .entry-wrapped .body h2 {
     font-size: 1em;
