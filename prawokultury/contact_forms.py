@@ -19,12 +19,6 @@ class RegistrationForm(ContactForm):
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
-    title = forms.CharField(label=_('Title of presentation'), 
-            max_length=256, required=False)
-    presentation = forms.FileField(label=_('Presentation'),
-            required=False)
-    summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
-            widget=forms.Textarea, max_length=1800, required=False)
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
         help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
@@ -36,17 +30,65 @@ class RegistrationForm(ContactForm):
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
-
         self.started = getattr(settings, 'REGISTRATION_STARTED', False)
-        self.open_call = getattr(settings, 'REGISTRATION_OPEN_CALL', False)
         self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= settings.REGISTRATION_LIMIT
-        if self.limit_reached:
-            for field in ('title', 'summary'):
-                self.fields[field].required = True
-        if not self.open_call:
-            for field in ('title', 'summary', 'presentation'):
-                del self.fields[field]
-            
+
+
+tracks = (
+    'CopyArt',
+    'Creative middle class',
+    'How to Pay?',
+    'How to Be Paid?',
+    'Copyright and Education',
+    'Technology and Innovation',
+    'Copyright and Human Rights',
+    'Self-Publishing',
+    'Future of the Book',
+    'Copyright Enforcement',
+    'Future of Copyright',
+    'Copyright Debate',
+)
+
+class RegisterSpeaker(RegistrationForm):
+    form_tag = 'register-speaker'
+    save_as_tag = '2014-speaker'
+
+    thematic_track = forms.ChoiceField(
+        label = _('Please select one thematic track'),
+        choices=[(t,t) for t in tracks], widget=forms.RadioSelect())
+
+    bio = forms.CharField(label=_('Short biographical note (max. 500 characters)'),
+            widget=forms.Textarea, max_length=500, required=True)
+
+    title = forms.CharField(label=_('Title of presentation'),
+            max_length=256, required=True)
+    presentation = forms.FileField(label=_('Presentation'),
+            required=True)
+    summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
+            widget=forms.Textarea, max_length=1800, required=True)
+
+    post_conference_publication = forms.BooleanField(
+        label=_('I am interested in including my paper in the post-conference publication'),
+        required=False
+    )
+
+    def __init__(self, *args, **kw):
+        super(RegisterSpeaker, self).__init__(*args, **kw)
+        self.closed = getattr(settings, 'REGISTRATION_SPEAKER_CLOSED', False)
+        self.fields.keyOrder = [
+            'name',
+            'contact',
+            'organization',
+            'thematic_track',
+            'bio',
+            'title',
+            'presentation',
+            'summary',
+            'post_conference_publication',
+            'agree_data',
+            'agree_license'
+        ]
+
 
 class NextForm(ContactForm):
     form_tag = 'next'

@@ -58,4 +58,8 @@
     .required label:before {
         content: '* ';
     }
+
+    input[type="radio"] {
+        width: auto;
+    }
 }

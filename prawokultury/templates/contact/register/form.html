@@ -6,44 +6,24 @@
 {% block "body" %}
     <h1>{% block contact_form_title %}{{ form.form_title }}{% endblock %}</h1>
 
-    <div class="form-info">
-    {% block contact_form_description %}
-        {% chunk "contact_form__"|add:form.form_tag %}
-    {% endblock %}
-    </div>
 
 {% if not form.started %}
   {# Not yet started. #}
-  <div class="warning">
+  <div class="form-info">
     {% chunk "contact_form__"|add:form.form_tag|add:"__not_started" %}
   </div>
 {% else %}
   {# Already started. #}
-  {% if form.limit_reached and not form.open_call %}
+  {% if form.limit_reached %}
     {# Already closed. #}
-    <div class="warning">
+    <div class="form-info">
       {% chunk "contact_form__"|add:form.form_tag|add:"__closed" %}
     </div>
   {% else %}
     {# Still running. #}
-    {% if form.limit_reached %}
-      {# Only taking presentation submissions. #}
-      <div class="warning">
-        {% chunk "contact_form__"|add:form.form_tag|add:"__presentations_only" %}
-      </div>
-    {% else %}
-      {% if not form.open_call %}
-      {# Not taking presentations any more. #}
-      <div class="warning">
-        {% chunk "contact_form__"|add:form.form_tag|add:"__no_presentations" %}
-      </div>
-      {% else %}
-        <div class="warning">
-          {% chunk "contact_form__"|add:form.form_tag|add:"__running" %}
-        </div>
-      {% endif %}
-    {% endif %}
-
+    <div class="form-info">
+        {% chunk "contact_form__"|add:form.form_tag|add:"__running" %}
+    </div>
     <form method="POST" action="." enctype="multipart/form-data" class="submit-form">
       {% csrf_token %}
       <table>

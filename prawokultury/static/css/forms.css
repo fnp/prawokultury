@@ -38,3 +38,5 @@
     font-weight: bold; }
   .submit-form .required label:before {
     content: '* '; }
+  .submit-form input[type="radio"] {
+    width: auto; }
