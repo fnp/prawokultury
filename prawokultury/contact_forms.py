@@ -36,7 +36,7 @@ class RegistrationForm(ContactForm):
 
 tracks = (
     'CopyArt',
-    'Creative middle class',
+    'Creative Middle Class',
     'How to Pay?',
     'How to Be Paid?',
     'Copyright and Education',
