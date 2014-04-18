@@ -19,13 +19,19 @@ class RegistrationForm(ContactForm):
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
+    
+    agree_mailing = forms.BooleanField(
+        label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
+        required=False
+    )
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
         help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
     )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=_('I agree to having materials recorded during the conference released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA</a> license.')
+        help_text=_('I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA</a> license and to publishing my image.'),
+        required=False
     )
 
     def __init__(self, *args, **kwargs):
@@ -85,6 +91,7 @@ class RegisterSpeaker(RegistrationForm):
             'presentation',
             'summary',
             'post_conference_publication',
+            'agree_mailing',
             'agree_data',
             'agree_license'
         ]

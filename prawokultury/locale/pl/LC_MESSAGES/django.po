@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-07 15:50+0200\n"
+"POT-Creation-Date: 2014-04-11 09:48+0200\n"
 "PO-Revision-Date: 2014-04-02 16:11+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -23,23 +23,31 @@ msgstr ""
 msgid "Take part!"
 msgstr "Weź udział!"
 
-#: contact_forms.py:18 contact_forms.py:95
+#: contact_forms.py:18 contact_forms.py:104
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:19 contact_forms.py:96
+#: contact_forms.py:19 contact_forms.py:105
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:20 contact_forms.py:97
+#: contact_forms.py:20 contact_forms.py:106
 msgid "Organization"
 msgstr "Organizacja"
 
-#: contact_forms.py:23
+#: contact_forms.py:24
+msgid ""
+"I am interested in receiving information about the Modern Poland "
+"Foundation's activities by e-mail"
+msgstr ""
+"Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
+"działalności Fundacji Nowoczesna Polska"
+
+#: contact_forms.py:28
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:24
+#: contact_forms.py:29
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -49,48 +57,48 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:27
+#: contact_forms.py:32
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:28
+#: contact_forms.py:33
 msgid ""
-"I agree to having materials recorded during the conference released under "
+"I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
-"\">CC BY-SA</a> license."
+"\">CC BY-SA</a> license and to publishing my image."
 msgstr ""
 "Wyrażam zgodę na publikację materiałów zarejestrowanych na konferencji na "
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
-"\">CC BY-SA</a>."
+"\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:42
+#: contact_forms.py:63
 msgid "Please select one thematic track"
 msgstr "Proszę wybrać jedną ścieżkę tematyczną"
 
-#: contact_forms.py:58
+#: contact_forms.py:66
 msgid "Short biographical note (max. 500 characters)"
 msgstr "Krótka notka biograficzna (maks. 500 znaków)"
 
-#: contact_forms.py:61
+#: contact_forms.py:69
 msgid "Title of presentation"
 msgstr "Tytuł prezentacji"
 
-#: contact_forms.py:63
+#: contact_forms.py:71
 msgid "Presentation"
 msgstr "Prezentacja"
 
-#: contact_forms.py:65
+#: contact_forms.py:73
 msgid "Summary of presentation (max. 1800 characters)"
 msgstr "Krótki opis prezentacji (maks. 1800 znaków)"
 
-#: contact_forms.py:69
+#: contact_forms.py:77
 msgid ""
 "I am interested in including my paper in the post-conference publication"
 msgstr ""
 "Jestem zainteresowana/y umieszczeniem pisemnej wersji mojego wystąpienia w "
 "publikacji pokonferencyjnej"
 
-#: contact_forms.py:93
+#: contact_forms.py:102
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
