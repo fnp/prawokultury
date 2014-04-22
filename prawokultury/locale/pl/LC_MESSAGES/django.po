@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-11 09:48+0200\n"
+"POT-Creation-Date: 2014-04-22 10:55+0200\n"
 "PO-Revision-Date: 2014-04-02 16:11+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -70,6 +70,54 @@ msgstr ""
 "Wyrażam zgodę na publikację materiałów zarejestrowanych na konferencji na "
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
+
+#: contact_forms.py:44
+msgid "CopyArt"
+msgstr "Prawo autorskie i sztuka"
+
+#: contact_forms.py:45
+msgid "Creative Middle Class"
+msgstr "O kreatywnej klasie średniej"
+
+#: contact_forms.py:46
+msgid "How to Pay?"
+msgstr "Jak płacić za twórczość?"
+
+#: contact_forms.py:47
+msgid "How to Be Paid?"
+msgstr "Jak zarabiać na twórczości?"
+
+#: contact_forms.py:48
+msgid "Copyright and Education"
+msgstr "Prawo autorskie i edukacja"
+
+#: contact_forms.py:49
+msgid "Technology and Innovation"
+msgstr "Technologie i innowacje"
+
+#: contact_forms.py:50
+msgid "Copyright and Human Rights"
+msgstr "Prawo autorskie a prawa człowieka"
+
+#: contact_forms.py:51
+msgid "Self-Publishing"
+msgstr "Self-publishing"
+
+#: contact_forms.py:52
+msgid "Future of the Book"
+msgstr "Przyszłość książki"
+
+#: contact_forms.py:53
+msgid "Copyright Enforcement"
+msgstr "Prawo autorskie i jego egzekwowanie"
+
+#: contact_forms.py:54
+msgid "Future of Copyright"
+msgstr "Przyszłość prawa autorskiego"
+
+#: contact_forms.py:55
+msgid "Copyright Debate"
+msgstr "O debacie prawnoautorskiej"
 
 #: contact_forms.py:63
 msgid "Please select one thematic track"

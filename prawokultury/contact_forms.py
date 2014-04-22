@@ -41,18 +41,18 @@ class RegistrationForm(ContactForm):
 
 
 tracks = (
-    'CopyArt',
-    'Creative Middle Class',
-    'How to Pay?',
-    'How to Be Paid?',
-    'Copyright and Education',
-    'Technology and Innovation',
-    'Copyright and Human Rights',
-    'Self-Publishing',
-    'Future of the Book',
-    'Copyright Enforcement',
-    'Future of Copyright',
-    'Copyright Debate',
+    _('CopyArt'),
+    _('Creative Middle Class'),
+    _('How to Pay?'),
+    _('How to Be Paid?'),
+    _('Copyright and Education'),
+    _('Technology and Innovation'),
+    _('Copyright and Human Rights'),
+    _('Self-Publishing'),
+    _('Future of the Book'),
+    _('Copyright Enforcement'),
+    _('Future of Copyright'),
+    _('Copyright Debate')
 )
 
 class RegisterSpeaker(RegistrationForm):
