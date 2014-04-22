@@ -9,17 +9,18 @@
     padding-top: .7em; }
 
 .entry-wrapped {
-  margin-left: 8em; }
+  margin-left: 8em;
+  line-height: 1.8em; }
   .entry-wrapped h1, .entry-wrapped h2 {
     margin: 0;
     color: #ed7f00;
-    font-size: 1.3em; }
+    font-size: 1.4em; }
     .entry-wrapped h1 a, .entry-wrapped h2 a {
       color: #01519a; }
   .entry-wrapped h2.section {
     margin: 2em 0; }
   .entry-wrapped .entry-data {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-top: 1.4em;
     margin-bottom: 1.4em; }
     .entry-wrapped .entry-data .date {
@@ -31,9 +32,9 @@
       .entry-wrapped .entry-data .categories a {
         color: black; }
   .entry-wrapped .lead {
-    font-size: 1.3em; }
+    font-size: 1.4em; }
   .entry-wrapped .body {
-    font-size: 1.3em; }
+    font-size: 1.4em; }
   .entry-wrapped blockquote {
     position: relative;
     left: 1em;
