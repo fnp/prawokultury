@@ -46,7 +46,7 @@ class ContactForm(forms.Form):
         contact = Contact.objects.create(body=body,
                     ip=request.META['REMOTE_ADDR'],
                     contact=self.cleaned_data['contact'],
-                    form_tag=self.save_as_tag)
+                    form_tag=save_as_tag)
         for name, value in self.cleaned_data.items():
             if isinstance(value, UploadedFile):
                 attachment = Attachment(contact=contact, tag=name)
