@@ -4,7 +4,7 @@ Django>=1.6,<1.7
 fnpdjango>=0.1.18,<0.2
 django_cas>=2.1,<2.2
 South>=0.7.4
-PIL
+Pillow
 sorl-thumbnail>=11.09,<12
 django-pagination
 django-migdal>=0.4,<0.5
