@@ -36,7 +36,7 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
 
 SOUTH_MIGRATION_MODULES = {
-    'getpaid' : 'prawokultury.migrations.getpaid',
-    'payu': 'prawokultury.migrations.getpaid_payu',
+    'getpaid' : 'prawokultury.migrations_contrib.getpaid',
+    'payu': 'prawokultury.migrations_contrib.getpaid_payu',
     'taggit': 'taggit.south_migrations',
 }
