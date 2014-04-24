@@ -24,7 +24,7 @@ INSTALLED_APPS = (
     'getpaid',
     'getpaid.backends.payu',
     'djcelery',
-    'djkombu',
+    'kombu.transport.django',
 
 
     'django.contrib.auth',
