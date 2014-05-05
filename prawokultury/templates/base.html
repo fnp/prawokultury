@@ -2,7 +2,7 @@
 {% load url from future %}
 {% load i18n %}
 {% load static from staticfiles %}
-{% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang fnp_annoy %}
+{% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang %}
 {% load compressed %}
 {% load chunks %}
 {% load piwik_tags %}
@@ -23,7 +23,7 @@
         {% block "headextra" %}{% endblock %}
     </head>
     <body>
-    {% annoy %}
+    {# 1%  {% load fnp_annoy %}{% annoy %}  #}
     <div id="body">
         <div id="header-bar">
         <div class="bar-left">
