@@ -69,7 +69,7 @@ class RegisterSpeaker(RegistrationForm):
     title = forms.CharField(label=_('Title of presentation'),
             max_length=256, required=True)
     presentation = forms.FileField(label=_('Presentation'),
-            required=True)
+            required=False)
     summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
             widget=forms.Textarea, max_length=1800, required=True)
 
