@@ -18,7 +18,7 @@ def add_entry(**qs):
 add_entry(slug_pl='co')
 add_entry(slug_pl='gdzie')
 add_entry(slug_pl='program')
-add_entry(slug_pl='media')
+add_entry(slug_pl='wyszehrad')
 add_entry(slug_pl='wez-udzial')
 add_entry(slug_pl='materialy')
 add_entry(slug_pl='poprzednie')
