@@ -71,6 +71,11 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
+#: contact_forms.py:48
+#, python-format
+msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
+msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
+
 #: contact_forms.py:44
 msgid "CopyArt"
 msgstr "Prawo autorskie i sztuka"

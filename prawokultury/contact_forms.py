@@ -4,6 +4,8 @@ from django import forms
 from contact.forms import ContactForm
 from contact.models import Contact
 from django.utils.translation import ugettext_lazy as _
+from django.utils.safestring import mark_safe
+from migdal.models import Entry
 
 
 class RegistrationForm(ContactForm):
@@ -38,6 +40,14 @@ class RegistrationForm(ContactForm):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.started = getattr(settings, 'REGISTRATION_STARTED', False)
         self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= settings.REGISTRATION_LIMIT
+        try:
+            url = Entry.objects.get(slug_pl='regulamin').get_absolute_url()
+            self.fields['agree_toc'] = forms.BooleanField(
+                required = True,
+                label = mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
+            )
+        except Entry.DoesNotExist:
+            pass
 
 
 tracks = (
