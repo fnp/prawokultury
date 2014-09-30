@@ -4,18 +4,6 @@
 {% block "titleextra" %}{{ form.form_title }} :: {% endblock %}
 
 {% block "body" %}
-    <style>
-        #id_thematic_track {
-            list-style: none;
-        }
-        #id_thematic_track label {
-            font-weight: normal;
-        }
-        #id_thematic_track label:before {
-            content: '';
-        }
-    </style>
-
     <h1>{% block contact_form_title %}{{ form.form_title }}{% endblock %}</h1>
 
     {% if not form.started %}

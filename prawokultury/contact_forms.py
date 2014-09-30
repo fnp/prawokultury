@@ -21,6 +21,14 @@ class RegistrationForm(ContactForm):
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
+
+    days = forms.ChoiceField(
+        label = _("I'm planning to show up on"),
+        choices=[
+            ('both', _('Both days of the conference')),
+            ('only-6th', _('November 6th only')),
+            ('only-7th', _('November 7th only')),
+        ], widget=forms.RadioSelect())
     
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),

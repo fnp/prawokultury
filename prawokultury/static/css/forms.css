@@ -36,7 +36,15 @@
       color: #363A3B; }
   .submit-form .required label {
     font-weight: bold; }
-  .submit-form .required label:before {
-    content: '* '; }
+    .submit-form .required label:before {
+      content: '* '; }
+  .submit-form .required ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .submit-form .required ul label {
+      font-weight: normal; }
+      .submit-form .required ul label:before {
+        content: none; }
   .submit-form input[type="radio"] {
     width: auto; }

@@ -52,12 +52,30 @@
         }
     }
 
-    .required label {
-        font-weight: bold;
+    .required {
+        label {
+            font-weight: bold;
+
+            &:before {
+                content: '* ';
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            label {
+                font-weight: normal;
+
+                &:before {
+                    content: none;
+                }
+            }
+        }
     }
-    .required label:before {
-        content: '* ';
-    }
+
 
     input[type="radio"] {
         width: auto;
