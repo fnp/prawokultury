@@ -37,18 +37,32 @@ class ContactForm(forms.Form):
     required_css_class = 'required'
     contact = forms.CharField(max_length=128)
 
+    def __init__(self, *args, **kwargs):
+        key = kwargs.pop('key', None)
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.key = key
+
     def save(self, request):
+        key = self.key
         body = {}
         for name, value in self.cleaned_data.items():
-            if not isinstance(value, UploadedFile) and name != 'contact':
+            if not isinstance(value, UploadedFile) and name != 'contact' and not name.startswith('_'):
                     body[name] = value
         save_as_tag = self.save_as_tag or self.form_tag
-        contact = Contact.objects.create(body=body,
+        if key:
+            contact = Contact.objects.get(form_tag=save_as_tag, key=key)
+            contact.body = body
+            contact.ip = request.META['REMOTE_ADDR'] or '127.0.0.1'
+            contact.contact = self.cleaned_data['contact']
+            contact.save()
+        else:
+            contact = Contact.objects.create(body=body,
                     ip=request.META['REMOTE_ADDR'],
                     contact=self.cleaned_data['contact'],
                     form_tag=save_as_tag)
         for name, value in self.cleaned_data.items():
             if isinstance(value, UploadedFile):
+                contact.attachment_set.filter(tag=name).delete()
                 attachment = Attachment(contact=contact, tag=name)
                 attachment.file.save(value.name, value)
                 attachment.save()
@@ -65,7 +79,7 @@ class ContactForm(forms.Form):
         mail_managers_subject = render_to_string([
                 'contact/%s/mail_managers_subject.txt' % self.form_tag,
                 'contact/mail_managers_subject.txt', 
-            ], dictionary, context)
+            ], dictionary, context).strip()
         mail_managers_body = render_to_string([
                 'contact/%s/mail_managers_body.txt' % self.form_tag,
                 'contact/mail_managers_body.txt', 
@@ -81,7 +95,7 @@ class ContactForm(forms.Form):
             mail_subject = render_to_string([
                     'contact/%s/mail_subject.txt' % self.form_tag,
                     'contact/mail_subject.txt', 
-                ], dictionary, context)
+                ], dictionary, context).strip()
             mail_body = render_to_string([
                     'contact/%s/mail_body.txt' % self.form_tag,
                     'contact/mail_body.txt', 

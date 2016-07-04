@@ -96,15 +96,18 @@
         }
     }
 
+    .gallery h2 {
+        margin-top: 2em;
+    }
     .gallery-item {
         float: left;
         width: 300px;
         text-align: center;
-        margin-top: 2em;
+        //margin-bottom: 2em;
     }
 
     .gallery-image {
-        height: 250px;
+        height: 300px;
         width: 300px;
         display: table-cell;
         vertical-align: middle;

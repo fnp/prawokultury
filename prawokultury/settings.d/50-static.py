@@ -27,6 +27,8 @@ PIPELINE_CSS = {
           'css/prevnext.scss',
           'css/forms.scss',
           'events/events.scss',
+
+          'contrib/lightbox/css/lightbox.css',
         ),
         'output_filename': 'compressed/base.css',
     },
@@ -35,6 +37,7 @@ PIPELINE_JS = {
     'base': {
         'source_filenames': (
             'js/promobox.js',
+            'contrib/lightbox/js/lightbox.min.js',
         ),
         'output_filename': 'compressed/base.js',
     },

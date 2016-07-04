@@ -1,6 +1,6 @@
-@import url(//static.mdrn.pl/fonts/Lato2OFLWeb/Lato/Lato-Regular.css);
-@import url(//static.mdrn.pl/fonts/Lato2OFLWeb/Lato/Lato-Bold.css);
-@import url(//static.mdrn.pl/fonts/Lato2OFLWeb/Lato/Lato-Italic.css);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Regular.css);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Bold.css);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Italic.css);
 body {
   font-family: 'Lato', sans-serif;
   font-size: .625em;
@@ -40,3 +40,13 @@ h1 {
 
 .sponsor-logos a {
   margin-bottom: 1.5em; }
+
+.bios p {
+  clear: left;
+  margin-left: 200px;
+  margin-top: 3em; }
+
+.bios p img {
+  float: left;
+  margin: 0 -200px 3em -200px;
+  box-shadow: 0 0 1em #777; }

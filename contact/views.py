@@ -5,19 +5,29 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import ugettext_lazy as _
 from fnpdjango.utils.views import serve_file
 from .forms import contact_forms
-from .models import Attachment
+from .models import Attachment, Contact
 
 
-def form(request, form_tag):
+def form(request, form_tag, key=None):
     try:
         form_class = contact_forms[form_tag]
     except KeyError:
         raise Http404
     if request.method == 'POST':
-        form = form_class(request.POST, request.FILES)
+        form = form_class(request.POST, request.FILES, key=key)
         if form.is_valid():
             form.save(request)
             return redirect('contact_thanks', form_tag)
+    elif key:
+        try:
+            c = Contact.objects.get(form_tag=form_class.save_as_tag, key=key)
+        except Contact.DoesNotExist:
+            raise Http404
+        initial = dict(c.body)
+        initial['contact'] = c.contact
+        for att in c.attachment_set.all():
+            initial[att.tag] = att.file
+        form = form_class(initial=initial, key=key)
     else:
         form = form_class()
     return render(request,

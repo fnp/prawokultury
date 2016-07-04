@@ -1,1 +1,6 @@
-{% extends "contact/register/mail_body.txt" %}
+{% load i18n %}{% trans "Thank you for submitting your proposal." %}
+
+{% trans "Your submission can be modified until July 31 at:" %}
+https://copycamp.pl{% url 'contact_form_key' form.form_tag contact.key %}
+
+{% trans "We will inform you of the open call results by the end of August." %}

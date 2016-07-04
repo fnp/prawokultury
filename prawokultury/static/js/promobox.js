@@ -42,4 +42,31 @@ if ($slides.length > 1) {
 }
 
 
+/*
+if (!$('#id_presentation').checked) {
+        $('[id^="id_presentation_"]').parent().parent().hide();
+}
+if (!$('#id_workshop').checked) {
+        $('[id^="id_workshop_"]').parent().parent().hide();
+}
+
+$('#id_presentation').change(function() {
+    if (this.checked) {
+        $('[id^="id_presentation_"]').parent().parent().show('slow');
+    } else {
+        $('[id^="id_presentation_"]').parent().parent().hide('slow');
+    }
+});
+
+$('#id_workshop').change(function() {
+    if (this.checked) {
+        $('[id^="id_workshop_"]').parent().parent().show('slow');
+    } else {
+        $('[id^="id_workshop_"]').parent().parent().hide('slow');
+    }
+});
+*/
+
+
+
 });

@@ -1,0 +1,5 @@
+{% load i18n %}
+{% blocktrans %}Thank you for registering to the workshop. Please arrive on time.{% endblocktrans %}
+
+-- 
+{% trans "Message sent automatically. Please do not reply to it." %}

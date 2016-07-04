@@ -1,0 +1,6 @@
+{% load i18n %}
+{% comment %}{% blocktrans %}Thank you for submitting the registration form at {{ site_name }}.{% endblocktrans %}{% endcomment %}
+{% blocktrans with conf=form.conference_name %}Thank you for registering for workshops at the {{conf}} conference.{% endblocktrans %}
+
+-- 
+{% trans "Message sent automatically. Please do not reply to it." %}

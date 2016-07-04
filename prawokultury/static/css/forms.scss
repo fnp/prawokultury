@@ -16,9 +16,12 @@
     label {
         font-size: 1.2em;
         font-weight: normal;
+        h3 {
+            display: inline;
+        }
     }
 
-    .errorlist {
+    ul.errorlist {
         color: #e41b13;
         font-size: 1.2em;
         padding: 0 0 0 1.3em;
@@ -72,6 +75,11 @@
                 &:before {
                     content: none;
                 }
+            }
+            &.errorlist {
+                list-style: url("/static/img/read-more.png");
+                padding: 0 0 0 1.3em;
+                margin: 0 0 .5em 0;
             }
         }
     }

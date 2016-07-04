@@ -61,13 +61,14 @@
     .entry-wrapped .more .read-more:after {
       content: url("/static/img/read-more.png");
       margin-left: .7em; }
+  .entry-wrapped .gallery h2 {
+    margin-top: 2em; }
   .entry-wrapped .gallery-item {
     float: left;
     width: 300px;
-    text-align: center;
-    margin-top: 2em; }
+    text-align: center; }
   .entry-wrapped .gallery-image {
-    height: 250px;
+    height: 300px;
     width: 300px;
     display: table-cell;
     vertical-align: middle; }

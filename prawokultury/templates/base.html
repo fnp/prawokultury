@@ -12,21 +12,27 @@
         {% compressed_css 'base' %}
 
         <meta charset="UTF-8" />
-        <meta property='og:url' content='{% block "ogurl" %}{% url 'migdal_main' %}{% endblock %}' />
+        <meta property='og:url' content='{% block "ogurl" %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:title' content='{% block "ogtitle" %}CopyCamp{% endblock %}' />
         <meta property='og:site_name' content='CopyCamp' />
         <meta property='og:description' content='{% block "ogdescription" %}{% trans "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms." %}{% endblock %}' />
         <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/copycamp2012_"|add:request.LANGUAGE_CODE|add:".png"|build_absolute_uri:request }}{% endblock %}' />
-        <meta property='og:locale' content='pl_PL' />
+        <meta property='og:image' content='{% block "ogimage" %}https://copycamp.pl{% static "img/copycamp_2016_"|add:request.LANGUAGE_CODE|add:"_big.png" %}{% endblock %}' />
+        <meta property='og:locale' content='{% if LANGUAGE_CODE == 'en'%}en_US{% else %}pl_PL{% endif %}' />
     </head>
     <body>
     <div id="body">
+        {% comment %}
+        <a href="https://nowoczesnapolska.org.pl/pomoz-nam/wesprzyj-nas/" style="width: 100%; display: inline-block;">
+            <img src="{% static 'img/960x150_ogolny.jpg' %}">
+        </a>
+        {% endcomment %}
+
         <div id="header-bar">
         <div class="bar-left">
             <a id="logo" href="{% url "migdal_main" %}">
                 <img alt="{% trans "CopyCamp" %}"
-                    src="{% static "img/copycamp_2014_"|add:request.LANGUAGE_CODE|add:".png" %}" /></a>
+                    src="{% static "img/copycamp_2016_"|add:request.LANGUAGE_CODE|add:".png" %}" /></a>
         </div>
         <div class="bar-right">
             <a href="http://prawokultury.pl"><img src="{% static "img/logo_160.png" %}" alt="PrawoKultury.pl"/></a>
@@ -50,12 +56,21 @@
             {% endblock %}
             <li id="item-lang">{% lang_switcher %}</li>
         </ul>
+        <a href="/contact/register/" style="float: right; margin: 0 10px; width: 220px; text-align:center; background: #ED7F00; color: white; font-size: 24px; text-transform: uppercase;">{% trans "Registration" %}</a>
         <div style="clear: both;"></div>
         </div>
 
         <div id="main-bar">
         <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
+<div class="sidebar-box" style="text-align:center; font-size: 1.3em;">
+<strong><a target="_blank" style="display: block" href="https://prawokultury.pl/publikacje/cory-doctorow-kontekst/">
+<img style="margin-bottom: .5em;" src="//prawokultury.pl/media/entry/image/cory_cvr_fb_2_maly.jpg" alt="Cory Doctorow &ndash; Kontekst"><br>
+  Książka:<br/>
+  Cory Doctorow &ndash; Kontekst<br/>
+  Kup na PrawoKultury.pl
+  </a></strong></div>
+
                 <div class="sidebar-box">
                     {% sponsor_page 'main' %}
                 </div>
@@ -91,7 +106,7 @@
         </div>
 
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
     {% tracking_code %}
     </body>

@@ -1,1 +1,1 @@
-{% extends "contact/register/mail_subject.txt" %}
+{% load i18n %}{% trans "Thank you for submitting your proposal" %}
