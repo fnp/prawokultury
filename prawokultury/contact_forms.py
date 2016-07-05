@@ -30,14 +30,14 @@ class RegistrationForm(ContactForm):
             max_length=256, required=False)
     country = forms.CharField(label=_('Country'), max_length=128)
 
-    #days = forms.ChoiceField(
+    # days = forms.ChoiceField(
     #    label = _("I'm planning to show up on"),
     #    choices=[
     #        ('both', _('Both days of the conference')),
     #        ('only-6th', _('November 6th only')),
     #        ('only-7th', _('November 7th only')),
     #    ], widget=forms.RadioSelect())
-    
+
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
         required=False
@@ -59,7 +59,7 @@ class RegistrationForm(ContactForm):
         try:
             url = Entry.objects.get(slug_pl='regulamin').get_absolute_url()
             self.fields['agree_toc'] = forms.BooleanField(
-                required = True,
+                required=True,
                 label = mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
             )
         except Entry.DoesNotExist:
@@ -67,16 +67,16 @@ class RegistrationForm(ContactForm):
 
 
 tracks = (
-    _('CopyArt'),
-    _('Models of Remuneration'),
-    _('Copyright and Education'),
-    _('Technology and Innovation'),
+    _('Copyright and Art'),
+    _('Remuneration Models'),
+    _('Copyright, Education and Science'),
+    _('Technology, Innovation and Copyright'),
     _('Copyright and Human Rights'),
-    _('Technologies in Social Activism'),
     _('Copyright Enforcement'),
-    _('Future of Copyright'),
-    _('Copyright Debate')
+    _('Copyright Debate'),
+    _('Copyright Lawmaking'),
 )
+
 
 class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
@@ -84,35 +84,39 @@ class RegisterSpeaker(RegistrationForm):
     form_title = _('Open call for presentations')
 
     presentation_thematic_track = forms.ChoiceField(
-        label = _('Please select one thematic track'),
-        choices=[(t,t) for t in tracks], widget=forms.RadioSelect())
+        label=_('Please select one thematic track'),
+        choices=[(t, t) for t in tracks], widget=forms.RadioSelect())
 
-    bio = forms.CharField(label=_('Short biographical note (max. 500 characters)'),
-            widget=forms.Textarea, max_length=500, required=True)
+    bio = forms.CharField(label=mark_safe_lazy(
+        _('Short biographical note in Polish (max. 500 characters, fill <strong>at least</strong> one bio)')),
+                          widget=forms.Textarea, max_length=500, required=False)
+    bio_en = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
+                             max_length=500, required=False)
     photo = forms.FileField(label=_('Photo'), required=False)
     phone = forms.CharField(label=_('Phone number'), max_length=64,
-        required=False,
-        help_text=_('Used only for organizational purposes.'))
+                            required=False,
+                            help_text=_('Used only for organizational purposes.'))
 
-    #presentation = forms.BooleanField(label=_('Presentation'), required=False)
-    presentation_title = forms.CharField(label=_('Title of presentation'),
-            max_length=256)
-    #presentation = forms.FileField(label=_('Presentation'),
-    #        required=False)
+    # presentation = forms.BooleanField(label=_('Presentation'), required=False)
+    presentation_title = forms.CharField(
+        label=mark_safe_lazy(_('Title of the presentation in Polish (fill <strong>at least</strong> one title)')),
+        max_length=256, required=False)
+    presentation_title_en = forms.CharField(label=_('Title of the presentation in English'),
+                                            max_length=256, required=False)
+    # presentation = forms.FileField(label=_('Presentation'), required=False)
     presentation_summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
-            widget=forms.Textarea, max_length=1800)
+                                           widget=forms.Textarea, max_length=1800)
 
     presentation_post_conference_publication = forms.BooleanField(
         label=_('I am interested in including my paper in the post-conference publication'),
         required=False
     )
 
-    #workshop = forms.BooleanField(label=_('Workshop'), required=False)
-    #workshop_title = forms.CharField(label=_('Title of workshop'),
+    # workshop = forms.BooleanField(label=_('Workshop'), required=False)
+    # workshop_title = forms.CharField(label=_('Title of workshop'),
     #        max_length=256, required=False)
-    #workshop_summary = forms.CharField(label=_('Summary of workshop (max. 1800 characters)'),
+    # workshop_summary = forms.CharField(label=_('Summary of workshop (max. 1800 characters)'),
     #        widget=forms.Textarea, max_length=1800, required=False)
-
 
     def __init__(self, *args, **kw):
         super(RegisterSpeaker, self).__init__(*args, **kw)
@@ -124,20 +128,33 @@ class RegisterSpeaker(RegistrationForm):
             'phone',
             'organization',
             'bio',
+            'bio_en',
             'photo',
-#            'presentation',
+            # 'presentation',
             'presentation_title',
+            'presentation_title_en',
             'presentation_summary',
             'presentation_thematic_track',
             'presentation_post_conference_publication',
-#            'workshop',
-#            'workshop_title',
-#            'workshop_summary',
+            # 'workshop',
+            # 'workshop_title',
+            # 'workshop_summary',
 
             'agree_mailing',
             'agree_data',
             'agree_license'
         ]
+
+    def clean(self):
+        cleaned_data = super(RegisterSpeaker, self).clean()
+        errors = []
+        if not cleaned_data['bio'] and not cleaned_data['bio_en']:
+            errors.append(forms.ValidationError(_('Fill at least one bio!')))
+        if not cleaned_data['presentation_title'] and not cleaned_data['presentation_title_en']:
+            errors.append(forms.ValidationError(_('Fill at least one title!')))
+        if errors:
+            raise forms.ValidationError(errors)
+        return cleaned_data
 
 
 class NextForm(ContactForm):
@@ -147,7 +164,7 @@ class NextForm(ContactForm):
     name = forms.CharField(label=_('Name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'),
-            max_length=256, required=False)
+                                   max_length=256, required=False)
 
 
 class WorkshopForm(ContactForm):
@@ -159,7 +176,7 @@ class WorkshopForm(ContactForm):
     name = forms.CharField(label=_('Name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'),
-            max_length=256, required=False)
+                                   max_length=256, required=False)
 
     _#header = HeaderField(label=mark_safe_lazy(_("<h3>I'll take a part in workshops</h3>")), help_text=_('Only workshops with any spots left are visible here.'))
 
@@ -181,10 +198,10 @@ class WorkshopForm(ContactForm):
 
     #_header_1 = HeaderField(label='')
 
-    #agree_mailing = forms.BooleanField(
+    # agree_mailing = forms.BooleanField(
     #    label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
     #    required=False
-    #)
+    # )
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
         help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
@@ -199,27 +216,26 @@ class WorkshopForm(ContactForm):
         super(WorkshopForm, self).__init__(*args, **kwargs)
         self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= 60
 
-    #    counts = {k: 0 for k in self.start_workshops}
-    #    for contact in Contact.objects.filter(form_tag=self.save_as_tag):
-    #        for workshop in self.start_workshops:
+        # counts = {k: 0 for k in self.start_workshops}
+        # for contact in Contact.objects.filter(form_tag=self.save_as_tag):
+        #     for workshop in self.start_workshops:
     #            if contact.body.get('w_%s' % workshop, False): counts[workshop] += 1
-    #    some_full = False
-    #    for k, v in counts.items():
-    #        if v >= 60:
-    #            some_full = True
-    #            if 'w_%s' % k in self.fields:
-    #                del self.fields['w_%s' % k]
-    #            if k in self.workshops:
-    #                self.workshops.remove(k)
-    #    if not some_full:
-    #        self.fields['_header'].help_text = None
+        # some_full = False
+        # for k, v in counts.items():
+        #     if v >= 60:
+        #         some_full = True
+        #         if 'w_%s' % k in self.fields:
+        #             del self.fields['w_%s' % k]
+        #         if k in self.workshops:
+        #             self.workshops.remove(k)
+        # if not some_full:
+        #     self.fields['_header'].help_text = None
 
-    #def clean(self):
-    #    any_workshop = False
-    #    for w in self.start_workshops:
-    #        if self.cleaned_data.get('w_%s' % w):
-    #            any_workshop = True
-    #    if not any_workshop:
-    #        self._errors['_header'] = [_("Please choose at least one workshop.")]
-    #    return self.cleaned_data
-
+    # def clean(self):
+    #     any_workshop = False
+    #     for w in self.start_workshops:
+    #         if self.cleaned_data.get('w_%s' % w):
+    #             any_workshop = True
+    #     if not any_workshop:
+    #         self._errors['_header'] = [_("Please choose at least one workshop.")]
+    #     return self.cleaned_data
