@@ -115,8 +115,7 @@ class RegisterSpeaker(RegistrationForm):
     agree_data = None
 
     agree_terms = forms.BooleanField(
-        label=_('Terms and Conditions'),
-        help_text=mark_safe_lazy(_(u'I accept <a href="/en/info/terms-and-conditions/">'
+        label=mark_safe_lazy(_(u'I accept <a href="/en/info/terms-and-conditions/">'
                                    u'CopyCamp Terms and Conditions</a>.'))
     )
 
