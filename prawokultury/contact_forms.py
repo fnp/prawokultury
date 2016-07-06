@@ -80,7 +80,7 @@ tracks = (
 
 class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
-    save_as_tag = '2015-speaker'
+    save_as_tag = '2016-speaker'
     form_title = _('Open call for presentations')
 
     presentation_thematic_track = forms.ChoiceField(
