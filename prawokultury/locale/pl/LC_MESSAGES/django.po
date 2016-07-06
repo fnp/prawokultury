@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-05 15:06+0200\n"
+"POT-Creation-Date: 2016-07-06 12:26+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -31,11 +31,11 @@ msgstr "Imię"
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: contact_forms.py:28 contact_forms.py:165 contact_forms.py:177
+#: contact_forms.py:28 contact_forms.py:174 contact_forms.py:186
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:29 contact_forms.py:166 contact_forms.py:178
+#: contact_forms.py:29 contact_forms.py:175 contact_forms.py:187
 msgid "Organization"
 msgstr "Organizacja"
 
@@ -51,11 +51,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:46 contact_forms.py:206
+#: contact_forms.py:46 contact_forms.py:215
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:47 contact_forms.py:207
+#: contact_forms.py:47 contact_forms.py:216
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -65,11 +65,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:50 contact_forms.py:210
+#: contact_forms.py:50 contact_forms.py:219
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:51 contact_forms.py:211
+#: contact_forms.py:51 contact_forms.py:220
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -122,7 +122,7 @@ msgstr "Otwarty nabór prezentacji"
 
 #: contact_forms.py:87
 msgid "Please select one thematic track"
-msgstr "Proszę wybrać jedną ścieżkę tematyczną"
+msgstr "Wybierz jedną ścieżkę tematyczną"
 
 #: contact_forms.py:91
 msgid ""
@@ -171,23 +171,34 @@ msgstr ""
 "Jestem zainteresowana/y umieszczeniem pisemnej wersji mojego wystąpienia w "
 "publikacji pokonferencyjnej"
 
-#: contact_forms.py:152
+#: contact_forms.py:118
+msgid "Terms and Conditions"
+msgstr "Regulamin"
+
+#: contact_forms.py:119
+msgid ""
+"I accept <a href=\"/en/info/terms-and-conditions/"
+"\">CopyCamp Terms and Conditions</a>."
+msgstr ""
+"Akceptuję <a href=\"/info/regulamin/\">regulamin CopyCampu</a>"
+
+#: contact_forms.py:161
 msgid "Fill at least one bio!"
 msgstr "Wpisz przynajmniej jedną notkę biograficzną (po polsku lub angielsku)!"
 
-#: contact_forms.py:154
+#: contact_forms.py:163
 msgid "Fill at least one title!"
 msgstr "Wpisz przynajmniej jeden tytuł prezentacji (po polsku lub angielsku)!"
 
-#: contact_forms.py:162
+#: contact_forms.py:171
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
-#: contact_forms.py:164 contact_forms.py:176
+#: contact_forms.py:173 contact_forms.py:185
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:174
+#: contact_forms.py:183
 msgid "Workshop"
 msgstr "Warsztat"
 

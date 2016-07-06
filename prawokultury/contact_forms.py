@@ -112,6 +112,14 @@ class RegisterSpeaker(RegistrationForm):
         required=False
     )
 
+    agree_data = None
+
+    agree_terms = forms.BooleanField(
+        label=_('Terms and Conditions'),
+        help_text=mark_safe_lazy(_(u'I accept <a href="/en/info/terms-and-conditions/">'
+                                   u'CopyCamp Terms and Conditions</a>.'))
+    )
+
     # workshop = forms.BooleanField(label=_('Workshop'), required=False)
     # workshop_title = forms.CharField(label=_('Title of workshop'),
     #        max_length=256, required=False)
@@ -141,8 +149,9 @@ class RegisterSpeaker(RegistrationForm):
             # 'workshop_summary',
 
             'agree_mailing',
-            'agree_data',
-            'agree_license'
+            # 'agree_data',
+            'agree_license',
+            'agree_terms',
         ]
 
     def clean(self):
