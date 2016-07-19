@@ -156,9 +156,9 @@ class RegisterSpeaker(RegistrationForm):
     def clean(self):
         cleaned_data = super(RegisterSpeaker, self).clean()
         errors = []
-        if not cleaned_data['bio'] and not cleaned_data['bio_en']:
+        if not cleaned_data.get('bio') and not cleaned_data.get('bio_en'):
             errors.append(forms.ValidationError(_('Fill at least one bio!')))
-        if not cleaned_data['presentation_title'] and not cleaned_data['presentation_title_en']:
+        if not cleaned_data.get('presentation_title') and not cleaned_data.get('presentation_title_en'):
             errors.append(forms.ValidationError(_('Fill at least one title!')))
         if errors:
             raise forms.ValidationError(errors)
