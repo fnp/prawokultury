@@ -261,8 +261,8 @@ msgid "Message sent automatically. Please do not reply to it."
 msgstr "Wiadomość wysłana automatycznie, prosimy nie odpowiadać."
 
 #: templates/contact/register/mail_subject.txt:1
-msgid "Thank you for registering to CopyCamp 2015."
-msgstr " Dziękujemy za rejestrację na konferencję CopyCamp 2015."
+msgid "Thank you for registering to CopyCamp 2016."
+msgstr " Dziękujemy za rejestrację na konferencję CopyCamp 2016."
 
 #: templates/contact/register/thanks.html:5
 #: templates/contact/workshops/thanks.html:5
@@ -275,8 +275,8 @@ msgid "Thank you for submitting your proposal."
 msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/mail_body.txt:3
-msgid "Your submission can be modified until July 31 at:"
-msgstr "Zgłoszenie można modyfikować do 31 lipca pod adresem:"
+msgid "Your submission can be modified until August 10 at:"
+msgstr "Zgłoszenie można modyfikować do 10 sierpnia pod adresem:"
 
 #: templates/contact/register-speaker/mail_body.txt:6
 #: templates/contact/register-speaker/thanks.html:10
@@ -289,10 +289,10 @@ msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/thanks.html:8
 msgid ""
-"Your submission can be modified until July 31 using the unique link sent to "
+"Your submission can be modified until August 10 using the unique link sent to "
 "you by e-mail."
 msgstr ""
-"Zgłoszenie można modyfikować do 31 lipca używając unikalnego adresu "
+"Zgłoszenie można modyfikować do 10 sierpnia używając unikalnego adresu "
 "przesłanego e-mailem."
 
 #: templates/contact/workshop/mail_body.txt:2
