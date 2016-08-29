@@ -1,17 +1,21 @@
+from django.utils.translation import get_language
+
+
 class MenuItem(object):
     html_id = None
 
     class InvalidMenuItem(BaseException):
         pass
 
-    def __init__(self, url, title, html_id=None, more_urls=None):
+    def __init__(self, url, title, html_id=None, more_urls=None, langs=None):
         self.url = url
         self.title = title
         self.html_id = html_id
         self.more_urls = more_urls or set()
+        self.langs = langs
 
     def is_valid(self):
-        return True
+        return not (self.langs and get_language() not in self.langs)
 
     def is_active(self, request, value):
         url = request.get_full_path()
@@ -62,9 +66,11 @@ class ObjectMenuItem(MenuItem):
         return self.url or self.get_object().get_absolute_url()
 
     def is_valid(self):
+        if not super(ObjectMenuItem, self).is_valid():
+            return False
         try:
-            obj = self.get_object()
-        except self.InvalidMenuItem, e:
+            self.get_object()
+        except self.InvalidMenuItem:
             return False
         return True
 
