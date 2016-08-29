@@ -6,4 +6,4 @@ HAYSTACK_CONNECTIONS = {
 }
 
 HAYSTACK_DOCUMENT_FIELD = "text"
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+#HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

@@ -23,7 +23,7 @@
         {% block "headextra" %}{% endblock %}
     </head>
     <body>
-    {# 1%  {% load fnp_annoy %}{% annoy %}  #}
+    {% load fnp_annoy %}{% annoy %}
     <div id="body">
         <div id="header-bar">
         <div class="bar-left">
@@ -62,7 +62,13 @@
         <div style="clear: both;"></div>
         </div>
 
-        <div id="main-bar">
+        {% comment %}
+        <a style="width: 100%; display: inline-block;" href="https://nowoczesnapolska.org.pl/pomoz-nam/wesprzyj-nas/">
+            <img src="{% static 'img/960x150_ogolny.jpg' %}">
+        </a>
+        {% endcomment %}
+
+        <div id="main-bar" style='clear: both;'>
         <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
                 <div class="sidebar-box">

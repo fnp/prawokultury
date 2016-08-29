@@ -7,7 +7,7 @@
 .submit-form {
   margin-top: 3em; }
   .submit-form table {
-    border-spacing: 0 0.5em; }
+    border-spacing: 0 .5em; }
   .submit-form tr {
     background-color: #fdfdfd; }
   .submit-form label {
@@ -17,7 +17,7 @@
     color: #e41b13;
     font-size: 1.2em;
     padding: 0 0 0 1.3em;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 .5em 0;
     list-style: url("/static/img/read-more.png"); }
   .submit-form input, .submit-form textarea, .submit-form select {
     font-size: 1.2em;
@@ -26,7 +26,7 @@
     color: #363A3B;
     width: 100%;
     margin-bottom: .5em;
-    border: 1px solid #edece7; }
+    border: 1px solid #EDECE7; }
   .submit-form th, .submit-form td {
     text-align: left;
     font-weight: normal;

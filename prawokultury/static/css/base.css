@@ -1,4 +1,6 @@
-@import url(//fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Regular.css);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Bold.css);
+@import url(//static.mdrn.pl/fonts/Lato-2.010/Lato-Italic.css);
 body {
   font-family: 'Lato', sans-serif;
   font-size: .625em;

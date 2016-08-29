@@ -1,0 +1,13 @@
+#questions-filter div {
+  margin: 10px 0; }
+
+#questions-categories {
+  margin-bottom: 10px;
+  display: inline; }
+  #questions-categories a.selected {
+    cursor: default;
+    text-decoration: none;
+    color: black; }
+
+.questions-tags-group {
+  display: none; }
