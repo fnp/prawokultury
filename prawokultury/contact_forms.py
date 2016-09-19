@@ -220,6 +220,7 @@ class RegisterSpeaker(RegistrationForm):
 
     def __init__(self, *args, **kw):
         super(RegisterSpeaker, self).__init__(*args, **kw)
+        self.started = getattr(settings, 'REGISTRATION_SPEAKER_STARTED', False)
         self.closed = getattr(settings, 'REGISTRATION_SPEAKER_CLOSED', False)
         self.fields.keyOrder = [
             'first_name',
