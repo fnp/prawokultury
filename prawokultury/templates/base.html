@@ -7,17 +7,17 @@
 {% load piwik_tags %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
-       <title>{% block "titleextra" %}{% endblock %}CopyCamp</title>
+       <title>{% block titleextra %}{% endblock %}CopyCamp</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
 
         <meta charset="UTF-8" />
-        <meta property='og:url' content='{% block "ogurl" %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
-        <meta property='og:title' content='{% block "ogtitle" %}CopyCamp{% endblock %}' />
+        <meta property='og:url' content='{% block ogurl %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
+        <meta property='og:title' content='{% block ogtitle %}CopyCamp{% endblock %}' />
         <meta property='og:site_name' content='CopyCamp' />
-        <meta property='og:description' content='{% block "ogdescription" %}{% trans "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms." %}{% endblock %}' />
-        <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}https://copycamp.pl{% static "img/copycamp_2016_"|add:request.LANGUAGE_CODE|add:"_big.png" %}{% endblock %}' />
+        <meta property='og:description' content='{% block ogdescription %}{% trans "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms." %}{% endblock %}' />
+        <meta property='og:type' content='{% block ogtype %}website{% endblock %}' />
+        <meta property='og:image' content='{% block ogimage %}https://copycamp.pl{% static "img/copycamp_2016_"|add:request.LANGUAGE_CODE|add:"_big.png" %}{% endblock %}' />
         <meta property='og:locale' content='{% if LANGUAGE_CODE == 'en'%}en_US{% else %}pl_PL{% endif %}' />
     </head>
     <body>
@@ -51,7 +51,7 @@
             </button></form-->
         </div>
         <ul id="menu" class="bar-left">
-            {% block "main_menu" %}
+            {% block main_menu %}
                 {% main_menu %}
             {% endblock %}
             <li id="item-lang">{% lang_switcher %}</li>
@@ -62,7 +62,7 @@
 
         <div id="main-bar">
         <div id="sidebar" class="bar-right">
-            {% block "sidebar" %}
+            {% block sidebar %}
 <div class="sidebar-box" style="text-align:center; font-size: 1.3em;">
 <strong><a target="_blank" style="display: block" href="https://prawokultury.pl/publikacje/cory-doctorow-kontekst/">
 <img style="margin-bottom: .5em;" src="//prawokultury.pl/media/entry/image/cory_cvr_fb_2_maly.jpg" alt="Cory Doctorow &ndash; Kontekst"><br>
@@ -77,7 +77,7 @@
             {% endblock %}
         </div>
         <div id="content" class="bar-left">
-            {% block "body" %}{% endblock %}
+            {% block body %}{% endblock %}
         </div>
         <div style="clear: both;"></div>
         </div>

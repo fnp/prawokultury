@@ -20,12 +20,12 @@
     list-style: url("/static/img/read-more.png"); }
   .submit-form input, .submit-form textarea, .submit-form select {
     font-size: 1.2em;
-    border: 0;
     background-color: white;
     color: #363A3B;
-    width: 100%;
     margin-bottom: .5em;
-    border: 1px solid #EDECE7; }
+    border: 1px solid #aeada8; }
+  .submit-form textarea, .submit-form select {
+    width: 100%; }
   .submit-form th, .submit-form td {
     text-align: left;
     font-weight: normal;
@@ -36,21 +36,21 @@
     font-size: 1.1em; }
     .submit-form .helptext a {
       color: #363A3B; }
+  .submit-form tr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .submit-form tr ul.errorlist {
+      list-style: url("/static/img/read-more.png");
+      padding: 0 0 0 1.3em;
+      margin: 0 0 .5em 0; }
   .submit-form .required label {
     font-weight: bold; }
     .submit-form .required label:before {
       content: '* '; }
-  .submit-form .required ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    .submit-form .required ul label {
-      font-weight: normal; }
-      .submit-form .required ul label:before {
-        content: none; }
-    .submit-form .required ul.errorlist {
-      list-style: url("/static/img/read-more.png");
-      padding: 0 0 0 1.3em;
-      margin: 0 0 .5em 0; }
+  .submit-form .required ul label {
+    font-weight: normal; }
+    .submit-form .required ul label:before {
+      content: none; }
   .submit-form input[type="radio"] {
     width: auto; }

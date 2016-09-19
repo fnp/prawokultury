@@ -38,6 +38,82 @@ class RegistrationForm(ContactForm):
     #        ('only-7th', _('November 7th only')),
     #    ], widget=forms.RadioSelect())
 
+    # ankieta
+    times_attended = forms.ChoiceField(
+        required=False,
+        label=_("1. How many times have you attended CopyCamp?"),
+        choices=[
+            ('0', _('not yet')),
+            ('1', _('once')),
+            ('2', _('twice')),
+            ('3', _('three times')),
+            ('4', _('four times')),
+        ], widget=forms.RadioSelect())
+    age = forms.ChoiceField(
+        required=False,
+        label=_("2. Please indicate your age bracket:"),
+        choices=[
+           ('0-19', _('19 or below')),
+           ('20-25', _('20-25')),
+           ('26-35', _('26-35')),
+           ('36-45', _('36-45')),
+           ('46-55', _('46-55')),
+           ('56-65', _('56-65')),
+           ('66+', _('66 or above')),
+        ], widget=forms.RadioSelect())
+    distance = forms.ChoiceField(
+        required=False,
+        label=_("3. How far will you travel to attend CopyCamp?"),
+        choices=[
+           ('0-50', _('0-50 km')),
+           ('51-100', _('51-100 km')),
+           ('101-200', _('101-200 km')),
+           ('200+', _('200 km or more')),
+        ], widget=forms.RadioSelect())
+    areas = forms.MultipleChoiceField(
+        required=False,
+        label=_("4. Please indicate up to 3 areas you feel most affiliated with"),
+        choices=[
+            ('sztuki plastyczne', _('visual art')),
+            ('literatura', _('literature')),
+            ('muzyka', _('music')),
+            ('teatr', _('theatre')),
+            ('film', _('film production')),
+            ('wydawanie', _('publishing')),
+            ('prawo', _('law')),
+            ('ekonomia', _('economy')),
+            ('socjologia', _('sociology')),
+            ('technika', _('technology')),
+            ('edukacja', _('education')),
+            ('studia', _('higher education')),
+            ('nauka', _('academic research')),
+            ('biblioteki', _('library science')),
+            ('administracja', _('public administration')),
+            ('ngo', _('nonprofit organisations')),
+            ('other', _('other (please specify below)')),
+        ], widget=forms.CheckboxSelectMultiple())
+    areas_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
+    source = forms.ChoiceField(
+        required=False,
+        label=_("5. Please indicate how you received information about the conference:"),
+        choices=[
+           ('znajomi', _('through friends sharing on the web')),
+           ('fnp', _('directly through the Foundation\'s facebook or website')),
+           ('www', _('through other websites (please specify below)')),
+           ('other', _('other (please specify below)')),
+        ], widget=forms.RadioSelect())
+    source_other = forms.CharField(required=False, label=_('Fill if you selected “other” or “other website” above'))
+    motivation = forms.ChoiceField(
+        required=False,
+        label=_("6. Please indicate the most important factor for your willingness to participate:"),
+        choices=[
+           ('idea', _('the main idea of the conference')),
+           ('speaker', _('particular speaker(s)')),
+           ('networking', _('good networking occasion')),
+           ('other', _('other (please specify below)')),
+        ], widget=forms.RadioSelect())
+    motivation_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
+
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
         required=False
@@ -48,7 +124,7 @@ class RegistrationForm(ContactForm):
     )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=_('I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA</a> license and to publishing my image.'),
+        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
         required=False
     )
 
@@ -60,10 +136,27 @@ class RegistrationForm(ContactForm):
             url = Entry.objects.get(slug_pl='regulamin').get_absolute_url()
             self.fields['agree_toc'] = forms.BooleanField(
                 required=True,
-                label = mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
+                label=mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
             )
         except Entry.DoesNotExist:
             pass
+
+    def clean_areas(self):
+        data = self.cleaned_data['areas']
+        if len(data) > 3:
+            raise forms.ValidationError(_('Select at most 3 areas'))
+        return data
+
+    def main_fields(self):
+        return [self[name] for name in ('first_name', 'last_name', 'contact', 'organization', 'country')]
+
+    def survey_fields(self):
+        return [self[name] for name in (
+            'times_attended', 'age', 'distance',
+            'areas', 'areas_other', 'source', 'source_other', 'motivation', 'motivation_other')]
+
+    def agreement_fields(self):
+        return [self[name] for name in ('agree_mailing', 'agree_data', 'agree_license')]
 
 
 tracks = (
@@ -216,7 +309,7 @@ class WorkshopForm(ContactForm):
     )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=_('I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA</a> license and to publishing my image.'),
+        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
         required=False
     )
 
