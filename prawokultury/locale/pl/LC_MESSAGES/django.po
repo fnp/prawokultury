@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 14:33+0200\n"
+"POT-Creation-Date: 2016-09-20 10:51+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -31,11 +31,11 @@ msgstr "Imię"
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: contact_forms.py:28 contact_forms.py:266 contact_forms.py:278
+#: contact_forms.py:28 contact_forms.py:267 contact_forms.py:279
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:29 contact_forms.py:267 contact_forms.py:279
+#: contact_forms.py:29 contact_forms.py:268 contact_forms.py:280
 msgid "Organization"
 msgstr "Organizacja"
 
@@ -244,11 +244,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:122 contact_forms.py:307
+#: contact_forms.py:122 contact_forms.py:308
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:123 contact_forms.py:308
+#: contact_forms.py:123 contact_forms.py:309
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -258,11 +258,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:126 contact_forms.py:311
+#: contact_forms.py:126 contact_forms.py:312
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:127 contact_forms.py:312
+#: contact_forms.py:127 contact_forms.py:313
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -374,23 +374,23 @@ msgid ""
 "Conditions</a>."
 msgstr "Akceptuję <a href=\"/info/regulamin/\">regulamin CopyCampu</a>"
 
-#: contact_forms.py:253
+#: contact_forms.py:254
 msgid "Fill at least one bio!"
 msgstr "Wpisz przynajmniej jedną notkę biograficzną (po polsku lub angielsku)!"
 
-#: contact_forms.py:255
+#: contact_forms.py:256
 msgid "Fill at least one title!"
 msgstr "Wpisz przynajmniej jeden tytuł prezentacji (po polsku lub angielsku)!"
 
-#: contact_forms.py:263
+#: contact_forms.py:264
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
-#: contact_forms.py:265 contact_forms.py:277
+#: contact_forms.py:266 contact_forms.py:278
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:275
+#: contact_forms.py:276
 msgid "Workshop"
 msgstr "Warsztat"
 
@@ -451,8 +451,8 @@ msgstr ""
 "konferencji."
 
 #: templates/contact/register/mail_body.txt:5
-msgid "See you on the 4th of November!"
-msgstr "Do zobaczenia 4 listopada!"
+msgid "See you on October 27-28th!"
+msgstr "Do zobaczenia 27-28 października!"
 
 #: templates/contact/register/mail_body.txt:8
 #: templates/contact/workshop/mail_body.txt:5
@@ -461,8 +461,8 @@ msgid "Message sent automatically. Please do not reply to it."
 msgstr "Wiadomość wysłana automatycznie, prosimy nie odpowiadać."
 
 #: templates/contact/register/mail_subject.txt:1
-msgid "Thank you for registering to CopyCamp 2016."
-msgstr " Dziękujemy za rejestrację na konferencję CopyCamp 2016."
+msgid "Thank you for registering to CopyCamp 2016"
+msgstr "Dziękujemy za rejestrację na konferencję CopyCamp 2016"
 
 #: templates/contact/register/thanks.html:5
 #: templates/contact/workshops/thanks.html:5

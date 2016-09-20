@@ -2,7 +2,7 @@
 {% blocktrans with conf=form.conference_name %}Thank you for registering to {{conf}}.
 Please arrive earlier to collect your ID and the conference programme.{% endblocktrans %}
 
-{% trans "See you on the 4th of November!" %}
+{% trans "See you on October 27-28th!" %}
 
 -- 
 {% trans "Message sent automatically. Please do not reply to it." %}
