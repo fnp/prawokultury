@@ -156,7 +156,7 @@ class RegistrationForm(ContactForm):
             'areas', 'areas_other', 'source', 'source_other', 'motivation', 'motivation_other')]
 
     def agreement_fields(self):
-        return [self[name] for name in ('agree_mailing', 'agree_data', 'agree_license')]
+        return [self[name] for name in ('agree_mailing', 'agree_data', 'agree_license', 'agree_toc')]
 
 
 tracks = (
