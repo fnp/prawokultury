@@ -30,13 +30,13 @@ class RegistrationForm(ContactForm):
             max_length=256, required=False)
     country = forms.CharField(label=_('Country'), max_length=128)
 
-    # days = forms.ChoiceField(
-    #    label = _("I'm planning to show up on"),
-    #    choices=[
-    #        ('both', _('Both days of the conference')),
-    #        ('only-6th', _('November 6th only')),
-    #        ('only-7th', _('November 7th only')),
-    #    ], widget=forms.RadioSelect())
+    days = forms.ChoiceField(
+       label=_("I'm planning to show up on"),
+       choices=[
+           ('both', _('Both days of the conference')),
+           ('only-27th', _('October 27th only')),
+           ('only-28th', _('October 28th only')),
+       ], widget=forms.RadioSelect())
 
     # ankieta
     times_attended = forms.ChoiceField(
@@ -53,22 +53,22 @@ class RegistrationForm(ContactForm):
         required=False,
         label=_("2. Please indicate your age bracket:"),
         choices=[
-           ('0-19', _('19 or below')),
-           ('20-25', _('20-25')),
-           ('26-35', _('26-35')),
-           ('36-45', _('36-45')),
-           ('46-55', _('46-55')),
-           ('56-65', _('56-65')),
-           ('66+', _('66 or above')),
+            ('0-19', _('19 or below')),
+            ('20-25', _('20-25')),
+            ('26-35', _('26-35')),
+            ('36-45', _('36-45')),
+            ('46-55', _('46-55')),
+            ('56-65', _('56-65')),
+            ('66+', _('66 or above')),
         ], widget=forms.RadioSelect())
     distance = forms.ChoiceField(
         required=False,
         label=_("3. How far will you travel to attend CopyCamp?"),
         choices=[
-           ('0-50', _('0-50 km')),
-           ('51-100', _('51-100 km')),
-           ('101-200', _('101-200 km')),
-           ('200+', _('200 km or more')),
+            ('0-50', _('0-50 km')),
+            ('51-100', _('51-100 km')),
+            ('101-200', _('101-200 km')),
+            ('200+', _('200 km or more')),
         ], widget=forms.RadioSelect())
     areas = forms.MultipleChoiceField(
         required=False,
@@ -97,20 +97,22 @@ class RegistrationForm(ContactForm):
         required=False,
         label=_("5. Please indicate how you received information about the conference:"),
         choices=[
-           ('znajomi', _('through friends sharing on the web')),
-           ('fnp', _('directly through the Foundation\'s facebook or website')),
-           ('www', _('through other websites (please specify below)')),
-           ('other', _('other (please specify below)')),
+            ('znajomi', _('through friends sharing on the web')),
+            ('znajomi2', _('through friends by other means')),
+            ('prasa', _('through press')),
+            ('fnp', _('directly through the Foundation\'s facebook or website')),
+            ('www', _('through other websites (please specify below)')),
+            ('other', _('other (please specify below)')),
         ], widget=forms.RadioSelect())
     source_other = forms.CharField(required=False, label=_('Fill if you selected “other” or “other website” above'))
     motivation = forms.ChoiceField(
         required=False,
         label=_("6. Please indicate the most important factor for your willingness to participate:"),
         choices=[
-           ('idea', _('the main idea of the conference')),
-           ('speaker', _('particular speaker(s)')),
-           ('networking', _('good networking occasion')),
-           ('other', _('other (please specify below)')),
+            ('idea', _('the main idea of the conference')),
+            ('speaker', _('particular speaker(s)')),
+            ('networking', _('good networking occasion')),
+            ('other', _('other (please specify below)')),
         ], widget=forms.RadioSelect())
     motivation_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
 
@@ -148,7 +150,7 @@ class RegistrationForm(ContactForm):
         return data
 
     def main_fields(self):
-        return [self[name] for name in ('first_name', 'last_name', 'contact', 'organization', 'country')]
+        return [self[name] for name in ('first_name', 'last_name', 'contact', 'organization', 'country', 'days')]
 
     def survey_fields(self):
         return [self[name] for name in (
