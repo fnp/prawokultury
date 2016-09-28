@@ -24,7 +24,7 @@
     color: #363A3B;
     margin-bottom: .5em;
     border: 1px solid #aeada8; }
-  .submit-form textarea, .submit-form select {
+  .submit-form textarea, .submit-form select, .submit-form input[type=text], .submit-form input[type=email] {
     width: 100%; }
   .submit-form th, .submit-form td {
     text-align: left;
