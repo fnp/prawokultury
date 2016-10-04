@@ -5,6 +5,7 @@
 {% load sponsor_tags %}
 {% load compressed %}
 {% load piwik_tags %}
+{% load entry_url %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
        <title>{% block "titleextra" %}{% endblock %}CopyCamp</title>
@@ -63,13 +64,14 @@
         <div id="main-bar">
         <div id="sidebar" class="bar-right">
             {% block "sidebar" %}
-<div class="sidebar-box" style="text-align:center; font-size: 1.3em;">
-<strong><a target="_blank" style="display: block" href="https://prawokultury.pl/publikacje/cory-doctorow-kontekst/">
-<img style="margin-bottom: .5em;" src="//prawokultury.pl/media/entry/image/cory_cvr_fb_2_maly.jpg" alt="Cory Doctorow &ndash; Kontekst"><br>
-  Książka:<br/>
-  Cory Doctorow &ndash; Kontekst<br/>
-  Kup na PrawoKultury.pl
-  </a></strong></div>
+                <a href="{% entry_url "warsztaty" %}" style="display: block; margin-bottom: 10px; width: 220px; text-align:center; background: #ED7F00; color: white; font-size: 24px; text-transform: uppercase;">{% trans "Workshops" %}</a>
+                <div class="sidebar-box" style="text-align:center; font-size: 1.3em;">
+                    <strong><a target="_blank" style="display: block" href="https://prawokultury.pl/publikacje/cory-doctorow-kontekst/">
+                        <img style="margin-bottom: .5em;" src="//prawokultury.pl/media/entry/image/cory_cvr_fb_2_maly.jpg" alt="Cory Doctorow &ndash; Kontekst"><br>
+                        Książka:<br/>
+                        Cory Doctorow &ndash; Kontekst<br/>
+                        Kup na PrawoKultury.pl
+                </a></strong></div>
 
                 <div class="sidebar-box">
                     {% sponsor_page 'main' %}

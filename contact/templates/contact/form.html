@@ -16,6 +16,10 @@
     <form method="POST" action="." enctype="multipart/form-data" class="submit-form">
     {% csrf_token %}
     <table>
+        <colgroup>
+            <col span="1" style="width: 45%;">
+            <col span="1" style="width: 55%;">
+        </colgroup>
         {{ form.as_table }}
         <tr><td></td><td><button>{% block contact_form_submit %}{{ form.submit_label }}{% endblock %}</button></td></tr>
     </table>

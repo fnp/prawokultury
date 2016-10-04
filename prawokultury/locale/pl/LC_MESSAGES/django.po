@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-22 13:21+0200\n"
+"POT-Creation-Date: 2016-10-04 16:05+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: contact_forms.py:23 templates/base.html:60
+#: contact_forms.py:23 templates/base.html:61
 msgid "Registration"
 msgstr "Rejestracja"
 
@@ -39,7 +39,7 @@ msgstr "E-mail"
 msgid "Organization"
 msgstr "Organizacja"
 
-#: contact_forms.py:31
+#: contact_forms.py:31 contact_forms.py:284
 msgid "Country"
 msgstr "Kraj"
 
@@ -261,7 +261,7 @@ msgstr "konkretna(y) prelegentka(ent)"
 msgid "good networking occasion"
 msgstr "możliwość networkingu"
 
-#: contact_forms.py:120
+#: contact_forms.py:120 contact_forms.py:329
 msgid ""
 "I am interested in receiving information about the Modern Poland "
 "Foundation's activities by e-mail"
@@ -269,11 +269,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:124 contact_forms.py:310
+#: contact_forms.py:124 contact_forms.py:332
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:125 contact_forms.py:311
+#: contact_forms.py:125 contact_forms.py:334
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -283,11 +283,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:128 contact_forms.py:314
+#: contact_forms.py:128 contact_forms.py:338
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:129 contact_forms.py:315
+#: contact_forms.py:129 contact_forms.py:340
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -297,7 +297,7 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:141
+#: contact_forms.py:141 contact_forms.py:352
 #, python-format
 msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
 msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
@@ -419,6 +419,71 @@ msgstr "Imię i nazwisko"
 msgid "Workshop"
 msgstr "Warsztat"
 
+#: contact_forms.py:287
+msgid "<h3>I'll take a part in workshops</h3>"
+msgstr "<h3>Wezmę udział w warsztatach</h3>"
+
+#: contact_forms.py:288
+msgid "Only workshops with any spots left are visible here."
+msgstr "Widoczne są tylko warsztaty, w których są jeszcze miejsca."
+
+#: contact_forms.py:290
+msgid "<strong>Thursday, October 27th, 10 a.m.–12 noon</strong>"
+msgstr "<strong>Czwartek, 27 października, 10:00–12:00</strong>"
+
+#: contact_forms.py:292
+msgid "Dimitar Dimitrov: Hacking Brussels"
+msgstr "Dimitar Dimitrov: Hacking Brussels (warsztat w języku angielskim)"
+
+#: contact_forms.py:294
+msgid ""
+"Stef van Gompel: Methods and constraints for including evidence in IP "
+"lawmaking"
+msgstr ""
+"Stef van Gompel: Methods and constraints for including evidence in IP "
+"lawmaking (warsztat w języku angielskim)"
+
+#: contact_forms.py:296
+msgid "<strong>Friday, October 28th, 10 a.m.–12 noon</strong>"
+msgstr "<strong>Piątek, 28 października, 10:00–12:00</strong>"
+
+#: contact_forms.py:299
+msgid ""
+"dr Krzysztof Siewicz, dr Marta Hoffman-Sommer: Legal aspects of using "
+"research data in the age of Open Data"
+msgstr ""
+"dr Krzysztof Siewicz, dr Marta Hoffman-Sommer: Legal aspects of using "
+"research data in the age of Open Data (warsztat w języku angielskim)"
+
+#: contact_forms.py:313
+msgid "Marcin Olender, Google: Prawo autorskie na YouTube (workshop in Polish)"
+msgstr "Marcin Olender, Google: Prawo autorskie na YouTube"
+
+#: contact_forms.py:315
+msgid "<strong>Friday, October 28th, 12 noon–2 p.m.</strong>"
+msgstr "<strong>Piątek, 28 października, 12:00–14:00</strong>"
+
+#: contact_forms.py:318
+msgid ""
+"Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego "
+"użytku (workshop in Polish)"
+msgstr ""
+"Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego "
+"użytku"
+
+#: contact_forms.py:373
+msgid "Please submit your answer to qualify for this workshop"
+msgstr ""
+"Zamieść odpowiedź na zadanie, aby móc się zakwalifikować na ten warsztat"
+
+#: contact_forms.py:376
+msgid "You can't choose more than one workshop during the same period"
+msgstr "Nie możesz wybrać warsztatów odbywających się w tym samym czasie"
+
+#: contact_forms.py:378
+msgid "Please choose at least one workshop."
+msgstr "Proszę wybrać co najmniej jeden warsztat."
+
 #: settings.d/60-custom.py:5
 msgid "info"
 msgstr "info"
@@ -431,7 +496,7 @@ msgstr "Strona nie znaleziona"
 msgid "The page you were looking for doesn't exist."
 msgstr "Strona, której szukasz, nie istnieje."
 
-#: templates/base.html:18
+#: templates/base.html:19
 msgid ""
 "CopyCamp Conference is the first large-scale meeting in Poland devoted to "
 "the issues of copyright in both ideological and practical terms."
@@ -439,15 +504,19 @@ msgstr ""
 "CopyCamp jest pierwszym w Polsce, organizowanym na dużą skalę spotkaniem "
 "osób zajmujących się problematyką praw autorskich."
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "CopyCamp"
 msgstr "CopyCamp"
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Search"
 msgstr "Szukaj"
 
-#: templates/base.html:103
+#: templates/base.html:68
+msgid "Workshops"
+msgstr "Warsztaty"
+
+#: templates/base.html:105
 msgid ""
 "If not explicitly stated otherwise, all texts are licensed under the <a "
 "href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons "
@@ -542,27 +611,12 @@ msgstr ""
 #~ msgid "Take part! / Workshops"
 #~ msgstr "Weź udział! / Warsztaty"
 
-#~ msgid "<h3>I'll take a part in workshops</h3>"
-#~ msgstr "<h3>Wezmę udział w warsztatach</h3>"
-
-#~ msgid "Only workshops with any spots left are visible here."
-#~ msgstr "Widoczne są tylko warsztaty, w których są jeszcze miejsca."
-
-#~ msgid "<strong>Friday, November 7th, 10 a.m.–12 noon</strong>"
-#~ msgstr "<strong>Piątek, 7 listopada, 10:00–12:00</strong>"
-
 #~ msgid ""
 #~ "Péter Mezei: European copyright alternatives – 2014 (Workshop will be "
 #~ "held in English)"
 #~ msgstr ""
 #~ "Péter Mezei: European copyright alternatives – 2014 (Uwaga! Warsztat "
 #~ "prowadzony będzie w jęz. angielskim.)"
-
-#~ msgid "<strong>Friday, November 7th, 12 noon–2 p.m.</strong>"
-#~ msgstr "<strong>Piątek, 7 listopada, 12:00–14:00</strong>"
-
-#~ msgid "Please choose at least one workshop."
-#~ msgstr "Proszę wybrać co najmniej jeden warsztat."
 
 #~ msgid "Creative Middle Class"
 #~ msgstr "O kreatywnej klasie średniej"
@@ -581,9 +635,6 @@ msgstr ""
 
 #~ msgid "Presentation"
 #~ msgstr "Prezentacja"
-
-#~ msgid "<strong>Thursday, November 6th, 10 a.m.–12 noon</strong>"
-#~ msgstr "<strong>Czwartek, 6 listopada, 10:00–12:00</strong>"
 
 #~ msgid "Thank you for submitting the registration form at %(site_name)s."
 #~ msgstr ""

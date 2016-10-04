@@ -272,8 +272,8 @@ class NextForm(ContactForm):
 
 
 class WorkshopForm(ContactForm):
-    form_tag = 'workshop'
-    save_as_tag = 'workshop-2016'
+    form_tag = 'workshops'
+    save_as_tag = 'workshops-2016'
     conference_name = u'CopyCamp 2016'
     form_title = _('Workshop')
 
@@ -281,65 +281,99 @@ class WorkshopForm(ContactForm):
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'),
                                    max_length=256, required=False)
+    country = forms.CharField(label=_('Country'), max_length=128)
 
-    _#header = HeaderField(label=mark_safe_lazy(_("<h3>I'll take a part in workshops</h3>")), help_text=_('Only workshops with any spots left are visible here.'))
+    _header = HeaderField(
+        label=mark_safe_lazy(_("<h3>I'll take a part in workshops</h3>")),
+        help_text=_('Only workshops with any spots left are visible here.'))
 
-    #_h1 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, November 6th, 10 a.m.–12 noon</strong>")))
+    _h1 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, October 27th, 10 a.m.–12 noon</strong>")))
 
-    #w_rysiek = forms.BooleanField(label=_(u'Michał „rysiek” Woźniak, Koalicja Otwartej Edukacji KOED: Wprowadzenie do prawa autorskiego i wolnych licencji'), required=False)
-    #w_bartsch = forms.BooleanField(label=_(u'Natalia Bartsch: Wykorzystywanie istniejących utworów w tworzeniu przedstawienia teatralnego'), required=False)
-    #w_samsung = forms.BooleanField(label=_(u'Rafał Sikorski: Prywatny użytek w prawie autorskim w XXI wieku. Jak powinien wyglądać w\u00a0Unii Europejskiej?'), required=False)
+    w_dimitrov = forms.BooleanField(label=_(u'Dimitar Dimitrov: Hacking Brussels'), required=False)
+    w_vangompel = forms.BooleanField(label=_(
+        u'Stef van Gompel: Methods and constraints for including evidence in IP lawmaking'), required=False)
 
-    #_h2 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, November 7th, 10 a.m.–12 noon</strong>")))
+    _h2 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, October 28th, 10 a.m.–12 noon</strong>")))
 
-    #w_mezei = forms.BooleanField(label=_(u'Péter Mezei: European copyright alternatives – 2014 (Workshop will be held in English)'), required=False)
-    #w_sliwowski = forms.BooleanField(label=_(u'Kamil Śliwowski, Koalicja Otwartej Edukacji KOED: Prawo autorskie w Sieci - ćwiczenia praktyczne'), required=False)
+    w_siewicz = forms.BooleanField(label=_(
+        u'dr Krzysztof Siewicz, dr Marta Hoffman-Sommer: '
+        u'Legal aspects of using research data in the age of Open Data'), required=False)
+    w_siewicz_project = forms.CharField(
+        label=mark_safe(
+            u'<p style="margin-top: 0"><strong>Qualification for this workshop will be based on the answers '
+            u'for the following problem:</strong></p>'
+            u'Please choose a particular dataset from any research project you are involved in and provide '
+            u'a description (no more than 1800 characters). Selected datasets will be discussed during '
+            u'the workshop as case studies. In your description, please include the following information: '
+            u'What is the research goal of the project (in the context of the chosen dataset)? '
+            u'What data is being collected and how is it stored? What is the process of data collection '
+            u'or generation? Who is involved in collecting or producing the data and in what manner?'),
+        max_length=1800, widget=forms.Textarea, required=False)
+    w_google = forms.BooleanField(label=_(
+        u'Marcin Olender, Google: Prawo autorskie na YouTube (workshop in Polish)'), required=False)
 
-    #_h3 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, November 7th, 12 noon–2 p.m.</strong>")))
+    _h3 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, October 28th, 12 noon–2 p.m.</strong>")))
 
-    #w_zaiks = forms.BooleanField(label=_(u'Łukasz Łyczkowski, Adam Pacuski, Stowarzyszenie Autorów ZAiKS: Praktyczne aspekty dozwolonego użytku'), required=False)
-    #w_creativepoland = forms.BooleanField(label=_(u'Paweł Kaźmierczyk i Dagmara Białek, Creative Poland: Sektor kreatywny – pomysły są w cenie'), required=False)
+    w_patronite = forms.BooleanField(label=_(
+        u'Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego użytku '
+        u'(workshop in Polish)'),
+        required=False)
 
-    #_header_1 = HeaderField(label='')
+    _header_1 = HeaderField(label='')
 
-    # agree_mailing = forms.BooleanField(
-    #    label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
-    #    required=False
-    # )
+    start_workshops = ('dimitrov', 'vangompel', 'siewicz', 'google', 'patronite')
+
+    slots = (('_h1', 'dimitrov', 'vangompel'), ('_h2', 'siewicz', 'google'), ('_h3', 'patronite'))
+
+    agree_mailing = forms.BooleanField(
+        label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
+        required=False)
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
-        help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
-    )
+        help_text=_(
+            u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, '
+            u'00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of '
+            u'registration for CopyCamp conference.'))
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
-        required=False
-    )
+        help_text=mark_safe_lazy(_(
+            u'I agree to having materials, recorded during the conference, released under the terms of '
+            u'<a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> '
+            u'license and to publishing my image.')),
+        required=False)
 
     def __init__(self, *args, **kwargs):
         super(WorkshopForm, self).__init__(*args, **kwargs)
-        self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= 60
+        # self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= 60
+        try:
+            url = Entry.objects.get(slug_pl='regulamin').get_absolute_url()
+            self.fields['agree_toc'] = forms.BooleanField(
+                required=True,
+                label=mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
+            )
+        except Entry.DoesNotExist:
+            pass
+        counts = {k: 0 for k in self.start_workshops}
+        for contact in Contact.objects.filter(form_tag=self.save_as_tag):
+            for workshop in self.start_workshops:
+                if contact.body.get('w_%s' % workshop, False): counts[workshop] += 1
+        some_full = False
+        for k, v in counts.items():
+            if v >= 30:
+                some_full = True
+                if 'w_%s' % k in self.fields:
+                    del self.fields['w_%s' % k]
+                if k in self.workshops:
+                    self.workshops.remove(k)
+        if not some_full:
+            self.fields['_header'].help_text = None
 
-        # counts = {k: 0 for k in self.start_workshops}
-        # for contact in Contact.objects.filter(form_tag=self.save_as_tag):
-        #     for workshop in self.start_workshops:
-    #            if contact.body.get('w_%s' % workshop, False): counts[workshop] += 1
-        # some_full = False
-        # for k, v in counts.items():
-        #     if v >= 60:
-        #         some_full = True
-        #         if 'w_%s' % k in self.fields:
-        #             del self.fields['w_%s' % k]
-        #         if k in self.workshops:
-        #             self.workshops.remove(k)
-        # if not some_full:
-        #     self.fields['_header'].help_text = None
-
-    # def clean(self):
-    #     any_workshop = False
-    #     for w in self.start_workshops:
-    #         if self.cleaned_data.get('w_%s' % w):
-    #             any_workshop = True
-    #     if not any_workshop:
-    #         self._errors['_header'] = [_("Please choose at least one workshop.")]
-    #     return self.cleaned_data
+    def clean(self):
+        if self.cleaned_data.get('w_siewicz') and not self.cleaned_data.get('w_siewicz_project'):
+            self._errors['w_siewicz_project'] = [_("Please submit your answer to qualify for this workshop")]
+        for slot in self.slots:
+            if sum(1 for w in slot if self.cleaned_data.get('w_%s' % w)) > 1:
+                self._errors[slot[0]] = [_("You can't choose more than one workshop during the same period")]
+        if not any(self.cleaned_data.get('w_%s' % w) for w in self.start_workshops):
+            self._errors['_header'] = [_("Please choose at least one workshop.")]
+        return self.cleaned_data

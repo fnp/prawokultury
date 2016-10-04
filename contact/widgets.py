@@ -4,7 +4,6 @@ from django.utils.html import format_html
 
 class HeaderWidget(forms.widgets.Widget):
     def render(self, name, value, attrs=None):
-        return ''
         attrs.update(self.attrs)
-        return format_html('<div{0}>{1}</div>', flatatt(attrs), unicode(value))
-
+        return format_html('<a{0}></a>', flatatt(attrs))
+        # return format_html('<div{0}>{1}</div>', flatatt(attrs), unicode(value))
