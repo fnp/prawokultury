@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 16:05+0200\n"
+"POT-Creation-Date: 2016-10-06 10:45+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -261,7 +261,7 @@ msgstr "konkretna(y) prelegentka(ent)"
 msgid "good networking occasion"
 msgstr "możliwość networkingu"
 
-#: contact_forms.py:120 contact_forms.py:329
+#: contact_forms.py:120 contact_forms.py:332
 msgid ""
 "I am interested in receiving information about the Modern Poland "
 "Foundation's activities by e-mail"
@@ -269,11 +269,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:124 contact_forms.py:332
+#: contact_forms.py:124 contact_forms.py:335
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:125 contact_forms.py:334
+#: contact_forms.py:125 contact_forms.py:337
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -283,11 +283,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:128 contact_forms.py:338
+#: contact_forms.py:128 contact_forms.py:341
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:129 contact_forms.py:340
+#: contact_forms.py:129 contact_forms.py:343
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -297,7 +297,7 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:141 contact_forms.py:352
+#: contact_forms.py:141 contact_forms.py:355
 #, python-format
 msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
 msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
@@ -471,16 +471,23 @@ msgstr ""
 "Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego "
 "użytku"
 
-#: contact_forms.py:373
+#: contact_forms.py:323
+msgid ""
+"Olga Goriunova: The Lurker and the politics of knowledge in data culture"
+msgstr ""
+"Olga Goriunova: The Lurker and the politics of knowledge in data culture "
+" (warsztat w języku angielskim)"
+
+#: contact_forms.py:376
 msgid "Please submit your answer to qualify for this workshop"
 msgstr ""
 "Zamieść odpowiedź na zadanie, aby móc się zakwalifikować na ten warsztat"
 
-#: contact_forms.py:376
+#: contact_forms.py:379
 msgid "You can't choose more than one workshop during the same period"
 msgstr "Nie możesz wybrać warsztatów odbywających się w tym samym czasie"
 
-#: contact_forms.py:378
+#: contact_forms.py:381
 msgid "Please choose at least one workshop."
 msgstr "Proszę wybrać co najmniej jeden warsztat."
 

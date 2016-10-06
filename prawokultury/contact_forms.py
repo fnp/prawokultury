@@ -319,11 +319,14 @@ class WorkshopForm(ContactForm):
         u'(workshop in Polish)'),
         required=False)
 
+    w_gurionova = forms.BooleanField(label=_(
+        u'Olga Goriunova: The Lurker and the politics of knowledge in data culture'), required=False)
+
     _header_1 = HeaderField(label='')
 
     start_workshops = ('dimitrov', 'vangompel', 'siewicz', 'google', 'patronite')
 
-    slots = (('_h1', 'dimitrov', 'vangompel'), ('_h2', 'siewicz', 'google'), ('_h3', 'patronite'))
+    slots = (('_h1', 'dimitrov', 'vangompel'), ('_h2', 'siewicz', 'google'), ('_h3', 'patronite', 'gurionova'))
 
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
