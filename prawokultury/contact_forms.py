@@ -315,7 +315,7 @@ class WorkshopForm(ContactForm):
     _h3 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, October 28th, 12 noon–2 p.m.</strong>")))
 
     w_patronite = forms.BooleanField(label=_(
-        u'Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego użytku '
+        u'Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać – warsztaty dla twórców '
         u'(workshop in Polish)'),
         required=False)
 

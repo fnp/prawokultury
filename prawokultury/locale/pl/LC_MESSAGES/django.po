@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 10:45+0200\n"
+"POT-Creation-Date: 2016-10-24 10:56+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -464,19 +464,20 @@ msgid "<strong>Friday, October 28th, 12 noon–2 p.m.</strong>"
 msgstr "<strong>Piątek, 28 października, 12:00–14:00</strong>"
 
 #: contact_forms.py:318
+#, fuzzy
 msgid ""
-"Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego "
-"użytku (workshop in Polish)"
+"Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać "
+"– warsztaty dla twórców (workshop in Polish)"
 msgstr ""
-"Mateusz Górski, Michał Leksiński, Patronite: Praktyczne aspekty dozwolonego "
-"użytku"
+"Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać "
+"– warsztaty dla twórców"
 
 #: contact_forms.py:323
 msgid ""
 "Olga Goriunova: The Lurker and the politics of knowledge in data culture"
 msgstr ""
-"Olga Goriunova: The Lurker and the politics of knowledge in data culture "
-" (warsztat w języku angielskim)"
+"Olga Goriunova: The Lurker and the politics of knowledge in data culture  "
+"(warsztat w języku angielskim)"
 
 #: contact_forms.py:376
 msgid "Please submit your answer to qualify for this workshop"
