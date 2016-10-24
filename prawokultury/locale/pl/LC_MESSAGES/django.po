@@ -464,7 +464,6 @@ msgid "<strong>Friday, October 28th, 12 noon–2 p.m.</strong>"
 msgstr "<strong>Piątek, 28 października, 12:00–14:00</strong>"
 
 #: contact_forms.py:318
-#, fuzzy
 msgid ""
 "Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać "
 "– warsztaty dla twórców (workshop in Polish)"

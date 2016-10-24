@@ -366,8 +366,8 @@ class WorkshopForm(ContactForm):
                 some_full = True
                 if 'w_%s' % k in self.fields:
                     del self.fields['w_%s' % k]
-                if k in self.workshops:
-                    self.workshops.remove(k)
+                # if k in self.workshops:
+                #     self.workshops.remove(k)
         if not some_full:
             self.fields['_header'].help_text = None
 
