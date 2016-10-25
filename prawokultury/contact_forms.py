@@ -324,7 +324,7 @@ class WorkshopForm(ContactForm):
 
     _header_1 = HeaderField(label='')
 
-    start_workshops = ('dimitrov', 'vangompel', 'siewicz', 'google', 'patronite')
+    start_workshops = ('dimitrov', 'vangompel', 'siewicz', 'google', 'patronite', 'gurionova')
 
     slots = (('_h1', 'dimitrov', 'vangompel'), ('_h2', 'siewicz', 'google'), ('_h3', 'patronite', 'gurionova'))
 
