@@ -8,19 +8,19 @@
 {% load piwik_tags %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
-       <title>{% block "titleextra" %}{% endblock %}{% trans "Right to Culture" %}</title>
+       <title>{% block titleextra %}{% endblock %}{% trans "Right to Culture" %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
         {% compressed_css 'base' %}
-        {% block "extra_css" %}{% endblock %}
+        {% block extra_css %}{% endblock %}
         <meta charset="UTF-8" />
-        <meta property='og:url' content='{% block "ogurl" %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
-        <meta property='og:title' content='{% block "ogtitle" %}{% trans "Right to Culture" %}{% endblock %}' />
+        <meta property='og:url' content='{% block ogurl %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
+        <meta property='og:title' content='{% block ogtitle %}{% trans "Right to Culture" %}{% endblock %}' />
         <meta property='og:site_name' content='{% trans "Right to Culture" %}' />
-        <meta property='og:description' content='{% block "ogdescription" %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />
-        <meta property='og:type' content='{% block "ogtype" %}website{% endblock %}' />
-        <meta property='og:image' content='{% block "ogimage" %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
+        <meta property='og:description' content='{% block ogdescription %}Prawokultury.pl to strona edukacyjna mająca za zadanie w przystępny i rzetelny sposób informować o wszelkich kwestiach związanych z prawem autorskim.{% endblock %}' />
+        <meta property='og:type' content='{% block ogtype %}website{% endblock %}' />
+        <meta property='og:image' content='{% block ogimage %}{{ "/static/img/square-logo.png"|build_absolute_uri:request }}{% endblock %}' />
         <meta property='og:locale' content='pl_PL' />
-        {% block "headextra" %}{% endblock %}
+        {% block headextra %}{% endblock %}
     </head>
     <body>
     {% load fnp_annoy %}{% annoy %}
@@ -54,7 +54,7 @@
             </button></form>
         </div>
         <ul id="menu" class="bar-left">
-            {% block "main_menu" %}
+            {% block main_menu %}
                 {% main_menu %}
             {% endblock %}
             <li id="item-lang">{% lang_switcher %}</li>
@@ -70,7 +70,7 @@
 
         <div id="main-bar" style='clear: both;'>
         <div id="sidebar" class="bar-right">
-            {% block "sidebar" %}
+            {% block sidebar %}
                 <div class="sidebar-box">
                     <h3><a href="{% url 'events' %}">{% trans "Upcoming events" %}</a></h3>
                     {% events_box %}
@@ -96,7 +96,7 @@
             {% endblock %}
         </div>
         <div id="content" class="bar-left">
-            {% block "body" %}{% endblock %}
+            {% block body %}{% endblock %}
         </div>
         <div style="clear: both;"></div>
         </div>
@@ -129,6 +129,6 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
     {% compressed_js 'base' %}
     {% tracking_code %}
-    {% block "extra_js" %}{% endblock %}
+    {% block extra_js %}{% endblock %}
     </body>
 </html>

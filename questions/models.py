@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from markupfield.fields import MarkupField
 from taggit.models import TagBase, GenericTaggedItemBase
 from taggit_autosuggest.managers import TaggableManager
-from fnpdjango.utils.text.slughifi import slughifi
+from slugify import slugify
 
 
 class TagCategory(models.Model):
@@ -26,7 +26,7 @@ class TagCategory(models.Model):
     
 class Tag(TagBase):
     def slugify(self, tag, i=None):
-        slug = slughifi(tag)
+        slug = slugify(tag)
         if i is not None:
             slug += "_%d" % i
         return slug
