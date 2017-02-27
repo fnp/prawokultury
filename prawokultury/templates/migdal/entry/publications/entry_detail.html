@@ -8,6 +8,8 @@
 
 {% if not entry.published %}
     <p class="warning">{% trans "This entry hasn't been published yet." %}</p>
+{% else %}
+    <p>{% trans "Published at" %} {{ entry.first_published_at|date:"DATETIME_FORMAT" }}</p>
 {% endif %}
 
 <div class="entry entry-detail entry-{{ entry.type }}">
