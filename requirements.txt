@@ -7,7 +7,7 @@ South>=0.7.4
 Pillow
 sorl-thumbnail>=11.09,<12
 django-pagination
-django-migdal>=0.4,<0.5
+django-migdal==0.5.2
 pytz
 
 jsonfield>=0.9.20
