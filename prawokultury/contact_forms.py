@@ -17,8 +17,8 @@ mark_safe_lazy = lazy(mark_safe, unicode)
 class RegistrationForm(ContactForm):
     form_tag = 'register'
 
-    save_as_tag = '2016'
-    conference_name = u'CopyCamp 2016'
+    save_as_tag = '2017'
+    conference_name = u'CopyCamp 2017'
     
     form_title = _('Registration')
     admin_list = ['first_name', 'last_name', 'organization']
@@ -175,7 +175,7 @@ tracks = (
 
 class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
-    save_as_tag = '2016-speaker'
+    save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
 
     presentation_thematic_track = forms.ChoiceField(
@@ -273,8 +273,8 @@ class NextForm(ContactForm):
 
 class WorkshopForm(ContactForm):
     form_tag = 'workshops'
-    save_as_tag = 'workshops-2016'
-    conference_name = u'CopyCamp 2016'
+    save_as_tag = 'workshops-2017'
+    conference_name = u'CopyCamp 2017'
     form_title = _('Workshop')
 
     name = forms.CharField(label=_('Name'), max_length=128)
