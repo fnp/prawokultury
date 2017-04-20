@@ -190,6 +190,21 @@ class RegisterSpeaker(RegistrationForm):
     save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
 
+    # inherited fields included do they are not translated
+    first_name = forms.CharField(label=_('First name'), max_length=128)
+    last_name = forms.CharField(label=_('Last name'), max_length=128)
+    organization = forms.CharField(label=_('Organization'),
+            max_length=256, required=False)
+    agree_mailing = forms.BooleanField(
+        label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
+        required=False
+    )
+    agree_license = forms.BooleanField(
+        label=_('Permission for publication'),
+        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
+        required=False
+    )
+
     presentation_thematic_track = forms.ChoiceField(
         label=_('Please select one thematic track'),
         choices=[(t, mark_safe('<strong>%s</strong><p style="margin-left: 20px;">%s</p>' % (t, desc))) for t, desc in tracks],
