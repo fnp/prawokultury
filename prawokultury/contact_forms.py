@@ -189,6 +189,7 @@ class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
     save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
+    notify_on_register = False
 
     # inherited fields included do they are not translated
     first_name = forms.CharField(label=_('First name'), max_length=128)

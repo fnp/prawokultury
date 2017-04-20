@@ -33,6 +33,7 @@ class ContactForm(forms.Form):
     form_title = _('Contact form')
     submit_label = _('Submit')
     admin_list = None
+    notify_on_register = True
 
     required_css_class = 'required'
     contact = forms.CharField(max_length=128)
@@ -76,16 +77,16 @@ class ContactForm(forms.Form):
             'form': self,
         }
         context = RequestContext(request)
-        mail_managers_subject = render_to_string([
-                'contact/%s/mail_managers_subject.txt' % self.form_tag,
-                'contact/mail_managers_subject.txt', 
-            ], dictionary, context).strip()
-        mail_managers_body = render_to_string([
-                'contact/%s/mail_managers_body.txt' % self.form_tag,
-                'contact/mail_managers_body.txt', 
-            ], dictionary, context)
-        mail_managers(mail_managers_subject, mail_managers_body, 
-            fail_silently=True)
+        if self.notify_on_register:
+            mail_managers_subject = render_to_string([
+                    'contact/%s/mail_managers_subject.txt' % self.form_tag,
+                    'contact/mail_managers_subject.txt',
+                ], dictionary, context).strip()
+            mail_managers_body = render_to_string([
+                    'contact/%s/mail_managers_body.txt' % self.form_tag,
+                    'contact/mail_managers_body.txt',
+                ], dictionary, context)
+            mail_managers(mail_managers_subject, mail_managers_body, fail_silently=True)
 
         try:
             validate_email(contact.contact)
