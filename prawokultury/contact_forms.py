@@ -162,56 +162,62 @@ class RegistrationForm(ContactForm):
 
 
 tracks = (
-    _('Copyright and Art'),
-    _('Remuneration Models'),
-    _('Copyright, Education and Science'),
-    _('Technology, Innovation and Copyright'),
-    _('Copyright and Human Rights'),
-    _('Copyright Enforcement'),
-    _('Copyright Debate'),
-    _('Copyright Lawmaking'),
+    (_('business models, heritage digitization, remix'),
+     _('What are the boundaries of appropriation in culture? '
+       'Who owns the past and whether these exclusive rights allow to '
+       'control present and future? How to make money from creativity without selling yourself?')),
+    (_('health, food, security, and exclusive rights'),
+     _('Who owns medicines and equipment necessary to provide health care? '
+       'Who owns grain and machines used to harvest it? '
+       'To what extent exclusive rights can affect what you eat, '
+       'how you exercise, whether you can apply a specific treatment?')),
+    (_('text and data mining, machine learning, online education'),
+     _('Do you think own the data you feed to algorithms? Or maybe you think you own these algorithms? '
+       'What if you can’t mine the data because you actually don’t own any of those rights? '
+       'What does it mean to own data about someone, or data necessary for that person’s education?')),
+    (_('IoT: autonomous cars, smart homes, wearables'),
+     _('What does it mean to own exclusive rights to software and data used to construct autonomous agents? '
+       'What will it mean in a near future?')),
+    (_('hacking government data, public procurement, public aid in culture'),
+     _('Who owns information created using public money? How can this information be appropriated? '
+       'What is the role of government in the development of information infrastructure?')),
 )
 
 
 class RegisterSpeaker(RegistrationForm):
+    from django.utils.translation import ugettext_noop as _
     form_tag = 'register-speaker'
     save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
 
     presentation_thematic_track = forms.ChoiceField(
         label=_('Please select one thematic track'),
-        choices=[(t, t) for t in tracks], widget=forms.RadioSelect())
+        choices=[(t, mark_safe('<strong>%s</strong><p style="margin-left: 20px;">%s</p>' % (t, desc))) for t, desc in tracks],
+        widget=forms.RadioSelect())
 
-    bio = forms.CharField(label=mark_safe_lazy(
-        _('Short biographical note in Polish (max. 500 characters, fill <strong>at least</strong> one bio)')),
-                          widget=forms.Textarea, max_length=500, required=False)
-    bio_en = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
-                             max_length=500, required=False)
+    bio = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
+                          max_length=500, required=False)
     photo = forms.FileField(label=_('Photo'), required=False)
     phone = forms.CharField(label=_('Phone number'), max_length=64,
                             required=False,
                             help_text=_('Used only for organizational purposes.'))
 
-    # presentation = forms.BooleanField(label=_('Presentation'), required=False)
     presentation_title = forms.CharField(
-        label=mark_safe_lazy(_('Title of the presentation in Polish (fill <strong>at least</strong> one title)')),
+        label=mark_safe_lazy(_('Title of the presentation in English')),
         max_length=256, required=False)
-    presentation_title_en = forms.CharField(label=_('Title of the presentation in English'),
-                                            max_length=256, required=False)
-    # presentation = forms.FileField(label=_('Presentation'), required=False)
     presentation_summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
                                            widget=forms.Textarea, max_length=1800)
 
-    presentation_post_conference_publication = forms.BooleanField(
-        label=_('I am interested in including my paper in the post-conference publication'),
-        required=False
-    )
+    # presentation_post_conference_publication = forms.BooleanField(
+    #     label=_('I am interested in including my paper in the post-conference publication'),
+    #     required=False
+    # )
 
     agree_data = None
 
     agree_terms = forms.BooleanField(
         label=mark_safe_lazy(_(u'I accept <a href="/en/info/terms-and-conditions/">'
-                                   u'CopyCamp Terms and Conditions</a>.'))
+                               u'CopyCamp Terms and Conditions</a>.'))
     )
 
     # workshop = forms.BooleanField(label=_('Workshop'), required=False)
@@ -231,14 +237,11 @@ class RegisterSpeaker(RegistrationForm):
             'phone',
             'organization',
             'bio',
-            'bio_en',
             'photo',
-            # 'presentation',
             'presentation_title',
-            'presentation_title_en',
             'presentation_summary',
             'presentation_thematic_track',
-            'presentation_post_conference_publication',
+            # 'presentation_post_conference_publication',
             # 'workshop',
             # 'workshop_title',
             # 'workshop_summary',
@@ -248,17 +251,6 @@ class RegisterSpeaker(RegistrationForm):
             'agree_license',
             'agree_terms',
         ]
-
-    def clean(self):
-        cleaned_data = super(RegisterSpeaker, self).clean()
-        errors = []
-        if not cleaned_data.get('bio') and not cleaned_data.get('bio_en'):
-            errors.append(forms.ValidationError(_('Fill at least one bio!')))
-        if not cleaned_data.get('presentation_title') and not cleaned_data.get('presentation_title_en'):
-            errors.append(forms.ValidationError(_('Fill at least one title!')))
-        if errors:
-            raise forms.ValidationError(errors)
-        return cleaned_data
 
 
 class NextForm(ContactForm):
