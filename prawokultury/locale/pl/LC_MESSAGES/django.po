@@ -570,8 +570,8 @@ msgid "Thank you for submitting your proposal."
 msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/mail_body.txt:3
-msgid "Your submission can be modified until May 31st at:"
-msgstr "Zgłoszenie można modyfikować do 31 maja pod adresem:"
+msgid "Your submission can be modified until June 11th at:"
+msgstr "Zgłoszenie można modyfikować do 11 czerwca pod adresem:"
 
 #: templates/contact/register-speaker/mail_body.txt:6
 #: templates/contact/register-speaker/thanks.html:10
@@ -584,10 +584,10 @@ msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/thanks.html:8
 msgid ""
-"Your submission can be modified until May 31st using the unique link sent to "
+"Your submission can be modified until June 11th using the unique link sent to "
 "you by e-mail."
 msgstr ""
-"Zgłoszenie można modyfikować do 31 maja używając unikalnego adresu "
+"Zgłoszenie można modyfikować do 11 czerwca używając unikalnego adresu "
 "przesłanego e-mailem."
 
 #: templates/contact/workshop/mail_body.txt:2
