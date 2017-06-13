@@ -28,4 +28,4 @@ django-haystack>=2.1,<2.2
 pysolr
 django-piwik
 
-django-sponsors
+django-sponsors>=1.2,<2.0
