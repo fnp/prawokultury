@@ -36,7 +36,7 @@ class ContactForm(forms.Form):
     notify_on_register = True
 
     required_css_class = 'required'
-    contact = forms.CharField(max_length=128)
+    contact = forms.EmailField(label=_('E-mail'), max_length=128)
 
     def __init__(self, *args, **kwargs):
         key = kwargs.pop('key', None)

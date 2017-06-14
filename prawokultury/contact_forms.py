@@ -269,6 +269,12 @@ class RegisterSpeaker(RegistrationForm):
         ]
 
 
+class RemindForm(ContactForm):
+    form_tag = 'remind-me'
+    save_as_tag = 'remind-me-2017'
+    form_title = u'CopyCamp 2017'
+
+
 class NextForm(ContactForm):
     form_tag = '/next'
     form_title = _('Next CopyCamp')
