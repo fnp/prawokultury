@@ -34,6 +34,7 @@ class ContactForm(forms.Form):
     submit_label = _('Submit')
     admin_list = None
     notify_on_register = True
+    notify_user = True
 
     required_css_class = 'required'
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
@@ -93,17 +94,18 @@ class ContactForm(forms.Form):
         except ValidationError:
             pass
         else:
-            mail_subject = render_to_string([
-                    'contact/%s/mail_subject.txt' % self.form_tag,
-                    'contact/mail_subject.txt', 
-                ], dictionary, context).strip()
-            mail_body = render_to_string([
-                    'contact/%s/mail_body.txt' % self.form_tag,
-                    'contact/mail_body.txt', 
-                ], dictionary, context)
-            send_mail(mail_subject, mail_body,
-                'no-reply@%s' % site.domain,
-                [contact.contact],
-                fail_silently=True)
+            if self.notify_user:
+                mail_subject = render_to_string([
+                        'contact/%s/mail_subject.txt' % self.form_tag,
+                        'contact/mail_subject.txt',
+                    ], dictionary, context).strip()
+                mail_body = render_to_string([
+                        'contact/%s/mail_body.txt' % self.form_tag,
+                        'contact/mail_body.txt',
+                    ], dictionary, context)
+                send_mail(mail_subject, mail_body,
+                    'no-reply@%s' % site.domain,
+                    [contact.contact],
+                    fail_silently=True)
 
         return contact

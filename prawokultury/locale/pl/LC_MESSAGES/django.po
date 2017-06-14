@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-27 10:38+0200\n"
+"POT-Creation-Date: 2017-06-14 10:00+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: contact_forms.py:23
+#: contact_forms.py:23 templates/base.html:61
 msgid "Registration"
 msgstr "Rejestracja"
 
@@ -31,16 +31,16 @@ msgstr "Imię"
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: contact_forms.py:28 contact_forms.py:277 contact_forms.py:289
+#: contact_forms.py:28 contact_forms.py:283 contact_forms.py:295
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:29 contact_forms.py:197 contact_forms.py:278
-#: contact_forms.py:290
+#: contact_forms.py:29 contact_forms.py:197 contact_forms.py:284
+#: contact_forms.py:296
 msgid "Organization"
 msgstr "Organizacja"
 
-#: contact_forms.py:31 contact_forms.py:292
+#: contact_forms.py:31 contact_forms.py:298
 msgid "Country"
 msgstr "Kraj"
 
@@ -262,7 +262,7 @@ msgstr "konkretna(y) prelegentka(ent)"
 msgid "good networking occasion"
 msgstr "możliwość networkingu"
 
-#: contact_forms.py:120 contact_forms.py:200 contact_forms.py:340
+#: contact_forms.py:120 contact_forms.py:200 contact_forms.py:346
 msgid ""
 "I am interested in receiving information about the Modern Poland "
 "Foundation's activities by e-mail"
@@ -270,11 +270,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:124 contact_forms.py:343
+#: contact_forms.py:124 contact_forms.py:349
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:125 contact_forms.py:345
+#: contact_forms.py:125 contact_forms.py:351
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -284,11 +284,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:128 contact_forms.py:204 contact_forms.py:349
+#: contact_forms.py:128 contact_forms.py:204 contact_forms.py:355
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:129 contact_forms.py:205 contact_forms.py:351
+#: contact_forms.py:129 contact_forms.py:205 contact_forms.py:357
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -298,7 +298,7 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:141 contact_forms.py:363
+#: contact_forms.py:141 contact_forms.py:369
 #, python-format
 msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
 msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
@@ -405,35 +405,35 @@ msgid ""
 "Conditions</a>."
 msgstr "Akceptuję <a href=\"/info/regulamin/\">regulamin CopyCampu</a>"
 
-#: contact_forms.py:274
+#: contact_forms.py:280
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
-#: contact_forms.py:276 contact_forms.py:288
+#: contact_forms.py:282 contact_forms.py:294
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:286
+#: contact_forms.py:292
 msgid "Workshop"
 msgstr "Warsztat"
 
-#: contact_forms.py:295
+#: contact_forms.py:301
 msgid "<h3>I'll take a part in workshops</h3>"
 msgstr "<h3>Wezmę udział w warsztatach</h3>"
 
-#: contact_forms.py:296
+#: contact_forms.py:302
 msgid "Only workshops with any spots left are visible here."
 msgstr "Widoczne są tylko warsztaty, w których są jeszcze miejsca."
 
-#: contact_forms.py:298
+#: contact_forms.py:304
 msgid "<strong>Thursday, October 27th, 10 a.m.–12 noon</strong>"
 msgstr "<strong>Czwartek, 27 października, 10:00–12:00</strong>"
 
-#: contact_forms.py:300
+#: contact_forms.py:306
 msgid "Dimitar Dimitrov: Hacking Brussels"
 msgstr "Dimitar Dimitrov: Hacking Brussels (warsztat w języku angielskim)"
 
-#: contact_forms.py:302
+#: contact_forms.py:308
 msgid ""
 "Stef van Gompel: Methods and constraints for including evidence in IP "
 "lawmaking"
@@ -441,11 +441,11 @@ msgstr ""
 "Stef van Gompel: Methods and constraints for including evidence in IP "
 "lawmaking (warsztat w języku angielskim)"
 
-#: contact_forms.py:304
+#: contact_forms.py:310
 msgid "<strong>Friday, October 28th, 10 a.m.–12 noon</strong>"
 msgstr "<strong>Piątek, 28 października, 10:00–12:00</strong>"
 
-#: contact_forms.py:307
+#: contact_forms.py:313
 msgid ""
 "dr Krzysztof Siewicz, dr Marta Hoffman-Sommer: Legal aspects of using "
 "research data in the age of Open Data"
@@ -453,15 +453,15 @@ msgstr ""
 "dr Krzysztof Siewicz, dr Marta Hoffman-Sommer: Legal aspects of using "
 "research data in the age of Open Data (warsztat w języku angielskim)"
 
-#: contact_forms.py:321
+#: contact_forms.py:327
 msgid "Marcin Olender, Google: Prawo autorskie na YouTube (workshop in Polish)"
 msgstr "Marcin Olender, Google: Prawo autorskie na YouTube"
 
-#: contact_forms.py:323
+#: contact_forms.py:329
 msgid "<strong>Friday, October 28th, 12 noon–2 p.m.</strong>"
 msgstr "<strong>Piątek, 28 października, 12:00–14:00</strong>"
 
-#: contact_forms.py:326
+#: contact_forms.py:332
 msgid ""
 "Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać "
 "– warsztaty dla twórców (workshop in Polish)"
@@ -469,23 +469,23 @@ msgstr ""
 "Mateusz Górski, Michał Leksiński, Patronite: Jak zarabiać i się nie sprzedać "
 "– warsztaty dla twórców"
 
-#: contact_forms.py:331
+#: contact_forms.py:337
 msgid ""
 "Olga Goriunova: The Lurker and the politics of knowledge in data culture"
 msgstr ""
 "Olga Goriunova: The Lurker and the politics of knowledge in data culture  "
 "(warsztat w języku angielskim)"
 
-#: contact_forms.py:384
+#: contact_forms.py:390
 msgid "Please submit your answer to qualify for this workshop"
 msgstr ""
 "Zamieść odpowiedź na zadanie, aby móc się zakwalifikować na ten warsztat"
 
-#: contact_forms.py:387
+#: contact_forms.py:393
 msgid "You can't choose more than one workshop during the same period"
 msgstr "Nie możesz wybrać warsztatów odbywających się w tym samym czasie"
 
-#: contact_forms.py:389
+#: contact_forms.py:395
 msgid "Please choose at least one workshop."
 msgstr "Proszę wybrać co najmniej jeden warsztat."
 
@@ -584,11 +584,15 @@ msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/thanks.html:8
 msgid ""
-"Your submission can be modified until June 11th using the unique link sent to "
-"you by e-mail."
+"Your submission can be modified until June 11th using the unique link sent "
+"to you by e-mail."
 msgstr ""
 "Zgłoszenie można modyfikować do 11 czerwca używając unikalnego adresu "
 "przesłanego e-mailem."
+
+#: templates/contact/remind-me/thanks.html:6
+msgid "Thank you for submitting your e-mail address."
+msgstr "Dziękujemy za zostawienie adresu e-mail."
 
 #: templates/contact/workshop/mail_body.txt:2
 msgid "Thank you for registering to the workshop. Please arrive on time."

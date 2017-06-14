@@ -273,6 +273,8 @@ class RemindForm(ContactForm):
     form_tag = 'remind-me'
     save_as_tag = 'remind-me-2017'
     form_title = u'CopyCamp 2017'
+    notify_on_register = False
+    notify_user = False
 
 
 class NextForm(ContactForm):
