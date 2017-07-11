@@ -11,6 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 from migdal.models import Entry
 
+from prawokultury.countries import COUNTRIES
+
 mark_safe_lazy = lazy(mark_safe, unicode)
 
 
@@ -28,7 +30,7 @@ class RegistrationForm(ContactForm):
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), 
             max_length=256, required=False)
-    country = forms.CharField(label=_('Country'), max_length=128)
+    country = forms.ChoiceField(label=_('Country'), choices=zip(COUNTRIES, COUNTRIES))
 
     days = forms.ChoiceField(
        label=_("I'm planning to show up on"),
@@ -48,6 +50,7 @@ class RegistrationForm(ContactForm):
             ('2', _('twice')),
             ('3', _('three times')),
             ('4', _('four times')),
+            ('5', _('five times')),
         ], widget=forms.RadioSelect())
     age = forms.ChoiceField(
         required=False,
@@ -61,18 +64,9 @@ class RegistrationForm(ContactForm):
             ('56-65', _('56-65')),
             ('66+', _('66 or above')),
         ], widget=forms.RadioSelect())
-    distance = forms.ChoiceField(
-        required=False,
-        label=_("3. How far will you travel to attend CopyCamp?"),
-        choices=[
-            ('0-50', _('0-50 km')),
-            ('51-100', _('51-100 km')),
-            ('101-200', _('101-200 km')),
-            ('200+', _('200 km or more')),
-        ], widget=forms.RadioSelect())
     areas = forms.MultipleChoiceField(
         required=False,
-        label=_("4. Please indicate up to 3 areas you feel most affiliated with"),
+        label=_("3. Please indicate up to 3 areas you feel most affiliated with"),
         choices=[
             ('sztuki plastyczne', _('visual art')),
             ('literatura', _('literature')),
@@ -95,7 +89,7 @@ class RegistrationForm(ContactForm):
     areas_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
     source = forms.ChoiceField(
         required=False,
-        label=_("5. Please indicate how you received information about the conference:"),
+        label=_("4. Please indicate how you received information about the conference:"),
         choices=[
             ('znajomi', _('through friends sharing on the web')),
             ('znajomi2', _('through friends by other means')),
@@ -109,9 +103,9 @@ class RegistrationForm(ContactForm):
         required=False,
         label=_("6. Please indicate the most important factor for your willingness to participate:"),
         choices=[
-            ('idea', _('the main idea of the conference')),
-            ('speaker', _('particular speaker(s)')),
+            ('speaker', _('listening to particular speaker(s)')),
             ('networking', _('good networking occasion')),
+            ('partnering', _('partnering with organisations present at the event')),
             ('other', _('other (please specify below)')),
         ], widget=forms.RadioSelect())
     motivation_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
