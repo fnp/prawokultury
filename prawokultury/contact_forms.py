@@ -148,7 +148,7 @@ class RegistrationForm(ContactForm):
 
     def survey_fields(self):
         return [self[name] for name in (
-            'times_attended', 'age', 'distance',
+            'times_attended', 'age',
             'areas', 'areas_other', 'source', 'source_other', 'motivation', 'motivation_other')]
 
     def agreement_fields(self):
