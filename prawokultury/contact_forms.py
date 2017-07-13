@@ -7,7 +7,7 @@ from contact.forms import ContactForm
 from contact.models import Contact
 from contact.fields import HeaderField
 from django.utils.functional import lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_noop as _
 from django.utils.safestring import mark_safe
 from migdal.models import Entry
 
@@ -36,8 +36,8 @@ class RegistrationForm(ContactForm):
        label=_("I'm planning to show up on"),
        choices=[
            ('both', _('Both days of the conference')),
-           ('only-27th', _('October 27th only')),
-           ('only-28th', _('October 28th only')),
+           ('only-28th', _('September 28th only')),
+           ('only-29th', _('September 29th only')),
        ], widget=forms.RadioSelect())
 
     # ankieta
@@ -179,7 +179,6 @@ tracks = (
 
 
 class RegisterSpeaker(RegistrationForm):
-    from django.utils.translation import ugettext_noop as _
     form_tag = 'register-speaker'
     save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
