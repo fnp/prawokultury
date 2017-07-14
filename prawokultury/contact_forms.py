@@ -21,6 +21,7 @@ class RegistrationForm(ContactForm):
 
     save_as_tag = '2017'
     conference_name = u'CopyCamp 2017'
+    notify_on_register = False
     
     form_title = _('Registration')
     admin_list = ['first_name', 'last_name', 'organization']
