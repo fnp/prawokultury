@@ -5,6 +5,7 @@ dev.sqlite
 *~
 *.orig
 *.log
+*.css.map
 
 # Compress output
 /static
