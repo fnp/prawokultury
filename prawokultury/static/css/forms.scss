@@ -29,6 +29,10 @@
         list-style: url("/static/img/read-more.png");
     }
 
+    span.error {
+        color: #e41b13;
+    }
+
     input, textarea, select {
         font-size: 1.2em;
         background-color: white;

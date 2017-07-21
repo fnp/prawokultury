@@ -38,6 +38,7 @@ PIPELINE_JS = {
         'source_filenames': (
             'js/promobox.js',
             'js/workshop_form.js',
+            'js/optional_fields.js',
             'contrib/lightbox/js/lightbox.min.js',
         ),
         'output_filename': 'compressed/base.js',

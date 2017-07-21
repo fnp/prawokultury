@@ -257,3 +257,11 @@ COUNTRIES = [
     u"Zambia",
     u"Zimbabwe",
 ]
+
+TRAVEL_GRANT_COUNTRIES = [
+    # u"Czech Republic",
+    u"Germany",
+    # u"Hungary",
+    # u"Poland",
+    # u"Slovakia",
+]

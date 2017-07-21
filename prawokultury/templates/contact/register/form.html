@@ -45,6 +45,12 @@
   {% endif %}
 {% endif %}
 
-<script type="text/javascript" src="/static/js/prefill.js"></script>
+<script type="text/javascript">
+    var travelGrantCountries = [
+    {% for country in form.travel_grant_countries %}
+        '{{ country }}'{% if not forloop.last %},{% endif %}
+    {% endfor %}
+    ];
+</script>
 
 {% endblock %}

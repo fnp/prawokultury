@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_noop as _
 from django.utils.safestring import mark_safe
 from migdal.models import Entry
 
-from prawokultury.countries import COUNTRIES
+from prawokultury.countries import COUNTRIES, TRAVEL_GRANT_COUNTRIES
 
 mark_safe_lazy = lazy(mark_safe, unicode)
 
@@ -26,12 +26,22 @@ class RegistrationForm(ContactForm):
     form_title = _('Registration')
     admin_list = ['first_name', 'last_name', 'organization']
 
+    travel_grant_countries = TRAVEL_GRANT_COUNTRIES
+
     first_name = forms.CharField(label=_('First name'), max_length=128)
     last_name = forms.CharField(label=_('Last name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
-    organization = forms.CharField(label=_('Organization'), 
-            max_length=256, required=False)
-    country = forms.ChoiceField(label=_('Country'), choices=zip(COUNTRIES, COUNTRIES))
+    organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
+    country = forms.ChoiceField(label=_('Country of residence'), choices=zip(COUNTRIES, COUNTRIES))
+    travel_grant = forms.BooleanField(
+        label=_('I require financial assistance to attend CopyCamp 2017.'), required=False)
+    travel_grant_motivation = forms.CharField(
+        label=_('Please write us about yourself and why you want to come to CopyCamp. '
+                'This information will help us evaluate your travel grant application:'),
+        help_text=_('Financial assistance for German audience is possible '
+                    'thanks to the funds of the German Federal Foreign Office transferred by '
+                    'the Foundation for Polish-German Cooperation.'),
+        widget=forms.Textarea, max_length=600, required=False)
 
     days = forms.ChoiceField(
        label=_("I'm planning to show up on"),
@@ -144,8 +154,24 @@ class RegistrationForm(ContactForm):
             raise forms.ValidationError(_('Select at most 3 areas'))
         return data
 
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        country = cleaned_data['country']
+        travel_grant = cleaned_data['travel_grant']
+        motivation = cleaned_data['travel_grant_motivation']
+        if country not in self.travel_grant_countries and travel_grant:
+            raise forms.ValidationError(_('Travel grant is not provided for the selected country'))
+        if travel_grant and not motivation:
+            self._errors['travel_grant_motivation'] = _('Please provide this information')
+            raise forms.ValidationError(_('To apply for a travel grant you must provide additional information.'))
+        if not travel_grant and motivation:
+            cleaned_data['motivation'] = ''
+        return cleaned_data
+
     def main_fields(self):
-        return [self[name] for name in ('first_name', 'last_name', 'contact', 'organization', 'country', 'days')]
+        return [self[name] for name in (
+            'first_name', 'last_name', 'contact', 'organization', 'country',
+            'travel_grant', 'travel_grant_motivation', 'days')]
 
     def survey_fields(self):
         return [self[name] for name in (

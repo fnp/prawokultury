@@ -18,6 +18,8 @@
     padding: 0 0 0 1.3em;
     margin: 0 0 .5em 0;
     list-style: url("/static/img/read-more.png"); }
+  .submit-form span.error {
+    color: #e41b13; }
   .submit-form input, .submit-form textarea, .submit-form select {
     font-size: 1.2em;
     background-color: white;
@@ -54,3 +56,5 @@
       content: none; }
   .submit-form input[type="radio"] {
     width: auto; }
+
+/*# sourceMappingURL=forms.css.map */
