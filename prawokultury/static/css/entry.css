@@ -76,8 +76,9 @@
       margin: 0; }
   .entry-wrapped table {
     border-collapse: collapse; }
-    .entry-wrapped table td {
-      border: 1px #bbb solid; }
+    .entry-wrapped table td, .entry-wrapped table th {
+      border: 1px #bbb solid;
+      padding: 0.4em; }
 
 .entry-info .entry-wrapped,
 .entry-publications .entry-wrapped {

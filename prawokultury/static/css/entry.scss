@@ -118,8 +118,9 @@
 
     table {
         border-collapse: collapse;
-        td {
+        td, th {
             border: 1px #bbb solid;
+            padding: 0.4em;
         }
     }
 }
