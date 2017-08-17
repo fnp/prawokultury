@@ -74,6 +74,10 @@
     vertical-align: middle; }
     .entry-wrapped .gallery-image img {
       margin: 0; }
+  .entry-wrapped table {
+    border-collapse: collapse; }
+    .entry-wrapped table td {
+      border: 1px #bbb solid; }
 
 .entry-info .entry-wrapped,
 .entry-publications .entry-wrapped {
@@ -114,3 +118,5 @@
       font-weight: bold; }
   .comments .body {
     font-size: 1.3em; }
+
+/*# sourceMappingURL=entry.css.map */

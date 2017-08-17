@@ -115,6 +115,13 @@
             margin: 0;
         }
     }
+
+    table {
+        border-collapse: collapse;
+        td {
+            border: 1px #bbb solid;
+        }
+    }
 }
 
 .entry-info .entry-wrapped,
