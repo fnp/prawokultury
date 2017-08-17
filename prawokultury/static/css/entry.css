@@ -75,7 +75,8 @@
     .entry-wrapped .gallery-image img {
       margin: 0; }
   .entry-wrapped table {
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    margin-bottom: 2em; }
     .entry-wrapped table td, .entry-wrapped table th {
       border: 1px #bbb solid;
       padding: 0.4em; }
