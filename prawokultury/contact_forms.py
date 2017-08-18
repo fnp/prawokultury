@@ -354,6 +354,7 @@ class WorkshopForm(ContactForm):
     w_zimmermann = workshop_field(u'Jeremie Zimmermann: Hackers ethics and peer-to-peer philosophy in care')  # 30
 
     _header_1 = HeaderField(label='')
+    _header_2 = HeaderField(label='')
 
     start_workshops = ('mileszyk', 'wang', 'vanderwaal', 'youtube', 'murray', 'zimmermann')
 
