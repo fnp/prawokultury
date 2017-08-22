@@ -318,6 +318,7 @@ class WorkshopForm(ContactForm):
     save_as_tag = 'workshops-2017'
     conference_name = u'CopyCamp 2017'
     form_title = _('Workshop')
+    notify_on_register = False
 
     first_name = forms.CharField(label=_('First name'), max_length=128)
     last_name = forms.CharField(label=_('Last name'), max_length=128)
