@@ -333,18 +333,27 @@ class WorkshopForm(ContactForm):
     _h1 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, September 28th, 10 a.m.–12 noon</strong>")))
 
     w_mileszyk = workshop_field(
-        u'Natalia Mileszyk, Dimitar Dimitrov, Diego Naranjo: School of Rock(ing) Copyright: United to #fixcopyright')  # 20
+        u'Natalia Mileszyk, Dimitar Dimitrov, Diego Naranjo: School of Rock(ing) Copyright: United to #fixcopyright')
     w_wang = workshop_field(
-        u'Jacob Riddersholm Wang, Pernille Feldt, Martin Appelt: Heritage gone digital - beyond legal rights')  # 20
+        u'Jacob Riddersholm Wang, Pernille Feldt, Martin Appelt: Heritage gone digital - beyond legal rights')
 
     _h2 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, September 28th, 12 noon–2 p.m.</strong>")))
 
-    w_vanderwaal = workshop_field(u'Sander van der Waal, Danny Lämmerhirt: Tackling open license proliferation')  # 20
+    w_vanderwaal = workshop_field(u'Sander van der Waal, Danny Lämmerhirt: Tackling open license proliferation')
+
+    _h2a = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 9 a.m.–11 noon</strong>")))
+
+    w_nobre = workshop_field(u'Teresa Nobre, Paul Keller, Sean Flynn: Researching the Impact of Copyright User Rights')
+    w_nobre_question = forms.CharField(
+        label=mark_safe_lazy(_(
+            u'Please describe the most important recent changes to copyright user rights in your national law. '
+            u'(max 1500 characters)')),
+        max_length=1500, widget=forms.Textarea, required=False)
 
     _h3 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 10 a.m.–12 noon</strong>")))
 
     w_youtube = workshop_field(
-        u'Kiki Ganzemüller: YouTube Songwriter Workshop: Rights Management & Building a Presence on YouTube')  # 40
+        u'Kiki Ganzemüller: YouTube Songwriter Workshop: Rights Management & Building a Presence on YouTube')
 
     _h4 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 12 noon–2 p.m.</strong>")))
 
@@ -352,19 +361,25 @@ class WorkshopForm(ContactForm):
         u'Peter Murray-Rust: Wikidata, ContentMine and the automatic liberation of factual data: '
         u'(The Right to Read is the Right To Mine)')  # 30
 
-    w_zimmermann = workshop_field(u'Jeremie Zimmermann: Hackers ethics and peer-to-peer philosophy in care')  # 30
+    w_zimmermann = workshop_field(u'Jeremie Zimmermann: Hackers ethics and peer-to-peer philosophy in care')
 
     _header_1 = HeaderField(label='')
     _header_2 = HeaderField(label='')
 
-    start_workshops = ('mileszyk', 'wang', 'vanderwaal', 'youtube', 'murray', 'zimmermann')
+    start_workshops = ('mileszyk', 'wang', 'vanderwaal', 'nobre', 'youtube', 'murray', 'zimmermann')
 
-    slots = (('_h1', 'mileszyk', 'wang'), ('_h2', 'vanderwaal'), ('_h3', 'youtube'), ('_h4', 'murray', 'zimmermann'))
+    slots = (
+        ('_h1', 'mileszyk', 'wang'),
+        ('_h2', 'vanderwaal'),
+        ('_h2a', 'nobre', '_h3', 'youtube'),
+        ('_h4', 'murray', 'zimmermann'),
+    )
 
     limits = {
         'mileszyk': 25,
         'wang': 25,
         'vanderwaal': 25,
+        'nobre': 25,
         'youtube': 40,
         'murray': 35,
         'zimmermann': 35,
