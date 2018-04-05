@@ -12,7 +12,7 @@ def registration_url(request):
     if speaker_form.started and not speaker_form.closed:
         url = reverse("contact_form", args=["register-speaker"])
         label = _('Registration')
-    elif speaker_form.closed and not registration_form.started:
+    elif not speaker_form.started or (speaker_form.closed and not registration_form.started):
         url = reverse("contact_form", args=["remind-me"])
         label = _('Remind me')
     else:
