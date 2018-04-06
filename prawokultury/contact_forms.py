@@ -28,6 +28,8 @@ class RegistrationForm(ContactForm):
     form_title = _('Registration')
     admin_list = ['first_name', 'last_name', 'organization']
 
+    mailing_field = 'agree_mailing'
+
     travel_grant_countries = TRAVEL_GRANT_COUNTRIES
 
     first_name = forms.CharField(label=_('First name'), max_length=128)
@@ -129,11 +131,17 @@ class RegistrationForm(ContactForm):
     )
     agree_data = forms.BooleanField(
         label=_('Permission for data processing'),
-        help_text=_(u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of registration for CopyCamp conference.')
+        help_text=_(
+            u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, '
+            u'00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes '
+            u'of registration for CopyCamp conference.')
     )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
+        help_text=mark_safe_lazy(_(
+            u'I agree to having materials, recorded during the conference, released under the terms of '
+            u'<a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and '
+            u'to publishing my image.')),
         required=False
     )
 
@@ -212,25 +220,30 @@ class RegisterSpeaker(RegistrationForm):
     save_as_tag = '2017-speaker'
     form_title = _('Open call for presentations')
     notify_on_register = False
+    mailing_field = 'agree_mailing'
 
     # inherited fields included so they are not translated
     first_name = forms.CharField(label=_('First name'), max_length=128)
     last_name = forms.CharField(label=_('Last name'), max_length=128)
-    organization = forms.CharField(label=_('Organization'),
-            max_length=256, required=False)
+    organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
         required=False
     )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
-        help_text=mark_safe_lazy(_(u'I agree to having materials, recorded during the conference, released under the terms of <a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and to publishing my image.')),
+        help_text=mark_safe_lazy(_(
+            u'I agree to having materials, recorded during the conference, released under the terms of '
+            u'<a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and '
+            u'to publishing my image.')),
         required=False
     )
 
     presentation_thematic_track = forms.ChoiceField(
         label=_('Please select one thematic track'),
-        choices=[(t, mark_safe('<strong>%s</strong><p style="margin-left: 20px;">%s</p>' % (t, desc))) for t, desc in tracks],
+        choices=[
+            (t, mark_safe('<strong>%s</strong><p style="margin-left: 20px;">%s</p>' % (t, desc)))
+            for t, desc in tracks],
         widget=forms.RadioSelect())
 
     bio = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
@@ -319,6 +332,7 @@ class WorkshopForm(ContactForm):
     conference_name = u'CopyCamp 2017'
     form_title = _('Workshop')
     notify_on_register = False
+    mailing_field = 'agree_mailing'
 
     first_name = forms.CharField(label=_('First name'), max_length=128)
     last_name = forms.CharField(label=_('Last name'), max_length=128)

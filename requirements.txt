@@ -28,3 +28,5 @@ pysolr
 django-piwik
 
 django-sponsors>=1.2.1,<2.0
+
+mailchimp3

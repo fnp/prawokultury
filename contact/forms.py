@@ -7,6 +7,8 @@ from django import forms
 from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
+
+from contact import mailing
 from .models import Attachment, Contact
 
 
@@ -35,6 +37,7 @@ class ContactForm(forms.Form):
     admin_list = None
     notify_on_register = True
     notify_user = True
+    mailing_field = None
 
     required_css_class = 'required'
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
@@ -107,5 +110,7 @@ class ContactForm(forms.Form):
                     'no-reply@%s' % site.domain,
                     [contact.contact],
                     fail_silently=True)
+            if self.mailing_field and self.cleaned_data[self.mailing_field]:
+                mailing.subscribe(contact.contact)
 
         return contact
