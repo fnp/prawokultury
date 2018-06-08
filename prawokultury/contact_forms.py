@@ -9,7 +9,7 @@ from contact.forms import ContactForm
 from contact.models import Contact
 from contact.fields import HeaderField
 from django.utils.functional import lazy
-from django.utils.translation import ugettext_noop as _
+from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 from migdal.models import Entry
 
@@ -126,7 +126,8 @@ class RegistrationForm(ContactForm):
     motivation_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
 
     agree_mailing = forms.BooleanField(
-        label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
+        label=_('I want to receive e-mails about future CopyCamps '
+                'and similar activities of the Modern Poland Foundation'),
         required=False
     )
     agree_data = forms.BooleanField(
@@ -166,16 +167,17 @@ class RegistrationForm(ContactForm):
 
     def clean(self):
         cleaned_data = self.cleaned_data
-        country = cleaned_data['country']
-        travel_grant = cleaned_data['travel_grant']
-        motivation = cleaned_data['travel_grant_motivation']
-        if country not in self.travel_grant_countries and travel_grant:
-            raise forms.ValidationError(_('Travel grant is not provided for the selected country'))
-        if travel_grant and not motivation:
-            self._errors['travel_grant_motivation'] = _('Please provide this information')
-            raise forms.ValidationError(_('To apply for a travel grant you must provide additional information.'))
-        if not travel_grant and motivation:
-            cleaned_data['motivation'] = ''
+        if 'travel_grant' in cleaned_data:
+            country = cleaned_data['country']
+            travel_grant = cleaned_data['travel_grant']
+            motivation = cleaned_data['travel_grant_motivation']
+            if country not in self.travel_grant_countries and travel_grant:
+                raise forms.ValidationError(_('Travel grant is not provided for the selected country'))
+            if travel_grant and not motivation:
+                self._errors['travel_grant_motivation'] = _('Please provide this information')
+                raise forms.ValidationError(_('To apply for a travel grant you must provide additional information.'))
+            if not travel_grant and motivation:
+                cleaned_data['motivation'] = ''
         return cleaned_data
 
     def main_fields(self):
@@ -193,70 +195,42 @@ class RegistrationForm(ContactForm):
 
 
 tracks = (
-    (_('business models, heritage digitization, remix'),
-     _('What are the boundaries of appropriation in culture? '
-       'Who owns the past and whether these exclusive rights allow to '
-       'control present and future? How to make money from creativity without selling yourself?')),
-    (_('health, food, security, and exclusive rights'),
-     _('Who owns medicines and equipment necessary to provide health care? '
-       'Who owns grain and machines used to harvest it? '
-       'To what extent exclusive rights can affect what you eat, '
-       'how you exercise, whether you can apply a specific treatment?')),
-    (_('text and data mining, machine learning, online education'),
-     _('Do you think own the data you feed to algorithms? Or maybe you think you own these algorithms? '
-       'What if you can’t mine the data because you actually don’t own any of those rights? '
-       'What does it mean to own data about someone, or data necessary for that person’s education?')),
-    (_('IoT: autonomous cars, smart homes, wearables'),
-     _('What does it mean to own exclusive rights to software and data used to construct autonomous agents? '
-       'What will it mean in a near future?')),
-    (_('hacking government data, public procurement, public aid in culture'),
-     _('Who owns information created using public money? How can this information be appropriated? '
-       'What is the role of government in the development of information infrastructure?')),
+    _('social security in the creative sector'),
+    _('100 years of the evolution of modern copyright law and industrial property law in Poland '
+      'and of cultural activities regulated by this law'),
+    _('EU copyright reform'),
+    _('blockchain use prospects'),
+    _('reuse of archives and cultural heritage'),
 )
 
 
 class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
-    save_as_tag = '2017-speaker'
+    save_as_tag = '2018-speaker'
     form_title = _('Open call for presentations')
     notify_on_register = False
     mailing_field = 'agree_mailing'
 
-    # inherited fields included so they are not translated
-    first_name = forms.CharField(label=_('First name'), max_length=128)
-    last_name = forms.CharField(label=_('Last name'), max_length=128)
-    organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
-    agree_mailing = forms.BooleanField(
-        label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
-        required=False
-    )
-    agree_license = forms.BooleanField(
-        label=_('Permission for publication'),
-        help_text=mark_safe_lazy(_(
-            u'I agree to having materials, recorded during the conference, released under the terms of '
-            u'<a href="http://creativecommons.org/licenses/by-sa/3.0/deed">CC\u00a0BY-SA</a> license and '
-            u'to publishing my image.')),
-        required=False
-    )
-
     presentation_thematic_track = forms.ChoiceField(
-        label=_('Please select one thematic track'),
-        choices=[
-            (t, mark_safe('<strong>%s</strong><p style="margin-left: 20px;">%s</p>' % (t, desc)))
-            for t, desc in tracks],
-        widget=forms.RadioSelect())
+        label=_('Thematic track'),
+        choices=[(t, t) for t in tracks], widget=forms.RadioSelect())
 
-    bio = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
-                          max_length=500, required=False)
+    bio = forms.CharField(label=mark_safe_lazy(
+        _('Short biographical note in Polish (max. 500 characters, not required)')),
+                          widget=forms.Textarea, max_length=500, required=False)
+    bio_en = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
+                             max_length=500)
     photo = forms.FileField(label=_('Photo'), required=False)
     phone = forms.CharField(label=_('Phone number'), max_length=64,
                             required=False,
-                            help_text=_('Used only for organizational purposes.'))
+                            help_text=_('(used only for organizational purposes)'))
 
     presentation_title = forms.CharField(
-        label=mark_safe_lazy(_('Title of the presentation in English')),
+        label=mark_safe_lazy(_('Presentation title in Polish (not required)')),
         max_length=256, required=False)
-    presentation_summary = forms.CharField(label=_('Summary of presentation (max. 1800 characters)'),
+    presentation_title_en = forms.CharField(
+        label=_('Presentation title in English'), max_length=256)
+    presentation_summary = forms.CharField(label=_('Presentation summary (max. 1800 characters)'),
                                            widget=forms.Textarea, max_length=1800)
 
     # presentation_post_conference_publication = forms.BooleanField(
@@ -267,15 +241,9 @@ class RegisterSpeaker(RegistrationForm):
     agree_data = None
 
     agree_terms = forms.BooleanField(
-        label=mark_safe_lazy(_(u'I accept <a href="/en/info/terms-and-conditions/">'
-                               u'CopyCamp Terms and Conditions</a>.'))
+        label=mark_safe_lazy(
+            _(u'I accept <a href="/en/info/terms-and-conditions/">CopyCamp Terms and Conditions</a>.'))
     )
-
-    # workshop = forms.BooleanField(label=_('Workshop'), required=False)
-    # workshop_title = forms.CharField(label=_('Title of workshop'),
-    #        max_length=256, required=False)
-    # workshop_summary = forms.CharField(label=_('Summary of workshop (max. 1800 characters)'),
-    #        widget=forms.Textarea, max_length=1800, required=False)
 
     def __init__(self, *args, **kw):
         super(RegisterSpeaker, self).__init__(*args, **kw)
@@ -288,14 +256,13 @@ class RegisterSpeaker(RegistrationForm):
             'phone',
             'organization',
             'bio',
+            'bio_en',
             'photo',
             'presentation_title',
+            'presentation_title_en',
             'presentation_summary',
             'presentation_thematic_track',
             # 'presentation_post_conference_publication',
-            # 'workshop',
-            # 'workshop_title',
-            # 'workshop_summary',
 
             'agree_mailing',
             # 'agree_data',
