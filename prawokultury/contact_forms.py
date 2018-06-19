@@ -21,8 +21,8 @@ mark_safe_lazy = lazy(mark_safe, unicode)
 class RegistrationForm(ContactForm):
     form_tag = 'register'
 
-    save_as_tag = '2017'
-    conference_name = u'CopyCamp 2017'
+    save_as_tag = '2018'
+    conference_name = u'CopyCamp 2018'
     notify_on_register = False
     
     form_title = _('Registration')
@@ -38,7 +38,7 @@ class RegistrationForm(ContactForm):
     organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
     country = forms.ChoiceField(label=_('Country of residence'), choices=zip(COUNTRIES, COUNTRIES))
     travel_grant = forms.BooleanField(
-        label=_('I require financial assistance to attend CopyCamp 2017.'), required=False)
+        label=_('I require financial assistance to attend CopyCamp 2018.'), required=False)
     travel_grant_motivation = forms.CharField(
         label=_('Please write us about yourself and why you want to come to CopyCamp. '
                 'This information will help us evaluate your travel grant application:'),
@@ -295,8 +295,8 @@ def workshop_field(label):
 
 class WorkshopForm(ContactForm):
     form_tag = 'workshops'
-    save_as_tag = 'workshops-2017'
-    conference_name = u'CopyCamp 2017'
+    save_as_tag = 'workshops-2018'
+    conference_name = u'CopyCamp 2018'
     form_title = _('Workshop')
     notify_on_register = False
     mailing_field = 'agree_mailing'

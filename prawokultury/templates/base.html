@@ -18,7 +18,7 @@
         <meta property='og:site_name' content='CopyCamp' />
         <meta property='og:description' content='{% block ogdescription %}{% trans "CopyCamp Conference is the first large-scale meeting in Poland devoted to the issues of copyright in both ideological and practical terms." %}{% endblock %}' />
         <meta property='og:type' content='{% block ogtype %}website{% endblock %}' />
-        <meta property='og:image' content='{% block ogimage %}https://copycamp.pl{% static "img/copycamp_2017_"|add:request.LANGUAGE_CODE|add:"_big.png" %}{% endblock %}' />
+        <meta property='og:image' content='{% block ogimage %}https://copycamp.pl{% static "img/copycamp_2018_"|add:request.LANGUAGE_CODE|add:"_big.png" %}{% endblock %}' />
         <meta property='og:locale' content='{% if LANGUAGE_CODE == 'en'%}en_US{% else %}pl_PL{% endif %}' />
     </head>
     <body>
@@ -33,7 +33,7 @@
         <div class="bar-left">
             <a id="logo" href="{% url "migdal_main" %}">
                 <img alt="{% trans "CopyCamp" %}"
-                    src="{% static "img/copycamp_2017_"|add:request.LANGUAGE_CODE|add:".png" %}" /></a>
+                    src="{% static "img/copycamp_2018_"|add:request.LANGUAGE_CODE|add:".png" %}" /></a>
         </div>
         <div class="bar-right">
             <a href="http://prawokultury.pl"><img src="{% static "img/logo_160.png" %}" alt="PrawoKultury.pl"/></a>

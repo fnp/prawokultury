@@ -515,8 +515,8 @@ msgstr ""
 
 # msgstr "Wiadomość wysłana automatycznie, prosimy nie odpowiadać."
 #: templates/contact/register/mail_subject.txt:1
-msgid "Thank you for registering to CopyCamp 2017"
-msgstr "Dziękujemy za rejestrację na konferencję CopyCamp 2017"
+msgid "Thank you for registering to CopyCamp 2018"
+msgstr "Dziękujemy za rejestrację na konferencję CopyCamp 2018"
 
 #: templates/contact/register/thanks.html:5
 #: templates/contact/workshops/thanks.html:5
