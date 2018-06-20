@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:56+0200\n"
+"POT-Creation-Date: 2018-06-20 15:09+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -23,19 +23,19 @@ msgstr ""
 msgid "Registration"
 msgstr "Rejestracja"
 
-#: contact_forms.py:35 contact_forms.py:303
+#: contact_forms.py:35 contact_forms.py:304
 msgid "First name"
 msgstr "Imię"
 
-#: contact_forms.py:36 contact_forms.py:304
+#: contact_forms.py:36 contact_forms.py:305
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: contact_forms.py:37 contact_forms.py:286 contact_forms.py:305
+#: contact_forms.py:37 contact_forms.py:287 contact_forms.py:306
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:38 contact_forms.py:287 contact_forms.py:306
+#: contact_forms.py:38 contact_forms.py:288 contact_forms.py:307
 msgid "Organization"
 msgstr "Organizacja"
 
@@ -44,7 +44,7 @@ msgid "Country of residence"
 msgstr ""
 
 #: contact_forms.py:41
-msgid "I require financial assistance to attend CopyCamp 2017."
+msgid "I require financial assistance to attend CopyCamp 2018."
 msgstr ""
 
 #: contact_forms.py:43
@@ -266,13 +266,15 @@ msgstr ""
 msgid ""
 "I want to receive e-mails about future CopyCamps and similar activities of "
 "the Modern Poland Foundation"
-msgstr "Chcę otrzymywać informacje o przyszłych CopyCampach i podobnych działaniach Fundacji Nowoczesna Polska na e-mail"
+msgstr ""
+"Chcę otrzymywać informacje o przyszłych CopyCampach i podobnych działaniach "
+"Fundacji Nowoczesna Polska na e-mail"
 
-#: contact_forms.py:134 contact_forms.py:372
+#: contact_forms.py:134 contact_forms.py:373
 msgid "Permission for data processing"
 msgstr "Zgoda na przetwarzanie danych"
 
-#: contact_forms.py:136 contact_forms.py:374
+#: contact_forms.py:136 contact_forms.py:375
 msgid ""
 "I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. "
 "Marszałkowska 84/92, 00-514 Warszawa) permission to process my personal data "
@@ -282,11 +284,11 @@ msgstr ""
 "poczty elektronicznej) przez Fundację Nowoczesna Polska (ul. Marszałkowska "
 "84/92, 00-514 Warszawa) w związku z rejestracją na konferencję CopyCamp."
 
-#: contact_forms.py:141 contact_forms.py:378
+#: contact_forms.py:141 contact_forms.py:379
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:143 contact_forms.py:380
+#: contact_forms.py:143 contact_forms.py:381
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -296,7 +298,7 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:157 contact_forms.py:391
+#: contact_forms.py:157 contact_forms.py:392
 #, python-format
 msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
 msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
@@ -305,23 +307,23 @@ msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
 msgid "Select at most 3 areas"
 msgstr "Wybierz najwyżej 3 obszary"
 
-#: contact_forms.py:174
+#: contact_forms.py:175
 msgid "Travel grant is not provided for the selected country"
 msgstr ""
 
-#: contact_forms.py:176
+#: contact_forms.py:177
 msgid "Please provide this information"
 msgstr ""
 
-#: contact_forms.py:177
+#: contact_forms.py:178
 msgid "To apply for a travel grant you must provide additional information."
 msgstr ""
 
-#: contact_forms.py:197
+#: contact_forms.py:198
 msgid "social security in the creative sector"
 msgstr "zabezpieczenie społeczne twórców"
 
-#: contact_forms.py:198
+#: contact_forms.py:199
 msgid ""
 "100 years of the evolution of modern copyright law and industrial property "
 "law in Poland and of cultural activities regulated by this law"
@@ -329,115 +331,117 @@ msgstr ""
 "stulecie ewolucji nowoczesnego prawa autorskiego i prawa własności "
 "przemysłowej w Polsce oraz zachowań kulturowych przez to prawo regulowanych"
 
-#: contact_forms.py:200
+#: contact_forms.py:201
 msgid "EU copyright reform"
 msgstr "reforma prawa autorskiego UE"
 
-#: contact_forms.py:201
+#: contact_forms.py:202
 msgid "blockchain use prospects"
 msgstr "perspektywy wykorzystania technologii blockchain"
 
-#: contact_forms.py:202
+#: contact_forms.py:203
 msgid "reuse of archives and cultural heritage"
-msgstr "ponowne wykorzystanie zasobów archiwów i innych instytucji gromadzących dziedzictwo"
+msgstr ""
+"ponowne wykorzystanie zasobów archiwów i innych instytucji gromadzących "
+"dziedzictwo"
 
-#: contact_forms.py:209
+#: contact_forms.py:210
 msgid "Open call for presentations"
 msgstr "Otwarty nabór prezentacji"
 
-#: contact_forms.py:214
+#: contact_forms.py:215
 msgid "Thematic track"
 msgstr "Ścieżka tematyczna"
 
-#: contact_forms.py:218
+#: contact_forms.py:219
 msgid "Short biographical note in Polish (max. 500 characters, not required)"
 msgstr "Krótka notka biograficzna po polsku (max. 500 znaków)"
 
-#: contact_forms.py:220
+#: contact_forms.py:221
 msgid "Short biographical note in English (max. 500 characters)"
 msgstr "Krótka notka biograficzna po angielsku (max. 500 znaków)"
 
-#: contact_forms.py:222
+#: contact_forms.py:223
 msgid "Photo"
 msgstr "Zdjęcie"
 
-#: contact_forms.py:223
+#: contact_forms.py:224
 msgid "Phone number"
 msgstr "Numer telefonu"
 
-#: contact_forms.py:225
+#: contact_forms.py:226
 msgid "(used only for organizational purposes)"
 msgstr "(używany wyłącznie do celów organizacyjnych)"
 
-#: contact_forms.py:228
+#: contact_forms.py:229
 msgid "Presentation title in Polish (not required)"
 msgstr "Polski tytuł prezentacji"
 
-#: contact_forms.py:231
+#: contact_forms.py:232
 msgid "Presentation title in English"
 msgstr "Angielski tytuł prezentacji"
 
-#: contact_forms.py:232
+#: contact_forms.py:233
 msgid "Presentation summary (max. 1800 characters)"
 msgstr "Streszczenie (maks. 1800 znaków)"
 
-#: contact_forms.py:244
+#: contact_forms.py:245
 msgid ""
 "I accept <a href=\"/en/info/terms-and-conditions/\">CopyCamp Terms and "
 "Conditions</a>."
 msgstr "Akceptuję <a href=\"/info/regulamin/\">regulamin CopyCampu</a>"
 
-#: contact_forms.py:283
+#: contact_forms.py:284
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
-#: contact_forms.py:285
+#: contact_forms.py:286
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:299
+#: contact_forms.py:300
 msgid "Workshop"
 msgstr "Warsztat"
 
-#: contact_forms.py:307
+#: contact_forms.py:308
 msgid "Country"
 msgstr "Kraj"
 
-#: contact_forms.py:310
+#: contact_forms.py:311
 msgid "<h3>I'll take a part in workshops</h3>"
 msgstr "<h3>Wezmę udział w warsztatach</h3>"
 
-#: contact_forms.py:311
+#: contact_forms.py:312
 msgid "Only workshops with any spots left are visible here."
 msgstr "Widoczne są tylko warsztaty, w których są jeszcze miejsca."
 
-#: contact_forms.py:313
+#: contact_forms.py:314
 msgid "<strong>Thursday, September 28th, 10 a.m.–12 noon</strong>"
 msgstr ""
 
-#: contact_forms.py:320
+#: contact_forms.py:321
 msgid "<strong>Thursday, September 28th, 12 noon–2 p.m.</strong>"
 msgstr ""
 
-#: contact_forms.py:324
+#: contact_forms.py:325
 msgid "<strong>Friday, September 29th, 9 a.m.–11 noon</strong>"
 msgstr ""
 
-#: contact_forms.py:329
+#: contact_forms.py:330
 msgid ""
 "Please describe the most important recent changes to copyright user rights "
 "in your national law. (max 1500 characters)"
 msgstr ""
 
-#: contact_forms.py:333
+#: contact_forms.py:334
 msgid "<strong>Friday, September 29th, 10 a.m.–12 noon</strong>"
 msgstr ""
 
-#: contact_forms.py:338
+#: contact_forms.py:339
 msgid "<strong>Friday, September 29th, 12 noon–2 p.m.</strong>"
 msgstr ""
 
-#: contact_forms.py:369
+#: contact_forms.py:370
 msgid ""
 "I am interested in receiving information about the Modern Poland "
 "Foundation's activities by e-mail"
@@ -445,11 +449,11 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:418
+#: contact_forms.py:419
 msgid "You can't choose more than one workshop during the same period"
 msgstr "Nie możesz wybrać warsztatów odbywających się w tym samym czasie"
 
-#: contact_forms.py:420
+#: contact_forms.py:421
 msgid "Please choose at least one workshop."
 msgstr "Proszę wybrać co najmniej jeden warsztat."
 
@@ -529,13 +533,13 @@ msgid "Thank you for submitting your proposal."
 msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/mail_body.txt:3
-msgid "Your submission can be modified until June 11th at:"
-msgstr "Zgłoszenie można modyfikować do 11 czerwca pod adresem:"
+msgid "Your submission can be modified until July 31st at:"
+msgstr "Zgłoszenie można modyfikować do 31 lipca pod adresem:"
 
 #: templates/contact/register-speaker/mail_body.txt:6
 #: templates/contact/register-speaker/thanks.html:10
-msgid "We will inform you of the open call results by the end of June."
-msgstr "O wynikach naboru poinformujemy najpóźniej do końca czerwca."
+msgid "We will inform you of the open call results in mid-August."
+msgstr "O wynikach naboru poinformujemy w połowie sierpnia."
 
 #: templates/contact/register-speaker/mail_subject.txt:1
 msgid "Thank you for submitting your proposal"
@@ -543,10 +547,10 @@ msgstr "Dziękujemy za zgłoszenie."
 
 #: templates/contact/register-speaker/thanks.html:8
 msgid ""
-"Your submission can be modified until June 11th using the unique link sent "
+"Your submission can be modified until July 31st using the unique link sent "
 "to you by e-mail."
 msgstr ""
-"Zgłoszenie można modyfikować do 11 czerwca używając unikalnego adresu "
+"Zgłoszenie można modyfikować do 31 lipca używając unikalnego adresu "
 "przesłanego e-mailem."
 
 #: templates/contact/remind-me/thanks.html:6
