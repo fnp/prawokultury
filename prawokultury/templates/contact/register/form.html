@@ -31,7 +31,7 @@
         {% for field in form.main_fields %}
           {% include "snippets/field_as_table_row.html" %}
         {% endfor %}
-        <tr><td colspan="2"><h3>{# {% trans " #}We would be grateful if you could answer our questions below. This will allow us to better adapt to your expectations in the future.{# " %} #}</h3></td></tr>
+        <tr><td colspan="2"><h3>{% trans "We would be grateful if you could answer our questions below. This will allow us to better adapt to your expectations in the future." %}</h3></td></tr>
         {% for field in form.survey_fields %}
           {% include "snippets/field_as_table_row.html" %}
         {% endfor %}
@@ -39,6 +39,7 @@
         {% for field in form.agreement_fields %}
           {% include "snippets/field_as_table_row.html" %}
         {% endfor %}
+        <tr><td></td><td>{% chunk "contact_form__"|add:form.form_tag|add:"__data_processing" %}</td></tr>
         <tr><td></td><td><button>{% block contact_form_submit %}{{ form.submit_label }}{% endblock %}</button></td></tr>
       </table>
     </form>

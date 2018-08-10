@@ -36,7 +36,8 @@ class RegistrationForm(ContactForm):
     last_name = forms.CharField(label=_('Last name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
-    country = forms.ChoiceField(label=_('Country of residence'), choices=zip(COUNTRIES, COUNTRIES))
+    country = forms.ChoiceField(
+        label=_('Country of residence'), choices=[('', '--------')] + zip(COUNTRIES, COUNTRIES), required=False)
     travel_grant = forms.BooleanField(
         label=_('I require financial assistance to attend CopyCamp 2018.'), required=False)
     travel_grant_motivation = forms.CharField(
@@ -51,8 +52,8 @@ class RegistrationForm(ContactForm):
        label=_("I'm planning to show up on"),
        choices=[
            ('both', _('Both days of the conference')),
-           ('only-28th', _('September 28th only')),
-           ('only-29th', _('September 29th only')),
+           ('only-28th', _('October 5th only')),
+           ('only-29th', _('October 6th only')),
        ], widget=forms.RadioSelect())
 
     # ankieta
@@ -130,13 +131,6 @@ class RegistrationForm(ContactForm):
                 'and similar activities of the Modern Poland Foundation'),
         required=False
     )
-    agree_data = forms.BooleanField(
-        label=_('Permission for data processing'),
-        help_text=_(
-            u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, '
-            u'00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes '
-            u'of registration for CopyCamp conference.')
-    )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
         help_text=mark_safe_lazy(_(
@@ -191,7 +185,7 @@ class RegistrationForm(ContactForm):
             'areas', 'areas_other', 'source', 'source_other', 'motivation', 'motivation_other')]
 
     def agreement_fields(self):
-        return [self[name] for name in ('agree_mailing', 'agree_data', 'agree_license', 'agree_toc')]
+        return [self[name] for name in ('agree_mailing', 'agree_license', 'agree_toc')]
 
 
 tracks = (
