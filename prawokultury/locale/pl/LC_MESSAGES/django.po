@@ -520,15 +520,14 @@ msgid ""
 msgstr ""
 
 #: templates/contact/register/mail_body.txt:5
-msgid "See you on September 28-29th!"
-msgstr ""
+msgid "See you on October 5-6th!"
+msgstr "Do zobaczenia 5-6 października!"
 
-# msgstr "Do zobaczenia 27-28 października!"
 #: templates/contact/register/mail_body.txt:8
 #: templates/contact/workshop/mail_body.txt:5
 #: templates/contact/workshops/mail_body.txt:5
 msgid "Message sent automatically. Please do not reply to it."
-msgstr ""
+msgstr "Wiadomość wysłana automatycznie. Prosimy nie odpowiadać."
 
 # msgstr "Wiadomość wysłana automatycznie, prosimy nie odpowiadać."
 #: templates/contact/register/mail_subject.txt:1
