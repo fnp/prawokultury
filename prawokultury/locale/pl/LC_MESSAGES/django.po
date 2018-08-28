@@ -518,6 +518,8 @@ msgid ""
 "Thank you for registering to %(conf)s.\n"
 "Please arrive earlier to collect your ID and the conference programme."
 msgstr ""
+"Dziękujemy za rejestrację na %(conf)s.\n"
+"Prosimy przybyć wcześniej, aby odebrać identyfikator i program konferencji."
 
 #: templates/contact/register/mail_body.txt:5
 msgid "See you on October 5-6th!"
