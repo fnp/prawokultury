@@ -283,8 +283,8 @@ class NextForm(ContactForm):
                                    max_length=256, required=False)
 
 
-def workshop_field(label):
-    return forms.BooleanField(label=_(label), required=False)
+def workshop_field(label, help=None):
+    return forms.BooleanField(label=_(label), required=False, help_text=help)
 
 
 class WorkshopForm(ContactForm):
@@ -299,76 +299,66 @@ class WorkshopForm(ContactForm):
     last_name = forms.CharField(label=_('Last name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
-    country = forms.CharField(label=_('Country'), max_length=128)
+    country = forms.ChoiceField(
+        label=_('Country of residence'), choices=[('', '--------')] + zip(COUNTRIES, COUNTRIES), required=False)
 
     _header = HeaderField(
         label=mark_safe_lazy(_("<h3>I'll take a part in workshops</h3>")),
         help_text=_('Only workshops with any spots left are visible here.'))
 
-    _h1 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, September 28th, 10 a.m.–12 noon</strong>")))
+    _h1 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, October 5th, 11 a.m.–1 p.m.</strong>")))
 
-    w_mileszyk = workshop_field(
-        u'Natalia Mileszyk, Dimitar Dimitrov, Diego Naranjo: School of Rock(ing) Copyright: United to #fixcopyright')
-    w_wang = workshop_field(
-        u'Jacob Riddersholm Wang, Pernille Feldt, Martin Appelt: Heritage gone digital - beyond legal rights')
+    w_dobosz = workshop_field(
+        u'Elżbieta Dobosz, Urząd Patentowy RP: Ochrona wzornictwa, co można chronić, co warto chronić i w jaki sposób',
+        u'Uczestnicy mogą przedstawić na warsztatach swoje wzory – '
+        u'rozwiązania wizualne ze wszystkich kategorii produktów.')
+    w_kozak = workshop_field(
+        u'Łukasz Kozak i Krzysztof Siewicz: Projekt : Upiór – wprowadzenie i warsztaty dla twórców gier')
+    w_secker = workshop_field(
+        u'Jane Secker and Chris Morrison: Embedding Copyright literacy using games-based learning',
+        _(u'The workshop will be conducted in English.'))
 
-    _h2 = HeaderField(label=mark_safe_lazy(_("<strong>Thursday, September 28th, 12 noon–2 p.m.</strong>")))
+    _h2 = HeaderField(label=mark_safe_lazy(_("<strong>Saturday, October 6th, 11 a.m.–1 p.m.</strong>")))
 
-    w_vanderwaal = workshop_field(u'Sander van der Waal, Danny Lämmerhirt: Tackling open license proliferation')
-
-    _h2a = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 9 a.m.–11 noon</strong>")))
-
-    w_nobre = workshop_field(u'Teresa Nobre, Paul Keller, Sean Flynn: Researching the Impact of Copyright User Rights')
-    w_nobre_question = forms.CharField(
-        label=mark_safe_lazy(_(
-            u'Please describe the most important recent changes to copyright user rights in your national law. '
-            u'(max 1500 characters)')),
-        max_length=1500, widget=forms.Textarea, required=False)
-
-    _h3 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 10 a.m.–12 noon</strong>")))
-
-    w_youtube = workshop_field(
-        u'Kiki Ganzemüller: YouTube Songwriter Workshop: Rights Management & Building a Presence on YouTube')
-
-    _h4 = HeaderField(label=mark_safe_lazy(_("<strong>Friday, September 29th, 12 noon–2 p.m.</strong>")))
-
-    w_murray = workshop_field(
-        u'Peter Murray-Rust: Wikidata, ContentMine and the automatic liberation of factual data: '
-        u'(The Right to Read is the Right To Mine)')  # 30
-
-    w_zimmermann = workshop_field(u'Jeremie Zimmermann: Hackers ethics and peer-to-peer philosophy in care')
+    w_kakareko = workshop_field(
+        u'Ksenia Kakareko: Regulacje prawne dotyczące wykorzystania materiałów zdigitalizowanych')
+    w_kakareko_question = forms.CharField(
+        label=u'Możesz opisać sprawy, z którymi najczęściej spotykasz się jako pracownik instytucji posiadającej '
+              u'zdigitalizowane zbiory lub jako użytkownik tych zbiorów '
+              u'(max 800 znaków)',
+        max_length=800, widget=forms.Textarea, required=False)
+    w_sikorska = workshop_field(
+        u'Zuza Sikorska-Borowska i Krzysztof Siewicz: Autor: projektant / prawo autorskie dla projektantów')
+    w_sikorska_question = forms.CharField(
+        label=u'Jeżeli chcesz, możesz przesłać prowadzącym swoje pytanie dotyczące prawa autorskiego, '
+              u'co pomoże im lepiej przygotować warsztaty '
+              u'(max 800 znaków)',
+        max_length=800, widget=forms.Textarea, required=False)
+    w_sztoldman = workshop_field(
+        u'dr Agnieszka Sztoldman, Aleksandra Burda, SMM Legal: Spory o pieniądze w branżach IP-driven')
 
     _header_1 = HeaderField(label='')
     _header_2 = HeaderField(label='')
 
-    start_workshops = ('mileszyk', 'wang', 'vanderwaal', 'nobre', 'youtube', 'murray', 'zimmermann')
+    start_workshops = ('dobosz', 'kozak', 'secker', 'kakareko', 'sikorska', 'sztoldman')
 
     slots = (
-        ('_h1', 'mileszyk', 'wang'),
-        ('_h2', 'vanderwaal'),
-        ('_h2a', 'nobre', '_h3', 'youtube'),
-        ('_h4', 'murray', 'zimmermann'),
+        ('_h1', 'dobosz', 'kozak', 'secker'),
+        ('_h2', 'kakareko', 'sikorska', 'sztoldman'),
     )
 
     limits = {
-        'mileszyk': 25,
-        'wang': 25,
-        'vanderwaal': 25,
-        'nobre': 25,
-        'youtube': 40,
-        'murray': 35,
-        'zimmermann': 35,
+        'dobosz': 30,
+        'kozak': 30,
+        'secker': 30,
+        'kakareko': 30,
+        'sikorska': 30,
+        'sztoldman': 30,
     }
 
     agree_mailing = forms.BooleanField(
         label=_('I am interested in receiving information about the Modern Poland Foundation\'s activities by e-mail'),
         required=False)
-    agree_data = forms.BooleanField(
-        label=_('Permission for data processing'),
-        help_text=_(
-            u'I hereby grant Modern Poland Foundation (Fundacja Nowoczesna Polska, ul. Marszałkowska 84/92, '
-            u'00-514 Warszawa) permission to process my personal data (name, e-mail address) for purposes of '
-            u'registration for CopyCamp conference.'))
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
         help_text=mark_safe_lazy(_(
@@ -392,11 +382,11 @@ class WorkshopForm(ContactForm):
             for workshop in self.start_workshops:
                 if contact.body.get('w_%s' % workshop, False):
                     counts[workshop] += 1
-                    if workshop == 'youtube' and counts[workshop] == 30:
-                        send_mail(u'Warsztaty YouTube', u'Przekroczono limit 30 osób na warsztaty YouTube',
-                                  'no-reply@copycamp.pl',
-                                  ['krzysztof.siewicz@nowoczesnapolska.org.pl'],
-                                  fail_silently=True)
+                    # if workshop == 'youtube' and counts[workshop] == 30:
+                    #     send_mail(u'Warsztaty YouTube', u'Przekroczono limit 30 osób na warsztaty YouTube',
+                    #               'no-reply@copycamp.pl',
+                    #               ['krzysztof.siewicz@nowoczesnapolska.org.pl'],
+                    #               fail_silently=True)
 
         some_full = False
         for k, v in counts.items():

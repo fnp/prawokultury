@@ -260,7 +260,7 @@ COUNTRIES = [
 
 TRAVEL_GRANT_COUNTRIES = [
     # u"Czech Republic",
-    u"Germany",
+    # u"Germany",
     # u"Hungary",
     # u"Poland",
     # u"Slovakia",
