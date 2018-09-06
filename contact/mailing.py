@@ -41,12 +41,15 @@ def subscribe(email):
     else:
         if member['status'] != 'subscribed':
             remove_from_groups(email, client)
-    client.lists.members.create_or_update(
-        settings.MAILCHIMP_LIST_ID, subscriber_hash(email),
-        data={
-            'email_address': email,
-            'status_if_new': 'subscribed',
-            'status': 'subscribed',
-            'interests': INTERESTS,
-        }
-    )
+    try:
+        client.lists.members.create_or_update(
+            settings.MAILCHIMP_LIST_ID, subscriber_hash(email),
+            data={
+                'email_address': email,
+                'status_if_new': 'subscribed',
+                'status': 'subscribed',
+                'interests': INTERESTS,
+            }
+        )
+    except MailChimpError:
+        pass
