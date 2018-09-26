@@ -328,10 +328,10 @@ class WorkshopForm(ContactForm):
               u'(max 800 znaków)',
         max_length=800, widget=forms.Textarea, required=False)
     w_sikorska = workshop_field(
-        u'Zuza Sikorska-Borowska i Krzysztof Siewicz: Autor: projektant / prawo autorskie dla projektantów')
+        u'Krzysztof Siewicz: Autor: projektant / prawo autorskie dla projektantów')
     w_sikorska_question = forms.CharField(
-        label=u'Jeżeli chcesz, możesz przesłać prowadzącym swoje pytanie dotyczące prawa autorskiego, '
-              u'co pomoże im lepiej przygotować warsztaty '
+        label=u'Jeżeli chcesz, możesz przesłać prowadzącemu swoje pytanie dotyczące prawa autorskiego, '
+              u'co pomoże mu lepiej przygotować warsztaty '
               u'(max 800 znaków)',
         max_length=800, widget=forms.Textarea, required=False)
     w_sztoldman = workshop_field(
