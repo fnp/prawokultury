@@ -267,8 +267,8 @@ class RegisterSpeaker(RegistrationForm):
 
 class RemindForm(ContactForm):
     form_tag = 'remind-me'
-    save_as_tag = 'remind-me-2018'
-    form_title = u'CopyCamp 2018'
+    save_as_tag = 'remind-me-2019'
+    form_title = u'CopyCamp 2019'
     notify_on_register = False
     notify_user = False
 
