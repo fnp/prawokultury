@@ -188,42 +188,28 @@ class RegistrationForm(ContactForm):
         return [self[name] for name in ('agree_mailing', 'agree_license', 'agree_toc')]
 
 
-tracks = (
-    _('social security in the creative sector'),
-    _('100 years of the evolution of modern copyright law and industrial property law in Poland '
-      'and of cultural activities regulated by this law'),
-    _('EU copyright reform'),
-    _('blockchain use prospects'),
-    _('reuse of archives and cultural heritage'),
-)
-
-
 class RegisterSpeaker(RegistrationForm):
     form_tag = 'register-speaker'
-    save_as_tag = '2018-speaker'
+    save_as_tag = '2019-speaker'
     form_title = _('Open call for presentations')
     notify_on_register = False
     mailing_field = 'agree_mailing'
 
-    presentation_thematic_track = forms.ChoiceField(
-        label=_('Thematic track'),
-        choices=[(t, t) for t in tracks], widget=forms.RadioSelect())
-
     bio = forms.CharField(label=mark_safe_lazy(
-        _('Short biographical note in Polish (max. 500 characters, not required)')),
-                          widget=forms.Textarea, max_length=500, required=False)
-    bio_en = forms.CharField(label=_('Short biographical note in English (max. 500 characters)'), widget=forms.Textarea,
-                             max_length=500)
+        _('Short biographical note in Polish (max. 500 characters)')),
+                          widget=forms.Textarea, max_length=500, required=True)
+    bio_en = forms.CharField(label=_('Short biographical note in English (max. 500 characters, not required)'), widget=forms.Textarea,
+                             max_length=500, required=False)
     photo = forms.FileField(label=_('Photo'), required=False)
     phone = forms.CharField(label=_('Phone number'), max_length=64,
                             required=False,
                             help_text=_('(used only for organizational purposes)'))
 
     presentation_title = forms.CharField(
-        label=mark_safe_lazy(_('Presentation title in Polish (not required)')),
-        max_length=256, required=False)
+        label=mark_safe_lazy(_('Presentation title in Polish')),
+        max_length=256)
     presentation_title_en = forms.CharField(
-        label=_('Presentation title in English'), max_length=256)
+        label=_('Presentation title in English (not required)'), max_length=256, required=False)
     presentation_summary = forms.CharField(label=_('Presentation summary (max. 1800 characters)'),
                                            widget=forms.Textarea, max_length=1800)
 
@@ -255,7 +241,6 @@ class RegisterSpeaker(RegistrationForm):
             'presentation_title',
             'presentation_title_en',
             'presentation_summary',
-            'presentation_thematic_track',
             # 'presentation_post_conference_publication',
 
             'agree_mailing',

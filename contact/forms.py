@@ -107,7 +107,7 @@ class ContactForm(forms.Form):
                         'contact/mail_body.txt',
                     ], dictionary, context)
                 send_mail(mail_subject, mail_body,
-                    'no-reply@%s' % site.domain,
+                    'no-reply@nowoczesnapolska.org.pl',
                     [contact.contact],
                     fail_silently=True)
             if self.mailing_field and self.cleaned_data[self.mailing_field]:

@@ -1,1 +1,1 @@
-{% load i18n %}{% trans "Thank you for registering to CopyCamp 2018" %}
+{% load i18n %}{% trans "Thank you for registering to CopyCamp 2019" %}
