@@ -40,19 +40,15 @@ class RegistrationForm(ContactForm):
             u'to publishing my image.')),
         required=False
     )
+    agree_terms = forms.BooleanField(
+        label=mark_safe_lazy(
+            _(u'I accept <a href="/en/info/terms-and-conditions/">CopyCamp Terms and Conditions</a>.'))
+    )
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.started = getattr(settings, 'REGISTRATION_STARTED', False)
         self.limit_reached = Contact.objects.filter(form_tag=self.save_as_tag).count() >= settings.REGISTRATION_LIMIT
-        try:
-            url = Entry.objects.get(slug_pl='regulamin').get_absolute_url()
-            self.fields['agree_toc'] = forms.BooleanField(
-                required=True,
-                label=mark_safe(_('I accept <a href="%s">Terms and Conditions of CopyCamp</a>') % url)
-            )
-        except Entry.DoesNotExist:
-            pass
 
     def main_fields(self):
         return [self[name] for name in (
@@ -97,11 +93,6 @@ class RegisterSpeaker(RegistrationForm):
 
     agree_data = None
 
-    agree_terms = forms.BooleanField(
-        label=mark_safe_lazy(
-            _(u'I accept <a href="/en/info/terms-and-conditions/">CopyCamp Terms and Conditions</a>.'))
-    )
-
     def __init__(self, *args, **kw):
         super(RegisterSpeaker, self).__init__(*args, **kw)
         self.started = getattr(settings, 'REGISTRATION_SPEAKER_STARTED', False)
@@ -118,10 +109,7 @@ class RegisterSpeaker(RegistrationForm):
             'presentation_title',
             'presentation_title_en',
             'presentation_summary',
-            # 'presentation_post_conference_publication',
 
-            'agree_mailing',
-            # 'agree_data',
             'agree_license',
             'agree_terms',
         ]
