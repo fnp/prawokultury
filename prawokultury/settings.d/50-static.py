@@ -10,43 +10,43 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_STORAGE = 'fnpdjango.pipeline_storage.GzipPipelineCachedStorage'
-PIPELINE_CSS_COMPRESSOR = None
-PIPELINE_JS_COMPRESSOR = None
-PIPELINE_CSS = {
-    'base': {
-        'source_filenames': (
-          'css/base.scss',
-          'css/layout.scss',
-          'css/header.scss',
-          'css/menu.scss',
-          'css/search.scss',
-          'css/sidebar.scss',
-          'css/promobox.scss',
-          'css/entry.scss',
-          'css/footer.scss',
-          'css/prevnext.scss',
-          'css/forms.scss',
-          'events/events.scss',
 
-          'contrib/lightbox/css/lightbox.css',
-        ),
-        'output_filename': 'compressed/base.css',
+PIPELINE = {
+    'CSS_COMPRESSOR': None,
+    'JS_COMPRESSOR': None,
+    'STYLESHEETS': {
+        'base': {
+            'source_filenames': (
+                'css/base.scss',
+                'css/layout.scss',
+                'css/header.scss',
+                'css/menu.scss',
+                'css/search.scss',
+                'css/sidebar.scss',
+                'css/promobox.scss',
+                'css/entry.scss',
+                'css/footer.scss',
+                'css/prevnext.scss',
+                'css/forms.scss',
+                'events/events.scss',
+
+                'contrib/lightbox/css/lightbox.css',
+            ),
+            'output_filename': 'compressed/base.css',
+        },
     },
-}
-PIPELINE_JS = {
-    'base': {
-        'source_filenames': (
-            'js/promobox.js',
-            'js/workshop_form.js',
-            'js/optional_fields.js',
-            'contrib/lightbox/js/lightbox.min.js',
-        ),
-        'output_filename': 'compressed/base.js',
+    'JAVASCRIPT': {
+        'base': {
+            'source_filenames': (
+                'js/promobox.js',
+                'js/workshop_form.js',
+                'js/optional_fields.js',
+                'contrib/lightbox/js/lightbox.min.js',
+            ),
+            'output_filename': 'compressed/base.js',
+        },
     },
+    'COMPILERS': (
+        'pipeline.compilers.sass.SASSCompiler',
+    ),
 }
-
-PIPELINE_COMPILERS = (
-  'pipeline.compilers.sass.SASSCompiler',
-)
-
-PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'

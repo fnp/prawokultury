@@ -5,7 +5,7 @@ from django.utils.translation import ugettext as _
 from .forms import contact_forms, admin_list_width
 from django.template import Template
 from django.utils.safestring import mark_safe
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.http import HttpResponse, Http404
 
 from .utils import deunicode
@@ -106,9 +106,9 @@ class ContactAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(ContactAdmin, self).get_urls()
-        return patterns('',
+        return [
             url(r'^extract/(?P<form_tag>[\w-]+)/(?P<extract_type_slug>[\w-]+)/$', self.admin_site.admin_view(extract_view), name='contact_extract')
-        ) + super(ContactAdmin, self).get_urls()
+        ] + super(ContactAdmin, self).get_urls()
 
 
 def extract_view(request, form_tag, extract_type_slug):

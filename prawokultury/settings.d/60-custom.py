@@ -1,8 +1,7 @@
-from fnpdjango.utils.settings import LazyUGettextLazy as gettext
 from migdal.helpers import EntryType
 
 MIGDAL_TYPES = (
-    EntryType('info', gettext('info'), commentable=False, on_main=False),
+    EntryType('info', 'info', commentable=False, on_main=False),
 )
 
 MIGDAL_TAXONOMIES = ()

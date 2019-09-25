@@ -10,7 +10,7 @@ from . import app_settings
 
 class Contact(models.Model):
     created_at = models.DateTimeField(_('submission date'), auto_now_add=True)
-    ip = models.IPAddressField(_('IP address'), default='127.0.0.1')
+    ip = models.GenericIPAddressField(_('IP address'), default='127.0.0.1')
     contact = models.CharField(_('contact'), max_length=128)
     form_tag = models.CharField(_('form'), max_length=32, db_index=True)
     body = JSONField(_('body'))

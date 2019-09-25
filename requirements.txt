@@ -1,21 +1,21 @@
 -i https://py.mdrn.pl/simple
 
-Django>=1.7,<1.8
+Django>=1.9,<1.10
 fnpdjango==0.3
 django_cas>=2.1,<2.2
 Pillow
-sorl-thumbnail==12.2
+sorl-thumbnail==12.4.1
 django-pagination
-django-migdal==0.8.5
+django-migdal==0.8.6
 pytz
 
 jsonfield==1.0.3
 
 django-markupfield==1.4.3
 django-gravatar2
-django-comments-xtd==1.4.0 # for migdal
-django-contrib-comments==1.6.0 # for migdal
-django-pipeline>=1.3.23,<1.4
+django-comments-xtd==1.5.1 # for migdal
+django-contrib-comments==1.7.3 # for migdal
+django-pipeline==1.6.14
 django-extensions
 six
 
@@ -23,7 +23,7 @@ six
 #git+git://github.com/Kronuz/pyScss.git@d8f4da23a3c87696a75b3830ed4ab49b75550a93#egg=pyScss
 #TODO: pyScss support, for now just install sass
 
-django-haystack>=2.1,<2.2
+django-haystack==2.7.0
 pysolr
 django-piwik
 
