@@ -1,6 +1,6 @@
 -i https://py.mdrn.pl/simple
 
-Django>=1.9,<1.10
+Django>=1.11,<2
 fnpdjango==0.3
 django_cas>=2.1,<2.2
 Pillow

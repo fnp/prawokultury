@@ -18,7 +18,6 @@ urlpatterns = [
     url(r'^accounts/login/$', django_cas.views.login),
     url(r'^accounts/logout/$', django_cas.views.logout),
 ] + i18n_patterns(
-    url(r'^comments/', include('django_comments_xtd.urls')),
     url(r'^contact/', include('contact.urls')),
 ) + migdal_urlpatterns 
 
