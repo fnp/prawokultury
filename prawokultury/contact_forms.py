@@ -21,116 +21,17 @@ mark_safe_lazy = lazy(mark_safe, unicode)
 class RegistrationForm(ContactForm):
     form_tag = 'register'
 
-    save_as_tag = '2018'
-    conference_name = u'CopyCamp 2018'
+    save_as_tag = '2019'
+    conference_name = u'CopyCamp 2019'
     notify_on_register = False
     
     form_title = _('Registration')
     admin_list = ['first_name', 'last_name', 'organization']
 
-    mailing_field = 'agree_mailing'
-
-    travel_grant_countries = TRAVEL_GRANT_COUNTRIES
-
     first_name = forms.CharField(label=_('First name'), max_length=128)
     last_name = forms.CharField(label=_('Last name'), max_length=128)
     contact = forms.EmailField(label=_('E-mail'), max_length=128)
     organization = forms.CharField(label=_('Organization'), max_length=256, required=False)
-    country = forms.ChoiceField(
-        label=_('Country of residence'), choices=[('', '--------')] + zip(COUNTRIES, COUNTRIES), required=False)
-    travel_grant = forms.BooleanField(
-        label=_('I require financial assistance to attend CopyCamp 2018.'), required=False)
-    travel_grant_motivation = forms.CharField(
-        label=_('Please write us about yourself and why you want to come to CopyCamp. '
-                'This information will help us evaluate your travel grant application:'),
-        help_text=_('Financial assistance for German audience is possible '
-                    'thanks to the funds of the German Federal Foreign Office transferred by '
-                    'the Foundation for Polish-German Cooperation.'),
-        widget=forms.Textarea, max_length=600, required=False)
-
-    days = forms.ChoiceField(
-       label=_("I'm planning to show up on"),
-       choices=[
-           ('both', _('Both days of the conference')),
-           ('only-28th', _('October 5th only')),
-           ('only-29th', _('October 6th only')),
-       ], widget=forms.RadioSelect())
-
-    # ankieta
-    times_attended = forms.ChoiceField(
-        required=False,
-        label=_("1. How many times have you attended CopyCamp?"),
-        choices=[
-            ('0', _('not yet')),
-            ('1', _('once')),
-            ('2', _('twice')),
-            ('3', _('three times')),
-            ('4', _('four times')),
-            ('5', _('five times')),
-        ], widget=forms.RadioSelect())
-    age = forms.ChoiceField(
-        required=False,
-        label=_("2. Please indicate your age bracket:"),
-        choices=[
-            ('0-19', _('19 or below')),
-            ('20-25', _('20-25')),
-            ('26-35', _('26-35')),
-            ('36-45', _('36-45')),
-            ('46-55', _('46-55')),
-            ('56-65', _('56-65')),
-            ('66+', _('66 or above')),
-        ], widget=forms.RadioSelect())
-    areas = forms.MultipleChoiceField(
-        required=False,
-        label=_("3. Please indicate up to 3 areas you feel most affiliated with"),
-        choices=[
-            ('sztuki plastyczne', _('visual art')),
-            ('literatura', _('literature')),
-            ('muzyka', _('music')),
-            ('teatr', _('theatre')),
-            ('film', _('film production')),
-            ('wydawanie', _('publishing')),
-            ('prawo', _('law')),
-            ('ekonomia', _('economy')),
-            ('socjologia', _('sociology')),
-            ('technika', _('technology')),
-            ('edukacja', _('education')),
-            ('studia', _('higher education')),
-            ('nauka', _('academic research')),
-            ('biblioteki', _('library science')),
-            ('administracja', _('public administration')),
-            ('ngo', _('nonprofit organisations')),
-            ('other', _('other (please specify below)')),
-        ], widget=forms.CheckboxSelectMultiple())
-    areas_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
-    source = forms.ChoiceField(
-        required=False,
-        label=_("4. Please indicate how you received information about the conference:"),
-        choices=[
-            ('znajomi', _('through friends sharing on the web')),
-            ('znajomi2', _('through friends by other means')),
-            ('prasa', _('through press')),
-            ('fnp', _('directly through the Foundation\'s facebook or website')),
-            ('www', _('through other websites (please specify below)')),
-            ('other', _('other (please specify below)')),
-        ], widget=forms.RadioSelect())
-    source_other = forms.CharField(required=False, label=_('Fill if you selected “other” or “other website” above'))
-    motivation = forms.ChoiceField(
-        required=False,
-        label=_("6. Please indicate the most important factor for your willingness to participate:"),
-        choices=[
-            ('speaker', _('listening to particular speaker(s)')),
-            ('networking', _('good networking occasion')),
-            ('partnering', _('partnering with organisations present at the event')),
-            ('other', _('other (please specify below)')),
-        ], widget=forms.RadioSelect())
-    motivation_other = forms.CharField(required=False, label=_('Fill if you selected “other” above'))
-
-    agree_mailing = forms.BooleanField(
-        label=_('I want to receive e-mails about future CopyCamps '
-                'and similar activities of the Modern Poland Foundation'),
-        required=False
-    )
     agree_license = forms.BooleanField(
         label=_('Permission for publication'),
         help_text=mark_safe_lazy(_(
@@ -153,39 +54,15 @@ class RegistrationForm(ContactForm):
         except Entry.DoesNotExist:
             pass
 
-    def clean_areas(self):
-        data = self.cleaned_data['areas']
-        if len(data) > 3:
-            raise forms.ValidationError(_('Select at most 3 areas'))
-        return data
-
-    def clean(self):
-        cleaned_data = self.cleaned_data
-        if 'travel_grant' in cleaned_data:
-            country = cleaned_data['country']
-            travel_grant = cleaned_data['travel_grant']
-            motivation = cleaned_data['travel_grant_motivation']
-            if country not in self.travel_grant_countries and travel_grant:
-                raise forms.ValidationError(_('Travel grant is not provided for the selected country'))
-            if travel_grant and not motivation:
-                self._errors['travel_grant_motivation'] = _('Please provide this information')
-                raise forms.ValidationError(_('To apply for a travel grant you must provide additional information.'))
-            if not travel_grant and motivation:
-                cleaned_data['motivation'] = ''
-        return cleaned_data
-
     def main_fields(self):
         return [self[name] for name in (
-            'first_name', 'last_name', 'contact', 'organization', 'country',
-            'travel_grant', 'travel_grant_motivation', 'days')]
+            'first_name', 'last_name', 'contact', 'organization')]
 
     def survey_fields(self):
-        return [self[name] for name in (
-            'times_attended', 'age',
-            'areas', 'areas_other', 'source', 'source_other', 'motivation', 'motivation_other')]
+        return []
 
     def agreement_fields(self):
-        return [self[name] for name in ('agree_mailing', 'agree_license', 'agree_toc')]
+        return [self[name] for name in ('agree_license', 'agree_toc')]
 
 
 class RegisterSpeaker(RegistrationForm):
