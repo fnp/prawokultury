@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prawokultury\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 10:19+0000\n"
+"POT-Creation-Date: 2019-09-25 11:43+0200\n"
 "PO-Revision-Date: 2014-09-30 16:25+0100\n"
 "Last-Translator: Radek Czajka <radoslaw.czajka@nowoczesnapolska.org.pl>\n"
 "Language-Team: FNP <fundacja@nowoczesnapolska.org.pl>\n"
@@ -23,263 +23,27 @@ msgstr ""
 msgid "Registration"
 msgstr "Rejestracja"
 
-#: contact_forms.py:35 contact_forms.py:294
+#: contact_forms.py:31 contact_forms.py:147
 msgid "First name"
 msgstr "Imię"
 
-#: contact_forms.py:36 contact_forms.py:295
+#: contact_forms.py:32 contact_forms.py:148
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: contact_forms.py:37 contact_forms.py:277 contact_forms.py:296
+#: contact_forms.py:33 contact_forms.py:130 contact_forms.py:149
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contact_forms.py:38 contact_forms.py:278 contact_forms.py:297
+#: contact_forms.py:34 contact_forms.py:131 contact_forms.py:150
 msgid "Organization"
 msgstr "Organizacja"
 
-#: contact_forms.py:40 contact_forms.py:299
-msgid "Country of residence"
-msgstr "Kraj zamieszkania"
-
-#: contact_forms.py:42
-msgid "I require financial assistance to attend CopyCamp 2018."
-msgstr "Potrzebuję wsparcia finansowego, aby uczestniczyć w CopyCampie 2018."
-
-#: contact_forms.py:44
-msgid ""
-"Please write us about yourself and why you want to come to CopyCamp. This "
-"information will help us evaluate your travel grant application:"
-msgstr ""
-"Prosimy napisać o sobie i dlaczego chcesz uczestniczyć w CopyCampie. Te "
-"informacje pomogą nam ocenić Twoją prośbę o dofinansowanie:"
-
-#: contact_forms.py:46
-msgid ""
-"Financial assistance for German audience is possible thanks to the funds of "
-"the German Federal Foreign Office transferred by the Foundation for Polish-"
-"German Cooperation."
-msgstr ""
-"Wsparcie finansowe dla niemieckich uczestników jest możliwe dzięki funduszom "
-"Urzędu Spraw Zagranicznych Republiki Federalnej Niemiec przekazanym Fundacji "
-"Współpracy Polsko-Niemieckiej."
-
-#: contact_forms.py:52
-msgid "I'm planning to show up on"
-msgstr "Planuję pojawić się"
-
-#: contact_forms.py:54
-msgid "Both days of the conference"
-msgstr "na obu dniach konferencji"
-
-#: contact_forms.py:55
-msgid "October 5th only"
-msgstr "Tylko 5 października"
-
-#: contact_forms.py:56
-msgid "October 6th only"
-msgstr "Tylko 6 października"
-
-#: contact_forms.py:62
-msgid "1. How many times have you attended CopyCamp?"
-msgstr "1. W CopyCamp brałam(em) udział:"
-
-#: contact_forms.py:64
-msgid "not yet"
-msgstr "nie brałam(em) jeszcze udziału w CopyCampie"
-
-#: contact_forms.py:65
-msgid "once"
-msgstr "1 raz"
-
-#: contact_forms.py:66
-msgid "twice"
-msgstr "2 razy"
-
-#: contact_forms.py:67
-msgid "three times"
-msgstr "3 razy"
-
-#: contact_forms.py:68
-msgid "four times"
-msgstr "4 razy"
-
-#: contact_forms.py:69
-msgid "five times"
-msgstr "5 razy"
-
-#: contact_forms.py:73
-msgid "2. Please indicate your age bracket:"
-msgstr "2. Mam lat:"
-
-#: contact_forms.py:75
-msgid "19 or below"
-msgstr "19 lub poniżej"
-
-#: contact_forms.py:76
-msgid "20-25"
-msgstr "20-25"
-
-#: contact_forms.py:77
-msgid "26-35"
-msgstr "26-35"
-
-#: contact_forms.py:78
-msgid "36-45"
-msgstr "36-45"
-
-#: contact_forms.py:79
-msgid "46-55"
-msgstr "46-55"
-
-#: contact_forms.py:80
-msgid "56-65"
-msgstr "56-65"
-
-#: contact_forms.py:81
-msgid "66 or above"
-msgstr "66 lub więcej"
-
-#: contact_forms.py:85
-msgid "3. Please indicate up to 3 areas you feel most affiliated with"
-msgstr ""
-"3. Obszary, z którymi czuję najbardziej związana/y to (zaznacz maksymalnie "
-"trzy):"
-
-#: contact_forms.py:87
-msgid "visual art"
-msgstr "sztuki plastyczne"
-
-#: contact_forms.py:88
-msgid "literature"
-msgstr "literatura"
-
-#: contact_forms.py:89
-msgid "music"
-msgstr "muzyka"
-
-#: contact_forms.py:90
-msgid "theatre"
-msgstr "teatr"
-
-#: contact_forms.py:91
-msgid "film production"
-msgstr "produkcja filmowa"
-
-#: contact_forms.py:92
-msgid "publishing"
-msgstr "działalność wydawnicza"
-
-#: contact_forms.py:93
-msgid "law"
-msgstr "prawo"
-
-#: contact_forms.py:94
-msgid "economy"
-msgstr "ekonomia"
-
-#: contact_forms.py:95
-msgid "sociology"
-msgstr "socjologia"
-
-#: contact_forms.py:96
-msgid "technology"
-msgstr "technika"
-
-#: contact_forms.py:97
-msgid "education"
-msgstr "edukacja"
-
-#: contact_forms.py:98
-msgid "higher education"
-msgstr "studia wyższe"
-
-#: contact_forms.py:99
-msgid "academic research"
-msgstr "badania naukowe"
-
-#: contact_forms.py:100
-msgid "library science"
-msgstr "działalność biblioteczna"
-
-#: contact_forms.py:101
-msgid "public administration"
-msgstr "administracja publiczna"
-
-#: contact_forms.py:102
-msgid "nonprofit organisations"
-msgstr "organizacja pozarządowa"
-
-#: contact_forms.py:103 contact_forms.py:115 contact_forms.py:125
-msgid "other (please specify below)"
-msgstr "inne (wpisz poniżej)"
-
-#: contact_forms.py:105 contact_forms.py:127
-msgid "Fill if you selected “other” above"
-msgstr "Wypełnij, jeśli powyżej wybrałaś(eś) „inne”"
-
-#: contact_forms.py:108
-msgid "4. Please indicate how you received information about the conference:"
-msgstr "4. O konferencji CopyCamp dowiedziałam(em) się:"
-
-#: contact_forms.py:110
-msgid "through friends sharing on the web"
-msgstr "przez znajomych w sieciach społecznościowych"
-
-#: contact_forms.py:111
-msgid "through friends by other means"
-msgstr "przez znajomych inną drogą"
-
-#: contact_forms.py:112
-msgid "through press"
-msgstr "prasa"
-
-#: contact_forms.py:113
-msgid "directly through the Foundation's facebook or website"
-msgstr "informacja na stronie internetowej/facebooku Fundacji"
-
-#: contact_forms.py:114
-msgid "through other websites (please specify below)"
-msgstr "informacja na innej stronie internetowej (wpisz poniżej)"
-
-#: contact_forms.py:117
-msgid "Fill if you selected “other” or “other website” above"
-msgstr "Wypełnij, jeśli wybrałaś(eś) powyżej „inne” lub „inna strona”"
-
-#: contact_forms.py:120
-msgid ""
-"6. Please indicate the most important factor for your willingness to "
-"participate:"
-msgstr ""
-"6. Do rejestracji i chęci uczestniczenia w CopyCampie skłoniła mnie w "
-"największym stopniu:"
-
-#: contact_forms.py:122
-msgid "listening to particular speaker(s)"
-msgstr "konkretna(y) prelegentka(ent)"
-
-#: contact_forms.py:123
-msgid "good networking occasion"
-msgstr "możliwość networkingu"
-
-#: contact_forms.py:124
-msgid "partnering with organisations present at the event"
-msgstr "partnerstwo z organizacjami obecnymi na wydarzeniu"
-
-#: contact_forms.py:130
-msgid ""
-"I want to receive e-mails about future CopyCamps and similar activities of "
-"the Modern Poland Foundation"
-msgstr ""
-"Chcę otrzymywać informacje o przyszłych CopyCampach i podobnych działaniach "
-"Fundacji Nowoczesna Polska na e-mail"
-
-#: contact_forms.py:135 contact_forms.py:359
+#: contact_forms.py:36 contact_forms.py:212
 msgid "Permission for publication"
 msgstr "Zgoda na publikację"
 
-#: contact_forms.py:137 contact_forms.py:361
+#: contact_forms.py:38 contact_forms.py:214
 msgid ""
 "I agree to having materials, recorded during the conference, released under "
 "the terms of <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed"
@@ -289,128 +53,85 @@ msgstr ""
 "licencji <a href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.pl"
 "\">CC BY-SA</a> oraz rozpowszechnianie wizerunku."
 
-#: contact_forms.py:151 contact_forms.py:372
-#, python-format
-msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
-msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
-
-#: contact_forms.py:159
-msgid "Select at most 3 areas"
-msgstr "Wybierz najwyżej 3 obszary"
-
-#: contact_forms.py:169
-msgid "Travel grant is not provided for the selected country"
-msgstr "Dofinansowanie nie jest dostępne dla wybranego kraju"
-
-#: contact_forms.py:171
-msgid "Please provide this information"
-msgstr "Prosimy podać tę informację"
-
-#: contact_forms.py:172
-msgid "To apply for a travel grant you must provide additional information."
-msgstr "Aby aplikować o dofinansowanie musisz podać dodatkowe informacje."
-
-#: contact_forms.py:192
-msgid "social security in the creative sector"
-msgstr "zabezpieczenie społeczne twórców"
-
-#: contact_forms.py:193
-msgid ""
-"100 years of the evolution of modern copyright law and industrial property "
-"law in Poland and of cultural activities regulated by this law"
-msgstr ""
-"stulecie ewolucji nowoczesnego prawa autorskiego i prawa własności "
-"przemysłowej w Polsce oraz zachowań kulturowych przez to prawo regulowanych"
-
-#: contact_forms.py:195
-msgid "EU copyright reform"
-msgstr "reforma prawa autorskiego UE"
-
-#: contact_forms.py:196
-msgid "blockchain use prospects"
-msgstr "perspektywy wykorzystania technologii blockchain"
-
-#: contact_forms.py:197
-msgid "reuse of archives and cultural heritage"
-msgstr ""
-"ponowne wykorzystanie zasobów archiwów i innych instytucji gromadzących "
-"dziedzictwo"
-
-#: contact_forms.py:204
-msgid "Open call for presentations"
-msgstr "Otwarty nabór prezentacji"
-
-#: contact_forms.py:209
-msgid "Short biographical note in Polish (max. 500 characters)"
-msgstr "Krótka notka biograficzna po polsku (max. 500 znaków)"
-
-#: contact_forms.py:211
-msgid "Short biographical note in English (max. 500 characters, not required)"
-msgstr "Krótka notka biograficzna po angielsku (max. 500 znaków, nie wymagana)"
-
-#: contact_forms.py:213
-msgid "Photo"
-msgstr "Zdjęcie"
-
-#: contact_forms.py:214
-msgid "Phone number"
-msgstr "Numer telefonu"
-
-#: contact_forms.py:216
-msgid "(used only for organizational purposes)"
-msgstr "(używany wyłącznie do celów organizacyjnych)"
-
-#: contact_forms.py:219
-msgid "Presentation title in Polish"
-msgstr "Polski tytuł prezentacji"
-
-#: contact_forms.py:222
-msgid "Presentation title in English (not required)"
-msgstr "Angielski tytuł prezentacji (nie wymagany)"
-
-#: contact_forms.py:223
-msgid "Presentation summary (max. 1800 characters)"
-msgstr "Streszczenie (maks. 1800 znaków)"
-
-#: contact_forms.py:235
+#: contact_forms.py:45
 msgid ""
 "I accept <a href=\"/en/info/terms-and-conditions/\">CopyCamp Terms and "
 "Conditions</a>."
 msgstr "Akceptuję <a href=\"/info/regulamin/\">regulamin CopyCampu</a>"
 
-#: contact_forms.py:274
+#: contact_forms.py:67
+msgid "Open call for presentations"
+msgstr "Otwarty nabór prezentacji"
+
+#: contact_forms.py:71
+msgid "Short biographical note in Polish (max. 500 characters)"
+msgstr "Krótka notka biograficzna po polsku (max. 500 znaków)"
+
+#: contact_forms.py:73
+msgid "Short biographical note in English (max. 500 characters, not required)"
+msgstr "Krótka notka biograficzna po angielsku (max. 500 znaków, nie wymagana)"
+
+#: contact_forms.py:75
+msgid "Photo"
+msgstr "Zdjęcie"
+
+#: contact_forms.py:76
+msgid "Phone number"
+msgstr "Numer telefonu"
+
+#: contact_forms.py:78
+msgid "(used only for organizational purposes)"
+msgstr "(używany wyłącznie do celów organizacyjnych)"
+
+#: contact_forms.py:81
+msgid "Presentation title in Polish"
+msgstr "Polski tytuł prezentacji"
+
+#: contact_forms.py:84
+msgid "Presentation title in English (not required)"
+msgstr "Angielski tytuł prezentacji (nie wymagany)"
+
+#: contact_forms.py:85
+msgid "Presentation summary (max. 1800 characters)"
+msgstr "Streszczenie (maks. 1800 znaków)"
+
+#: contact_forms.py:127
 msgid "Next CopyCamp"
 msgstr "Kolejny CopyCamp"
 
-#: contact_forms.py:276
+#: contact_forms.py:129
 msgid "Name"
 msgstr "Imię i nazwisko"
 
-#: contact_forms.py:290
+#: contact_forms.py:143
 msgid "Workshop"
 msgstr "Warsztat"
 
-#: contact_forms.py:302
+#: contact_forms.py:152
+msgid "Country of residence"
+msgstr "Kraj zamieszkania"
+
+#: contact_forms.py:155
 msgid "<h3>I'll take a part in workshops</h3>"
 msgstr "<h3>Wezmę udział w warsztatach</h3>"
 
-#: contact_forms.py:303
+#: contact_forms.py:156
 msgid "Only workshops with any spots left are visible here."
 msgstr "Widoczne są tylko warsztaty, w których są jeszcze miejsca."
 
-#: contact_forms.py:305
+#: contact_forms.py:158
 msgid "<strong>Friday, October 5th, 11 a.m.–1 p.m.</strong>"
 msgstr "<strong>Piątek, 5 października, 11:00–13:00</strong>"
 
-#: contact_forms.py:315
+#: contact_forms.py:168
 msgid "The workshop will be conducted in English."
 msgstr "Warsztat będzie prowadzony po angielsku."
 
-#: contact_forms.py:317
+#: contact_forms.py:170
 msgid "<strong>Saturday, October 6th, 11 a.m.–1 p.m.</strong>"
 msgstr "<strong>Sobota, 6 października, 11:00–13:00</strong>"
 
-#: contact_forms.py:356
+#: contact_forms.py:209
 msgid ""
 "I am interested in receiving information about the Modern Poland "
 "Foundation's activities by e-mail"
@@ -418,21 +139,22 @@ msgstr ""
 "Jestem zainteresowana/y otrzymywaniem drogą mailową informacji dotyczących "
 "działalności Fundacji Nowoczesna Polska"
 
-#: contact_forms.py:399
+#: contact_forms.py:225
+#, python-format
+msgid "I accept <a href=\"%s\">Terms and Conditions of CopyCamp</a>"
+msgstr "Akceptuję <a href=\"%s\">Regulamin CopyCampu</a>"
+
+#: contact_forms.py:252
 msgid "You can't choose more than one workshop during the same period"
 msgstr "Nie możesz wybrać warsztatów odbywających się w tym samym czasie"
 
-#: contact_forms.py:401
+#: contact_forms.py:254
 msgid "Please choose at least one workshop."
 msgstr "Proszę wybrać co najmniej jeden warsztat."
 
 #: context_processors.py:17
 msgid "Remind me"
 msgstr "Przypomnij mi"
-
-#: settings.d/60-custom.py:5
-msgid "info"
-msgstr "info"
 
 #: templates/404.html:5 templates/404.html.py:10
 msgid "Page not found"
@@ -467,6 +189,31 @@ msgstr ""
 "Jeśli nie oznaczono inaczej, wszystkie teksty są objęte wolną licencją <a "
 "href='http://creativecommons.org/licenses/by-sa/3.0/deed.pl'>Creative "
 "Commons Uznanie autorstwa – Na tych samych warunkach</a>."
+
+#: templates/contact/register-speaker/mail_body.txt:1
+#: templates/contact/register-speaker/thanks.html:6
+msgid "Thank you for submitting your proposal."
+msgstr "Dziękujemy za zgłoszenie."
+
+#: templates/contact/register-speaker/mail_body.txt:3
+msgid "Your submission can be modified at:"
+msgstr "Zgłoszenie można modyfikować pod adresem:"
+
+#: templates/contact/register-speaker/mail_body.txt:6
+#: templates/contact/register-speaker/thanks.html:10
+msgid "We will inform you of the open call results by early November."
+msgstr "O wynikach naboru poinformujemy na przełomie października i listopada."
+
+#: templates/contact/register-speaker/mail_subject.txt:1
+msgid "Thank you for submitting your proposal"
+msgstr "Dziękujemy za zgłoszenie."
+
+#: templates/contact/register-speaker/thanks.html:8
+msgid ""
+"Your submission can be modified using the unique link sent to you by e-mail."
+msgstr ""
+"Zgłoszenie można modyfikować używając unikalnego adresu "
+"przesłanego e-mailem."
 
 #: templates/contact/register/form.html:35
 msgid ""
@@ -505,32 +252,6 @@ msgstr "Dziękujemy za rejestrację na konferencję CopyCamp 2019"
 msgid "Thank you for submitting the registration form."
 msgstr "Dziękujemy za wypełnienie formularza rejestracyjnego."
 
-#: templates/contact/register-speaker/mail_body.txt:1
-#: templates/contact/register-speaker/thanks.html:6
-msgid "Thank you for submitting your proposal."
-msgstr "Dziękujemy za zgłoszenie."
-
-#: templates/contact/register-speaker/mail_body.txt:3
-msgid "Your submission can be modified until July 31st at:"
-msgstr "Zgłoszenie można modyfikować do 31 lipca pod adresem:"
-
-#: templates/contact/register-speaker/mail_body.txt:6
-#: templates/contact/register-speaker/thanks.html:10
-msgid "We will inform you of the open call results in mid-August."
-msgstr "O wynikach naboru poinformujemy w połowie sierpnia."
-
-#: templates/contact/register-speaker/mail_subject.txt:1
-msgid "Thank you for submitting your proposal"
-msgstr "Dziękujemy za zgłoszenie."
-
-#: templates/contact/register-speaker/thanks.html:8
-msgid ""
-"Your submission can be modified until July 31st using the unique link sent "
-"to you by e-mail."
-msgstr ""
-"Zgłoszenie można modyfikować do 31 lipca używając unikalnego adresu "
-"przesłanego e-mailem."
-
 #: templates/contact/remind-me/thanks.html:6
 msgid "Thank you for submitting your e-mail address."
 msgstr "Dziękujemy za zostawienie adresu e-mail."
@@ -550,6 +271,227 @@ msgid "Thank you, you have been registered for workshops at %(site_name)s."
 msgstr ""
 "Dziękujemy za wypełnienie formularza rejestracji na warsztaty na stronie "
 "%(site_name)s."
+
+#~ msgid "We will inform you of the open call results in mid-August."
+#~ msgstr "O wynikach naboru poinformujemy w połowie sierpnia."
+
+#~ msgid "I require financial assistance to attend CopyCamp 2018."
+#~ msgstr ""
+#~ "Potrzebuję wsparcia finansowego, aby uczestniczyć w CopyCampie 2018."
+
+#~ msgid ""
+#~ "Please write us about yourself and why you want to come to CopyCamp. This "
+#~ "information will help us evaluate your travel grant application:"
+#~ msgstr ""
+#~ "Prosimy napisać o sobie i dlaczego chcesz uczestniczyć w CopyCampie. Te "
+#~ "informacje pomogą nam ocenić Twoją prośbę o dofinansowanie:"
+
+#~ msgid ""
+#~ "Financial assistance for German audience is possible thanks to the funds "
+#~ "of the German Federal Foreign Office transferred by the Foundation for "
+#~ "Polish-German Cooperation."
+#~ msgstr ""
+#~ "Wsparcie finansowe dla niemieckich uczestników jest możliwe dzięki "
+#~ "funduszom Urzędu Spraw Zagranicznych Republiki Federalnej Niemiec "
+#~ "przekazanym Fundacji Współpracy Polsko-Niemieckiej."
+
+#~ msgid "I'm planning to show up on"
+#~ msgstr "Planuję pojawić się"
+
+#~ msgid "Both days of the conference"
+#~ msgstr "na obu dniach konferencji"
+
+#~ msgid "October 5th only"
+#~ msgstr "Tylko 5 października"
+
+#~ msgid "October 6th only"
+#~ msgstr "Tylko 6 października"
+
+#~ msgid "1. How many times have you attended CopyCamp?"
+#~ msgstr "1. W CopyCamp brałam(em) udział:"
+
+#~ msgid "not yet"
+#~ msgstr "nie brałam(em) jeszcze udziału w CopyCampie"
+
+#~ msgid "once"
+#~ msgstr "1 raz"
+
+#~ msgid "twice"
+#~ msgstr "2 razy"
+
+#~ msgid "three times"
+#~ msgstr "3 razy"
+
+#~ msgid "four times"
+#~ msgstr "4 razy"
+
+#~ msgid "five times"
+#~ msgstr "5 razy"
+
+#~ msgid "2. Please indicate your age bracket:"
+#~ msgstr "2. Mam lat:"
+
+#~ msgid "19 or below"
+#~ msgstr "19 lub poniżej"
+
+#~ msgid "20-25"
+#~ msgstr "20-25"
+
+#~ msgid "26-35"
+#~ msgstr "26-35"
+
+#~ msgid "36-45"
+#~ msgstr "36-45"
+
+#~ msgid "46-55"
+#~ msgstr "46-55"
+
+#~ msgid "56-65"
+#~ msgstr "56-65"
+
+#~ msgid "66 or above"
+#~ msgstr "66 lub więcej"
+
+#~ msgid "3. Please indicate up to 3 areas you feel most affiliated with"
+#~ msgstr ""
+#~ "3. Obszary, z którymi czuję najbardziej związana/y to (zaznacz "
+#~ "maksymalnie trzy):"
+
+#~ msgid "visual art"
+#~ msgstr "sztuki plastyczne"
+
+#~ msgid "literature"
+#~ msgstr "literatura"
+
+#~ msgid "music"
+#~ msgstr "muzyka"
+
+#~ msgid "theatre"
+#~ msgstr "teatr"
+
+#~ msgid "film production"
+#~ msgstr "produkcja filmowa"
+
+#~ msgid "publishing"
+#~ msgstr "działalność wydawnicza"
+
+#~ msgid "law"
+#~ msgstr "prawo"
+
+#~ msgid "economy"
+#~ msgstr "ekonomia"
+
+#~ msgid "sociology"
+#~ msgstr "socjologia"
+
+#~ msgid "technology"
+#~ msgstr "technika"
+
+#~ msgid "education"
+#~ msgstr "edukacja"
+
+#~ msgid "higher education"
+#~ msgstr "studia wyższe"
+
+#~ msgid "academic research"
+#~ msgstr "badania naukowe"
+
+#~ msgid "library science"
+#~ msgstr "działalność biblioteczna"
+
+#~ msgid "public administration"
+#~ msgstr "administracja publiczna"
+
+#~ msgid "nonprofit organisations"
+#~ msgstr "organizacja pozarządowa"
+
+#~ msgid "other (please specify below)"
+#~ msgstr "inne (wpisz poniżej)"
+
+#~ msgid "Fill if you selected “other” above"
+#~ msgstr "Wypełnij, jeśli powyżej wybrałaś(eś) „inne”"
+
+#~ msgid ""
+#~ "4. Please indicate how you received information about the conference:"
+#~ msgstr "4. O konferencji CopyCamp dowiedziałam(em) się:"
+
+#~ msgid "through friends sharing on the web"
+#~ msgstr "przez znajomych w sieciach społecznościowych"
+
+#~ msgid "through friends by other means"
+#~ msgstr "przez znajomych inną drogą"
+
+#~ msgid "through press"
+#~ msgstr "prasa"
+
+#~ msgid "directly through the Foundation's facebook or website"
+#~ msgstr "informacja na stronie internetowej/facebooku Fundacji"
+
+#~ msgid "through other websites (please specify below)"
+#~ msgstr "informacja na innej stronie internetowej (wpisz poniżej)"
+
+#~ msgid "Fill if you selected “other” or “other website” above"
+#~ msgstr "Wypełnij, jeśli wybrałaś(eś) powyżej „inne” lub „inna strona”"
+
+#~ msgid ""
+#~ "6. Please indicate the most important factor for your willingness to "
+#~ "participate:"
+#~ msgstr ""
+#~ "6. Do rejestracji i chęci uczestniczenia w CopyCampie skłoniła mnie w "
+#~ "największym stopniu:"
+
+#~ msgid "listening to particular speaker(s)"
+#~ msgstr "konkretna(y) prelegentka(ent)"
+
+#~ msgid "good networking occasion"
+#~ msgstr "możliwość networkingu"
+
+#~ msgid "partnering with organisations present at the event"
+#~ msgstr "partnerstwo z organizacjami obecnymi na wydarzeniu"
+
+#~ msgid ""
+#~ "I want to receive e-mails about future CopyCamps and similar activities "
+#~ "of the Modern Poland Foundation"
+#~ msgstr ""
+#~ "Chcę otrzymywać informacje o przyszłych CopyCampach i podobnych "
+#~ "działaniach Fundacji Nowoczesna Polska na e-mail"
+
+#~ msgid "Select at most 3 areas"
+#~ msgstr "Wybierz najwyżej 3 obszary"
+
+#~ msgid "Travel grant is not provided for the selected country"
+#~ msgstr "Dofinansowanie nie jest dostępne dla wybranego kraju"
+
+#~ msgid "Please provide this information"
+#~ msgstr "Prosimy podać tę informację"
+
+#~ msgid "To apply for a travel grant you must provide additional information."
+#~ msgstr "Aby aplikować o dofinansowanie musisz podać dodatkowe informacje."
+
+#~ msgid "social security in the creative sector"
+#~ msgstr "zabezpieczenie społeczne twórców"
+
+#~ msgid ""
+#~ "100 years of the evolution of modern copyright law and industrial "
+#~ "property law in Poland and of cultural activities regulated by this law"
+#~ msgstr ""
+#~ "stulecie ewolucji nowoczesnego prawa autorskiego i prawa własności "
+#~ "przemysłowej w Polsce oraz zachowań kulturowych przez to prawo "
+#~ "regulowanych"
+
+#~ msgid "EU copyright reform"
+#~ msgstr "reforma prawa autorskiego UE"
+
+#~ msgid "blockchain use prospects"
+#~ msgstr "perspektywy wykorzystania technologii blockchain"
+
+#~ msgid "reuse of archives and cultural heritage"
+#~ msgstr ""
+#~ "ponowne wykorzystanie zasobów archiwów i innych instytucji gromadzących "
+#~ "dziedzictwo"
+
+#~ msgid "info"
+#~ msgstr "info"
 
 #~ msgid "Presentation title in Polish (not required)"
 #~ msgstr "Polski tytuł prezentacji"
