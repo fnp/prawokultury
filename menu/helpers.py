@@ -25,10 +25,21 @@ class ObjectMenuItem(MenuItem):
     If no url or title is provided, get_absolute_url and __unicode__ are used.
     You can also provide a reverse lookup dictionary, as in {model: field_name}.
     """
-    def __init__(self, obj, url=None, rev_lookups=None, title=None, html_id=None):
+    def __init__(self, obj_lookup, url=None, rev_lookups=None, title=None, html_id=None):
         super(ObjectMenuItem, self).__init__(url=url, title=title, html_id=html_id)
-        self.obj = obj
+        self.obj_lookup = obj_lookup
         self.rev_lookups = rev_lookups
+
+    @property
+    def obj(self):
+        from migdal.models import Entry
+        try:
+            entry = Entry.objects.get(**self.obj_lookup)
+        except Entry.DoesNotExist:
+            return
+        if not entry.published:
+            return None
+        return entry
 
     def get_title(self):
         return self.title or unicode(self.obj)

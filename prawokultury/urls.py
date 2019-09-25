@@ -8,7 +8,6 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.utils.translation import ugettext_lazy as _, string_concat
 from fnpdjango.utils.urls import i18n_patterns
-from events.urls import urlpatterns as events_urlpatterns
 from migdal.urls import urlpatterns as migdal_urlpatterns
 
 admin.autodiscover()
@@ -22,8 +21,7 @@ urlpatterns = patterns('',
 
     (r'^accounts/login/$', 'django_cas.views.login'),
     (r'^accounts/logout/$', 'django_cas.views.logout'),
-) + i18n_patterns('',
-    #url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
+) + i18n_patterns(
     url(r'^comments/', include('django_comments_xtd.urls')),
     url(r'^contact/', include('contact.urls')),
 ) + migdal_urlpatterns 

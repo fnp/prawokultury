@@ -2,7 +2,6 @@ INSTALLED_APPS = (
     'prawokultury',
     'fnpdjango',
 
-    #'events',
     'menu',
     'migdal',
     'contact',
@@ -10,8 +9,7 @@ INSTALLED_APPS = (
 
     'sponsors',
     'django_gravatar',
-    'south',
-    'django.contrib.comments',
+    'django_comments',
     'django_comments_xtd',
     'pipeline',
     'haystack',

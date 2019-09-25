@@ -1,18 +1,12 @@
 # -*- coding: utf-8 -*-
-from migdal.models import Entry
 from menu.helpers import ObjectMenuItem
 
 ITEMS = []
 
 
 def add_entry(**qs):
-    try:
-        entry = Entry.objects.get(**qs)
-    except Entry.DoesNotExist:
-        return
-    if not entry.published:
-        return
-    ITEMS.append(ObjectMenuItem(entry))
+    ITEMS.append(ObjectMenuItem(qs))
+
 
 add_entry(slug_pl='co')
 add_entry(slug_pl='gdzie')
