@@ -66,7 +66,6 @@ class RegisterSpeaker(RegistrationForm):
     save_as_tag = '2019-speaker'
     form_title = _('Open call for presentations')
     notify_on_register = False
-    mailing_field = 'agree_mailing'
 
     bio = forms.CharField(label=mark_safe_lazy(
         _('Short biographical note in Polish (max. 500 characters)')),
