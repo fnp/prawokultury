@@ -5,7 +5,7 @@ fnpdjango==0.3
 django_cas>=2.1,<2.2
 Pillow
 sorl-thumbnail==12.4.1
-django-pagination
+fnp-django-pagination==2.2.4
 django-migdal==0.8.6
 pytz
 
