@@ -21,7 +21,7 @@ def chunk(key, cache_time=0):
         n = Chunk(key=key)
         n.save()
         return ''
-    return mark_safe(content)
+    return mark_safe(unicode(content))
 
 
 @register.simple_tag
