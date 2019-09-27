@@ -43,7 +43,7 @@ urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
 )
 
-urlpatterns += i18n_patterns('',
+urlpatterns += i18n_patterns(
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
     url(r'^comments/', include('django_comments_xtd.urls')),
     url(r'^pierwsza-pomoc/', include('questions.urls')),

@@ -9,8 +9,7 @@ INSTALLED_APPS = (
     'chunks',
 
     'django_gravatar',
-    'south',
-    'django.contrib.comments',
+    'django_comments',
     'django_comments_xtd',
     'pipeline',
     'haystack',

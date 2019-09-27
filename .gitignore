@@ -8,6 +8,7 @@ dev.sqlite
 
 # Compress output
 /static
+*.css.map
 
 # Python garbage
 *.pyc

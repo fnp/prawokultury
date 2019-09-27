@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.contrib.comments.signals import comment_will_be_posted
+from django_comments.signals import comment_will_be_posted
 import re
 
 def spamfilter(sender, comment, **kwargs):

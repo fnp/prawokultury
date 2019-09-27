@@ -34,9 +34,3 @@ CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_SEND_TASK_ERROR_EMAILS = True
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
-
-SOUTH_MIGRATION_MODULES = {
-    'getpaid' : 'prawokultury.migrations_contrib.getpaid',
-    'payu': 'prawokultury.migrations_contrib.getpaid_payu',
-    'taggit': 'taggit.south_migrations',
-}
