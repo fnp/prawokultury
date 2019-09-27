@@ -1,5 +1,4 @@
-if 'django_cas' in INSTALLED_APPS:
-    AUTHENTICATION_BACKENDS = (
-        'django.contrib.auth.backends.ModelBackend',
-        'fnpdjango.auth_backends.AttrCASBackend',
-    )
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas_ng.backends.CASBackend',
+)

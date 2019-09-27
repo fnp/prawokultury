@@ -12,7 +12,7 @@ MIDDLEWARE_CLASSES = (
 
 if 'django_cas' in INSTALLED_APPS:
     MIDDLEWARE_CLASSES += (
-        'django_cas.middleware.CASMiddleware',
+        'django_cas_ng.middleware.CASMiddleware',
     )
 
 MIDDLEWARE_CLASSES += (

@@ -13,8 +13,11 @@ THUMBNAIL_QUALITY = 95
 
 GRAVATAR_DEFAULT_IMAGE = 'http://localhost:8000/static/img/avatar.png'
 
-CAS_SERVER_URL = 'http://logowanie.nowoczesnapolska.org.pl/cas/'
-CAS_VERSION = '3'
+CAS_SERVER_URL = 'https://logowanie.nowoczesnapolska.org.pl/cas/'
+CAS_VERSION = '2'
+CAS_APPLY_ATTRIBUTES_TO_USER = True
+CAS_RENAME_ATTRIBUTES = {
+    'email': 'email', 'firstname': 'first_name', 'lastname': 'last_name'}
 
 HONEYPOT_FIELD_NAME='miut'
 

@@ -16,7 +16,7 @@ INSTALLED_APPS = (
     'pagination',
     'sorl.thumbnail',
     'piwik',
-    'django_cas',
+    'django_cas_ng',
     'honeypot',
     'taggit',
     'taggit_autosuggest',

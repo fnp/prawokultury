@@ -30,12 +30,12 @@ if 'django.contrib.sitemaps' in settings.INSTALLED_APPS:
         }),
     )
 
-if 'django_cas' in settings.INSTALLED_APPS:
+if 'django_cas_ng' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
-        (r'^accounts/login/$', 'django_cas.views.login'),
-        (r'^accounts/logout/$', 'django_cas.views.logout'),
-        (r'^admin/login/$', 'django_cas.views.login'),
-        (r'^admin/logout/$', 'django_cas.views.logout'),
+        (r'^accounts/login/$', 'django_cas_ng.views.login'),
+        (r'^accounts/logout/$', 'django_cas_ng.views.logout'),
+        (r'^admin/login/$', 'django_cas_ng.views.login'),
+        (r'^admin/logout/$', 'django_cas_ng.views.logout'),
     )
 
 urlpatterns += patterns('',
