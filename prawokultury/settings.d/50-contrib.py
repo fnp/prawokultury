@@ -21,7 +21,7 @@ CAS_RENAME_ATTRIBUTES = {
 
 HONEYPOT_FIELD_NAME='miut'
 
-TAGGIT_AUTOSUGGEST_MODEL = ('questions', 'Tag')
+TAGGIT_AUTOSUGGEST_MODELS = {"default": ('questions', 'Tag')}
 
 GETPAID_BACKENDS = (
     'getpaid.backends.payu',

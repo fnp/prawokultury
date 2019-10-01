@@ -16,7 +16,7 @@ from . import app_settings
 
 class Offer(models.Model):
     """ A fundraiser for a particular book. """
-    entry = models.OneToOneField(Entry)  # filter publications!
+    entry = models.OneToOneField(Entry, models.CASCADE)  # filter publications!
     price = models.DecimalField(_('price'), decimal_places=2, max_digits=6)
     cost_const = models.DecimalField(decimal_places=2, max_digits=6)
     cost_per_item = models.DecimalField(decimal_places=2, max_digits=6, default=0)
@@ -45,7 +45,7 @@ class Order(models.Model):
     The payment was completed if and only if payed_at is set.
 
     """
-    offer = models.ForeignKey(Offer, verbose_name=_('offer'))
+    offer = models.ForeignKey(Offer, models.CASCADE, verbose_name=_('offer'))
     items = models.IntegerField(verbose_name=_('items'), default=1)
     name = models.CharField(_('name'), max_length=127, blank=True)
     email = models.EmailField(_('email'), db_index=True)

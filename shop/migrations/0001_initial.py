@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('price', models.DecimalField(verbose_name='price', max_digits=6, decimal_places=2)),
                 ('cost_const', models.DecimalField(max_digits=6, decimal_places=2)),
                 ('cost_per_item', models.DecimalField(default=0, max_digits=6, decimal_places=2)),
-                ('entry', models.OneToOneField(to='migdal.Entry')),
+                ('entry', models.OneToOneField(to='migdal.Entry', on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ['entry'],
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('address', models.TextField(verbose_name='address', db_index=True)),
                 ('payed_at', models.DateTimeField(db_index=True, null=True, verbose_name='payed at', blank=True)),
                 ('language_code', models.CharField(max_length=2, null=True, blank=True)),
-                ('offer', models.ForeignKey(verbose_name='offer', to='shop.Offer')),
+                ('offer', models.ForeignKey(verbose_name='offer', on_delete=models.CASCADE, to='shop.Offer')),
             ],
             options={
                 'ordering': ['-payed_at'],

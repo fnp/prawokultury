@@ -15,7 +15,6 @@ from migdal.urls import urlpatterns as migdal_urlpatterns
 from migdal.sitemap import sitemaps as migdal_sitemaps
 from questions.sitemap import sitemaps as question_sitemaps
 
-admin.autodiscover()
 
 urlpatterns = [
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
@@ -30,7 +29,7 @@ urlpatterns = [
     url(r'^admin/logout/$', django_cas_ng.views.logout),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]
 
 urlpatterns += i18n_patterns(

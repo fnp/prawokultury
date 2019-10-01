@@ -40,7 +40,7 @@ class Tag(TagBase):
 
 
 class TagItem(GenericTaggedItemBase):
-    tag = models.ForeignKey(Tag, related_name="items")
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name="items")
  
 
 class Question(models.Model):

@@ -72,8 +72,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('object_id', models.IntegerField(verbose_name='Object id', db_index=True)),
-                ('content_type', models.ForeignKey(related_name='questions_tagitem_tagged_items', verbose_name='Content type', to='contenttypes.ContentType')),
-                ('tag', models.ForeignKey(related_name='items', to='questions.Tag')),
+                ('content_type', models.ForeignKey(related_name='questions_tagitem_tagged_items', on_delete=models.CASCADE, verbose_name='Content type', to='contenttypes.ContentType')),
+                ('tag', models.ForeignKey(related_name='items', to='questions.Tag', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
