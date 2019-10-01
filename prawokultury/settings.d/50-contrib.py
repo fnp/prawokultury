@@ -26,6 +26,7 @@ TAGGIT_AUTOSUGGEST_MODEL = ('questions', 'Tag')
 GETPAID_BACKENDS = (
     'getpaid.backends.payu',
 )
+GETPAID_ORDER_MODEL = 'shop.Order'
 
 PIWIK_URL = ''
 PIWIK_SITE_ID = 0

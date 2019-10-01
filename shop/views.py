@@ -38,7 +38,7 @@ class OfferDetailView(FormView):
         ctx['entry'] = self.object.entry
         return ctx
 
-    def get_form(self, form_class):
+    def get_form(self, form_class=OrderForm):
         return form_class(self.object, self.request.POST)
 
     def form_valid(self, form):

@@ -1,6 +1,5 @@
 {% extends "shop/email/base.txt" %}
 {% load i18n %}
-{% load url from future %}
 
 
 {% block body %}

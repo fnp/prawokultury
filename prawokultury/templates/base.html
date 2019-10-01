@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-{% load url from future %}
 {% load i18n %}
 {% load static from staticfiles %}
 {% load fnp_common menu_tags migdal_tags events_tags fnp_share fnp_lang %}
-{% load compressed %}
+{% load pipeline %}
 {% load chunks %}
 {% load piwik_tags %}
 <html prefix="og: http://ogp.me/ns#">
     <head>
        <title>{% block titleextra %}{% endblock %}{% trans "Right to Culture" %}</title>
        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.png" %}" />
-        {% compressed_css 'base' %}
+        {% stylesheet 'base' %}
         {% block extra_css %}{% endblock %}
         <meta charset="UTF-8" />
         <meta property='og:url' content='{% block ogurl %}{{ request.get_full_path|build_absolute_uri:request }}{% endblock %}' />
@@ -131,7 +130,7 @@
 
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.0.min.js" charset="utf-8"></script>
-    {% compressed_js 'base' %}
+    {% javascript 'base' %}
     {% tracking_code %}
     {% block extra_js %}{% endblock %}
     </body>

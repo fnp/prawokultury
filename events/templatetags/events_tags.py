@@ -3,6 +3,7 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django import template
+from django.utils.timezone import now
 from events import app_settings
 from events.models import Event
 
@@ -14,7 +15,7 @@ from datetime import datetime
 def events_box(context, limit=app_settings.BOX_LENGTH):
     lang = context['request'].LANGUAGE_CODE
     objects = Event.objects.filter(**{"published_%s" % lang: True})
-    objects = objects.filter(date_end__gte=datetime.now())[:limit]
+    objects = objects.filter(date_end__gte=now())[:limit]
     return {'objects': objects}
 
 

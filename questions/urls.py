@@ -2,12 +2,12 @@
 # This file is part of PrawoKultury, licensed under GNU Affero GPLv3 or later.
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic import DetailView, TemplateView
 from .models import Question
 from .views import QuestionFormView, QuestionListView
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^$',
         QuestionListView.as_view(),
         name="questions"
@@ -25,4 +25,4 @@ urlpatterns = patterns('',
         ),
         name="questions_thanks"
     ),
-)
+]

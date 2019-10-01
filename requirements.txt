@@ -1,9 +1,9 @@
 -i https://py.mdrn.pl/simple
 
-Django>=1.7,<1.8
+Django>=1.8,<1.9
 Pillow
 sorl-thumbnail==12.4.1
-django-pagination
+fnp-django-pagination==2.2.4
 django-honeypot==0.4.0
 django-cas-ng==3.5.10
 
@@ -15,7 +15,7 @@ django-markupfield==1.4.3
 django-gravatar2
 django-contrib-comments==1.6.0
 django-comments-xtd==1.5.1
-django-pipeline>=1.3.23,<1.4
+django-pipeline==1.6.14
 
 #pyScss
 #git+git://github.com/Kronuz/pyScss.git@d8f4da23a3c87696a75b3830ed4ab49b75550a93#egg=pyScss
@@ -25,9 +25,9 @@ django-haystack==2.7.0
 pysolr
 django-piwik
 
-django-taggit>=0.12,<0.13
-django-taggit-autosuggest>=0.2.1,<0.3
+django-taggit==0.22.2
+django-taggit-autosuggest>=0.3.8
 
-django-getpaid>=1.6,<1.7
+django-getpaid==1.7.6
 django-celery>=3.1,<3.2
 celery<4.0

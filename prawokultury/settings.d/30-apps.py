@@ -13,7 +13,7 @@ INSTALLED_APPS = (
     'django_comments_xtd',
     'pipeline',
     'haystack',
-    'pagination',
+    'fnp_django_pagination',
     'sorl.thumbnail',
     'piwik',
     'django_cas_ng',

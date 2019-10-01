@@ -3,45 +3,35 @@
 # Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
 #
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
+import django.contrib.sitemaps.views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.utils.translation import ugettext_lazy as _, string_concat
+import django_cas_ng.views
 from fnpdjango.utils.urls import i18n_patterns
 from events.urls import urlpatterns as events_urlpatterns
 from migdal.urls import urlpatterns as migdal_urlpatterns
+from migdal.sitemap import sitemaps as migdal_sitemaps
+from questions.sitemap import sitemaps as question_sitemaps
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT,
-        }),
+urlpatterns = [
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
-    )
 
-if 'django.contrib.sitemaps' in settings.INSTALLED_APPS:
-    from migdal.sitemap import sitemaps as migdal_sitemaps
-    from questions.sitemap import sitemaps as question_sitemaps
-    sitemaps = dict(migdal_sitemaps.items() + question_sitemaps.items())
-    urlpatterns += patterns('',
-        url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {
-            'sitemaps': sitemaps
-        }),
-    )
+    url(r'^sitemap\.xml$', django.contrib.sitemaps.views.sitemap, {
+        'sitemaps': dict(migdal_sitemaps.items() + question_sitemaps.items())
+    }),
 
-if 'django_cas_ng' in settings.INSTALLED_APPS:
-    urlpatterns += patterns('',
-        (r'^accounts/login/$', 'django_cas_ng.views.login'),
-        (r'^accounts/logout/$', 'django_cas_ng.views.logout'),
-        (r'^admin/login/$', 'django_cas_ng.views.login'),
-        (r'^admin/logout/$', 'django_cas_ng.views.logout'),
-    )
+    url(r'^accounts/login/$', django_cas_ng.views.login),
+    url(r'^accounts/logout/$', django_cas_ng.views.logout),
+    url(r'^admin/login/$', django_cas_ng.views.login),
+    url(r'^admin/logout/$', django_cas_ng.views.logout),
 
-urlpatterns += patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
 
 urlpatterns += i18n_patterns(
     url(string_concat(r'^', _('events'), r'/'), include('events.urls')),
@@ -51,10 +41,11 @@ urlpatterns += i18n_patterns(
 ) + migdal_urlpatterns 
 
 if settings.DEBUG:
-    urlpatterns += patterns('',
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+    import django.views.static
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', django.views.static.serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
-   )
+   ]
 
 urlpatterns += staticfiles_urlpatterns()
