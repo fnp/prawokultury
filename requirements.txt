@@ -7,7 +7,7 @@ fnp-django-pagination==2.2.4
 django-honeypot==0.4.0
 django-cas-ng==3.5.10
 
-django-migdal==0.8.6
+django-migdal==0.8.8
 fnpdjango[textile]==0.4.1
 
 python-slugify
