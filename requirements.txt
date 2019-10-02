@@ -27,7 +27,7 @@ django-haystack==2.7.0
 pysolr
 django-piwik
 
-django-sponsors==2.1
+django-sponsors==2.2
 
 
 mailchimp3
